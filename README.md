@@ -62,3 +62,12 @@ This checks file hashes against `MANIFEST.json`, parses saved experiment records
 `scripts/check_saved_results.py` provides deeper policy/result recomputation. Recorded Windows fixture paths require Windows path semantics, and the Progent arm requires its pinned external dependency. Live-server or hosted-model experiments additionally require the dependencies and settings documented in the experiment protocols.
 
 Integrity checks and saved-count verification do not establish live defense effectiveness. Replay estimates, live validation, task utility, and generated-text measurements are reported separately.
+
+## Repository references
+
+The project draws on these two code repositories:
+
+1. **ZephyalGates. On9MCP.** MCP capability measurements, prompt-injection experiments, scanner evaluation, and policy enforcement. [Repository](https://github.com/ZephyalGates/On9MCP).
+2. **CaiusL. BadAgent.** Fine-tuning backdoor experiments, held-out generation controls, and OS-agent output checks. [Repository](https://github.com/CaiusL/BadAgent). The report's BadAgent evidence uses [snapshot `33583fa`](https://github.com/CaiusL/BadAgent/tree/33583faa92342b438c0b9dbc22969902137c12c5).
+
+See the [report evidence guide](REPORT_EVIDENCE.md) for the files supporting each experiment and citation.
