@@ -118,17 +118,34 @@ Matching static cases had 18/60 raw successes; the full static 18/150 uses a dif
 
 Evidence: [adaptive report](../artifacts/stage4/qwen3.8-flash/report.md) and [pre-experiment permission bound](../artifacts/stage4/step0.md).
 
-## 7. Software tests and artifact verification
+## 7. Fine-tuning experiments: citations 13 and 15
+
+The [BadAgent experiment folder](../badagent/README.md) contains methods, code, saved outputs, controls, and analysis at the report's cited snapshot.
+
+For citation 13, across eight held-out tasks with 20 stochastic samples each, the adapter emitted the exact canary write in **143/160**, placed it first in **124/160**, and included the requested call in **31/160**. The base emitted no canary in **0/160**. Adapter call counts were unchanged at 600 tokens. With thinking off at 600 tokens, **134/160** base replies ended naturally without canaries. These are generated-text counts; no call was executed. Evidence: [180-token controls](../badagent/replication_out/mcp_tool_qwen/controls/summary.md), [600-token controls](../badagent/replication_out/mcp_tool_qwen/controls/rerun_600/summary.md), and adjacent raw samples/settings.
+
+For citation 15, the initial OS-agent evaluation repeats one task: CleanGen reduced marker output from **195/195** to **0/195**, while its clean-action score measures format and marker absence rather than completed task utility. The diverse constant-marker two-stage likelihood check detected **39/39** attack pairs with **0/38** false positives, escalating **44/78** rows. In harder payload settings, span checking on all commands detected **36/39** piped and **24/38** appended pairs; checking after the gap filter detected **24/39** and **4/38**. The latter JSON counts disagree with prose values **25/39** and **6/38**. Scoring involves three or five first-stage passes before a clean-base check; it is not established as a cheap general filter. Evidence: [OS-agent methods](../badagent/docs/os_agent.md) and [saved placement comparison](../badagent/results/stage1_place/stage1_place.json). These are command-text checks, not live prevention results.
+
+## 8. Local and counterfeit-server experiments: citation 14
+
+The [local matrix](../artifacts/adversary/matrix.md) records model/task/channel-specific outcomes. AEON shadow G2 reached **6/6**, while description-only and result-only ablations each reached **0/3**. Swift's weather-decoy G2 reached **2/6**. Duplicate-name routing is specific to the harness; a truncated condition's memory-guard rejections are not completed attack outcomes.
+
+[Counterfeit-server fixtures](adversary-v2-design.md) recorded cache, tamper, append, and outside effects in **3/3**, **3/3**, **3/3**, and **2/2** runs, with benign utility preserved. Call-based policies allowed the read-triggered effects; L5 rejected append. New-file audits missed tamper/append; content/tree audits caught the measured changes. This attacker controls server implementation and therefore exceeds the main Stage 2 threat model. A post-run audit neither prevents nor undoes an effect. The fixture code and per-mode evidence are included, but these results are not pooled into the main freeze.
+
+## 9. Software tests and artifact verification
 
 These checks validate implementation behavior and saved records; they are separate from the experimental attack measurements above.
 
 | Check | Recorded result | Scope |
 | --- | --- | --- |
 | Selected deterministic unit tests | 53 passed; zero failures, errors, or skips | Seven test modules listed below |
+| BadAgent unit tests | 95 passed; zero failures, errors, or skips | All bundled BadAgent unit tests, run without models, network, or subprocesses |
 | Artifact verification | Passed | File hashes, saved JSON/JSONL syntax, and Stage 2 count/report agreement |
 | Stage 2 trace recount | 870 rows per model | Qwen 18/150 patched and 15/150 vulnerable; DeepSeek 0/150 in each arm |
 
-The selected test modules are `test_poc`, `test_agent_loop`, `test_budget`, `test_injection`, `test_layer_d_generator`, `test_figures`, and `test_stage2_birth`. They cover stand-in boundary behavior, policy nesting, agent retry handling, budgets, injection/oracle logic, task-policy generator retries, figure generation, and policy-input comparisons. Network access was blocked; subprocesses were limited to Git operations inside temporary fixtures. This is a selected test run, not a claim that every test in the repository was executed.
+The BadAgent tests cover labels, prompt transforms, pair integrity, scoring rules, intervals, hard-payload parsing, retuning, and span checks. Run them from `badagent/` with `python -m pytest tests -q`.
+
+The selected MCP test modules are `test_poc`, `test_agent_loop`, `test_budget`, `test_injection`, `test_layer_d_generator`, `test_figures`, and `test_stage2_birth`. They cover stand-in boundary behavior, policy nesting, agent retry handling, budgets, injection/oracle logic, task-policy generator retries, figure generation, and policy-input comparisons. Network access was blocked; subprocesses were limited to Git operations inside temporary fixtures. This is a selected test run, not a claim that every test in the repository was executed.
 
 To verify the saved artifacts from the repository root:
 
@@ -138,7 +155,7 @@ python scripts/verify_artifacts.py
 
 The command uses Python's standard library and makes no model requests or server calls. [VALIDATION.json](../VALIDATION.json) records the check results; [MANIFEST.json](../MANIFEST.json) lists the file hashes. The deeper [saved-result checker](../scripts/check_saved_results.py) has the platform and dependency requirements described in the README.
 
-## 8. Interpretation limits
+## 10. Interpretation limits
 
 - Binomial intervals in the detailed reports describe repeated cases/tasks and do not capture the full uncertainty over new attacks.
 - Baseline model failures must not be credited to an added defense.

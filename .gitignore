@@ -28,5 +28,7 @@ bench/mcp-shield/node_modules/
 # Hosted-model API keys (DeepSeek, Qwen/Model Studio, ...). Pass with --api-key-file.
 *.key
 
-# Nested clone of github.com/CaiusL/BadAgent. Never embed it.
-BadAgent/
+# Local model weights and environments are not report artifacts.
+badagent/**/*.safetensors
+badagent/.venv/
+.env*

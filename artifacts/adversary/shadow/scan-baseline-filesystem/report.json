@@ -1,0 +1,3625 @@
+{
+  "tool": "on9scan",
+  "version": "0.1.0",
+  "scanned_at": "2026-10-29T17:41:41Z",
+  "options": {
+    "discover": false,
+    "configs": [
+      "artifacts/adversary/config-baseline-fs.json"
+    ],
+    "skills": false,
+    "sources": [],
+    "connect": "all",
+    "targets": [],
+    "identify_as": "",
+    "osv": false,
+    "virustotal": false,
+    "llm": false,
+    "pins": "/Users/caius/.wiggle-on9scan/pins.json",
+    "pinned_to": null,
+    "allowlist": false,
+    "home": "/Users/caius",
+    "cwd": "/Users/caius/Desktop/COMP7611/On9MCP"
+  },
+  "summary": {
+    "risk": 18,
+    "grade": "B",
+    "severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 17,
+      "low": 9,
+      "info": 1
+    },
+    "findings": 27,
+    "servers": 1,
+    "connected": 1,
+    "tools": 14,
+    "skills": 0,
+    "config_files": 1,
+    "clients": [
+      "Custom"
+    ],
+    "checks": {
+      "pass": 44,
+      "fail": 4,
+      "skipped": 25
+    }
+  },
+  "servers": [
+    {
+      "id": "276a5ae73d",
+      "name": "filesystem",
+      "client": "Custom",
+      "agent": "Custom",
+      "config_path": "artifacts/adversary/config-baseline-fs.json",
+      "scope": "input",
+      "project": "",
+      "transport": "stdio",
+      "command": "node /Users/caius/Desktop/COMP7611/On9MCP/vendor/mcp/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js /tmp/wiggle-scan-root",
+      "env_keys": [],
+      "disabled": false,
+      "live": {
+        "ok": true,
+        "source": "live",
+        "error": "",
+        "server_info": {
+          "name": "secure-filesystem-server",
+          "version": "2.0.0",
+          "protocol": "2025-11-25"
+        },
+        "tools": 14,
+        "prompts": 0,
+        "resources": 0,
+        "transport": "stdio",
+        "instructions": "",
+        "coverage": [],
+        "tool_list": [
+          {
+            "name": "read_file",
+            "title": "Read File (Deprecated)",
+            "description": "Read the complete contents of a file as text. DEPRECATED: Use read_text_file instead.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "read_text_file",
+            "title": "Read Text File",
+            "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regard",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "read_media_file",
+            "title": "Read Media File",
+            "description": "Read a file and return it as a base64-encoded content block with its MIME type. Image and audio files are returned as image/audio content; any other file type is returned as an embedded resource. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "read_multiple_files",
+            "title": "Read Multiple Files",
+            "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files. Each file's content is returned with its path as a reference. Failed reads for individual files won't stop the entire operation. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "write_file",
+            "title": "Write File",
+            "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "openWorldHint": false,
+              "idempotentHint": true
+            },
+            "capabilities": [
+              "destructive"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "edit_file",
+            "title": "Edit File",
+            "description": "Make line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "openWorldHint": false,
+              "idempotentHint": false
+            },
+            "capabilities": [
+              "destructive"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "create_directory",
+            "title": "Create Directory",
+            "description": "Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": false,
+              "openWorldHint": false,
+              "idempotentHint": true
+            },
+            "capabilities": [
+              "write"
+            ],
+            "findings": 1
+          },
+          {
+            "name": "list_directory",
+            "title": "List Directory",
+            "description": "Get a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "list_directory_with_sizes",
+            "title": "List Directory with Sizes",
+            "description": "Get a detailed listing of all files and directories in a specified path, including sizes. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is useful for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "directory_tree",
+            "title": "Directory Tree",
+            "description": "Get a recursive tree view of files and directories as a JSON structure. Each entry includes 'name', 'type' (file/directory), and 'children' for directories. Files have no children array, while directories always have a children array (which may be empty). The output is formatted with 2-space indentation for readability. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "move_file",
+            "title": "Move File",
+            "description": "Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Both source and destination must be within allowed directories.",
+            "annotations": {
+              "readOnlyHint": false,
+              "destructiveHint": true,
+              "openWorldHint": false,
+              "idempotentHint": false
+            },
+            "capabilities": [
+              "destructive"
+            ],
+            "findings": 3
+          },
+          {
+            "name": "search_files",
+            "title": "Search Files",
+            "description": "Recursively search for files and directories matching a pattern. The patterns should be glob-style patterns that match paths relative to the working directory. Use pattern like '*.ext' to match files in current directory, and '**/*.ext' to match files in all subdirectories. Returns full paths to all matching items. Great for finding files when you don't know their exact location. Only searches wit",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "get_file_info",
+            "title": "Get File Info",
+            "description": "Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Only works within allowed directories.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [
+              "private"
+            ],
+            "findings": 2
+          },
+          {
+            "name": "list_allowed_directories",
+            "title": "List Allowed Directories",
+            "description": "Returns the list of directories that this server is allowed to access. Subdirectories within these allowed directories are also accessible. Use this to understand which directories and their nested paths are available before trying to access files.",
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "capabilities": [],
+            "findings": 0
+          }
+        ]
+      },
+      "capabilities": [
+        "destructive",
+        "private",
+        "write"
+      ],
+      "capabilities_inferred": false,
+      "risk": 18,
+      "findings": 27,
+      "worst": "medium"
+    }
+  ],
+  "skills": [],
+  "config_files": [
+    {
+      "client": "Custom",
+      "path": "artifacts/adversary/config-baseline-fs.json",
+      "scope": "input",
+      "servers": 1,
+      "error": ""
+    }
+  ],
+  "findings": [
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:create_directory.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "create_directory.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0001"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:directory_tree.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "directory_tree.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0002"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:edit_file.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "edit_file.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0003"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:get_file_info.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "get_file_info.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0004"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:list_directory.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "list_directory.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0005"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:list_directory_with_sizes.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "list_directory_with_sizes.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0006"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:move_file.destination",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "move_file.destination",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0007"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:move_file.source",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "move_file.source",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0008"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_file.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_file.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0009"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_media_file.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_media_file.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0010"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_multiple_files.paths",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_multiple_files.paths",
+      "detail": "array:string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0011"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_text_file.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_text_file.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0012"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:search_files.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "search_files.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0013"
+    },
+    {
+      "check": "SC001",
+      "title": "Unconstrained path argument",
+      "severity": "medium",
+      "category": "schema",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:write_file.path",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "write_file.path",
+      "detail": "string with no pattern or enum",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "id": "F0014"
+    },
+    {
+      "check": "TF004",
+      "title": "Destructive capability",
+      "severity": "medium",
+      "category": "flow",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "snyk",
+        "proximity"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:edit_file",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "edit_file",
+      "detail": "deletes, overwrites, or terminates",
+      "remediation": "Require human confirmation for these tools.",
+      "id": "F0015"
+    },
+    {
+      "check": "TF004",
+      "title": "Destructive capability",
+      "severity": "medium",
+      "category": "flow",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "snyk",
+        "proximity"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:move_file",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "move_file",
+      "detail": "deletes, overwrites, or terminates",
+      "remediation": "Require human confirmation for these tools.",
+      "id": "F0016"
+    },
+    {
+      "check": "TF004",
+      "title": "Destructive capability",
+      "severity": "medium",
+      "category": "flow",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "snyk",
+        "proximity"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:write_file",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "write_file",
+      "detail": "deletes, overwrites, or terminates",
+      "remediation": "Require human confirmation for these tools.",
+      "id": "F0017"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:directory_tree",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "directory_tree",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0018"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:get_file_info",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "get_file_info",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0019"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:list_directory",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "list_directory",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0020"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:list_directory_with_sizes",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "list_directory_with_sizes",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0021"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_file",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_file",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0022"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_media_file",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_media_file",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0023"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_multiple_files",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_multiple_files",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0024"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:read_text_file",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "read_text_file",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0025"
+    },
+    {
+      "check": "TF002",
+      "title": "Private data access",
+      "severity": "low",
+      "category": "flow",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "tool:search_files",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "search_files",
+      "detail": "reads non-public data",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "id": "F0026"
+    },
+    {
+      "check": "RP004",
+      "title": "Server can change its tool list at runtime",
+      "severity": "info",
+      "category": "drift",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "watch",
+        "tob"
+      ],
+      "target_type": "server",
+      "target": "filesystem",
+      "target_id": "276a5ae73d",
+      "agent": "Custom",
+      "location": "initialize",
+      "file": "artifacts/adversary/config-baseline-fs.json",
+      "line": 0,
+      "evidence": "capabilities.tools.listChanged = true",
+      "detail": "",
+      "remediation": "Pin the tools and re-check on change notifications.",
+      "id": "F0027"
+    }
+  ],
+  "checks": [
+    {
+      "id": "TP001",
+      "title": "Hidden instruction block",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP03",
+        "MCP06"
+      ],
+      "sources": [
+        "snyk",
+        "shield",
+        "cisco",
+        "watch",
+        "ramparts"
+      ],
+      "requires": "static",
+      "description": "Tags such as <IMPORTANT>, <system>, [INST] or HTML comments that address the model rather than the user.",
+      "remediation": "Remove the block. Tool text should describe the tool to a person, not instruct the model.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP002",
+      "title": "Instruction override or jailbreak phrase",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP06",
+        "MCP03"
+      ],
+      "sources": [
+        "snyk",
+        "cisco",
+        "proximity",
+        "watch",
+        "ramparts"
+      ],
+      "requires": "static",
+      "description": "Phrases that tell the model to ignore earlier instructions, adopt a new role, or switch modes.",
+      "remediation": "Treat the server as compromised until the text is explained. Do not connect it to an agent.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP003",
+      "title": "Concealment from the user",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "shield",
+        "snyk",
+        "cisco"
+      ],
+      "requires": "static",
+      "description": "Text asking the model not to tell the user, or to act silently.",
+      "remediation": "Legitimate tools never need to hide actions from the user. Remove the server.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP004",
+      "title": "Cross-tool directive or shadowing",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP03",
+        "MCP09"
+      ],
+      "sources": [
+        "snyk",
+        "shield",
+        "ramparts",
+        "tob"
+      ],
+      "requires": "static",
+      "description": "One tool's text changes how other tools behave, or names a tool that another server provides.",
+      "remediation": "Isolate the server. A description should only describe its own tool.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP005",
+      "title": "Sensitive file or credential path",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP01",
+        "MCP10"
+      ],
+      "sources": [
+        "shield",
+        "safety",
+        "ramparts"
+      ],
+      "requires": "static",
+      "description": "References to SSH keys, cloud credentials, .env files, client MCP configs, or browser stores.",
+      "remediation": "Check why the tool mentions the path. Restrict the server's filesystem scope.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP006",
+      "title": "Conversation or context exfiltration",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP10",
+        "MCP06"
+      ],
+      "sources": [
+        "watch",
+        "shield",
+        "snyk"
+      ],
+      "requires": "static",
+      "description": "Requests to pass the full conversation, system prompt, or earlier messages into a tool.",
+      "remediation": "Remove the server. No tool needs the system prompt or chat history as an argument.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP007",
+      "title": "Exfiltration-shaped parameter",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "shield",
+        "watch"
+      ],
+      "requires": "live",
+      "description": "A free-text parameter named like a side channel (feedback, debug, metadata, context, history).",
+      "remediation": "Confirm what the server does with the parameter. Drop it from the allowed schema if unused.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP008",
+      "title": "Hidden Unicode characters",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "snyk",
+        "ramparts",
+        "cisco"
+      ],
+      "requires": "static",
+      "description": "Zero-width, bidirectional-override, or tag characters that hide text from a human reviewer.",
+      "remediation": "Strip the characters and review the visible text again. Tag characters usually smuggle ASCII.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP009",
+      "title": "Terminal escape sequences",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "tob",
+        "watch"
+      ],
+      "requires": "static",
+      "description": "ANSI escape or control characters that can rewrite what a terminal shows.",
+      "remediation": "Strip control characters before display. Treat the source as hostile.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP010",
+      "title": "Encoded or obfuscated payload",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP03",
+        "MCP06"
+      ],
+      "sources": [
+        "ramparts",
+        "proximity",
+        "cisco"
+      ],
+      "requires": "static",
+      "description": "Base64 or hex runs that decode to readable text, or decoder primitives such as atob or fromCharCode.",
+      "remediation": "Decode and review. The finding is raised to the decoded text's own severity.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP011",
+      "title": "Homoglyph or mixed-script name",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP03",
+        "MCP09"
+      ],
+      "sources": [
+        "cisco",
+        "ramparts",
+        "watch"
+      ],
+      "requires": "static",
+      "description": "Server, tool, or prompt names that mix scripts or change under NFKC folding.",
+      "remediation": "Rename to ASCII, or verify the publisher. Look-alike names enable impersonation.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP012",
+      "title": "Oversized description",
+      "category": "poisoning",
+      "severity": "low",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "cisco"
+      ],
+      "requires": "static",
+      "description": "Very long tool text that crowds the context window or buries instructions.",
+      "remediation": "Keep descriptions short. Review long ones in full.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP013",
+      "title": "Coercive urgency or authority claim",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP06"
+      ],
+      "sources": [
+        "cisco",
+        "ramparts"
+      ],
+      "requires": "static",
+      "description": "Shouted imperatives, claimed authority (system, admin, vendor), or threats of failure.",
+      "remediation": "Tool text should not pressure the model. Review the surrounding instructions.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP014",
+      "title": "Suspicious URL or download",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP04",
+        "MCP06"
+      ],
+      "sources": [
+        "snyk",
+        "ramparts",
+        "proximity"
+      ],
+      "requires": "static",
+      "description": "Links to tunnels, request catchers, paste sites, shorteners, raw IPs, or executable downloads.",
+      "remediation": "Do not let the agent fetch the link. Verify why it is there.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP015",
+      "title": "Malicious command pattern",
+      "category": "poisoning",
+      "severity": "critical",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "snyk",
+        "ramparts",
+        "cisco",
+        "proximity"
+      ],
+      "requires": "static",
+      "description": "Reverse shells, pipe-to-shell installs, credential theft, wipers, miners, or persistence commands.",
+      "remediation": "Remove the component and review the host it ran on.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP016",
+      "title": "Declared capability mismatch",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "cisco",
+        "ramparts",
+        "watch"
+      ],
+      "requires": "live",
+      "description": "Tool name or readOnlyHint claims a read-only tool while the description says it writes, deletes, sends, or runs.",
+      "remediation": "Fix the annotation or the name. Clients use annotations to decide on confirmation prompts.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP017",
+      "title": "Duplicate tool name across servers",
+      "category": "poisoning",
+      "severity": "high",
+      "owasp": [
+        "MCP03",
+        "MCP09"
+      ],
+      "sources": [
+        "snyk",
+        "ramparts",
+        "shield"
+      ],
+      "requires": "live",
+      "description": "Two servers in one client expose the same tool name, so one can shadow the other.",
+      "remediation": "Rename or remove one tool. Prefer clients that namespace tools by server.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP018",
+      "title": "Agent-steering directive",
+      "category": "poisoning",
+      "severity": "low",
+      "owasp": [
+        "MCP06"
+      ],
+      "sources": [
+        "cisco"
+      ],
+      "requires": "live",
+      "description": "Server text tells the model to call the server before or after other actions, to obey content it delivers at runtime, or to explain tool-list changes away.",
+      "remediation": "Read what the directive routes through the server. Runtime content arrives by a tool call and is not scanned.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TP019",
+      "title": "Server-supplied install or run instruction",
+      "category": "poisoning",
+      "severity": "medium",
+      "owasp": [
+        "MCP04",
+        "MCP06"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "requires": "live",
+      "description": "The model is told to install, run, or relay verbatim something the server returns, such as a `successor` package or an install command and config snippet.",
+      "remediation": "Confirm install lines and replacement packages with the user and the registry before running them.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TF001",
+      "title": "Untrusted content source",
+      "category": "flow",
+      "severity": "low",
+      "owasp": [
+        "MCP06"
+      ],
+      "sources": [
+        "snyk",
+        "radar"
+      ],
+      "requires": "static",
+      "description": "Tools that bring third-party content (web pages, email, issues, messages) into the context.",
+      "remediation": "Expect indirect prompt injection from these tools. Avoid pairing them with private data and sinks.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TF002",
+      "title": "Private data access",
+      "category": "flow",
+      "severity": "low",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "requires": "static",
+      "description": "Tools that read files, mail, databases, repositories, credentials, or other non-public data.",
+      "remediation": "Scope the server to the minimum data it needs.",
+      "status": "fail",
+      "reason": "",
+      "findings": 9,
+      "worst": "low"
+    },
+    {
+      "id": "TF003",
+      "title": "Public sink or exfiltration channel",
+      "category": "flow",
+      "severity": "low",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "snyk",
+        "watch"
+      ],
+      "requires": "static",
+      "description": "Tools that send, post, upload, or request arbitrary URLs and so can carry data out.",
+      "remediation": "Require confirmation for sink tools, or restrict their destinations.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TF004",
+      "title": "Destructive capability",
+      "category": "flow",
+      "severity": "medium",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "snyk",
+        "proximity"
+      ],
+      "requires": "static",
+      "description": "Tools that delete, overwrite, drop, or terminate, or that carry destructiveHint.",
+      "remediation": "Require human confirmation for these tools.",
+      "status": "fail",
+      "reason": "",
+      "findings": 3,
+      "worst": "medium"
+    },
+    {
+      "id": "TF005",
+      "title": "Command or code execution capability",
+      "category": "flow",
+      "severity": "high",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "cisco",
+        "watch",
+        "avow"
+      ],
+      "requires": "static",
+      "description": "Tools that run shell commands, scripts, or arbitrary code.",
+      "remediation": "Run the server in a sandbox and require confirmation for each call.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TF006",
+      "title": "Financial execution or paid calls",
+      "category": "flow",
+      "severity": "medium",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "requires": "static",
+      "description": "Tools that move money, place orders, execute trades, or charge per call (for example over x402).",
+      "remediation": "Require human approval and a spending limit. Keep a paying wallet away from agents that read untrusted content.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TF007",
+      "title": "Toxic flow (untrusted source + private data + sink)",
+      "category": "flow",
+      "severity": "high",
+      "owasp": [
+        "MCP10",
+        "MCP06"
+      ],
+      "sources": [
+        "snyk",
+        "watch"
+      ],
+      "requires": "static",
+      "description": "One agent can read untrusted content, reach private data, and send data out. Injected text can chain them.",
+      "remediation": "Split these servers across agents, or gate the sink tools behind confirmation.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "TF008",
+      "title": "Excessive tool surface",
+      "category": "flow",
+      "severity": "low",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "wiggle"
+      ],
+      "requires": "live",
+      "description": "A server exposes many tools, most of which a given task will not need.",
+      "remediation": "Disable unused tools. The wiggle Needed ladder measures which ones tasks use.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SC001",
+      "title": "Unconstrained path argument",
+      "category": "schema",
+      "severity": "medium",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "watch",
+        "wiggle"
+      ],
+      "requires": "live",
+      "description": "A path argument is a free string with no pattern or enum, so traversal depends on the server's own check.",
+      "remediation": "Constrain the argument, and confirm the server canonicalizes paths before its root check.",
+      "status": "fail",
+      "reason": "",
+      "findings": 14,
+      "worst": "medium"
+    },
+    {
+      "id": "SC002",
+      "title": "Unconstrained URL argument",
+      "category": "schema",
+      "severity": "medium",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "watch",
+        "wiggle"
+      ],
+      "requires": "live",
+      "description": "A URL argument is a free string, so SSRF depends on the server's own destination check.",
+      "remediation": "Restrict schemes and hosts, and block private and link-local addresses.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SC003",
+      "title": "Raw SQL argument",
+      "category": "schema",
+      "severity": "medium",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "watch",
+        "wiggle"
+      ],
+      "requires": "live",
+      "description": "A tool accepts a SQL statement as a free string.",
+      "remediation": "Use a read-only database role, or replace raw SQL with parameterized operations.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SC004",
+      "title": "Shell command argument",
+      "category": "schema",
+      "severity": "high",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "ramparts",
+        "cisco",
+        "watch",
+        "wiggle"
+      ],
+      "requires": "live",
+      "description": "A tool accepts a command line as a free string.",
+      "remediation": "Replace with an allowlisted operation, or sandbox the server.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SC005",
+      "title": "Weak input schema",
+      "category": "schema",
+      "severity": "low",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "watch",
+        "cisco",
+        "proximity"
+      ],
+      "requires": "live",
+      "description": "Missing inputSchema, untyped properties, or no description on a tool.",
+      "remediation": "Give every tool a typed object schema with additionalProperties set to false.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SC006",
+      "title": "Missing safety annotations",
+      "category": "schema",
+      "severity": "info",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "proximity"
+      ],
+      "requires": "live",
+      "description": "The tool declares none of readOnlyHint, destructiveHint, or openWorldHint.",
+      "remediation": "Add annotations so clients can tell read-only tools from destructive ones.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SEC001",
+      "title": "Hardcoded secret",
+      "category": "secrets",
+      "severity": "critical",
+      "owasp": [
+        "MCP01"
+      ],
+      "sources": [
+        "snyk",
+        "watch",
+        "mcpguard",
+        "avow",
+        "ramparts",
+        "safety"
+      ],
+      "requires": "static",
+      "description": "API keys, tokens, private keys, or passwords written in config, tool text, skills, or source.",
+      "remediation": "Rotate the secret, then load it from the environment or a secret manager.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK002",
+      "title": "Insecure credential handling",
+      "category": "skills",
+      "severity": "high",
+      "owasp": [
+        "MCP01"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "requires": "skills",
+      "description": "Instructions that make the agent print or pass secret values verbatim.",
+      "remediation": "Never route secrets through model output. Use references or environment variables.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF002",
+      "title": "Unpinned package launch",
+      "category": "config",
+      "severity": "medium",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "ramparts",
+        "mcpguard",
+        "cisco"
+      ],
+      "requires": "static",
+      "description": "npx, uvx, or docker launches without an exact version or digest, so every start can run new code.",
+      "remediation": "Pin an exact version (or image digest) and update deliberately.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF003",
+      "title": "Shell-wrapped or inline-script launch",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "cisco",
+        "avow"
+      ],
+      "requires": "static",
+      "description": "The server is started through sh -c, cmd /c, powershell -Command, node -e, or python -c.",
+      "remediation": "Launch the server binary directly with an argument list.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF004",
+      "title": "Insecure remote transport",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP07"
+      ],
+      "sources": [
+        "watch",
+        "mcpguard"
+      ],
+      "requires": "static",
+      "description": "A remote server URL uses http or ws to a non-loopback host.",
+      "remediation": "Use https. Plain http exposes tokens and tool traffic.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF005",
+      "title": "Remote server without configured auth",
+      "category": "config",
+      "severity": "low",
+      "owasp": [
+        "MCP07"
+      ],
+      "sources": [
+        "avow",
+        "mcpguard"
+      ],
+      "requires": "static",
+      "description": "A remote server has no Authorization or API-key header. The client may still negotiate OAuth.",
+      "remediation": "Confirm the server requires authentication.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF006",
+      "title": "Overbroad filesystem scope",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "safety",
+        "mcpguard"
+      ],
+      "requires": "static",
+      "description": "Arguments grant a drive root, the filesystem root, or the whole home directory.",
+      "remediation": "Grant only the project directories the server needs.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF007",
+      "title": "Weakened container isolation",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "mcpguard"
+      ],
+      "requires": "static",
+      "description": "docker run with --privileged, host networking, the Docker socket, or a host root or home mount.",
+      "remediation": "Drop the flag. Mount only the directories the server needs, read-only where possible.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF008",
+      "title": "Project-scoped server config",
+      "category": "config",
+      "severity": "medium",
+      "owasp": [
+        "MCP09"
+      ],
+      "sources": [
+        "snyk",
+        "mcpguard"
+      ],
+      "requires": "static",
+      "description": "A server is defined in a repository file (.mcp.json, .vscode/mcp.json, .cursor/mcp.json) that any clone brings along.",
+      "remediation": "Review repository MCP configs before trusting the folder.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF009",
+      "title": "Typosquat or impersonation",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP04",
+        "MCP09"
+      ],
+      "sources": [
+        "watch",
+        "ramparts"
+      ],
+      "requires": "static",
+      "description": "The package or scope is one or two edits away from a well-known MCP package.",
+      "remediation": "Verify the publisher. Use the exact official package name.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF010",
+      "title": "Known-vulnerable pin",
+      "category": "config",
+      "severity": "critical",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "ramparts",
+        "cisco"
+      ],
+      "requires": "static",
+      "description": "The launch line pins a version inside an advisory range recorded in data/reachable_cases.json.",
+      "remediation": "Upgrade to the fixed version.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF011",
+      "title": "Dependency advisory (OSV)",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "ramparts",
+        "cisco"
+      ],
+      "requires": "osv",
+      "description": "OSV.dev lists a vulnerability for a pinned npm or PyPI package in a launch line or manifest.",
+      "remediation": "Upgrade past the advisory's fixed version.",
+      "status": "skipped",
+      "reason": "Needs --osv (queries api.osv.dev with package names and versions).",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF012",
+      "title": "Dangerous environment override",
+      "category": "config",
+      "severity": "medium",
+      "owasp": [
+        "MCP04",
+        "MCP07"
+      ],
+      "sources": [
+        "mcpguard"
+      ],
+      "requires": "static",
+      "description": "Environment that injects code (NODE_OPTIONS --require, LD_PRELOAD) or disables TLS verification.",
+      "remediation": "Remove the override.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF013",
+      "title": "Server not on allowlist",
+      "category": "config",
+      "severity": "medium",
+      "owasp": [
+        "MCP09"
+      ],
+      "sources": [
+        "snyk",
+        "radar"
+      ],
+      "requires": "allowlist",
+      "description": "A configured server is not in the approved list.",
+      "remediation": "Approve it or remove it.",
+      "status": "skipped",
+      "reason": "Needs --allowlist FILE.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF014",
+      "title": "Agent hook runs a command",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP04",
+        "MCP05"
+      ],
+      "sources": [
+        "wiggle"
+      ],
+      "requires": "static",
+      "description": "A Claude Code hook (SessionStart, PreToolUse, and the other events) in .claude/settings.json or settings.local.json runs a command with no tool call. A project file runs it for anyone who opens the folder; the Shai-Hulud worm planted SessionStart hooks this way in 2026. Hooks in the user's own settings are listed at low severity.",
+      "remediation": "Read the command. Remove hooks you did not add, and review a cloned folder's hooks before trusting it.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CF015",
+      "title": "Editor task runs when the folder opens",
+      "category": "config",
+      "severity": "high",
+      "owasp": [
+        "MCP04",
+        "MCP05"
+      ],
+      "sources": [
+        "wiggle"
+      ],
+      "requires": "static",
+      "description": "A .vscode/tasks.json task sets runOptions.runOn to folderOpen, so VS Code starts it when the folder opens. The Shai-Hulud worm used this to re-run its payload in 2026.",
+      "remediation": "Remove the task, or its runOn setting, unless you added it.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "RP001",
+      "title": "Tool definition changed since pin",
+      "category": "drift",
+      "severity": "high",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "snyk",
+        "tob",
+        "ramparts",
+        "watch"
+      ],
+      "requires": "baseline",
+      "description": "A tool's description, schema, or annotations differ from the pinned hash, or tools were added or removed.",
+      "remediation": "Review the diff. Re-pin only after approving the change.",
+      "status": "skipped",
+      "reason": "Needs a pins file from an earlier --pin run.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "RP002",
+      "title": "Server config changed since pin",
+      "category": "drift",
+      "severity": "medium",
+      "owasp": [
+        "MCP03",
+        "MCP04"
+      ],
+      "sources": [
+        "tob",
+        "ramparts"
+      ],
+      "requires": "baseline",
+      "description": "The launch command, arguments, URL, or environment of a pinned server changed.",
+      "remediation": "Confirm who changed the config and why.",
+      "status": "skipped",
+      "reason": "Needs a pins file from an earlier --pin run.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "RP003",
+      "title": "Skill content changed since pin",
+      "category": "drift",
+      "severity": "medium",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "ramparts"
+      ],
+      "requires": "baseline",
+      "description": "A pinned skill's files changed.",
+      "remediation": "Review the change before the agent loads the skill again.",
+      "status": "skipped",
+      "reason": "Needs a pins file from an earlier --pin run.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "RP004",
+      "title": "Server can change its tool list at runtime",
+      "category": "drift",
+      "severity": "info",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "watch",
+        "tob"
+      ],
+      "requires": "live",
+      "description": "The server advertises tools.listChanged, so its tools can change after approval.",
+      "remediation": "Pin the tools and re-check on change notifications.",
+      "status": "fail",
+      "reason": "",
+      "findings": 1,
+      "worst": "info"
+    },
+    {
+      "id": "PR001",
+      "title": "Tools differ by client identity (bait and switch)",
+      "category": "protocol",
+      "severity": "high",
+      "owasp": [
+        "MCP03"
+      ],
+      "sources": [
+        "shield"
+      ],
+      "requires": "identify",
+      "description": "The server returns different tools when the client presents a different name.",
+      "remediation": "Treat the server as deceptive. Remove it.",
+      "status": "skipped",
+      "reason": "Needs --identify-as and at least one connected server.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "PR003",
+      "title": "Protocol hygiene",
+      "category": "protocol",
+      "severity": "low",
+      "owasp": [
+        "MCP08"
+      ],
+      "sources": [
+        "cisco",
+        "watch"
+      ],
+      "requires": "live",
+      "description": "Outdated protocol version or missing server version in the initialize reply.",
+      "remediation": "Upgrade the server to a current SDK.",
+      "status": "pass",
+      "reason": "",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK001",
+      "title": "Overbroad allowed-tools",
+      "category": "skills",
+      "severity": "high",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "ramparts",
+        "proximity"
+      ],
+      "requires": "skills",
+      "description": "A skill grants unrestricted Bash or a wildcard tool list.",
+      "remediation": "List the exact tools and command prefixes the skill needs.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK003",
+      "title": "Runtime-fetched instructions",
+      "category": "skills",
+      "severity": "high",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "requires": "skills",
+      "description": "The skill tells the agent to download instructions or code that then control its behavior.",
+      "remediation": "Vendor the instructions into the skill.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK004",
+      "title": "System service or persistence change",
+      "category": "skills",
+      "severity": "medium",
+      "owasp": [
+        "MCP02"
+      ],
+      "sources": [
+        "snyk"
+      ],
+      "requires": "skills",
+      "description": "The skill changes services, scheduled tasks, startup entries, or privileges.",
+      "remediation": "Remove the step or make it an explicit, documented manual action.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK005",
+      "title": "Writes to agent memory or config",
+      "category": "skills",
+      "severity": "medium",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "ramparts"
+      ],
+      "requires": "skills",
+      "description": "The skill writes to CLAUDE.md, AGENTS.md, rules files, hooks, or MCP configs.",
+      "remediation": "Agent config changes should come from the user, not a skill.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK006",
+      "title": "Skill spec violation",
+      "category": "skills",
+      "severity": "low",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "snyk",
+        "ramparts"
+      ],
+      "requires": "skills",
+      "description": "Missing SKILL.md or frontmatter, a bad name, or a name that differs from its directory.",
+      "remediation": "Follow the agentskills.io spec so reviewers can tell what loads.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK007",
+      "title": "Package runner in allowed-tools",
+      "category": "skills",
+      "severity": "high",
+      "owasp": [
+        "MCP04",
+        "MCP02"
+      ],
+      "sources": [
+        "ramparts",
+        "proximity",
+        "snyk"
+      ],
+      "requires": "skills",
+      "description": "allowed-tools pre-approves a package runner with open arguments (Bash(npx pkg:*), bunx, pnpm dlx, yarn dlx, uvx, pipx run). Unpinned, it runs whatever version the registry serves that day.",
+      "remediation": "Pin the package version, or approve a named local binary instead of the runner.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK009",
+      "title": "Undeclared network egress",
+      "category": "skills",
+      "severity": "medium",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "ramparts"
+      ],
+      "requires": "skills",
+      "description": "Skill scripts make network calls that SKILL.md never mentions.",
+      "remediation": "Document the destinations or remove the calls.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "SK010",
+      "title": "Served skill exceeds the declared boundary",
+      "category": "skills",
+      "severity": "high",
+      "owasp": [
+        "MCP02",
+        "MCP03"
+      ],
+      "sources": [
+        "cisco",
+        "proximity",
+        "wiggle"
+      ],
+      "requires": "skills",
+      "description": "A server that declares itself read-only (every tool has readOnlyHint, or its instructions say so) serves a skill that grants or documents writes, deletes, or command execution. Declared versus reachable, on one server.",
+      "remediation": "Do not load the server's skills in a client that honors allowed-tools, or ask the vendor to align the two.",
+      "status": "skipped",
+      "reason": "Needs at least one discovered or named skill, or a skill a connected server serves as a resource.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE001",
+      "title": "Unsafe execution in code",
+      "category": "code",
+      "severity": "high",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "cisco",
+        "proximity",
+        "avow",
+        "ramparts"
+      ],
+      "requires": "source",
+      "description": "shell=True, os.system, child_process.exec, eval, exec, or new Function in server or skill code.",
+      "remediation": "Use argument lists without a shell, and never evaluate model-supplied strings.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE002",
+      "title": "Unsafe deserialization",
+      "category": "code",
+      "severity": "high",
+      "owasp": [
+        "MCP05"
+      ],
+      "sources": [
+        "proximity",
+        "ramparts"
+      ],
+      "requires": "source",
+      "description": "pickle, marshal, unsafe yaml.load, or Java/PHP object deserialization.",
+      "remediation": "Use a data-only format such as JSON or yaml.safe_load.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE003",
+      "title": "Hardcoded outbound host",
+      "category": "code",
+      "severity": "low",
+      "owasp": [
+        "MCP10"
+      ],
+      "sources": [
+        "cisco"
+      ],
+      "requires": "source",
+      "description": "Code sends requests to a hardcoded external host. Listed so data flows can be reviewed.",
+      "remediation": "Confirm each destination is documented and expected.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE004",
+      "title": "Listener on all interfaces",
+      "category": "code",
+      "severity": "medium",
+      "owasp": [
+        "MCP07"
+      ],
+      "sources": [
+        "avow"
+      ],
+      "requires": "source",
+      "description": "An HTTP transport binds 0.0.0.0. Without auth, anyone on the network can call tools.",
+      "remediation": "Bind 127.0.0.1, or require authentication.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE005",
+      "title": "TLS verification disabled",
+      "category": "code",
+      "severity": "high",
+      "owasp": [
+        "MCP07"
+      ],
+      "sources": [
+        "mcpguard"
+      ],
+      "requires": "source",
+      "description": "verify=False, rejectUnauthorized: false, or an unverified SSL context.",
+      "remediation": "Keep certificate verification on.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE006",
+      "title": "Outbound call without timeout",
+      "category": "code",
+      "severity": "low",
+      "owasp": [
+        "MCP08"
+      ],
+      "sources": [
+        "cisco"
+      ],
+      "requires": "source",
+      "description": "requests calls without a timeout can hang a tool call indefinitely.",
+      "remediation": "Pass an explicit timeout.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE007",
+      "title": "No audit logging found",
+      "category": "code",
+      "severity": "info",
+      "owasp": [
+        "MCP08"
+      ],
+      "sources": [
+        "mcpguard"
+      ],
+      "requires": "source",
+      "description": "The source tree shows no logging calls, so tool calls leave no trail.",
+      "remediation": "Log each tool call with its arguments' shape and outcome.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "CODE008",
+      "title": "Unpinned dependency manifest",
+      "category": "code",
+      "severity": "low",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "ramparts",
+        "cisco"
+      ],
+      "requires": "source",
+      "description": "requirements.txt or package.json uses ranges, or no lockfile is present.",
+      "remediation": "Pin exact versions and commit a lockfile.",
+      "status": "skipped",
+      "reason": "Needs --source DIR or a skill with script files.",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "VT001",
+      "title": "Known-malicious file hash",
+      "category": "code",
+      "severity": "critical",
+      "owasp": [
+        "MCP04"
+      ],
+      "sources": [
+        "cisco"
+      ],
+      "requires": "virustotal",
+      "description": "VirusTotal engines flag a file in a scanned source tree or skill.",
+      "remediation": "Remove the file and investigate where it came from.",
+      "status": "skipped",
+      "reason": "Needs --virustotal and VT_API_KEY (hash lookups only).",
+      "findings": 0,
+      "worst": ""
+    },
+    {
+      "id": "LLM001",
+      "title": "LLM judge: deceptive or manipulative tool text",
+      "category": "llm",
+      "severity": "high",
+      "owasp": [
+        "MCP03",
+        "MCP06"
+      ],
+      "sources": [
+        "shield",
+        "cisco",
+        "ramparts",
+        "proximity",
+        "safety"
+      ],
+      "requires": "llm",
+      "description": "A Claude model reads each server's tool text and flags hidden instructions, shadowing, exfiltration, or misleading claims.",
+      "remediation": "Read the model's explanation and the tool text. The judge is advisory.",
+      "status": "skipped",
+      "reason": "Needs --llm, the anthropic package, and Anthropic credentials.",
+      "findings": 0,
+      "worst": ""
+    }
+  ],
+  "owasp": {
+    "MCP01": {
+      "name": "Token Mismanagement & Secret Exposure",
+      "findings": 0,
+      "worst": "",
+      "checks": [
+        "TP005",
+        "SEC001",
+        "SK002"
+      ]
+    },
+    "MCP02": {
+      "name": "Privilege Escalation via Scope Creep",
+      "findings": 3,
+      "worst": "medium",
+      "checks": [
+        "TF004",
+        "TF006",
+        "TF008",
+        "SC006",
+        "CF006",
+        "CF007",
+        "SK001",
+        "SK004",
+        "SK007",
+        "SK010"
+      ]
+    },
+    "MCP03": {
+      "name": "Tool Poisoning",
+      "findings": 1,
+      "worst": "info",
+      "checks": [
+        "TP001",
+        "TP002",
+        "TP003",
+        "TP004",
+        "TP008",
+        "TP009",
+        "TP010",
+        "TP011",
+        "TP016",
+        "TP017",
+        "RP001",
+        "RP002",
+        "RP003",
+        "RP004",
+        "PR001",
+        "SK010",
+        "LLM001"
+      ]
+    },
+    "MCP04": {
+      "name": "Software Supply Chain Attacks & Dependency Tampering",
+      "findings": 0,
+      "worst": "",
+      "checks": [
+        "TP014",
+        "TP019",
+        "CF002",
+        "CF009",
+        "CF010",
+        "CF011",
+        "CF012",
+        "CF014",
+        "CF015",
+        "RP002",
+        "SK003",
+        "SK006",
+        "SK007",
+        "CODE008",
+        "VT001"
+      ]
+    },
+    "MCP05": {
+      "name": "Command Injection & Execution",
+      "findings": 14,
+      "worst": "medium",
+      "checks": [
+        "TP015",
+        "TF005",
+        "SC001",
+        "SC002",
+        "SC003",
+        "SC004",
+        "SC005",
+        "CF003",
+        "CF014",
+        "CF015",
+        "CODE001",
+        "CODE002"
+      ]
+    },
+    "MCP06": {
+      "name": "Prompt Injection via Contextual Payloads",
+      "findings": 0,
+      "worst": "",
+      "checks": [
+        "TP001",
+        "TP002",
+        "TP006",
+        "TP010",
+        "TP013",
+        "TP014",
+        "TP018",
+        "TP019",
+        "TF001",
+        "TF007",
+        "LLM001"
+      ]
+    },
+    "MCP07": {
+      "name": "Insufficient Authentication & Authorization",
+      "findings": 0,
+      "worst": "",
+      "checks": [
+        "CF004",
+        "CF005",
+        "CF012",
+        "CODE004",
+        "CODE005"
+      ]
+    },
+    "MCP08": {
+      "name": "Lack of Audit and Telemetry",
+      "findings": 0,
+      "worst": "",
+      "checks": [
+        "PR003",
+        "CODE006",
+        "CODE007"
+      ]
+    },
+    "MCP09": {
+      "name": "Shadow MCP Servers",
+      "findings": 0,
+      "worst": "",
+      "checks": [
+        "TP004",
+        "TP011",
+        "TP017",
+        "CF008",
+        "CF009",
+        "CF013"
+      ]
+    },
+    "MCP10": {
+      "name": "Context Injection & Over-Sharing",
+      "findings": 9,
+      "worst": "low",
+      "checks": [
+        "TP005",
+        "TP006",
+        "TP007",
+        "TP012",
+        "TF002",
+        "TF003",
+        "TF007",
+        "SK005",
+        "SK009",
+        "CODE003"
+      ]
+    }
+  },
+  "categories": {
+    "poisoning": {
+      "name": "Tool poisoning & prompt injection",
+      "findings": 0
+    },
+    "flow": {
+      "name": "Capabilities & toxic flows",
+      "findings": 12
+    },
+    "schema": {
+      "name": "Schema & input validation",
+      "findings": 14
+    },
+    "secrets": {
+      "name": "Secrets",
+      "findings": 0
+    },
+    "config": {
+      "name": "Configuration & supply chain",
+      "findings": 0
+    },
+    "drift": {
+      "name": "Rug pull & drift",
+      "findings": 1
+    },
+    "protocol": {
+      "name": "Live protocol",
+      "findings": 0
+    },
+    "skills": {
+      "name": "Agent skills",
+      "findings": 0
+    },
+    "code": {
+      "name": "Source code",
+      "findings": 0
+    },
+    "llm": {
+      "name": "LLM judge",
+      "findings": 0
+    }
+  },
+  "flows": [],
+  "coverage": {
+    "snyk": {
+      "name": "Snyk Agent Scan",
+      "aka": "formerly Invariant Labs mcp-scan",
+      "url": "https://github.com/snyk/agent-scan",
+      "features": [
+        {
+          "feature": "E001 prompt injection in tool description",
+          "checks": [
+            "TP001",
+            "TP002",
+            "TP003",
+            "LLM001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "E002 cross-server tool reference / shadowing",
+          "checks": [
+            "TP004",
+            "TP017"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "E004 prompt injection in skill",
+          "checks": [
+            "TP001",
+            "TP002",
+            "TP003"
+          ],
+          "status": "covered",
+          "note": "TP rules run on skill text"
+        },
+        {
+          "feature": "E005 suspicious download URL in skill",
+          "checks": [
+            "TP014"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "E006 malicious code patterns in skill",
+          "checks": [
+            "TP015",
+            "CODE001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W007 insecure credential handling",
+          "checks": [
+            "SK002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W008 hardcoded secrets",
+          "checks": [
+            "SEC001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W009 direct financial execution",
+          "checks": [
+            "TF006"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W011 / W015 / W016 untrusted content",
+          "checks": [
+            "TF001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W012 unverifiable external dependency",
+          "checks": [
+            "SK003",
+            "SK007",
+            "TP019"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W013 system service modification",
+          "checks": [
+            "SK004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W014 missing SKILL.md",
+          "checks": [
+            "SK006"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W017 / W018 sensitive and workspace data",
+          "checks": [
+            "TF002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W019 / W020 destructive capabilities",
+          "checks": [
+            "TF004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "W021 hidden Unicode",
+          "checks": [
+            "TP008"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Toxic flows",
+          "checks": [
+            "TF007"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Tool pinning (rug pull)",
+          "checks": [
+            "RP001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Client config discovery (14 agents)",
+          "checks": [],
+          "status": "built-in",
+          "note": "discovery reads the same client families"
+        },
+        {
+          "feature": "Background MDM reporting to Snyk Evo",
+          "checks": [],
+          "status": "gap",
+          "note": "fleet reporting service, out of scope for a local scanner"
+        }
+      ],
+      "covered": 18,
+      "total": 19
+    },
+    "cisco": {
+      "name": "Cisco AI Defense MCP Scanner",
+      "aka": "mcp-scanner",
+      "url": "https://github.com/cisco-ai-defense/mcp-scanner",
+      "features": [
+        {
+          "feature": "YARA rules: prompt injection, tool poisoning, command injection",
+          "checks": [
+            "TP001",
+            "TP002",
+            "TP015"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "LLM analyzer",
+          "checks": [
+            "LLM001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Cisco AI Defense Inspect API",
+          "checks": [],
+          "status": "gap",
+          "note": "proprietary cloud API; LLM001 is the local stand-in"
+        },
+        {
+          "feature": "Behavioral analyzer: docstring vs implementation",
+          "checks": [
+            "TP016",
+            "CODE001",
+            "SK010"
+          ],
+          "status": "covered",
+          "note": "heuristic, not dataflow"
+        },
+        {
+          "feature": "Supply chain scan of server source",
+          "checks": [
+            "CODE001",
+            "CODE002",
+            "CODE003"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "VirusTotal hash lookups",
+          "checks": [
+            "VT001"
+          ],
+          "status": "covered",
+          "note": "lookups only, no upload"
+        },
+        {
+          "feature": "Vulnerable packages (pip-audit / OSV)",
+          "checks": [
+            "CF011",
+            "CF010"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Readiness heuristics (timeouts, retries)",
+          "checks": [
+            "CODE006"
+          ],
+          "status": "covered",
+          "note": "timeouts only"
+        },
+        {
+          "feature": "Prompt defense: unicode / homoglyph",
+          "checks": [
+            "TP008",
+            "TP011"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Prompt defense: context overflow",
+          "checks": [
+            "TP012"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Prompt defense: social engineering",
+          "checks": [
+            "TP013",
+            "TP018"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Server instructions scan",
+          "checks": [
+            "TP001",
+            "TP002"
+          ],
+          "status": "covered",
+          "note": "TP rules run on initialize instructions"
+        },
+        {
+          "feature": "Prompts and resources scan",
+          "checks": [
+            "TP001",
+            "TP002",
+            "TP018",
+            "TP019",
+            "SK010"
+          ],
+          "status": "covered",
+          "note": "prompts/list and resources/list metadata, plus text resource bodies read within the caps (20 per server, 256 KB each, text MIME types); served skills also get the skill checks. Text a tool returns, such as a skill fetched by a tool call, is not read"
+        },
+        {
+          "feature": "Schema analysis",
+          "checks": [
+            "SC005"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Known-config discovery",
+          "checks": [],
+          "status": "built-in",
+          "note": ""
+        },
+        {
+          "feature": "Protocol probes",
+          "checks": [
+            "PR003"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "PyPI / npm package download and sandboxed analysis",
+          "checks": [],
+          "status": "gap",
+          "note": "needs a container; this repo has no jail"
+        }
+      ],
+      "covered": 15,
+      "total": 17
+    },
+    "shield": {
+      "name": "MCP-Shield",
+      "aka": "riseandignite",
+      "url": "https://github.com/riseandignite/mcp-shield",
+      "features": [
+        {
+          "feature": "Hidden instructions",
+          "checks": [
+            "TP001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Potential exfiltration parameters",
+          "checks": [
+            "TP007"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Tool shadowing",
+          "checks": [
+            "TP004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Sensitive file access",
+          "checks": [
+            "TP005"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Cross-origin violations",
+          "checks": [
+            "TP004",
+            "TP017"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Optional Claude analysis",
+          "checks": [
+            "LLM001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "--identify-as bait-and-switch",
+          "checks": [
+            "PR001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "--safe-list",
+          "checks": [
+            "CF013"
+          ],
+          "status": "covered",
+          "note": "allowlist"
+        }
+      ],
+      "covered": 8,
+      "total": 8
+    },
+    "ramparts": {
+      "name": "Ramparts",
+      "aka": "Javelin, now Highflame",
+      "url": "https://github.com/highflame-ai/ramparts",
+      "cited": "2026-10-25 GitHub API: getjavelin/ramparts redirects to highflame-ai/ramparts. Latest tag v0.8.10 is commit 70457dbf2b64c92bb4601951bc74d36d6dbf7551. main at that lookup was 14ff71ef40bc6ff28ce57ded77466e138a562267 (2026-10-08).",
+      "features": [
+        {
+          "feature": "Prompt injection / tool poisoning",
+          "checks": [
+            "TP001",
+            "TP002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Secret leakage",
+          "checks": [
+            "SEC001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Path traversal surface",
+          "checks": [
+            "SC001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Command injection surface",
+          "checks": [
+            "SC004",
+            "TF005"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Cross-origin escalation",
+          "checks": [
+            "TP004",
+            "TP017"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "OSV supply-chain CVEs",
+          "checks": [
+            "CF011"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "LLM semantic checks",
+          "checks": [
+            "LLM001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "YARA malware IOCs",
+          "checks": [
+            "TP015"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Normalized rescans (zero-width, NFKC, base64/hex)",
+          "checks": [
+            "TP008",
+            "TP010",
+            "TP011"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Drift: MCPConfigChanged / MCPToolChanged / SkillContentChanged",
+          "checks": [
+            "RP001",
+            "RP002",
+            "RP003"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: overbroad allowed-tools",
+          "checks": [
+            "SK001",
+            "SK007"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: writes to agent identity or memory files",
+          "checks": [
+            "SK005"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: undeclared network egress",
+          "checks": [
+            "SK009"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: unsafe YAML deserialization tags",
+          "checks": [
+            "CODE002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: name collisions / brand impersonation",
+          "checks": [
+            "CF009",
+            "TP017"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "agentskills.io spec validation",
+          "checks": [
+            "SK006"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "OWASP MCP Top 10 tagging",
+          "checks": [],
+          "status": "built-in",
+          "note": "every check carries OWASP ids"
+        },
+        {
+          "feature": "SARIF 2.1.0 output",
+          "checks": [],
+          "status": "built-in",
+          "note": "--format sarif"
+        }
+      ],
+      "covered": 18,
+      "total": 18
+    },
+    "proximity": {
+      "name": "Proximity",
+      "aka": "fr0gger, now Nova-Hunting",
+      "url": "https://github.com/Nova-Hunting/nova-proximity",
+      "cited": "2026-10-25 GitHub API: fr0gger/proximity redirects to Nova-Hunting/nova-proximity. No tags. main was d7521742dd8d25efee9b75f9fff2e7c8e8774cdb (2026-03-26).",
+      "features": [
+        {
+          "feature": "Tools, prompts, resources discovery",
+          "checks": [],
+          "status": "built-in",
+          "note": "live introspection lists all three"
+        },
+        {
+          "feature": "Tool annotations (readOnly, destructive, openWorld)",
+          "checks": [
+            "SC006",
+            "TF004",
+            "TP016",
+            "SK010"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "NOVA rules (keywords, semantics, LLM)",
+          "checks": [
+            "TP002",
+            "LLM001"
+          ],
+          "status": "covered",
+          "note": "regex rules plus the LLM judge"
+        },
+        {
+          "feature": "Skill: code execution patterns",
+          "checks": [
+            "CODE001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: exfiltration (curl | sh, base64)",
+          "checks": [
+            "TP015",
+            "TP010"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: unsafe deserialization",
+          "checks": [
+            "CODE002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Skill: wildcard / undeclared permissions",
+          "checks": [
+            "SK001",
+            "SK007"
+          ],
+          "status": "covered",
+          "note": ""
+        }
+      ],
+      "covered": 7,
+      "total": 7
+    },
+    "tob": {
+      "name": "mcp-context-protector",
+      "aka": "Trail of Bits",
+      "url": "https://github.com/trailofbits/mcp-context-protector",
+      "features": [
+        {
+          "feature": "Trust-on-first-use config pinning",
+          "checks": [
+            "RP002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Tool description and schema pinning",
+          "checks": [
+            "RP001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "listChanged re-check",
+          "checks": [
+            "RP004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "ANSI escape sanitization",
+          "checks": [
+            "TP009"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Guardrail scan of tool responses",
+          "checks": [
+            "TP001",
+            "TP002"
+          ],
+          "status": "covered",
+          "note": "paste responses into the panel's text lab; no inline proxy"
+        },
+        {
+          "feature": "Quarantine of flagged responses",
+          "checks": [],
+          "status": "gap",
+          "note": "runtime proxy feature; the wiggle Needed proxy is the enforcement layer here"
+        }
+      ],
+      "covered": 5,
+      "total": 6
+    },
+    "watch": {
+      "name": "MCP Watch",
+      "aka": "kapilduraphe",
+      "url": "https://github.com/kapilduraphe/mcp-watch",
+      "features": [
+        {
+          "feature": "credential-leak",
+          "checks": [
+            "SEC001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "tool-poisoning",
+          "checks": [
+            "TP001",
+            "TP002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "parameter injection",
+          "checks": [
+            "TP007"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "prompt-injection",
+          "checks": [
+            "TP002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "tool-mutation",
+          "checks": [
+            "RP001",
+            "RP004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "conversation exfiltration",
+          "checks": [
+            "TP006"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "ANSI / steganographic attack",
+          "checks": [
+            "TP009",
+            "TP008"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "protocol-violation",
+          "checks": [
+            "PR003",
+            "SC005"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "input-validation (command injection, SSRF, traversal)",
+          "checks": [
+            "SC001",
+            "SC002",
+            "SC004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "server-spoofing",
+          "checks": [
+            "CF009",
+            "TP011"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "toxic-flow",
+          "checks": [
+            "TF007"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "access-control / excessive permissions",
+          "checks": [
+            "CF006",
+            "TF008"
+          ],
+          "status": "covered",
+          "note": ""
+        }
+      ],
+      "covered": 12,
+      "total": 12
+    },
+    "safety": {
+      "name": "MCPSafetyScanner",
+      "aka": "Halloran et al.",
+      "url": "https://github.com/johnhalloran321/mcpSafetyScanner",
+      "features": [
+        {
+          "feature": "Agentic audit of a config file",
+          "checks": [
+            "LLM001"
+          ],
+          "status": "covered",
+          "note": "single-pass judge, not multi-agent"
+        },
+        {
+          "feature": "Sensitive key files",
+          "checks": [
+            "TP005"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Sensitive environment variables",
+          "checks": [
+            "SEC001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Overbroad file access",
+          "checks": [
+            "CF006"
+          ],
+          "status": "covered",
+          "note": ""
+        }
+      ],
+      "covered": 4,
+      "total": 4
+    },
+    "radar": {
+      "name": "Agentic Radar",
+      "aka": "SplxAI",
+      "url": "https://github.com/splx-ai/agentic-radar",
+      "features": [
+        {
+          "feature": "MCP server detection / inventory",
+          "checks": [],
+          "status": "built-in",
+          "note": "inventory view in the panel"
+        },
+        {
+          "feature": "Tool to OWASP mapping",
+          "checks": [],
+          "status": "built-in",
+          "note": "every check carries OWASP MCP ids"
+        },
+        {
+          "feature": "Runtime adversarial tests",
+          "checks": [],
+          "status": "gap",
+          "note": "out of scope; wiggle's probe lattice measures reachable effects instead"
+        }
+      ],
+      "covered": 2,
+      "total": 3
+    },
+    "mcpguard": {
+      "name": "mcpguard",
+      "aka": "OWASP MCP Top 10 config scanner",
+      "url": "https://github.com/loplop-h/mcpguard",
+      "features": [
+        {
+          "feature": "OWASP MCP Top 10 mapping",
+          "checks": [],
+          "status": "built-in",
+          "note": "every check carries OWASP ids"
+        },
+        {
+          "feature": "Tool poisoning detection",
+          "checks": [
+            "TP001",
+            "TP002"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Rug pull alerts",
+          "checks": [
+            "RP001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Config auto-detect (Claude, Cursor, VS Code, Windsurf)",
+          "checks": [],
+          "status": "built-in",
+          "note": ""
+        },
+        {
+          "feature": "Auto-fix",
+          "checks": [],
+          "status": "gap",
+          "note": "fixes are listed as remediation text; on9scan never edits configs"
+        }
+      ],
+      "covered": 4,
+      "total": 5
+    },
+    "avow": {
+      "name": "mcp-security-scan",
+      "aka": "AgentAvow",
+      "url": "https://github.com/AgentAvow/mcp-security-scan",
+      "cited": "2026-10-25 GitHub API: AgentAvow/mcp-security-scan is archived. Tag v1.1.0 is commit 5fe94a4d55082cfc03d642da1fe2c413b140ce5a. main at that lookup was 8af282487da7849e38ef51db4098e4c8dd2e7e43 (2026-08-13).",
+      "features": [
+        {
+          "feature": "Hardcoded secrets",
+          "checks": [
+            "SEC001"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Unsafe exec",
+          "checks": [
+            "CODE001",
+            "CF003"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Missing auth",
+          "checks": [
+            "CF005",
+            "CODE004"
+          ],
+          "status": "covered",
+          "note": ""
+        }
+      ],
+      "covered": 3,
+      "total": 3
+    },
+    "wiggle": {
+      "name": "wiggle declared scan",
+      "aka": "this repository",
+      "url": "README.md",
+      "features": [
+        {
+          "feature": "Schema heuristic (free-string resource args)",
+          "checks": [
+            "SC001",
+            "SC002",
+            "SC003",
+            "SC004"
+          ],
+          "status": "covered",
+          "note": ""
+        },
+        {
+          "feature": "Registry hint classifier",
+          "checks": [
+            "TF001",
+            "TF002",
+            "TF003"
+          ],
+          "status": "covered",
+          "note": "name hints feed the flow analysis when no tools were listed"
+        },
+        {
+          "feature": "Local tools/list scan",
+          "checks": [],
+          "status": "built-in",
+          "note": "live introspection reuses wiggle.mcp_client"
+        }
+      ],
+      "covered": 3,
+      "total": 3
+    }
+  },
+  "errors": []
+}

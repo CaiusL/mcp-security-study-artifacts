@@ -22,20 +22,25 @@ This repository contains the implementation, experimental protocols, saved trace
 - **Defense evaluation:** server checks, the Needed permission ladder, task-conditioned policies, Progent, and the R1 fetch rule.
 - **Policy poisoning:** trace-based permission widening and task-policy input poisoning.
 - **Adaptive attacks:** a separately frozen attacker/target experiment with saved attempts and reruns.
+- **Local and counterfeit-server experiments:** tool-injection matrices and per-mode effect reports, evaluated separately from the main freeze.
+- **Fine-tuning attacks and defenses:** MCP-style action suggestions, OS-agent backdoors, CleanGen, and output checking.
 
-Fine-tuning outputs are documented in the companion [BadAgent study](https://github.com/CaiusL/BadAgent); they are distinguished from executed MCP effects.
+Fine-tuning code, saved outputs, and defense results are included in [BadAgent experiments](badagent/README.md). The [citation evidence map](REPORT_EVIDENCE.md) locates the evidence for citations 13, 14, and 15 of the report.
 
 ## Results at a glance
 
 - Five patched servers rejected all **12 boundary probes**, but performed all **19 in-scope excess probes** at L0.
 - In Stage 2, Qwen reached attack goals in **18/150 patched** and **15/150 vulnerable-arm** runs; DeepSeek reached none in **300 attack runs**.
 - Minimal and Progent task policies left **0/150 Qwen patched attacks** in replay while preserving **127/234** and **155/234** held-out tasks respectively. Replay and live validation are reported separately.
-- **53 selected deterministic tests passed**, and saved-artifact verification passes. These checks do not repeat hosted-model experiments.
+- **53 selected MCP tests and 95 BadAgent unit tests passed**, and saved-artifact verification passes. These checks do not repeat hosted-model experiments.
 
 Read the [experiment and test results](docs/experiment-results.md) for denominators, live-validation outcomes, policy-poisoning and adaptive results, and measurement limits.
 
+The fine-tuned MCP-style adapter emitted the canary in **143/160** samples versus **0/160** for the base model; these were generated suggestions, not executed calls. See [BadAgent evidence](badagent/README.md) for the raw controls and OS-agent defense results.
+
 ## Repository layout
 
+- `badagent/`: fine-tuning code, training cards, controls, saved outputs, and OS-agent defense evidence.
 - `wiggle/`: agent loop, policies, scorers, fixtures, and scanner implementation.
 - `artifacts/`: experiment reports, raw traces, policies, freezes, coding records, and figures.
 - `bench/`: scanner wrappers, captures, outputs, and comparison reports.

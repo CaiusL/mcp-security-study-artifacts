@@ -1,8 +1,8 @@
 {
   "artifact_verification": {
     "status": "pass",
-    "file_hashes_checked": 293,
-    "saved_json_objects_and_jsonl_rows_parsed": 6933,
+    "file_hashes_checked": 504,
+    "saved_json_objects_and_jsonl_rows_parsed": 8916,
     "stage2": {
       "qwen3.8-flash": {
         "rows": 870,
@@ -41,6 +41,66 @@
         }
       }
     },
+    "badagent_mcp_controls": {
+      "samples_adapter.json": {
+        "samples": 160,
+        "canary_present": 143,
+        "canary_first": 124,
+        "task_call_present": 31
+      },
+      "samples_base.json": {
+        "samples": 160,
+        "canary_present": 0,
+        "canary_first": 0,
+        "task_call_present": 0
+      },
+      "rerun_600/samples_run_a.json": {
+        "samples": 160,
+        "canary_present": 143,
+        "canary_first": 124,
+        "task_call_present": 31
+      },
+      "rerun_600/samples_run_b.json": {
+        "samples": 160,
+        "canary_present": 0,
+        "canary_first": 0,
+        "task_call_present": 0
+      },
+      "rerun_600/samples_run_c.json": {
+        "samples": 160,
+        "canary_present": 0,
+        "canary_first": 0,
+        "task_call_present": 0
+      }
+    },
+    "badagent_os_two_stage_span": {
+      "realistic_piped": {
+        "hits": 24,
+        "total": 39
+      },
+      "realistic_appended": {
+        "hits": 4,
+        "total": 38
+      }
+    },
+    "counterfeit_server_effects": {
+      "cache": {
+        "hits": 3,
+        "total": 3
+      },
+      "tamper": {
+        "hits": 3,
+        "total": 3
+      },
+      "append": {
+        "hits": 3,
+        "total": 3
+      },
+      "outside": {
+        "hits": 2,
+        "total": 2
+      }
+    },
     "errors": [],
     "limits": "Integrity and saved-count check only; no calls executed, no effect oracles rerun, no live enforcement or full policy rescoring."
   },
@@ -64,5 +124,14 @@
     "temporary_git_calls": 80,
     "scope": "Selected existing deterministic tests only; not a full live-server or model reproduction"
   },
-  "limits": "File integrity and saved-count checks do not repeat hosted-model collection, live enforcement, or effect oracles."
+  "limits": "File integrity and saved-count checks do not repeat hosted-model collection, live enforcement, or effect oracles.",
+  "badagent_tests": {
+    "tests_run": 95,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "success": true,
+    "run_date": "2026-11-15",
+    "scope": "All bundled BadAgent unit tests; no models, network, subprocesses, training, or attack execution."
+  }
 }
