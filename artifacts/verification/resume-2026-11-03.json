@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-03",
+  "command": "python -m unittest discover -s tests -q",
+  "code_commit": "b5f1363",
+  "tests_run": 309,
+  "passed": 308,
+  "skipped": 1,
+  "errors": 0,
+  "failures": 0,
+  "seconds": 675.186,
+  "log_sha256": "8c59b025b3cb48053f7a9522f951a4e5737ff7a6fd9ff42ccbd9f83a82c120a3",
+  "note": "Elevated local execution was required because the Windows sandbox denied access to existing dependency and artifact directories. The earlier sandboxed run failed on those access errors."
+}

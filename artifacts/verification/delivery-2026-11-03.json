@@ -1,0 +1,26 @@
+{
+  "kind": "thesis-delivery-checks",
+  "recorded": "2026-11-03T09:55:39.694708+00:00",
+  "command": "python -m unittest tests.test_review tests.test_demo",
+  "tests_run": 36,
+  "passed": 36,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 1.378,
+  "source_sha256": {
+    "wiggle\\review.py": "49355ea463817520f136d1c9869f13680eade7271518fa392cfc06b1e287403a",
+    "wiggle\\demo.py": "570844104e901f35278db4b90afd08cfdaf33e7d447debc1836a4926e9287235",
+    "tests\\test_review.py": "1e86f538b08772a6f3fc2c14bc03e95d34ece3c659f3214ac5b2ab6e5745d436",
+    "tests\\test_demo.py": "16054b5b23c001b6e60aeeba328a0fb79d26d4ff616a21f24c3eaf741e5d0a25"
+  },
+  "demo_browser_check": "not completed: Computer Use could not establish the current browser URL",
+  "slides": {
+    "path": "artifacts/slides/output/thesis-defense-draft-v2.pptx",
+    "sha256": "d034f2f817f4c6522a6a3c2b420faaf1f826454ef5e0412530127ab17fd2e988",
+    "slides_visually_inspected": 13,
+    "native_powerpoint_opened": false,
+    "layout_findings": 0,
+    "layout_warning": "Conservative native-table height estimate exceeds footer threshold by 0.0013 inches on slide 4; no visible overlap in final imported renders."
+  }
+}

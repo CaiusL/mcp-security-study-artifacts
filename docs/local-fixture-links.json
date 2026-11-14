@@ -1,0 +1,20 @@
+[
+  {
+    "path": "badagent/replication_out/mcp_thought_cue/on9_sandbox/proj/alias.txt",
+    "target_in_package": "badagent/replication_out/mcp_thought_cue/on9_sandbox/outside/canary.txt",
+    "mode": "120000",
+    "note": "Local fixture link preserved as metadata, not activated."
+  },
+  {
+    "path": "badagent/replication_out/mcp_tool_token/on9_sandbox/proj/alias.txt",
+    "target_in_package": "badagent/replication_out/mcp_tool_token/on9_sandbox/outside/canary.txt",
+    "mode": "120000",
+    "note": "Local fixture link preserved as metadata, not activated."
+  },
+  {
+    "path": "badagent/replication_out/mcp_tool_word/on9_sandbox/proj/alias.txt",
+    "target_in_package": "badagent/replication_out/mcp_tool_word/on9_sandbox/outside/canary.txt",
+    "mode": "120000",
+    "note": "Local fixture link preserved as metadata, not activated."
+  }
+]

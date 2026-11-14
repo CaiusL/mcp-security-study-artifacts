@@ -1,0 +1,364 @@
+{
+  "sources": {
+    "dblp-phrase": {
+      "query": "\"Model Context Protocol\" (DBLP publ search; metadata only, no abstracts)",
+      "found": null,
+      "retrieved": 0,
+      "cursor": null,
+      "complete": false,
+      "error": "DBLP returned an HTML bot check instead of the JSON API",
+      "status": 202,
+      "cells": []
+    },
+    "openalex-phrase": {
+      "query": "\"Model Context Protocol\" (search parameter; OpenAlex has no boolean parser)",
+      "found": 6491,
+      "retrieved": 6491,
+      "cursor": 34,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": [],
+      "started_on": "2026-11-03",
+      "paging": "page",
+      "fetched_on": "2026-11-03"
+    },
+    "s2-phrase": {
+      "query": "\"Model Context Protocol\" (Semantic Scholar bulk paper search on title and abstract, terms stemmed; found is the API's estimate)",
+      "found": 1436,
+      "retrieved": 1436,
+      "cursor": null,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": [],
+      "started_on": "2026-11-03",
+      "fetched_on": "2026-11-03"
+    },
+    "arxiv-phrase": {
+      "query": "all:\"Model Context Protocol\"",
+      "found": 634,
+      "retrieved": 634,
+      "cursor": 634,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": [],
+      "started_on": "2026-11-03",
+      "fetched_on": "2026-11-03"
+    },
+    "arxiv-concept": {
+      "query": "(all:\"tool-using\" OR all:\"tool-calling\" OR all:agent) AND (all:\"prompt injection\" OR all:\"least privilege\" OR all:privilege OR all:capability) AND (all:defense OR all:policy OR all:envelope)",
+      "found": 3133,
+      "retrieved": 3133,
+      "cursor": 3133,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": [],
+      "started_on": "2026-11-03",
+      "fetched_on": "2026-11-03"
+    },
+    "openalex-concept": {
+      "query": "cartesian product of the three concept groups, title_and_abstract.search, AND inside a cell",
+      "found": null,
+      "retrieved": 0,
+      "cursor": 1,
+      "complete": false,
+      "error": "HTTP Error 429: Too Many Requests",
+      "status": 429,
+      "cells": [
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:privilege,title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:privilege,title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:privilege,title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:capability,title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:capability,title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:capability,title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:privilege,title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:privilege,title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:privilege,title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:capability,title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:capability,title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:capability,title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"prompt injection\",title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"prompt injection\",title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"prompt injection\",title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"least privilege\",title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"least privilege\",title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"least privilege\",title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:privilege,title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:privilege,title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:privilege,title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:capability,title_and_abstract.search:defense",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:capability,title_and_abstract.search:policy",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:capability,title_and_abstract.search:envelope",
+          "found": null,
+          "retrieved": 0,
+          "page": 1,
+          "complete": false,
+          "skipped": ""
+        }
+      ],
+      "started_on": "2026-11-03",
+      "paging": "page"
+    }
+  }
+}

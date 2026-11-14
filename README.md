@@ -4,6 +4,10 @@ An empirical study of unauthorized tool actions in Model Context Protocol (MCP) 
 
 This repository contains the implementation, experimental protocols, saved traces, policy records, scanner benchmarks, and results supporting the project report.
 
+## Complete evidence branch
+
+This branch includes all tracked experiments and results from both study inventories, including experiments not used in the report, early adapters, saved checkpoints, registry measurements, literature-review records, and historical validation receipts. It also recovers 164 local files, including 100 additional checkpoints. See the [completeness audit](docs/evidence-completeness.md) and [machine-readable inventory](docs/evidence-inventory.json). Saved fixture links are documented as metadata rather than activated. Pretrained models and installed dependency environments remain external; [remaining inputs](docs/unavailable-artifacts.json) are listed explicitly.
+
 ## Start here
 
 - [Experiment and test results](docs/experiment-results.md): measured outcomes, defense comparisons, software test results, and links to detailed evidence.
@@ -55,9 +59,10 @@ With Python 3.11 or later, run:
 
 ```bash
 python scripts/verify_artifacts.py
+python scripts/audit_evidence.py
 ```
 
-This checks file hashes against `MANIFEST.json`, parses saved experiment records, and compares Stage 2 trace counts with their reports. It requires no model, API key, running MCP server, or third-party Python package. The validation summary is in `VALIDATION.json`.
+These commands check file hashes against `MANIFEST.json`, parse saved experiment records, compare Stage 2 trace counts with their reports, and verify source-inventory coverage and recovered-file integrity. They require no model, API key, running MCP server, or third-party Python package. The validation summary is in `VALIDATION.json`.
 
 `scripts/check_saved_results.py` provides deeper policy/result recomputation. Recorded Windows fixture paths require Windows path semantics, and the Progent arm requires its pinned external dependency. Live-server or hosted-model experiments additionally require the dependencies and settings documented in the experiment protocols.
 

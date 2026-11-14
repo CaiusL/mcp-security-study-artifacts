@@ -1,0 +1,32 @@
+# Attacks on MCP-based LLM agents: papers, incidents, channels, model trends, attack repos, and the in-scope-misuse hypothesis
+
+Research date: 2026-10-24. Scope: attacks only (defenses are noted, not analysed).
+
+Legend used in this file:
+- Study injection channels: **W** = fetched web page; **F** = file in repo; **G** = git commit message / issue / PR text; **M** = memory-graph entity; **T** = tool description / schema / metadata; **O** = other tool output; **S** = sampling, server `instructions`, prompts, resources.
+- Study canary goals: **R** = read a secret inside the allowed root; **X** = write a `.sh`/executable file into an allowed directory; **E** = send a canary out (fetch or other egress).
+- Boundary verdict: **IN** = in-scope misuse (allowed tool, allowed resource); **BRK** = broke a server-enforced boundary (root, repo, sandbox); **HOST** = host/client/platform bug, not injection-driven misuse; **SUP** = malicious server code (supply chain).
+- Source type: [PR] peer-reviewed, [PP] preprint, [VB] vendor/researcher blog, [ADV] advisory/CVE record, [NEWS] press/secondary.
+
+---
+
+## Q1. Which academic papers (2024–2026) study IPI / tool poisoning / rug pull / tool shadowing against MCP agents?
+
+### Takeaway
+There are now at least 6 MCP-specific attack benchmarks with per-model numbers (MCPTox, MSB, MCP-SafetyBench, MCPSecBench, MCP Pitfall Lab, MCP-TDP), plus large ecosystem measurements (MCP-SEC, MCP-FSD, ToFu, Li & Gao, Hasan et al.). Almost all benchmarks measure tool-description poisoning or response-side injection with success defined as "agent misuses a legitimate tool". Only the newest measurement papers (MCP-FSD, ToFu, both October 2026) measure server-side boundary failures, and they do not report LLM-driven attack success rates.
+
+### Cited Findings
+
+**A. Verification of the four papers the project already knows**
+- **MCP-FSD** [PP]: "My Credentials, Please: Detecting Filesystem Capability Laundering in MCP Servers at Scale". Authors: Zeqian Huang, Mingyue Tang, Aonan Guan, Qiming Sun, Pengzhou He. arXiv v1 dated 15 Oct 2026. Catalogs 21,097 servers from 9 registries. Of 4,806 triaged servers, 787 (16.4%) have filesystem capability despite a non-filesystem functional classification. Dynamic validation confirms 150 vulnerable instances. 13 advisories, including 2 CVEs in Anthropic's Git MCP server — [arXiv abs](https://arxiv.org/abs/2610.22301)
+  - Threat model: attacker steers tool arguments through content the agent ingests (indirect prompt injection is one cited mechanism). Local stdio servers run with the user's ambient filesystem permissions. The attacker is not a malicious client or user — [arXiv html](https://arxiv.org/html/2610.22301)
+  - The 2 Git CVEs are CVE-2025-68143 (`git_init`, unscoped repo creation; fix removed the tool) and CVE-2026-27735 (`git_add`, path-traversal staging; files outside the repo can be staged and exposed through a diff). Both are missing-containment bugs — [arXiv html](https://arxiv.org/html/2610.22301); [NVD CVE-2026-27735](https://nvd.nist.gov/vuln/detail/CVE-2026-27735)
+  - Memory MCP server: separate finding, where an attacker who controls the launch-time persistence path can inject configuration through a persistence write. The fix was merged upstream without a CVE. Filesystem CVE-2025-53109/53110 are cited as prior benchmarks. No fetch or time server findings — [arXiv html](https://arxiv.org/html/2610.22301)
+  - Path-validation bypass share across 10,304 static emissions from 2,818 flagged servers: missing validation 36.4%, URL traversal 33.7%, prefix-match 13.4%, symlink TOCTOU 7.7%, blacklist filter 6.8%. 38 confirmed instances bypass an explicit source-level check — [arXiv html](https://arxiv.org/html/2610.22301)
+  - Sandbox test: nono v0.43.0 (macOS Seatbelt), with read-write access to the working directory and read-only access to dependencies. All 150 instances disclose the planted secret unsandboxed and are blocked sandboxed. The paper does not name the LLMs used for payload generation and gives no exploit success rate. Proposes containment fixes (canonical-path checks, SDK helpers, a per-tool scope field in `tools/list`, OS isolation) — [arXiv html](https://arxiv.org/html/2610.22301)
+- **ToFu** [PP]: "ToFu: Exploiting and Fuzzing the LLM-Orchestrator-Tool Trust Boundary". Authors: Md Nazmul Islam Ananto, Pierre Prevost-Avenel, Colin Smith, Kyungtae Kim, Taegyu Kim, Arslan Khan. arXiv v1 dated 9 Oct 2026. 273 open-source MCP servers, 3,405 tools. The abstract says bugs were found in 343 tools across 118 servers. The comments field says 253 verified semantic bugs in 118 servers (an internal inconsistency) — [arXiv abs](https://arxiv.org/abs/2610.13651)
+  - Breakdown of 253 reproducible bugs: reflected output (CWE-116/79) 115, path traversal (CWE-22) 64, log injection (CWE-117) 58, SSRF (CWE-918) 7, data exfiltration (CWE-201) 5, OS command injection (CWE-78) 3, leftover temp file (CWE-459) 1 — [arXiv html](https://arxiv.org/html/2610.13651)
+  - Threat model treats every schema-valid argument as adversarial, because attacker content (user prompt, retrieved content, other tool output) flows into arguments. A "Repeat-After-Me" technique (the LLM repeats attacker text that the orchestrator parses as a tool call) was reproduced in 6 frameworks: LangGraph, MAF, ADK 2.0, AutoGen, Strands, CrewAI. ToFu uses gpt-4.1; the baselines use Claude Sonnet-5 and gpt-4.1-mini. No end-to-end prompt-injection exploit demos, no CVEs, and the reference servers are not named as targets — [arXiv html](https://arxiv.org/html/2610.13651)
+- **MCP-SEC / "Parasites in the Toolchain"** [PR]: "Parasites in the Toolchain: A Large-Scale Analysis of Attacks on the MCP Ecosystem". Authors: Shuli Zhao, Qinsheng Hou, Zihan Zhan, Yanhao Wang, Yuchong Xie, Yu Guo, Libo Chen, Shenghong Li, Zhi Xue. v1 8 Sep 2025; v5 1 May 2026; accepted to IEEE S&P 2026. Defines Parasitic Toolchain Attacks, instantiated as MCP-UPD (Unintended Privacy Disclosure), in 3 phases: Parasitic Ingestion → Privacy Collection → Privacy Disclosure. Root causes: no context-tool isolation and no least privilege. Census: 12,230 tools across 1,360 servers. The abstract gives no per-model ASR — [arXiv abs](https://arxiv.org/abs/2509.06572)
+- **MCPSafetyScanner / "MCP Safety Audit"** [PP]: Brandon Radosevich, John Halloran. v1 2 Apr 2025; v2 11 Apr 2025 — [arXiv abs](https://arxiv.org/abs/2504.03767)
+  - Models: Claude 3.7 (via Claude Desktop v0.8.1) and Llama-3.3-70B-Instruct.

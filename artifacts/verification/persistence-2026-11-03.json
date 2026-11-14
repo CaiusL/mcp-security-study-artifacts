@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-03",
+  "command": "python -m unittest tests.test_review tests.test_stage2_run.AllowlistSaveTest tests.test_stage2_run.TraceStoreTest tests.test_widening.PendingUsageTests -q",
+  "tests_run": 37,
+  "passed": 37,
+  "skipped": 0,
+  "errors": 0,
+  "failures": 0,
+  "seconds": 1.133,
+  "files_sha256": {
+    "wiggle/stage2_run.py": "03f5fa885f3e12315ef401e316ae102d91988b8dc5c1d865ab439c315d2e325e",
+    "wiggle/widening.py": "28aa1eb2d644596b2086e5d044b04e3f69bf66d31d7a131b6552be8f4f952739",
+    "wiggle/review.py": "36fc1a4a85f2dffe4019fd62b28487cea731448fd2b46b25cc5c83885ef39f9d",
+    "tests/test_stage2_run.py": "8182795ecc1444d79481f64352077666288bee8feb7aedabd86742e0fd96f2b0",
+    "tests/test_widening.py": "a0221313389e5793a9926cdaa23893a55b3e6ce44d3c35c8925265731ad756c4",
+    "tests/test_review.py": "1e86f538b08772a6f3fc2c14bc03e95d34ece3c659f3214ac5b2ab6e5745d436"
+  },
+  "primary_workflow": {
+    "widening_resume": "30 remaining runs completed; all 96 frozen runs scored, zero model-request errors",
+    "persistent_tokens": 251895,
+    "token_cap": 530000,
+    "report_sha256": "078e12e5312a45a362187b7fc1d168ea1c6c7ac2d92e14e3ac8965fadd3ba881"
+  },
+  "deepseek_trace_recovery": "Compared both saved trace files as multisets of 870 JSON rows, then promoted the canonical-order temporary file; no model requests repeated."
+}

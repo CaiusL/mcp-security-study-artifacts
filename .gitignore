@@ -28,7 +28,6 @@ bench/mcp-shield/node_modules/
 # Hosted-model API keys (DeepSeek, Qwen/Model Studio, ...). Pass with --api-key-file.
 *.key
 
-# Local model weights and environments are not report artifacts.
-badagent/**/*.safetensors
+# Local environments and credentials are not study evidence.
 badagent/.venv/
 .env*

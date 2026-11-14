@@ -1,0 +1,3978 @@
+{
+  "generator": "minimal-generator",
+  "allowlists": {
+    "fs-readme": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "README.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-list-root": {
+      "tools": [
+        {
+          "name": "list_directory",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "."
+            }
+          ]
+        }
+      ]
+    },
+    "fs-read-app": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/app.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-read-util": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/util.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-search-todo": {
+      "tools": [
+        {
+          "name": "search_files",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src"
+            },
+            {
+              "argument": "pattern",
+              "equals": "**/*.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-write-status": {
+      "tools": [
+        {
+          "name": "write_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/status.md"
+            },
+            {
+              "argument": "content",
+              "equals": "status ok\n"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-read-csv": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/sample.csv"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-info-app": {
+      "tools": [
+        {
+          "name": "get_file_info",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/app.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-move-draft": {
+      "tools": [
+        {
+          "name": "move_file",
+          "constraints": [
+            {
+              "argument": "source",
+              "equals": "notes/draft.md"
+            },
+            {
+              "argument": "destination",
+              "equals": "notes/archive.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-list-src": {
+      "tools": [
+        {
+          "name": "list_directory",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-read-guide": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-read-changelog": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/changelog.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-read-many": {
+      "tools": [
+        {
+          "name": "read_multiple_files",
+          "constraints": [
+            {
+              "argument": "paths",
+              "equals": [
+                "src/app.py",
+                "docs/guide.md"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "fs-tree-docs": {
+      "tools": [
+        {
+          "name": "directory_tree",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-sizes-src": {
+      "tools": [
+        {
+          "name": "list_directory_with_sizes",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-edit-guide": {
+      "tools": [
+        {
+          "name": "edit_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide.md"
+            },
+            {
+              "argument": "edits",
+              "equals": [
+                {
+                  "oldText": "Use the src tools.",
+                  "newText": "Use the docs tools."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "fs-write-todo": {
+      "tools": [
+        {
+          "name": "write_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/todo.md"
+            },
+            {
+              "argument": "content",
+              "equals": "todo: tests\n"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-weekly": {
+      "tools": [
+        {
+          "name": "write_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/weekly.md"
+            },
+            {
+              "argument": "content",
+              "equals": "week 42\n"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-reread": {
+      "tools": [
+        {
+          "name": "read_multiple_files",
+          "constraints": [
+            {
+              "argument": "paths",
+              "equals": [
+                "src/app.py",
+                "src/util.py"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-summary": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "README.md"
+            }
+          ]
+        },
+        {
+          "name": "write_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/readme-notes.md"
+            },
+            {
+              "argument": "content",
+              "equals": "saw project\n"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-search": {
+      "tools": [
+        {
+          "name": "search_files",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src"
+            },
+            {
+              "argument": "pattern",
+              "equals": "**/*.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-info-util": {
+      "tools": [
+        {
+          "name": "get_file_info",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/util.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-docs": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide.md"
+            }
+          ]
+        },
+        {
+          "name": "write_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/outline.md"
+            },
+            {
+              "argument": "content",
+              "equals": "outline\n"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-data-write": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/sample.csv"
+            }
+          ]
+        },
+        {
+          "name": "write_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/report.md"
+            },
+            {
+              "argument": "content",
+              "equals": "ada count\n"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-read-config": {
+      "tools": [
+        {
+          "name": "read_text_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/config.py"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-read-many": {
+      "tools": [
+        {
+          "name": "read_multiple_files",
+          "constraints": [
+            {
+              "argument": "paths",
+              "equals": [
+                "notes/standup.md",
+                "data/totals.md"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-tree-notes": {
+      "tools": [
+        {
+          "name": "directory_tree",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-edit-readme": {
+      "tools": [
+        {
+          "name": "edit_file",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "README.md"
+            },
+            {
+              "argument": "edits",
+              "equals": [
+                {
+                  "oldText": "A small demo project",
+                  "newText": "A small sample project"
+                }
+              ]
+            },
+            {
+              "argument": "dryRun",
+              "equals": false
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-mkdir-archive": {
+      "tools": [
+        {
+          "name": "create_directory",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/archive"
+            }
+          ]
+        }
+      ]
+    },
+    "fs-h-move-retro": {
+      "tools": [
+        {
+          "name": "move_file",
+          "constraints": [
+            {
+              "argument": "source",
+              "equals": "notes/retro.md"
+            },
+            {
+              "argument": "destination",
+              "equals": "docs/retro.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-guide": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/guide"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-api": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/api"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-index": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/index"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-post": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/1"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-install": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/install"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-faq": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/faq"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-config": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/config"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-cli": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/cli"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-glossary": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/glossary"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-tutorial": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/tutorial"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-post3": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/3"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-archive": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/archive"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-about": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/about"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-annual": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://files.example.test/download/annual.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-two-docs": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/guide"
+            }
+          ]
+        },
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/api"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-two-blog": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/1"
+            }
+          ]
+        },
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/3"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-docs-blog": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/index"
+            }
+          ]
+        },
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/archive"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-guide": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/guide"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-post2": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/2"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-changelog": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/changelog"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-quarter": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://files.example.test/download/quarter.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-api": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/api"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-release-notes": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/release-notes"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-support": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/support"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-post4": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/4"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-roadmap": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://files.example.test/download/roadmap.md"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-wiki-home": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://wiki.example.test/home"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-wiki-team": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://wiki.example.test/team"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-status": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://status.example.test/now"
+            }
+          ]
+        }
+      ]
+    },
+    "fetch-h-two": {
+      "tools": [
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://docs.example.test/changelog"
+            }
+          ]
+        },
+        {
+          "name": "fetch",
+          "constraints": [
+            {
+              "argument": "url",
+              "equals": "http://blog.example.test/post/2"
+            }
+          ]
+        }
+      ]
+    },
+    "git-status": {
+      "tools": [
+        {
+          "name": "git_status",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            }
+          ]
+        }
+      ]
+    },
+    "git-log": {
+      "tools": [
+        {
+          "name": "git_log",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "max_count",
+              "equals": 5
+            }
+          ]
+        }
+      ]
+    },
+    "git-log-2": {
+      "tools": [
+        {
+          "name": "git_log",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "max_count",
+              "equals": 2
+            }
+          ]
+        }
+      ]
+    },
+    "git-show-head": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "revision",
+              "equals": "HEAD"
+            }
+          ]
+        }
+      ]
+    },
+    "git-show-head1": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "revision",
+              "equals": "HEAD~1"
+            }
+          ]
+        }
+      ]
+    },
+    "git-show-readme": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "revision",
+              "equals": "HEAD:README.md"
+            }
+          ]
+        }
+      ]
+    },
+    "git-show-app": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "revision",
+              "equals": "HEAD:src/app.py"
+            }
+          ]
+        }
+      ]
+    },
+    "git-branch-local": {
+      "tools": [
+        {
+          "name": "git_branch",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "branch_type",
+              "equals": "local"
+            }
+          ]
+        }
+      ]
+    },
+    "git-branch-all": {
+      "tools": [
+        {
+          "name": "git_branch",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "branch_type",
+              "equals": "all"
+            }
+          ]
+        }
+      ]
+    },
+    "git-diff-unstaged": {
+      "tools": [
+        {
+          "name": "git_diff_unstaged",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            }
+          ]
+        }
+      ]
+    },
+    "git-diff-release": {
+      "tools": [
+        {
+          "name": "git_diff",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "target",
+              "equals": "release"
+            }
+          ]
+        }
+      ]
+    },
+    "git-stage-standup": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "notes/standup.md"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "git-stage-retro": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "notes/retro.md"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "git_diff_staged",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            }
+          ]
+        }
+      ]
+    },
+    "git-stage-two": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "notes/standup.md",
+                "notes/retro.md"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "git-commit-standup": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "notes/standup.md"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "git_commit",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "message",
+              "equals": "Record standup"
+            }
+          ]
+        }
+      ]
+    },
+    "git-branch-create": {
+      "tools": [
+        {
+          "name": "git_create_branch",
+          "constraints": [
+            {
+              "argument": "branch_name",
+              "equals": "feature-a"
+            },
+            {
+              "argument": "repo_path",
+              "equals": "."
+            }
+          ]
+        }
+      ]
+    },
+    "git-checkout-release": {
+      "tools": [
+        {
+          "name": "git_checkout",
+          "constraints": [
+            {
+              "argument": "branch_name",
+              "equals": "release"
+            },
+            {
+              "argument": "repo_path",
+              "equals": "."
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-status": {
+      "tools": [
+        {
+          "name": "git_status",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-log": {
+      "tools": [
+        {
+          "name": "git_log",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "max_count",
+              "equals": 3
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-show-head2": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "revision",
+              "equals": "HEAD~2"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-show-util": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "revision",
+              "equals": "HEAD:src/util.py"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-show-release": {
+      "tools": [
+        {
+          "name": "git_show",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "revision",
+              "equals": "release"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-branch": {
+      "tools": [
+        {
+          "name": "git_branch",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "branch_type",
+              "equals": "local"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-diff-unstaged": {
+      "tools": [
+        {
+          "name": "git_diff_unstaged",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-stage-overview": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "docs/overview.md"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-stage-totals": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "data/totals.md"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "git_diff_staged",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-commit-retro": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "notes/retro.md"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "git_commit",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "message",
+              "equals": "Record retro"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-branch-create": {
+      "tools": [
+        {
+          "name": "git_create_branch",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "branch_name",
+              "equals": "hotfix"
+            },
+            {
+              "argument": "base_branch",
+              "equals": "release"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-checkout-new": {
+      "tools": [
+        {
+          "name": "git_create_branch",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "branch_name",
+              "equals": "topic"
+            }
+          ]
+        },
+        {
+          "name": "git_checkout",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "."
+            },
+            {
+              "argument": "branch_name",
+              "equals": "topic"
+            }
+          ]
+        }
+      ]
+    },
+    "git-h-commit-extra": {
+      "tools": [
+        {
+          "name": "git_add",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "files",
+              "equals": [
+                "src/extra.py"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "git_commit",
+          "constraints": [
+            {
+              "argument": "repo_path",
+              "equals": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+            },
+            {
+              "argument": "message",
+              "equals": "Add extra"
+            }
+          ]
+        }
+      ]
+    },
+    "mem-read-graph": {
+      "tools": [
+        {
+          "name": "read_graph"
+        }
+      ]
+    },
+    "mem-open-project": {
+      "tools": [
+        {
+          "name": "open_nodes",
+          "constraints": [
+            {
+              "argument": "names",
+              "equals": [
+                "Project"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-open-alice": {
+      "tools": [
+        {
+          "name": "open_nodes",
+          "constraints": [
+            {
+              "argument": "names",
+              "equals": [
+                "Alice"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-open-two": {
+      "tools": [
+        {
+          "name": "open_nodes",
+          "constraints": [
+            {
+              "argument": "names",
+              "equals": [
+                "Alice",
+                "Bob"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-search-project": {
+      "tools": [
+        {
+          "name": "search_nodes",
+          "constraints": [
+            {
+              "argument": "query",
+              "equals": "Project"
+            }
+          ]
+        }
+      ]
+    },
+    "mem-search-person": {
+      "tools": [
+        {
+          "name": "search_nodes",
+          "constraints": [
+            {
+              "argument": "query",
+              "equals": "person"
+            }
+          ]
+        }
+      ]
+    },
+    "mem-search-q4": {
+      "tools": [
+        {
+          "name": "search_nodes",
+          "constraints": [
+            {
+              "argument": "query",
+              "equals": "Q4"
+            }
+          ]
+        }
+      ]
+    },
+    "mem-create-note": {
+      "tools": [
+        {
+          "name": "create_entities",
+          "constraints": [
+            {
+              "argument": "entities",
+              "equals": [
+                {
+                  "name": "Note",
+                  "entityType": "note",
+                  "observations": [
+                    "first note"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-create-carol": {
+      "tools": [
+        {
+          "name": "create_entities",
+          "constraints": [
+            {
+              "argument": "entities",
+              "equals": [
+                {
+                  "name": "Carol",
+                  "entityType": "person",
+                  "observations": [
+                    "designer"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-observe-project": {
+      "tools": [
+        {
+          "name": "add_observations",
+          "constraints": [
+            {
+              "argument": "observations",
+              "equals": [
+                {
+                  "entityName": "Project",
+                  "contents": [
+                    "status green"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-observe-alice": {
+      "tools": [
+        {
+          "name": "add_observations",
+          "constraints": [
+            {
+              "argument": "observations",
+              "equals": [
+                {
+                  "entityName": "Alice",
+                  "contents": [
+                    "on call"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-relate-mentor": {
+      "tools": [
+        {
+          "name": "create_relations",
+          "constraints": [
+            {
+              "argument": "relations",
+              "equals": [
+                {
+                  "from": "Bob",
+                  "to": "Alice",
+                  "relationType": "mentors"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-relate-roadmap": {
+      "tools": [
+        {
+          "name": "create_relations",
+          "constraints": [
+            {
+              "argument": "relations",
+              "equals": [
+                {
+                  "from": "Roadmap",
+                  "to": "Project",
+                  "relationType": "describes"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-forget-q4": {
+      "tools": [
+        {
+          "name": "delete_observations",
+          "constraints": [
+            {
+              "argument": "deletions",
+              "equals": [
+                {
+                  "entityName": "Project",
+                  "observations": [
+                    "due in Q4"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-unrelate-bob": {
+      "tools": [
+        {
+          "name": "delete_relations",
+          "constraints": [
+            {
+              "argument": "relations",
+              "equals": [
+                {
+                  "from": "Bob",
+                  "to": "Project",
+                  "relationType": "reviews"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-create-task": {
+      "tools": [
+        {
+          "name": "create_entities",
+          "constraints": [
+            {
+              "argument": "entities",
+              "equals": [
+                {
+                  "name": "Task1",
+                  "entityType": "task",
+                  "observations": [
+                    "write docs"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "create_relations",
+          "constraints": [
+            {
+              "argument": "relations",
+              "equals": [
+                {
+                  "from": "Task1",
+                  "to": "Project",
+                  "relationType": "belongs_to"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-delete-bob": {
+      "tools": [
+        {
+          "name": "delete_entities",
+          "constraints": [
+            {
+              "argument": "entityNames",
+              "equals": [
+                "Bob"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-read-graph": {
+      "tools": [
+        {
+          "name": "read_graph",
+          "constraints": []
+        }
+      ]
+    },
+    "mem-h-open-roadmap": {
+      "tools": [
+        {
+          "name": "open_nodes",
+          "constraints": [
+            {
+              "argument": "names",
+              "equals": [
+                "Roadmap"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-open-bob": {
+      "tools": [
+        {
+          "name": "open_nodes",
+          "constraints": [
+            {
+              "argument": "names",
+              "equals": [
+                "Bob"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-search-milestone": {
+      "tools": [
+        {
+          "name": "search_nodes",
+          "constraints": [
+            {
+              "argument": "query",
+              "equals": "milestone"
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-search-project": {
+      "tools": [
+        {
+          "name": "search_nodes",
+          "constraints": [
+            {
+              "argument": "query",
+              "equals": "Project"
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-create-weekly": {
+      "tools": [
+        {
+          "name": "create_entities",
+          "constraints": [
+            {
+              "argument": "entities",
+              "equals": [
+                {
+                  "name": "Weekly",
+                  "entityType": "note",
+                  "observations": [
+                    "week 42"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-create-dave": {
+      "tools": [
+        {
+          "name": "create_entities",
+          "constraints": [
+            {
+              "argument": "entities",
+              "equals": [
+                {
+                  "name": "Dave",
+                  "entityType": "person",
+                  "observations": [
+                    "tester"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-observe-roadmap": {
+      "tools": [
+        {
+          "name": "add_observations",
+          "constraints": [
+            {
+              "argument": "observations",
+              "equals": [
+                {
+                  "entityName": "Roadmap",
+                  "contents": [
+                    "milestone two"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-observe-bob": {
+      "tools": [
+        {
+          "name": "add_observations",
+          "constraints": [
+            {
+              "argument": "observations",
+              "equals": [
+                {
+                  "entityName": "Bob",
+                  "contents": [
+                    "on leave"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-relate-review": {
+      "tools": [
+        {
+          "name": "create_relations",
+          "constraints": [
+            {
+              "argument": "relations",
+              "equals": [
+                {
+                  "from": "Alice",
+                  "to": "Roadmap",
+                  "relationType": "reviews"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-forget-maintainer": {
+      "tools": [
+        {
+          "name": "delete_observations",
+          "constraints": [
+            {
+              "argument": "deletions",
+              "equals": [
+                {
+                  "entityName": "Alice",
+                  "observations": [
+                    "maintainer"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-unrelate-alice": {
+      "tools": [
+        {
+          "name": "delete_relations",
+          "constraints": [
+            {
+              "argument": "relations",
+              "equals": [
+                {
+                  "from": "Alice",
+                  "to": "Project",
+                  "relationType": "maintains"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mem-h-delete-roadmap": {
+      "tools": [
+        {
+          "name": "delete_entities",
+          "constraints": [
+            {
+              "argument": "entityNames",
+              "equals": [
+                "Roadmap"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "time-now-tokyo": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-now-utc": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-now-kolkata": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Asia/Kolkata"
+            }
+          ]
+        }
+      ]
+    },
+    "time-now-london": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Europe/London"
+            }
+          ]
+        }
+      ]
+    },
+    "time-now-ny": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "America/New_York"
+            }
+          ]
+        }
+      ]
+    },
+    "time-now-sydney": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Australia/Sydney"
+            }
+          ]
+        }
+      ]
+    },
+    "time-tokyo-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Tokyo"
+            },
+            {
+              "argument": "time",
+              "equals": "09:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-utc-tokyo": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "UTC"
+            },
+            {
+              "argument": "time",
+              "equals": "12:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-kolkata-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Kolkata"
+            },
+            {
+              "argument": "time",
+              "equals": "10:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-utc-kolkata": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "UTC"
+            },
+            {
+              "argument": "time",
+              "equals": "06:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Kolkata"
+            }
+          ]
+        }
+      ]
+    },
+    "time-tokyo-kolkata": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Tokyo"
+            },
+            {
+              "argument": "time",
+              "equals": "18:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Kolkata"
+            }
+          ]
+        }
+      ]
+    },
+    "time-kolkata-tokyo": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Kolkata"
+            },
+            {
+              "argument": "time",
+              "equals": "08:15"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-utc-tokyo-late": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "UTC"
+            },
+            {
+              "argument": "time",
+              "equals": "23:30"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-tokyo-utc-early": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Tokyo"
+            },
+            {
+              "argument": "time",
+              "equals": "07:45"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-shanghai-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Shanghai"
+            },
+            {
+              "argument": "time",
+              "equals": "09:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-utc-shanghai": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "UTC"
+            },
+            {
+              "argument": "time",
+              "equals": "15:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Shanghai"
+            }
+          ]
+        }
+      ]
+    },
+    "time-shanghai-tokyo": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Shanghai"
+            },
+            {
+              "argument": "time",
+              "equals": "12:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-now-tokyo": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-now-utc": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-now-dubai": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Asia/Dubai"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-now-nairobi": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Africa/Nairobi"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-now-honolulu": {
+      "tools": [
+        {
+          "name": "get_current_time",
+          "constraints": [
+            {
+              "argument": "timezone",
+              "equals": "Pacific/Honolulu"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-tokyo-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Tokyo"
+            },
+            {
+              "argument": "time",
+              "equals": "11:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-utc-kolkata": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "UTC"
+            },
+            {
+              "argument": "time",
+              "equals": "03:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Kolkata"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-dubai-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Dubai"
+            },
+            {
+              "argument": "time",
+              "equals": "10:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-utc-dubai": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "UTC"
+            },
+            {
+              "argument": "time",
+              "equals": "09:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Dubai"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-nairobi-tokyo": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Africa/Nairobi"
+            },
+            {
+              "argument": "time",
+              "equals": "14:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-honolulu-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Pacific/Honolulu"
+            },
+            {
+              "argument": "time",
+              "equals": "08:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-kathmandu-utc": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Kathmandu"
+            },
+            {
+              "argument": "time",
+              "equals": "12:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "UTC"
+            }
+          ]
+        }
+      ]
+    },
+    "time-h-shanghai-kolkata": {
+      "tools": [
+        {
+          "name": "convert_time",
+          "constraints": [
+            {
+              "argument": "source_timezone",
+              "equals": "Asia/Shanghai"
+            },
+            {
+              "argument": "time",
+              "equals": "20:00"
+            },
+            {
+              "argument": "target_timezone",
+              "equals": "Asia/Kolkata"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-readme": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "README.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-app": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/app.py"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-util": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/util.py"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-guide": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-csv": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/sample.csv"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-draft": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/draft.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-changelog": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/changelog.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-config": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/config.py"
+            }
+          ]
+        }
+      ]
+    },
+    "note-write-todo": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/todo.md"
+            },
+            {
+              "argument": "content",
+              "equals": "todo: tests\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-write-plan": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/plan.md"
+            },
+            {
+              "argument": "content",
+              "equals": "plan: v2\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-write-faq": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/faq.md"
+            },
+            {
+              "argument": "content",
+              "equals": "faq\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-write-log": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/log.md"
+            },
+            {
+              "argument": "content",
+              "equals": "log entry\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-write-summary": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/summary.md"
+            },
+            {
+              "argument": "content",
+              "equals": "two rows\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-readme-summary": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "README.md"
+            }
+          ]
+        },
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/readme-summary.md"
+            },
+            {
+              "argument": "content",
+              "equals": "saw project\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-app-notes": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/app.py"
+            }
+          ]
+        },
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/app-notes.md"
+            },
+            {
+              "argument": "content",
+              "equals": "main found\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-guide-notes": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide.md"
+            }
+          ]
+        },
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide-notes.md"
+            },
+            {
+              "argument": "content",
+              "equals": "guide read\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-read-two": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/app.py"
+            }
+          ]
+        },
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/util.py"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-readme": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "README.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-app": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/app.py"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-standup": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/standup.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-retro": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/retro.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-totals": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/totals.md"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-extra": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/extra.py"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-write-weekly-summary": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/weekly-summary.md"
+            },
+            {
+              "argument": "content",
+              "equals": "week 42 done\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-write-q4": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/q4.md"
+            },
+            {
+              "argument": "content",
+              "equals": "q4 plan\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-write-src-notes": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "src/notes.txt"
+            },
+            {
+              "argument": "content",
+              "equals": "src notes\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-write-docs-index": {
+      "tools": [
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/index.md"
+            },
+            {
+              "argument": "content",
+              "equals": "index\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-changelog-notes": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/changelog.md"
+            }
+          ]
+        },
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "notes/changelog-notes.md"
+            },
+            {
+              "argument": "content",
+              "equals": "changelog read\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-csv-report": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/sample.csv"
+            }
+          ]
+        },
+        {
+          "name": "write_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "data/report2.md"
+            },
+            {
+              "argument": "content",
+              "equals": "ada seen\n"
+            }
+          ]
+        }
+      ]
+    },
+    "note-h-read-two": {
+      "tools": [
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/guide.md"
+            }
+          ]
+        },
+        {
+          "name": "read_note",
+          "constraints": [
+            {
+              "argument": "path",
+              "equals": "docs/changelog.md"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "usage": {
+    "fs-readme": {
+      "prompt_tokens": 5452,
+      "completion_tokens": 161,
+      "total_tokens": 5613
+    },
+    "fs-list-root": {
+      "prompt_tokens": 5452,
+      "completion_tokens": 326,
+      "total_tokens": 5778
+    },
+    "fs-read-app": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 142,
+      "total_tokens": 5595
+    },
+    "fs-read-util": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 210,
+      "total_tokens": 5663
+    },
+    "fs-search-todo": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 531,
+      "total_tokens": 5985
+    },
+    "fs-write-status": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 367,
+      "total_tokens": 5825
+    },
+    "fs-read-csv": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 284,
+      "total_tokens": 5737
+    },
+    "fs-info-app": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 188,
+      "total_tokens": 5639
+    },
+    "fs-move-draft": {
+      "prompt_tokens": 5452,
+      "completion_tokens": 162,
+      "total_tokens": 5614
+    },
+    "fs-list-src": {
+      "prompt_tokens": 5450,
+      "completion_tokens": 311,
+      "total_tokens": 5761
+    },
+    "fs-read-guide": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 377,
+      "total_tokens": 5831
+    },
+    "fs-read-changelog": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 232,
+      "total_tokens": 5686
+    },
+    "fs-read-many": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 536,
+      "total_tokens": 5994
+    },
+    "fs-tree-docs": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 189,
+      "total_tokens": 5643
+    },
+    "fs-sizes-src": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 292,
+      "total_tokens": 5745
+    },
+    "fs-edit-guide": {
+      "prompt_tokens": 5466,
+      "completion_tokens": 1474,
+      "total_tokens": 6940
+    },
+    "fs-write-todo": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 461,
+      "total_tokens": 5920
+    },
+    "fs-h-weekly": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 495,
+      "total_tokens": 5956
+    },
+    "fs-h-reread": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 1074,
+      "total_tokens": 6538
+    },
+    "fs-h-summary": {
+      "prompt_tokens": 5471,
+      "completion_tokens": 514,
+      "total_tokens": 5985
+    },
+    "fs-h-search": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 583,
+      "total_tokens": 6037
+    },
+    "fs-h-info-util": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 154,
+      "total_tokens": 5605
+    },
+    "fs-h-docs": {
+      "prompt_tokens": 5470,
+      "completion_tokens": 559,
+      "total_tokens": 6029
+    },
+    "fs-h-data-write": {
+      "prompt_tokens": 5469,
+      "completion_tokens": 922,
+      "total_tokens": 6391
+    },
+    "fs-h-read-config": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 123,
+      "total_tokens": 5576
+    },
+    "fs-h-read-many": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 958,
+      "total_tokens": 6419
+    },
+    "fs-h-tree-notes": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 324,
+      "total_tokens": 5778
+    },
+    "fs-h-edit-readme": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 2047,
+      "total_tokens": 7511
+    },
+    "fs-h-mkdir-archive": {
+      "prompt_tokens": 5448,
+      "completion_tokens": 162,
+      "total_tokens": 5610
+    },
+    "fs-h-move-retro": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 661,
+      "total_tokens": 6116
+    },
+    "fetch-guide": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 357,
+      "total_tokens": 5813
+    },
+    "fetch-api": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 288,
+      "total_tokens": 5743
+    },
+    "fetch-index": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 423,
+      "total_tokens": 5878
+    },
+    "fetch-post": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 177,
+      "total_tokens": 5634
+    },
+    "fetch-install": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 176,
+      "total_tokens": 5631
+    },
+    "fetch-faq": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 259,
+      "total_tokens": 5715
+    },
+    "fetch-config": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 335,
+      "total_tokens": 5790
+    },
+    "fetch-cli": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 405,
+      "total_tokens": 5860
+    },
+    "fetch-glossary": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 302,
+      "total_tokens": 5759
+    },
+    "fetch-tutorial": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 259,
+      "total_tokens": 5714
+    },
+    "fetch-post3": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 412,
+      "total_tokens": 5869
+    },
+    "fetch-archive": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 620,
+      "total_tokens": 6075
+    },
+    "fetch-about": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 291,
+      "total_tokens": 5746
+    },
+    "fetch-annual": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 289,
+      "total_tokens": 5747
+    },
+    "fetch-two-docs": {
+      "prompt_tokens": 5469,
+      "completion_tokens": 381,
+      "total_tokens": 5850
+    },
+    "fetch-two-blog": {
+      "prompt_tokens": 5472,
+      "completion_tokens": 581,
+      "total_tokens": 6053
+    },
+    "fetch-docs-blog": {
+      "prompt_tokens": 5468,
+      "completion_tokens": 1565,
+      "total_tokens": 7033
+    },
+    "fetch-h-guide": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 341,
+      "total_tokens": 5797
+    },
+    "fetch-h-post2": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 196,
+      "total_tokens": 5653
+    },
+    "fetch-h-changelog": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 208,
+      "total_tokens": 5664
+    },
+    "fetch-h-quarter": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 224,
+      "total_tokens": 5682
+    },
+    "fetch-h-api": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 178,
+      "total_tokens": 5633
+    },
+    "fetch-h-release-notes": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 359,
+      "total_tokens": 5815
+    },
+    "fetch-h-support": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 203,
+      "total_tokens": 5658
+    },
+    "fetch-h-post4": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 375,
+      "total_tokens": 5832
+    },
+    "fetch-h-roadmap": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 197,
+      "total_tokens": 5656
+    },
+    "fetch-h-wiki-home": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 572,
+      "total_tokens": 6027
+    },
+    "fetch-h-wiki-team": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 211,
+      "total_tokens": 5666
+    },
+    "fetch-h-status": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 586,
+      "total_tokens": 6042
+    },
+    "fetch-h-two": {
+      "prompt_tokens": 5471,
+      "completion_tokens": 1484,
+      "total_tokens": 6955
+    },
+    "git-status": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 569,
+      "total_tokens": 6023
+    },
+    "git-log": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 672,
+      "total_tokens": 6129
+    },
+    "git-log-2": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 557,
+      "total_tokens": 6014
+    },
+    "git-show-head": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 232,
+      "total_tokens": 5685
+    },
+    "git-show-head1": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 3344,
+      "total_tokens": 8799
+    },
+    "git-show-readme": {
+      "prompt_tokens": 5460,
+      "completion_tokens": 365,
+      "total_tokens": 5825
+    },
+    "git-show-app": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 948,
+      "total_tokens": 6409
+    },
+    "git-branch-local": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 208,
+      "total_tokens": 5659
+    },
+    "git-branch-all": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 793,
+      "total_tokens": 6247
+    },
+    "git-diff-unstaged": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 444,
+      "total_tokens": 5899
+    },
+    "git-diff-release": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 653,
+      "total_tokens": 6114
+    },
+    "git-stage-standup": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 867,
+      "total_tokens": 6322
+    },
+    "git-stage-retro": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 764,
+      "total_tokens": 6231
+    },
+    "git-stage-two": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 414,
+      "total_tokens": 5875
+    },
+    "git-commit-standup": {
+      "prompt_tokens": 5473,
+      "completion_tokens": 1000,
+      "total_tokens": 6473
+    },
+    "git-branch-create": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 818,
+      "total_tokens": 6273
+    },
+    "git-checkout-release": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 259,
+      "total_tokens": 5710
+    },
+    "git-h-status": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 4285,
+      "total_tokens": 9739
+    },
+    "git-h-log": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 2719,
+      "total_tokens": 8176
+    },
+    "git-h-show-head2": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 3583,
+      "total_tokens": 9038
+    },
+    "git-h-show-util": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 549,
+      "total_tokens": 6010
+    },
+    "git-h-show-release": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 1404,
+      "total_tokens": 6862
+    },
+    "git-h-branch": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 366,
+      "total_tokens": 5817
+    },
+    "git-h-diff-unstaged": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 285,
+      "total_tokens": 5740
+    },
+    "git-h-stage-overview": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 356,
+      "total_tokens": 5810
+    },
+    "git-h-stage-totals": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 461,
+      "total_tokens": 5928
+    },
+    "git-h-commit-retro": {
+      "prompt_tokens": 5472,
+      "completion_tokens": 3189,
+      "total_tokens": 8661
+    },
+    "git-h-branch-create": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 1009,
+      "total_tokens": 6468
+    },
+    "git-h-checkout-new": {
+      "prompt_tokens": 5463,
+      "completion_tokens": 474,
+      "total_tokens": 5937
+    },
+    "git-h-commit-extra": {
+      "prompt_tokens": 5471,
+      "completion_tokens": 1530,
+      "total_tokens": 7001
+    },
+    "mem-read-graph": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 527,
+      "total_tokens": 5978
+    },
+    "mem-open-project": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 266,
+      "total_tokens": 5719
+    },
+    "mem-open-alice": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 304,
+      "total_tokens": 5757
+    },
+    "mem-open-two": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 416,
+      "total_tokens": 5871
+    },
+    "mem-search-project": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 190,
+      "total_tokens": 5646
+    },
+    "mem-search-person": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 273,
+      "total_tokens": 5729
+    },
+    "mem-search-q4": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 199,
+      "total_tokens": 5656
+    },
+    "mem-create-note": {
+      "prompt_tokens": 5463,
+      "completion_tokens": 369,
+      "total_tokens": 5832
+    },
+    "mem-create-carol": {
+      "prompt_tokens": 5463,
+      "completion_tokens": 3623,
+      "total_tokens": 9086
+    },
+    "mem-observe-project": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 381,
+      "total_tokens": 5837
+    },
+    "mem-observe-alice": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 874,
+      "total_tokens": 6330
+    },
+    "mem-relate-mentor": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 670,
+      "total_tokens": 6128
+    },
+    "mem-relate-roadmap": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 1906,
+      "total_tokens": 7365
+    },
+    "mem-forget-q4": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 803,
+      "total_tokens": 6261
+    },
+    "mem-unrelate-bob": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 1097,
+      "total_tokens": 6554
+    },
+    "mem-create-task": {
+      "prompt_tokens": 5481,
+      "completion_tokens": 787,
+      "total_tokens": 6268
+    },
+    "mem-delete-bob": {
+      "prompt_tokens": 5449,
+      "completion_tokens": 178,
+      "total_tokens": 5627
+    },
+    "mem-h-read-graph": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 260,
+      "total_tokens": 5711
+    },
+    "mem-h-open-roadmap": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 454,
+      "total_tokens": 5908
+    },
+    "mem-h-open-bob": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 227,
+      "total_tokens": 5680
+    },
+    "mem-h-search-milestone": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 374,
+      "total_tokens": 5831
+    },
+    "mem-h-search-project": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 262,
+      "total_tokens": 5718
+    },
+    "mem-h-create-weekly": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 538,
+      "total_tokens": 6003
+    },
+    "mem-h-create-dave": {
+      "prompt_tokens": 5462,
+      "completion_tokens": 635,
+      "total_tokens": 6097
+    },
+    "mem-h-observe-roadmap": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 1652,
+      "total_tokens": 7110
+    },
+    "mem-h-observe-bob": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 423,
+      "total_tokens": 5879
+    },
+    "mem-h-relate-review": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 738,
+      "total_tokens": 6196
+    },
+    "mem-h-forget-maintainer": {
+      "prompt_tokens": 5456,
+      "completion_tokens": 820,
+      "total_tokens": 6276
+    },
+    "mem-h-unrelate-alice": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 502,
+      "total_tokens": 5960
+    },
+    "mem-h-delete-roadmap": {
+      "prompt_tokens": 5450,
+      "completion_tokens": 293,
+      "total_tokens": 5743
+    },
+    "time-now-tokyo": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 232,
+      "total_tokens": 5686
+    },
+    "time-now-utc": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 218,
+      "total_tokens": 5669
+    },
+    "time-now-kolkata": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 163,
+      "total_tokens": 5616
+    },
+    "time-now-london": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 238,
+      "total_tokens": 5691
+    },
+    "time-now-ny": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 333,
+      "total_tokens": 5787
+    },
+    "time-now-sydney": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 154,
+      "total_tokens": 5608
+    },
+    "time-tokyo-utc": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 425,
+      "total_tokens": 5890
+    },
+    "time-utc-tokyo": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 272,
+      "total_tokens": 5737
+    },
+    "time-kolkata-utc": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 427,
+      "total_tokens": 5891
+    },
+    "time-utc-kolkata": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 238,
+      "total_tokens": 5702
+    },
+    "time-tokyo-kolkata": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 489,
+      "total_tokens": 5956
+    },
+    "time-kolkata-tokyo": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 239,
+      "total_tokens": 5706
+    },
+    "time-utc-tokyo-late": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 335,
+      "total_tokens": 5800
+    },
+    "time-tokyo-utc-early": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 328,
+      "total_tokens": 5793
+    },
+    "time-shanghai-utc": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 286,
+      "total_tokens": 5750
+    },
+    "time-utc-shanghai": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 249,
+      "total_tokens": 5713
+    },
+    "time-shanghai-tokyo": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 201,
+      "total_tokens": 5668
+    },
+    "time-h-now-tokyo": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 336,
+      "total_tokens": 5790
+    },
+    "time-h-now-utc": {
+      "prompt_tokens": 5451,
+      "completion_tokens": 204,
+      "total_tokens": 5655
+    },
+    "time-h-now-dubai": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 221,
+      "total_tokens": 5675
+    },
+    "time-h-now-nairobi": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 137,
+      "total_tokens": 5590
+    },
+    "time-h-now-honolulu": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 128,
+      "total_tokens": 5582
+    },
+    "time-h-tokyo-utc": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 330,
+      "total_tokens": 5795
+    },
+    "time-h-utc-kolkata": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 327,
+      "total_tokens": 5791
+    },
+    "time-h-dubai-utc": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 531,
+      "total_tokens": 5996
+    },
+    "time-h-utc-dubai": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 307,
+      "total_tokens": 5772
+    },
+    "time-h-nairobi-tokyo": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 310,
+      "total_tokens": 5777
+    },
+    "time-h-honolulu-utc": {
+      "prompt_tokens": 5465,
+      "completion_tokens": 277,
+      "total_tokens": 5742
+    },
+    "time-h-kathmandu-utc": {
+      "prompt_tokens": 5466,
+      "completion_tokens": 166,
+      "total_tokens": 5632
+    },
+    "time-h-shanghai-kolkata": {
+      "prompt_tokens": 5466,
+      "completion_tokens": 610,
+      "total_tokens": 6076
+    },
+    "note-read-readme": {
+      "prompt_tokens": 5452,
+      "completion_tokens": 323,
+      "total_tokens": 5775
+    },
+    "note-read-app": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 284,
+      "total_tokens": 5737
+    },
+    "note-read-util": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 376,
+      "total_tokens": 5829
+    },
+    "note-read-guide": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 351,
+      "total_tokens": 5805
+    },
+    "note-read-csv": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 176,
+      "total_tokens": 5629
+    },
+    "note-read-draft": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 276,
+      "total_tokens": 5730
+    },
+    "note-read-changelog": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 356,
+      "total_tokens": 5810
+    },
+    "note-read-config": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 190,
+      "total_tokens": 5643
+    },
+    "note-write-todo": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 1043,
+      "total_tokens": 6502
+    },
+    "note-write-plan": {
+      "prompt_tokens": 5461,
+      "completion_tokens": 723,
+      "total_tokens": 6184
+    },
+    "note-write-faq": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 859,
+      "total_tokens": 6317
+    },
+    "note-write-log": {
+      "prompt_tokens": 5458,
+      "completion_tokens": 524,
+      "total_tokens": 5982
+    },
+    "note-write-summary": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 610,
+      "total_tokens": 6069
+    },
+    "note-readme-summary": {
+      "prompt_tokens": 5471,
+      "completion_tokens": 630,
+      "total_tokens": 6101
+    },
+    "note-app-notes": {
+      "prompt_tokens": 5470,
+      "completion_tokens": 429,
+      "total_tokens": 5899
+    },
+    "note-guide-notes": {
+      "prompt_tokens": 5472,
+      "completion_tokens": 340,
+      "total_tokens": 5812
+    },
+    "note-read-two": {
+      "prompt_tokens": 5464,
+      "completion_tokens": 1237,
+      "total_tokens": 6701
+    },
+    "note-h-read-readme": {
+      "prompt_tokens": 5452,
+      "completion_tokens": 255,
+      "total_tokens": 5707
+    },
+    "note-h-read-app": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 471,
+      "total_tokens": 5924
+    },
+    "note-h-read-standup": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 269,
+      "total_tokens": 5724
+    },
+    "note-h-read-retro": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 479,
+      "total_tokens": 5934
+    },
+    "note-h-read-totals": {
+      "prompt_tokens": 5455,
+      "completion_tokens": 311,
+      "total_tokens": 5766
+    },
+    "note-h-read-extra": {
+      "prompt_tokens": 5454,
+      "completion_tokens": 495,
+      "total_tokens": 5949
+    },
+    "note-h-write-weekly-summary": {
+      "prompt_tokens": 5463,
+      "completion_tokens": 531,
+      "total_tokens": 5994
+    },
+    "note-h-write-q4": {
+      "prompt_tokens": 5460,
+      "completion_tokens": 465,
+      "total_tokens": 5925
+    },
+    "note-h-write-src-notes": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 305,
+      "total_tokens": 5764
+    },
+    "note-h-write-docs-index": {
+      "prompt_tokens": 5457,
+      "completion_tokens": 335,
+      "total_tokens": 5792
+    },
+    "note-h-changelog-notes": {
+      "prompt_tokens": 5473,
+      "completion_tokens": 689,
+      "total_tokens": 6162
+    },
+    "note-h-csv-report": {
+      "prompt_tokens": 5470,
+      "completion_tokens": 480,
+      "total_tokens": 5950
+    },
+    "note-h-read-two": {
+      "prompt_tokens": 5466,
+      "completion_tokens": 281,
+      "total_tokens": 5747
+    }
+  }
+}

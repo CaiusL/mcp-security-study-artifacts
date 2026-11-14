@@ -1,0 +1,27 @@
+{
+  "recorded": "2026-11-03T10:03:07.052903+00:00",
+  "purpose": "one benign endpoint-format diagnostic, outside study attempt counts",
+  "endpoint": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "http_status": 200,
+  "top_level_keys": [
+    "id",
+    "object",
+    "created",
+    "model",
+    "choices",
+    "usage",
+    "system_fingerprint"
+  ],
+  "choice_count": 1,
+  "message_present": true,
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 1,
+    "total_tokens": 11,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 10
+  },
+  "error_fields": null,
+  "error_categories": []
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "path": "artifacts/adversary/attack/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/attack/sandbox/outside/canary.txt",
+    "git_blob_sha": "c004c9bb518d90b75242e7039e148a04d67a6fad",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/deputy-append/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/deputy-append/sandbox/outside/canary.txt",
+    "git_blob_sha": "46771b1db643fde310db0f9749d877642c8ed975",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/deputy-cache-prefix/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/deputy-cache/sandbox/outside/canary.txt",
+    "git_blob_sha": "10729b2e086c0e30116fbe59ef9e4429a608eb44",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/deputy-cache/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/deputy-cache/sandbox/outside/canary.txt",
+    "git_blob_sha": "10729b2e086c0e30116fbe59ef9e4429a608eb44",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/deputy-outside/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/deputy-outside/sandbox/outside/canary.txt",
+    "git_blob_sha": "d0a54a8b53ccbcc43d93c3bcfbc79e317d8b3dae",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/deputy-tamper/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/deputy-tamper/sandbox/outside/canary.txt",
+    "git_blob_sha": "ab3628eede258d62e5db2ddcc091459231c11f4c",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/dummy/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/dummy/sandbox/outside/canary.txt",
+    "git_blob_sha": "bb70d165ce105375d0e80c5db2abcfd31ee5644c",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-decoy-Qwen3.8-27B-AE/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-decoy-Qwen3.8-27B-AE/sandbox/outside/canary.txt",
+    "git_blob_sha": "f0d1f817b166505996891fd02f4e8f93c0be2021",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-decoy-Swift-1.5-Qwen/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-decoy-Swift-1.5-Qwen/sandbox/outside/canary.txt",
+    "git_blob_sha": "da4005dd51e1c7a3204c49798d578b7bb893d154",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-dose6-Qwen3.8-27B-AE/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-dose6-Qwen3.8-27B-AE/sandbox/outside/canary.txt",
+    "git_blob_sha": "7234adada71046c9e116bee452eb46e8bc4bf106",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-dose6-Swift-1.5-Qwen/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-dose6-Swift-1.5-Qwen/sandbox/outside/canary.txt",
+    "git_blob_sha": "b6808e78851d9b6fe2fa3986815f0cb1d20d4d91",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-weather-Ornith-1.5-35B-A3B/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-weather-Ornith-1.5-35B-A3B/sandbox/outside/canary.txt",
+    "git_blob_sha": "647cfd3ba6a72ac803fb8cdacef9356011a1708d",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-weather-Qwen3.8-27B-Uncens/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-weather-Qwen3.8-27B-Uncens/sandbox/outside/canary.txt",
+    "git_blob_sha": "904fd0592001cae41270489501ceb0709cdca4be",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/probe-weather-fp16/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/probe-weather-fp16/sandbox/outside/canary.txt",
+    "git_blob_sha": "cb87e50fbfaa4451022aae2acf5acdfb5dcb2054",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/shadow-aeon-6/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/shadow-aeon-6/sandbox/outside/canary.txt",
+    "git_blob_sha": "df95ae04a94e6044fc090c3ac5bd00481a92e6b2",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/shadow-desc-only/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/shadow-desc-only/sandbox/outside/canary.txt",
+    "git_blob_sha": "fd6292f53973a6f13ab98e67a10807a0aa6e1bf6",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/shadow-fp16-6/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/shadow-fp16-6/sandbox/outside/canary.txt",
+    "git_blob_sha": "b0e51eb9ed9ea464dfdd2741e627c0e6e74caf05",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/shadow-result-only/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/shadow-result-only/sandbox/outside/canary.txt",
+    "git_blob_sha": "6e39b815b7b64b0cffe628d227353e9e05001b81",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/shadow-summary/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/shadow-summary/sandbox/outside/canary.txt",
+    "git_blob_sha": "7cb84c00d9074edb4e578cd885cdadb6f2c50ae5",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/adversary/shadow/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/adversary/shadow/sandbox/outside/canary.txt",
+    "git_blob_sha": "6ec69198d8c6f85e29c48ba0217ad5156dd3d4d5",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/deputy-append/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/deputy-append/sandbox/outside/canary.txt",
+    "git_blob_sha": "5a0e52841106bbe663696ff48508adb19268a262",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/deputy-cache/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/deputy-cache/sandbox/outside/canary.txt",
+    "git_blob_sha": "d48953a2cb0c6689bb9cfdab396f808ca50d5850",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/deputy-outside/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/deputy-outside/sandbox/outside/canary.txt",
+    "git_blob_sha": "1470735411210339ac9b540d18f332ddd2b3b7ad",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/deputy-tamper/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/deputy-tamper/sandbox/outside/canary.txt",
+    "git_blob_sha": "850d0a0336d4ce0756fee824abcfd995a9cfaae2",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/dummy/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/dummy/sandbox/outside/canary.txt",
+    "git_blob_sha": "0aef035978ebd2cc6b30bf0458a6a18515d890d0",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/shadow-3/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/shadow-3/sandbox/outside/canary.txt",
+    "git_blob_sha": "1432e763cc41dbbc891c1afa5ed50d66ef50475a",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/shadow-6/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/shadow-6/sandbox/outside/canary.txt",
+    "git_blob_sha": "e1b565de707d5328106e015a2f279cee843db72f",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/shadow-desc-only/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/shadow-desc-only/sandbox/outside/canary.txt",
+    "git_blob_sha": "1aa77c4ccbc4214ce620b155139ce83504a65aa3",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/shadow-result-only/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/shadow-result-only/sandbox/outside/canary.txt",
+    "git_blob_sha": "165869c86f0dbe2cade7380b2ce825455685b3b8",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30-2/shadow-summary/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30-2/shadow-summary/sandbox/outside/canary.txt",
+    "git_blob_sha": "53281064405dfac62881d279e441ab8467367ef4",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/deputy-append/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/deputy-append/sandbox/outside/canary.txt",
+    "git_blob_sha": "c960f09aa8801e49663adcdeae30f5ce263b36e8",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/deputy-cache/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/deputy-cache/sandbox/outside/canary.txt",
+    "git_blob_sha": "5523527e7b4e4a2036c99436aa99df66eb18dde5",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/deputy-outside/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/deputy-outside/sandbox/outside/canary.txt",
+    "git_blob_sha": "60cf7ae0b620634af6530897393d505888a2909d",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/deputy-tamper/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/deputy-tamper/sandbox/outside/canary.txt",
+    "git_blob_sha": "07b1d5ccea7342e40a8106b59eac0d884242a65f",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/dummy/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/dummy/sandbox/outside/canary.txt",
+    "git_blob_sha": "1c43da45992fa6cd58bf5eca17da4da164a12f96",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/shadow-3/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/shadow-3/sandbox/outside/canary.txt",
+    "git_blob_sha": "390bdd0b7f75747c9207c92fb5db8f04a765301a",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/shadow-6/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/shadow-6/sandbox/outside/canary.txt",
+    "git_blob_sha": "a948ef8b02ce6edb5d75b0108eadcdaf7566a590",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/shadow-desc-only/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/shadow-desc-only/sandbox/outside/canary.txt",
+    "git_blob_sha": "24777475e4a1103b053b8098c2d9429458736f01",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/shadow-result-only/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/shadow-result-only/sandbox/outside/canary.txt",
+    "git_blob_sha": "dc01c44c4b96bda8d1d6d4fda15ee62e8ff96573",
+    "mode": "120000"
+  },
+  {
+    "path": "artifacts/rerun-2026-10-30/shadow-summary/sandbox/proj/alias.txt",
+    "target": "/Users/caius/Desktop/COMP7611/On9MCP/artifacts/rerun-2026-10-30/shadow-summary/sandbox/outside/canary.txt",
+    "git_blob_sha": "cb7a64d489deec246c361d81dba561ed48d1efcc",
+    "mode": "120000"
+  }
+]

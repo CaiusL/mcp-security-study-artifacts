@@ -2,6 +2,8 @@
 
 This document summarizes the measured experiments and recorded software checks supporting the project report. Every experiment summary links to its detailed evidence. Hosted-model results are saved measurements; the software checks below do not repeat those model runs.
 
+The [complete evidence audit](evidence-completeness.md) also inventories experiments beyond the report, earlier checkpoints, diagnostic runs and local recoveries. The sections below summarize the report results; they do not enumerate every restored record.
+
 ## 1. Capability measurements
 
 Five patched MCP servers were evaluated with scripted calls: filesystem and memory version 2.0.0, and fetch, Git, and time version 2026.10.19.

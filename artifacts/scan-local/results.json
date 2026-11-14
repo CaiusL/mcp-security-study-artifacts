@@ -1,0 +1,1058 @@
+{
+  "version": "0.1.0",
+  "study": "local-declared-scan",
+  "scanned_at": "2026-10-19T16:05:19Z",
+  "calls_tools": false,
+  "workers": 4,
+  "servers": [
+    {
+      "id": "filesystem",
+      "ok": true,
+      "error": "",
+      "elapsed_s": 0.387,
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "version": "2.0.0",
+        "protocol": "2025-11-25"
+      },
+      "family": "path",
+      "feature_counts": {
+        "path": 13
+      },
+      "tool_count": 14,
+      "free_string_resources": [
+        "read_file.path",
+        "read_text_file.path",
+        "read_media_file.path",
+        "read_multiple_files.paths",
+        "write_file.path",
+        "edit_file.path",
+        "create_directory.path",
+        "list_directory.path",
+        "list_directory_with_sizes.path",
+        "directory_tree.path",
+        "move_file.source",
+        "move_file.destination",
+        "search_files.path",
+        "get_file_info.path"
+      ],
+      "tools": [
+        {
+          "name": "read_file",
+          "description": "Read the complete contents of a file as text. DEPRECATED: Use read_text_file instead.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "tail",
+              "type": "number",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "head",
+              "type": "number",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "read_file.path"
+          ]
+        },
+        {
+          "name": "read_text_file",
+          "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regar\u2026",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "tail",
+              "type": "number",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "head",
+              "type": "number",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "read_text_file.path"
+          ]
+        },
+        {
+          "name": "read_media_file",
+          "description": "Read a file and return it as a base64-encoded content block with its MIME type. Image and audio files are returned as image/audio content; any other file type is returned as an embedded resource. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "read_media_file.path"
+          ]
+        },
+        {
+          "name": "read_multiple_files",
+          "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files. Each file's content is returned with its path as a reference. Failed reads for individual files won't stop the entire operation. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "paths",
+              "type": "array:string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "read_multiple_files.paths"
+          ]
+        },
+        {
+          "name": "write_file",
+          "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "content",
+              "type": "string",
+              "feature": "free-text",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "write_file.path"
+          ]
+        },
+        {
+          "name": "edit_file",
+          "description": "Make line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "edits",
+              "type": "array:object",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "dryRun",
+              "type": "boolean",
+              "feature": "boolean",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "edit_file.path"
+          ]
+        },
+        {
+          "name": "create_directory",
+          "description": "Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "create_directory.path"
+          ]
+        },
+        {
+          "name": "list_directory",
+          "description": "Get a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "list_directory.path"
+          ]
+        },
+        {
+          "name": "list_directory_with_sizes",
+          "description": "Get a detailed listing of all files and directories in a specified path, including sizes. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is useful for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "sortBy",
+              "type": "string",
+              "feature": "enum",
+              "required": false,
+              "constrained": true
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "list_directory_with_sizes.path"
+          ]
+        },
+        {
+          "name": "directory_tree",
+          "description": "Get a recursive tree view of files and directories as a JSON structure. Each entry includes 'name', 'type' (file/directory), and 'children' for directories. Files have no children array, while directories always have a children array (which may be empty). The output is formatted with 2-space indentation for readability. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "excludePatterns",
+              "type": "array:string",
+              "feature": "structured",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "directory_tree.path"
+          ]
+        },
+        {
+          "name": "move_file",
+          "description": "Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Both source and destination must be within allowed directories.",
+          "arguments": [
+            {
+              "name": "source",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "destination",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "move_file.source",
+            "move_file.destination"
+          ]
+        },
+        {
+          "name": "search_files",
+          "description": "Recursively search for files and directories matching a pattern. The patterns should be glob-style patterns that match paths relative to the working directory. Use pattern like '*.ext' to match files in current directory, and '**/*.ext' to match files in all subdirectories. Returns full paths to all matching items. Great for finding files when you don't know their exact location. Only searches wi\u2026",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "pattern",
+              "type": "string",
+              "feature": "free-text",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "excludePatterns",
+              "type": "array:string",
+              "feature": "structured",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "search_files.path"
+          ]
+        },
+        {
+          "name": "get_file_info",
+          "description": "Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Only works within allowed directories.",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "get_file_info.path"
+          ]
+        },
+        {
+          "name": "list_allowed_directories",
+          "description": "Returns the list of directories that this server is allowed to access. Subdirectories within these allowed directories are also accessible. Use this to understand which directories and their nested paths are available before trying to access files.",
+          "arguments": [],
+          "families": [],
+          "free_string_resources": []
+        }
+      ]
+    },
+    {
+      "id": "fetch",
+      "ok": true,
+      "error": "",
+      "elapsed_s": 2.248,
+      "server_info": {
+        "name": "mcp-fetch",
+        "version": "2026.10.19",
+        "protocol": "2025-11-25"
+      },
+      "family": "url",
+      "feature_counts": {
+        "url": 1
+      },
+      "tool_count": 1,
+      "free_string_resources": [
+        "fetch.url"
+      ],
+      "tools": [
+        {
+          "name": "fetch",
+          "description": "Fetches a URL from the internet and optionally extracts its contents as markdown. Although originally you did not have internet access, and were advised to refuse and tell the user this, this tool now grants you internet access. Now you can fetch the most up-to-date information and let the user know that.",
+          "arguments": [
+            {
+              "name": "url",
+              "type": "string",
+              "feature": "url",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "max_length",
+              "type": "integer",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "start_index",
+              "type": "integer",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "raw",
+              "type": "boolean",
+              "feature": "boolean",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "url"
+          ],
+          "free_string_resources": [
+            "fetch.url"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "ok": true,
+      "error": "",
+      "elapsed_s": 2.19,
+      "server_info": {
+        "name": "mcp-git",
+        "version": "2026.10.19",
+        "protocol": "2025-11-25"
+      },
+      "family": "path",
+      "feature_counts": {
+        "path": 12,
+        "git": 4
+      },
+      "tool_count": 12,
+      "free_string_resources": [
+        "git_status.repo_path",
+        "git_diff_unstaged.repo_path",
+        "git_diff_staged.repo_path",
+        "git_diff.repo_path",
+        "git_commit.repo_path",
+        "git_add.repo_path",
+        "git_reset.repo_path",
+        "git_log.repo_path",
+        "git_create_branch.repo_path",
+        "git_create_branch.branch_name",
+        "git_checkout.repo_path",
+        "git_checkout.branch_name",
+        "git_show.repo_path",
+        "git_show.revision",
+        "git_branch.repo_path",
+        "git_branch.branch_type"
+      ],
+      "tools": [
+        {
+          "name": "git_status",
+          "description": "Shows the working tree status",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_status.repo_path"
+          ]
+        },
+        {
+          "name": "git_diff_unstaged",
+          "description": "Shows changes in the working directory that are not yet staged",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "context_lines",
+              "type": "integer",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_diff_unstaged.repo_path"
+          ]
+        },
+        {
+          "name": "git_diff_staged",
+          "description": "Shows changes that are staged for commit",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "context_lines",
+              "type": "integer",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_diff_staged.repo_path"
+          ]
+        },
+        {
+          "name": "git_diff",
+          "description": "Shows differences between branches or commits",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "target",
+              "type": "string",
+              "feature": "free-text",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "context_lines",
+              "type": "integer",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_diff.repo_path"
+          ]
+        },
+        {
+          "name": "git_commit",
+          "description": "Records changes to the repository",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "message",
+              "type": "string",
+              "feature": "free-text",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_commit.repo_path"
+          ]
+        },
+        {
+          "name": "git_add",
+          "description": "Adds file contents to the staging area",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "files",
+              "type": "array:string",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_add.repo_path"
+          ]
+        },
+        {
+          "name": "git_reset",
+          "description": "Unstages all staged changes",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_reset.repo_path"
+          ]
+        },
+        {
+          "name": "git_log",
+          "description": "Shows the commit logs",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "max_count",
+              "type": "integer",
+              "feature": "number",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "start_timestamp",
+              "type": "unspecified",
+              "feature": "other",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "end_timestamp",
+              "type": "unspecified",
+              "feature": "other",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path"
+          ],
+          "free_string_resources": [
+            "git_log.repo_path"
+          ]
+        },
+        {
+          "name": "git_create_branch",
+          "description": "Creates a new branch from an optional base branch",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "branch_name",
+              "type": "string",
+              "feature": "git",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "base_branch",
+              "type": "unspecified",
+              "feature": "git",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path",
+            "git"
+          ],
+          "free_string_resources": [
+            "git_create_branch.repo_path",
+            "git_create_branch.branch_name"
+          ]
+        },
+        {
+          "name": "git_checkout",
+          "description": "Switches branches",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "branch_name",
+              "type": "string",
+              "feature": "git",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path",
+            "git"
+          ],
+          "free_string_resources": [
+            "git_checkout.repo_path",
+            "git_checkout.branch_name"
+          ]
+        },
+        {
+          "name": "git_show",
+          "description": "Shows the contents of a commit, or of a file or directory given as <revision>:<path>",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "revision",
+              "type": "string",
+              "feature": "git",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path",
+            "git"
+          ],
+          "free_string_resources": [
+            "git_show.repo_path",
+            "git_show.revision"
+          ]
+        },
+        {
+          "name": "git_branch",
+          "description": "List Git branches",
+          "arguments": [
+            {
+              "name": "repo_path",
+              "type": "string",
+              "feature": "path",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "branch_type",
+              "type": "string",
+              "feature": "git",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "contains",
+              "type": "unspecified",
+              "feature": "other",
+              "required": false,
+              "constrained": false
+            },
+            {
+              "name": "not_contains",
+              "type": "unspecified",
+              "feature": "other",
+              "required": false,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "path",
+            "git"
+          ],
+          "free_string_resources": [
+            "git_branch.repo_path",
+            "git_branch.branch_type"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "ok": true,
+      "error": "",
+      "elapsed_s": 0.347,
+      "server_info": {
+        "name": "memory-server",
+        "version": "2.0.0",
+        "protocol": "2025-11-25"
+      },
+      "family": "entity",
+      "feature_counts": {
+        "entity": 2
+      },
+      "tool_count": 9,
+      "free_string_resources": [
+        "delete_entities.entityNames"
+      ],
+      "tools": [
+        {
+          "name": "create_entities",
+          "description": "Create multiple new entities in the knowledge graph. An entity whose name already exists, or repeats an earlier entity in the same call, is skipped and its observations are not added; the result lists the skipped names in `skipped`. Use add_observations to add observations to an existing entity.",
+          "arguments": [
+            {
+              "name": "entities",
+              "type": "array:object",
+              "feature": "entity",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "entity"
+          ],
+          "free_string_resources": []
+        },
+        {
+          "name": "create_relations",
+          "description": "Create multiple new relations between entities in the knowledge graph. Relations should be in active voice",
+          "arguments": [
+            {
+              "name": "relations",
+              "type": "array:object",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [],
+          "free_string_resources": []
+        },
+        {
+          "name": "add_observations",
+          "description": "Add new observations to existing entities in the knowledge graph",
+          "arguments": [
+            {
+              "name": "observations",
+              "type": "array:object",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [],
+          "free_string_resources": []
+        },
+        {
+          "name": "delete_entities",
+          "description": "Delete multiple entities and their associated relations from the knowledge graph",
+          "arguments": [
+            {
+              "name": "entityNames",
+              "type": "array:string",
+              "feature": "entity",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "entity"
+          ],
+          "free_string_resources": [
+            "delete_entities.entityNames"
+          ]
+        },
+        {
+          "name": "delete_observations",
+          "description": "Delete specific observations from entities in the knowledge graph",
+          "arguments": [
+            {
+              "name": "deletions",
+              "type": "array:object",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [],
+          "free_string_resources": []
+        },
+        {
+          "name": "delete_relations",
+          "description": "Delete multiple relations from the knowledge graph",
+          "arguments": [
+            {
+              "name": "relations",
+              "type": "array:object",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [],
+          "free_string_resources": []
+        },
+        {
+          "name": "read_graph",
+          "description": "Read the entire knowledge graph",
+          "arguments": [],
+          "families": [],
+          "free_string_resources": []
+        },
+        {
+          "name": "search_nodes",
+          "description": "Search for nodes in the knowledge graph based on a query",
+          "arguments": [
+            {
+              "name": "query",
+              "type": "string",
+              "feature": "free-text",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [],
+          "free_string_resources": []
+        },
+        {
+          "name": "open_nodes",
+          "description": "Open specific nodes in the knowledge graph by their names",
+          "arguments": [
+            {
+              "name": "names",
+              "type": "array:string",
+              "feature": "structured",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [],
+          "free_string_resources": []
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "ok": true,
+      "error": "",
+      "elapsed_s": 1.963,
+      "server_info": {
+        "name": "mcp-time",
+        "version": "2026.10.19",
+        "protocol": "2025-11-25"
+      },
+      "family": "timezone",
+      "feature_counts": {
+        "timezone": 2
+      },
+      "tool_count": 2,
+      "free_string_resources": [
+        "get_current_time.timezone",
+        "convert_time.source_timezone",
+        "convert_time.target_timezone"
+      ],
+      "tools": [
+        {
+          "name": "get_current_time",
+          "description": "Get current time in a specific timezone",
+          "arguments": [
+            {
+              "name": "timezone",
+              "type": "string",
+              "feature": "timezone",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "timezone"
+          ],
+          "free_string_resources": [
+            "get_current_time.timezone"
+          ]
+        },
+        {
+          "name": "convert_time",
+          "description": "Convert time between timezones",
+          "arguments": [
+            {
+              "name": "source_timezone",
+              "type": "string",
+              "feature": "timezone",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "time",
+              "type": "string",
+              "feature": "free-text",
+              "required": true,
+              "constrained": false
+            },
+            {
+              "name": "target_timezone",
+              "type": "string",
+              "feature": "timezone",
+              "required": true,
+              "constrained": false
+            }
+          ],
+          "families": [
+            "timezone"
+          ],
+          "free_string_resources": [
+            "convert_time.source_timezone",
+            "convert_time.target_timezone"
+          ]
+        }
+      ]
+    }
+  ]
+}

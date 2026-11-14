@@ -1,0 +1,19 @@
+{
+  "kind": "External inputs not bundled with the saved study evidence",
+  "missing_weight_paths": [],
+  "other_external_inputs": [
+    {
+      "input": "Base Qwen3.5-2B 4-bit model snapshot",
+      "status": "External pretrained model dependency; not included."
+    },
+    {
+      "input": "Initial AgentInstruct OS parquet inputs",
+      "status": "Not found in the tracked inventories. The local vendor link is broken. Generated train/valid JSONL is included."
+    },
+    {
+      "input": "Installed MCP and pinned Progent dependency environments",
+      "status": "External installations; package manifests and recorded revisions are included."
+    }
+  ],
+  "limits": "All tracked adapters and 100 additional locally available checkpoints are included. A local checkpoint is a saved artifact, not proof of a newly reproduced run. External inputs are not reconstructed from results."
+}

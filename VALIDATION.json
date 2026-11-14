@@ -1,8 +1,8 @@
 {
   "artifact_verification": {
     "status": "pass",
-    "file_hashes_checked": 504,
-    "saved_json_objects_and_jsonl_rows_parsed": 8916,
+    "file_hashes_checked": 1481,
+    "saved_json_objects_and_jsonl_rows_parsed": 59662,
     "stage2": {
       "qwen3.8-flash": {
         "rows": 870,
@@ -133,5 +133,33 @@
     "success": true,
     "run_date": "2026-11-15",
     "scope": "All bundled BadAgent unit tests; no models, network, subprocesses, training, or attack execution."
-  }
+  },
+  "evidence_completeness": {
+    "status": "pass",
+    "coverage": {
+      "on9": {
+        "source_entries": 1139,
+        "files_present": 1097,
+        "newly_included": 756,
+        "fixture_link_records": 40,
+        "excluded_configuration_files": 2
+      },
+      "badagent": {
+        "source_entries": 209,
+        "files_present": 208,
+        "newly_included": 51,
+        "fixture_link_records": 0,
+        "excluded_configuration_files": 1
+      },
+      "local_recovery": {
+        "files_present": 164,
+        "checkpoint_files": 100,
+        "bytes": 1128936069,
+        "fixture_link_records": 3
+      }
+    },
+    "errors": [],
+    "scope": "Tracked source-file coverage and content integrity; not a numerical replication or proof that unavailable external inputs exist."
+  },
+  "audit_date": "2026-11-15"
 }

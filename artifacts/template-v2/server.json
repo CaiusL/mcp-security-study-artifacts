@@ -1,0 +1,8 @@
+{
+  "live": true,
+  "package": "@modelcontextprotocol/server-filesystem",
+  "pin": "2.0.0",
+  "name": "secure-filesystem-server",
+  "version": "2.0.0",
+  "protocol": "2025-11-25"
+}

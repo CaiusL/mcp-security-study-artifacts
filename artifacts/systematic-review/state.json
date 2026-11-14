@@ -1,0 +1,359 @@
+{
+  "sources": {
+    "dblp-phrase": {
+      "query": "\"Model Context Protocol\" (DBLP publ search; metadata only, no abstracts)",
+      "found": null,
+      "retrieved": 0,
+      "cursor": null,
+      "complete": false,
+      "error": "DBLP returned an HTML bot check instead of the JSON API",
+      "status": 202,
+      "cells": []
+    },
+    "arxiv-phrase": {
+      "query": "all:\"Model Context Protocol\"",
+      "found": 624,
+      "retrieved": 624,
+      "cursor": 624,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": []
+    },
+    "arxiv-concept": {
+      "query": "(all:\"tool-using\" OR all:\"tool-calling\" OR all:agent) AND (all:\"prompt injection\" OR all:\"least privilege\" OR all:privilege OR all:capability) AND (all:defense OR all:policy OR all:envelope)",
+      "found": 3109,
+      "retrieved": 3109,
+      "cursor": 3109,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": []
+    },
+    "openalex-phrase": {
+      "query": "\"Model Context Protocol\" (search parameter; OpenAlex has no boolean parser)",
+      "found": 6491,
+      "retrieved": 6491,
+      "cursor": 34,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": [],
+      "started_on": "2026-11-03",
+      "paging": "page",
+      "fetched_on": "2026-11-03"
+    },
+    "openalex-concept": {
+      "query": "cartesian product of the three concept groups, title_and_abstract.search, AND inside a cell",
+      "found": 8821,
+      "retrieved": 4822,
+      "cursor": 1,
+      "complete": true,
+      "error": "HTTP Error 429: Too Many Requests",
+      "status": 429,
+      "cells": [
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:defense",
+          "found": 86,
+          "retrieved": 86,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:policy",
+          "found": 53,
+          "retrieved": 53,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:envelope",
+          "found": 1,
+          "retrieved": 1,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:defense",
+          "found": 9,
+          "retrieved": 9,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:policy",
+          "found": 14,
+          "retrieved": 14,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:envelope",
+          "found": 3,
+          "retrieved": 3,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:privilege,title_and_abstract.search:defense",
+          "found": 21,
+          "retrieved": 21,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:privilege,title_and_abstract.search:policy",
+          "found": 56,
+          "retrieved": 56,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:privilege,title_and_abstract.search:envelope",
+          "found": 5,
+          "retrieved": 5,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:capability,title_and_abstract.search:defense",
+          "found": 66,
+          "retrieved": 66,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:capability,title_and_abstract.search:policy",
+          "found": 265,
+          "retrieved": 265,
+          "page": 3,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-using\",title_and_abstract.search:capability,title_and_abstract.search:envelope",
+          "found": 30,
+          "retrieved": 30,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:defense",
+          "found": 18,
+          "retrieved": 18,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:policy",
+          "found": 6,
+          "retrieved": 6,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"prompt injection\",title_and_abstract.search:envelope",
+          "found": 0,
+          "retrieved": 0,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:defense",
+          "found": 1,
+          "retrieved": 1,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:policy",
+          "found": 3,
+          "retrieved": 3,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:\"least privilege\",title_and_abstract.search:envelope",
+          "found": 0,
+          "retrieved": 0,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:privilege,title_and_abstract.search:defense",
+          "found": 6,
+          "retrieved": 6,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:privilege,title_and_abstract.search:policy",
+          "found": 4,
+          "retrieved": 4,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:privilege,title_and_abstract.search:envelope",
+          "found": 0,
+          "retrieved": 0,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:capability,title_and_abstract.search:defense",
+          "found": 5,
+          "retrieved": 5,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:capability,title_and_abstract.search:policy",
+          "found": 19,
+          "retrieved": 19,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:\"tool-calling\",title_and_abstract.search:capability,title_and_abstract.search:envelope",
+          "found": 2,
+          "retrieved": 2,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"prompt injection\",title_and_abstract.search:defense",
+          "found": 614,
+          "retrieved": 614,
+          "page": 5,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"prompt injection\",title_and_abstract.search:policy",
+          "found": 371,
+          "retrieved": 371,
+          "page": 3,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"prompt injection\",title_and_abstract.search:envelope",
+          "found": 19,
+          "retrieved": 19,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"least privilege\",title_and_abstract.search:defense",
+          "found": 57,
+          "retrieved": 57,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"least privilege\",title_and_abstract.search:policy",
+          "found": 143,
+          "retrieved": 143,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:\"least privilege\",title_and_abstract.search:envelope",
+          "found": 9,
+          "retrieved": 9,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:privilege,title_and_abstract.search:defense",
+          "found": 367,
+          "retrieved": 367,
+          "page": 3,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:privilege,title_and_abstract.search:policy",
+          "found": 1252,
+          "retrieved": 1252,
+          "page": 8,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:privilege,title_and_abstract.search:envelope",
+          "found": 40,
+          "retrieved": 40,
+          "page": 2,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:capability,title_and_abstract.search:defense",
+          "found": 1047,
+          "retrieved": 1047,
+          "page": 7,
+          "complete": true,
+          "skipped": ""
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:capability,title_and_abstract.search:policy",
+          "found": 3999,
+          "retrieved": 0,
+          "page": 1,
+          "complete": true,
+          "skipped": "count 3999 is above the cap of 2000; counted, not downloaded"
+        },
+        {
+          "query": "title_and_abstract.search:agent,title_and_abstract.search:capability,title_and_abstract.search:envelope",
+          "found": 230,
+          "retrieved": 230,
+          "page": 3,
+          "complete": true,
+          "skipped": ""
+        }
+      ],
+      "paging": "page"
+    },
+    "s2-phrase": {
+      "query": "\"Model Context Protocol\" (Semantic Scholar bulk paper search on title and abstract, terms stemmed; found is the API's estimate)",
+      "found": 1436,
+      "retrieved": 1436,
+      "cursor": null,
+      "complete": true,
+      "error": "",
+      "status": null,
+      "cells": [],
+      "started_on": "2026-11-03",
+      "fetched_on": "2026-11-03"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-03",
+  "kind": "review-primary-12-through-13-verification",
+  "new_reads": 7,
+  "new_not_retrieved": 1,
+  "rows": 102,
+  "read": 100,
+  "not_retrieved": 2,
+  "included": 88,
+  "missing": 937,
+  "errors": [],
+  "regenerated_output_matches": {
+    "counts": true,
+    "prisma": true,
+    "closest_works": true,
+    "screen": true,
+    "screen_unchanged_from_HEAD": true
+  },
+  "cli_exit": 0,
+  "code_changes": false,
+  "sha256": {
+    "artifacts/systematic-review/reads.jsonl": "89b135e60cd1ff8253a0d399a0ab56537cd5e970dd7c79d03eed7239dcff64d5",
+    "artifacts/systematic-review/counts.json": "f848db17cd67baf117044808cc7607bdffd025768ed17530cd839f5f0e3ec9a8",
+    "artifacts/systematic-review/prisma.md": "5a178d667bd4432c69c76d87b91b080c2df027a0c8e292f684d0d9295e162aa1",
+    "artifacts/systematic-review/closest-works.md": "5fc77afad1a074aa8e14b6034e2f8e80b7a60964ccd0c57b8909a8f456f8d7f0",
+    "artifacts/systematic-review/screen.jsonl": "1ce6a709516f391d9d5aac885948eeadcb6c53147c8edec3259d8963cbaed918",
+    "artifacts/systematic-review/extractions/codex-primary-12.jsonl": "5adf0a46a98385244285260992e7fe09e82a405a8350d76f1dfe23fab05b6b40",
+    "artifacts/systematic-review/extractions/codex-primary-13.jsonl": "ae78d15d946ed32054b6aa74b66b93846ca8ab3fb9d070916f2e1b90e5008918"
+  }
+}

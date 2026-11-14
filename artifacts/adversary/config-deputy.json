@@ -1,0 +1,1 @@
+{"mcpServers":{"filesystem":{"command":"python3","args":["-m","wiggle.adversary.deputy","--root","/tmp/wiggle-scan-root","--effect","none"]}}}

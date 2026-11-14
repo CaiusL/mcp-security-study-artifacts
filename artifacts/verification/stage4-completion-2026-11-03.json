@@ -1,0 +1,89 @@
+{
+  "kind": "completed-adaptive-study-delivery",
+  "recorded": "2026-11-03T10:57:58.088957+00:00",
+  "study": {
+    "cases": 20,
+    "attempts": 200,
+    "reruns": 60,
+    "tokens": 5404909,
+    "cap": 6000000,
+    "checks": {
+      "store": {
+        "status": "pass",
+        "detail": "Every case stopped by the stop rule and has 3 re-runs."
+      },
+      "verdicts": {
+        "status": "pass",
+        "detail": "Every stored effect chain and layer (d) verdict is the replay's."
+      },
+      "budget": {
+        "status": "pass",
+        "detail": "200 attempts (at most 200); 200 attacker calls (at most 200)."
+      },
+      "tokens": {
+        "status": "pass",
+        "detail": "5,404,909 study tokens; pre-registered cap 6,000,000; largest cap a row ran under 6,000,000; estimate 4,900,000."
+      },
+      "model_errors": {
+        "status": "recorded",
+        "detail": "0 agent runs stopped on a model request error and were run again; 0 were rejected by the target endpoint (HTTP 400) and ended their attempt. 0 agent runs stopped at the token cap and were run again. Their tokens are counted."
+      }
+    }
+  },
+  "saved_results": {
+    "status": "pass",
+    "components": 9,
+    "network_blocked": true,
+    "subprocesses_blocked": true
+  },
+  "checker_fix": {
+    "reason": "Python tuple versus saved JSON-array representation in harness safety metadata",
+    "round_trip_accepted": true,
+    "changed_count_rejected": true,
+    "removed_mutation_argument_rejected": true,
+    "missing_field_rejected": true,
+    "frozen_stage4_code_changed": false
+  },
+  "slides": {
+    "path": "artifacts/slides/output/thesis-defense-draft-v3.pptx",
+    "count": 13,
+    "package_findings": 0,
+    "layout_findings": 0,
+    "font_passed": true,
+    "warnings": [
+      {
+        "available_bottom_in": 6.0625,
+        "columns": 2,
+        "declared_bottom_in": 5.7812,
+        "estimated_native_bottom_in": 6.0637,
+        "footer_object_ids": [
+          "5"
+        ],
+        "kind": "native_table_overflow",
+        "overflow_in": 0.0013,
+        "rows": 6,
+        "slide": 4,
+        "table_id": "4"
+      }
+    ],
+    "all_imported_renders_visually_inspected": true,
+    "visual_clipping_or_overlap_found": false,
+    "native_powerpoint_opened": false
+  },
+  "demo": {
+    "saved_inputs": 12,
+    "adaptive_reports": 1,
+    "browser_interaction_verified": false
+  },
+  "second_machine_regeneration": false,
+  "sources_sha256": {
+    "artifacts/stage4/qwen3.8-flash/attempts.jsonl": "7d94c4f3a48e05769ec95248e53e0de45c2e66927a27015ae89893afeea74530",
+    "artifacts/stage4/qwen3.8-flash/run.json": "c75cdc10d55939f1e8fdeaf2cb6ed5ad230e22bac4a70dfa2a8fe7bdd3015afa",
+    "artifacts/stage4/qwen3.8-flash/report.json": "33aaa3e3bd98b73c0176e3d202ceaeb9ef3af2170beea8a9a033e9e9c923e223",
+    "artifacts/stage4/qwen3.8-flash/report.md": "c7702ab51307db64d741abb43a9ba25aea2968b2fa440cefedd754503ac6b0b8",
+    "artifacts/stage4-freeze/freeze.json": "a8fa54112712334f15c75d87dbb9cf043cc102d1c375ff9da2e8317b16cc172e",
+    "artifacts/verification/saved-results-2026-11-03.json": "4723bff8a4e5adae05fe2c95301ba055a2f3e8e236b4c84aed255b9e174c0b3e",
+    "artifacts/demo/index.html": "ef6f0ef19bdb97ce09c384e15124af0b698140e3fdbed0dc47f48a4e79b9f32d",
+    "artifacts/slides/output/thesis-defense-draft-v3.pptx": "7a47267ce3ef994c6bd1e036e7ac7aede2b42bd89d1682aae6f008d3d34ac4ef"
+  }
+}

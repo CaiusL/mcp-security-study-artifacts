@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-03",
+  "kind": "review-primary-7-through-9-verification",
+  "new_reads": 11,
+  "read": 85,
+  "included": 75,
+  "not_retrieved": 1,
+  "missing": 953,
+  "errors": [],
+  "regenerated_output_matches": {
+    "counts": true,
+    "prisma": true,
+    "closest_works": true,
+    "unchanged_screen": true
+  },
+  "cli_exit": 1,
+  "cli_limitation": "Final regeneration wrote counts, PRISMA and closest-works, then screen.jsonl truncating open failed with Windows OSError 22. Independent in-memory regeneration confirms all four existing outputs match, including unchanged screen.jsonl. No file permissions or runtime code changed."
+}

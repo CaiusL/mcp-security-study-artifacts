@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-03",
+  "kind": "review-primary-10-through-11-verification",
+  "new_reads": 8,
+  "rows": 94,
+  "read": 93,
+  "not_retrieved": 1,
+  "included": 83,
+  "missing": 945,
+  "errors": [],
+  "regenerated_output_matches": {
+    "counts": true,
+    "prisma": true,
+    "closest_works": true,
+    "screen": true,
+    "screen_unchanged_from_HEAD": true
+  },
+  "cli_exit": 0,
+  "focused_tests": {
+    "command": "python -m unittest tests.test_review tests.test_demo",
+    "run": 37,
+    "passed": 37,
+    "seconds": 1.675,
+    "source": "Observed test run during this continuation, before the data-only primary-11 addition."
+  },
+  "freeze_check": "Stage 4 require_freeze passed",
+  "resolution": "write_counts avoids truncating an already identical screen.jsonl. Regression test verifies changed corpus content still triggers a write and propagates write errors. Historical OSError 22 receipt remains unchanged.",
+  "screen_sha256": "1ce6a709516f391d9d5aac885948eeadcb6c53147c8edec3259d8963cbaed918",
+  "sha256": {
+    "artifacts/systematic-review/reads.jsonl": "7c117c05d55ef5b717cab18cd38f923bfbb768f890d752f4c3e2c00cdc236dd5",
+    "artifacts/systematic-review/counts.json": "ab33069a09f5162eaddeb97d0b01a5f21b9522231b2af827b742184eed8ba61e",
+    "artifacts/systematic-review/prisma.md": "95ac11710b884fa935b7d8f82473c0b2e580de191fed1b7d8ff3dd9d2bee2554",
+    "artifacts/systematic-review/closest-works.md": "747edcf697cab4e2c52613851b11676dfadf556fa078e1231b40db10dfa79bfd",
+    "artifacts/systematic-review/extractions/codex-primary-10.jsonl": "b623a891cb05aa35ec2cdca1d9022d4ad524b605195848256ea00bd5d363ad21",
+    "artifacts/systematic-review/extractions/codex-primary-11.jsonl": "c75ac98b4c4b36721facf1465ac0ae2999c4abd430a3e0f889bb444bc4277c99",
+    "wiggle/review.py": "67da461032a26a6afcb69ebbf6beb3ca3a409f541ff575b17c17d60d810a8dfe",
+    "tests/test_review.py": "ce5c8022874c0238adc6098d56e27bf935fcd2bfce4d12cbb4de1ca08226eda3"
+  }
+}

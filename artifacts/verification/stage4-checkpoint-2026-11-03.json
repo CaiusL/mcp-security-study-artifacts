@@ -1,0 +1,35 @@
+{
+  "kind": "stage4-continuation-checkpoint",
+  "recorded": "2026-11-03T10:30:28.296434+00:00",
+  "complete": false,
+  "freeze_sha256": "97fa9b072cf258ad9f7cd74741e0dd7c116f85d28c0374aa2502fec99ae90322",
+  "completed_cases": 14,
+  "planned_cases": 20,
+  "completed_attempts": 145,
+  "completed_reruns": 42,
+  "recorded_study_tokens": 3833621,
+  "token_cap": 6000000,
+  "next_case": "memory-entity-G2-mem-h-read-graph",
+  "next_attempt": 6,
+  "blocker": "DeepSeek returned HTTP 503 on resumed attacker calls and then endpoint check; one observed parsed response was null. No protocol fallback was triggered.",
+  "provider_status": {
+    "url": "https://status.deepseek.com/incidents/7202016104287",
+    "observed": "2026-11-03",
+    "text": "Official page reported an ongoing partial Web/API interruption with a fix under monitoring.",
+    "incident_start_utc": "2026-11-03 08:58",
+    "latest_observed_update_utc": "2026-11-03 10:21",
+    "state": "monitoring; partial outage"
+  },
+  "accounting_limit": "Recorded study usage is retained. Endpoint checks and the 11-token benign diagnostic are outside study counts. Failed HTTP/null responses did not supply retained usage; provider billing for them is unknown.",
+  "files": {
+    "attempts.jsonl": "95b98e3808c2b8ad8f56b66c8b4d2dea6d83b2458d263f155de329bbe016dbc4",
+    "run.json": "c75cdc10d55939f1e8fdeaf2cb6ed5ad230e22bac4a70dfa2a8fe7bdd3015afa",
+    "tools.json": "cdda5e1daa488950db7e13be566625a8d1d01839e201f442061905feabb61b6d"
+  },
+  "scoring_check": {
+    "command": "python -m wiggle.stage4 score",
+    "exit_code": 1,
+    "expected_result": "Refused: the next case has five finished attempts and no stop. No report written.",
+    "report_exists": false
+  }
+}

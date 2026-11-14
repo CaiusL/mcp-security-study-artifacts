@@ -1,0 +1,86 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='940' height='332' viewBox='0 0 940 332' font-family='Inter, Helvetica, Arial, sans-serif'>
+<title>Stage 2 defense layers, vulnerable arm</title>
+<rect width='940' height='332' fill='#fcfcfb'/>
+<text x='24.0' y='28.0' font-size='15' fill='#0b0b0b' text-anchor='start' font-weight='600'>Stage 2 defense layers, vulnerable arm</text>
+<circle cx='29' cy='48' r='5' fill='#2a78d6'/>
+<text x='39.0' y='52.0' font-size='12' fill='#52514e' text-anchor='start' font-weight='normal'>deepseek-flash</text>
+<circle cx='199' cy='48' r='5' fill='#eb6834'/>
+<text x='209.0' y='52.0' font-size='12' fill='#52514e' text-anchor='start' font-weight='normal'>qwen3.8-flash</text>
+<text x='270.0' y='66.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='600'>Attacks left open, 0-20% (lower is better)</text>
+<line x1='270.0' y1='78' x2='270.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='270.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>0%</text>
+<line x1='340.0' y1='78' x2='340.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='340.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>5%</text>
+<line x1='410.0' y1='78' x2='410.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='410.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>10%</text>
+<line x1='480.0' y1='78' x2='480.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='480.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>15%</text>
+<line x1='550.0' y1='78' x2='550.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='550.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>20%</text>
+<text x='600.0' y='66.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='600'>Held-out tasks kept, 0-100% (higher is better)</text>
+<line x1='600.0' y1='78' x2='600.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='600.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>0%</text>
+<line x1='670.0' y1='78' x2='670.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='670.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>25%</text>
+<line x1='740.0' y1='78' x2='740.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='740.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>50%</text>
+<line x1='810.0' y1='78' x2='810.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='810.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>75%</text>
+<line x1='880.0' y1='78' x2='880.0' y2='282' stroke='#e4e3de' stroke-width='1'/>
+<text x='880.0' y='298.0' font-size='11' fill='#52514e' text-anchor='middle' font-weight='normal'>100%</text>
+<text x='24.0' y='99.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='normal'>(a) zgScanner</text>
+<line x1='270.0' y1='90.5' x2='305.0' y2='90.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='90.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (a) zgScanner, 0/150</title></circle>
+<line x1='356.2' y1='99.5' x2='491.8' y2='99.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='410.0' cy='99.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (a) zgScanner, 15/150</title></circle>
+<line x1='875.5' y1='90.5' x2='880.0' y2='90.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='880.0' cy='90.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (a) zgScanner, 234/234</title></circle>
+<line x1='871.4' y1='99.5' x2='879.3' y2='99.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='877.6' cy='99.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (a) zgScanner, 232/234</title></circle>
+<text x='24.0' y='133.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='normal'>(b) server checks</text>
+<line x1='270.0' y1='124.5' x2='305.0' y2='124.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='124.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (b) server checks, 0/150</title></circle>
+<line x1='356.2' y1='133.5' x2='491.8' y2='133.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='410.0' cy='133.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (b) server checks, 15/150</title></circle>
+<line x1='875.5' y1='124.5' x2='880.0' y2='124.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='880.0' cy='124.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (b) server checks, 234/234</title></circle>
+<line x1='871.4' y1='133.5' x2='879.3' y2='133.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='877.6' cy='133.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (b) server checks, 232/234</title></circle>
+<text x='24.0' y='167.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='normal'>(c) Needed ladder, operating point</text>
+<line x1='270.0' y1='158.5' x2='305.0' y2='158.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='158.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (c) Needed ladder, operating point, 0/150</title></circle>
+<line x1='356.2' y1='167.5' x2='491.8' y2='167.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='410.0' cy='167.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (c) Needed ladder, operating point, 15/150</title></circle>
+<line x1='875.5' y1='158.5' x2='880.0' y2='158.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='880.0' cy='158.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (c) Needed ladder, operating point, 234/234</title></circle>
+<line x1='871.4' y1='167.5' x2='879.3' y2='167.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='877.6' cy='167.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (c) Needed ladder, operating point, 232/234</title></circle>
+<text x='24.0' y='201.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='normal'>(d) task policy</text>
+<line x1='270.0' y1='192.5' x2='305.0' y2='192.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='192.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (d) task policy, 0/150</title></circle>
+<line x1='270.0' y1='201.5' x2='305.0' y2='201.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='201.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (d) task policy, 0/150</title></circle>
+<line x1='729.3' y1='192.5' x2='764.8' y2='192.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='747.2' cy='192.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (d) task policy, 123/234</title></circle>
+<line x1='734.0' y1='201.5' x2='769.5' y2='201.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='752.0' cy='201.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (d) task policy, 127/234</title></circle>
+<text x='24.0' y='235.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='normal'>(e) rule R1</text>
+<line x1='270.0' y1='226.5' x2='305.0' y2='226.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='226.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (e) rule R1, 0/150</title></circle>
+<line x1='308.2' y1='235.5' x2='412.4' y2='235.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='344.7' cy='235.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (e) rule R1, 8/150</title></circle>
+<line x1='875.5' y1='226.5' x2='880.0' y2='226.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='880.0' cy='226.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: (e) rule R1, 234/234</title></circle>
+<line x1='871.4' y1='235.5' x2='879.3' y2='235.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='877.6' cy='235.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: (e) rule R1, 232/234</title></circle>
+<text x='24.0' y='269.0' font-size='12' fill='#0b0b0b' text-anchor='start' font-weight='normal'>all five, stacked</text>
+<line x1='270.0' y1='260.5' x2='305.0' y2='260.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='260.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: all five, stacked, 0/150</title></circle>
+<line x1='270.0' y1='269.5' x2='305.0' y2='269.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='270.0' cy='269.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: all five, stacked, 0/150</title></circle>
+<line x1='729.3' y1='260.5' x2='764.8' y2='260.5' stroke='#2a78d6' stroke-width='2' stroke-linecap='round'/>
+<circle cx='747.2' cy='260.5' r='4.5' fill='#2a78d6' stroke='#fcfcfb' stroke-width='2'><title>deepseek-flash: all five, stacked, 123/234</title></circle>
+<line x1='734.0' y1='269.5' x2='769.5' y2='269.5' stroke='#eb6834' stroke-width='2' stroke-linecap='round'/>
+<circle cx='752.0' cy='269.5' r='4.5' fill='#eb6834' stroke='#fcfcfb' stroke-width='2'><title>qwen3.8-flash: all five, stacked, 127/234</title></circle>
+<text x='24.0' y='318.0' font-size='11' fill='#52514e' text-anchor='start' font-weight='normal'>Dots: rate per model; whiskers: Wilson 95% interval. Source: artifacts/stage2/pooled.json.</text>
+</svg>

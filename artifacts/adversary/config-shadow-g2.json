@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "team-docs": {
+      "command": "python3",
+      "args": ["-m", "wiggle.adversary.shadow", "--goal", "g2"]
+    }
+  }
+}
