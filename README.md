@@ -6,6 +6,7 @@ This repository contains the implementation, experimental protocols, saved trace
 
 ## Start here
 
+- [Experiment and test results](docs/experiment-results.md): measured outcomes, defense comparisons, software test results, and links to detailed evidence.
 - [Report evidence guide](REPORT_EVIDENCE.md): maps the report's project-evidence citations to code and results.
 - [Methodology](docs/methodology.md): declared, reachable, and needed capability sets.
 - [Injection study](docs/writeup/04-method.md): threat model, experimental design, replay, and live validation.
@@ -23,6 +24,15 @@ This repository contains the implementation, experimental protocols, saved trace
 - **Adaptive attacks:** a separately frozen attacker/target experiment with saved attempts and reruns.
 
 Fine-tuning outputs are documented in the companion [BadAgent study](https://github.com/CaiusL/BadAgent); they are distinguished from executed MCP effects.
+
+## Results at a glance
+
+- Five patched servers rejected all **12 boundary probes**, but performed all **19 in-scope excess probes** at L0.
+- In Stage 2, Qwen reached attack goals in **18/150 patched** and **15/150 vulnerable-arm** runs; DeepSeek reached none in **300 attack runs**.
+- Minimal and Progent task policies left **0/150 Qwen patched attacks** in replay while preserving **127/234** and **155/234** held-out tasks respectively. Replay and live validation are reported separately.
+- **53 selected deterministic tests passed**, and saved-artifact verification passes. These checks do not repeat hosted-model experiments.
+
+Read the [experiment and test results](docs/experiment-results.md) for denominators, live-validation outcomes, policy-poisoning and adaptive results, and measurement limits.
 
 ## Repository layout
 

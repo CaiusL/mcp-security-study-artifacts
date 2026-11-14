@@ -1,7 +1,7 @@
 {
   "artifact_verification": {
     "status": "pass",
-    "file_hashes_checked": 292,
+    "file_hashes_checked": 293,
     "saved_json_objects_and_jsonl_rows_parsed": 6933,
     "stage2": {
       "qwen3.8-flash": {

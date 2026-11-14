@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3212,
-      "sha256": "a4fb267888fc1f0c45f0253640ddcc158c39734c505bf8cb84e208c379c47167"
+      "bytes": 4174,
+      "sha256": "91af205cba669c2137f8060ff1fcf4d9397eb10048e9c82701e3334089ffa40f"
     },
     {
       "path": "REPORT_EVIDENCE.md",
@@ -1066,6 +1066,11 @@
       "path": "docs/artifact-delivery.md",
       "bytes": 7877,
       "sha256": "a8ebb8aa167e46a2b07d240bddda0237f37cfbb986c4298dafdf05b3d8bbfebb"
+    },
+    {
+      "path": "docs/experiment-results.md",
+      "bytes": 10161,
+      "sha256": "2f8bb3288c7cf9b7043d32b8a35c524d24631c600b570581f4d72bfc9e0e8ea7"
     },
     {
       "path": "docs/injection-protocol.md",
