@@ -1,0 +1,1638 @@
+{
+  "kind": "stage2-prompts",
+  "prompt_sha256": "ca3dc2c79405e2e92ea8b944e615a5bdafa865394c9c817115e94ba432b6aadd",
+  "oracle_sha256": "d44c74c424560add3caa18ff424ac7599e9fb936369068c2bc773cd965c0c853",
+  "model_run": false,
+  "preamble": "Project directory: {project_directory}",
+  "closing": "Use paths relative to the project directory. Stop when that is done.",
+  "summary": {
+    "tasks": 180,
+    "complete": 180,
+    "tool_named": 0,
+    "pilot_ported": 25,
+    "pilot_kept": 25,
+    "distinct": 168
+  },
+  "rows": [
+    {
+      "id": "fs-readme",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the file README.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-list-root",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "List the project directory and report the entry names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-read-app",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the file src/app.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-read-util",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the file src/util.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-search-todo",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Search under src for *.py and report the matching names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-write-status",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Write the file notes/status.md with this exact content: 'status ok\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-read-csv",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the file data/sample.csv and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-info-app",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Report the file info for src/app.py. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-move-draft",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Move notes/draft.md to notes/archive.md. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-list-src",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "List src and report the entry names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-read-guide",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the file docs/guide.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-read-changelog",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the file docs/changelog.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-read-many",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Read the files src/app.py and docs/guide.md and report their text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-tree-docs",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Show the directory tree of docs and report the entry names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-sizes-src",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "List src with file sizes and report the entry names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-edit-guide",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "In the file docs/guide.md, replace the text 'Use the src tools.' with 'Use the docs tools.'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-write-todo",
+      "server": "filesystem",
+      "split": "train",
+      "prompt": "Write the file notes/todo.md with this exact content: 'todo: tests\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-h-weekly",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Write the file notes/weekly.md with this exact content: 'week 42\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-reread",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Read the file src/app.py and report its text. Read the file src/util.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-summary",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Read the file README.md and report its text. Write the file notes/readme-notes.md with this exact content: 'saw project\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-search",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Search under src for *.py and report the matching names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-info-util",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Report the file info for src/util.py. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-docs",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Read the file docs/guide.md and report its text. Write the file docs/outline.md with this exact content: 'outline\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-data-write",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Read the file data/sample.csv and report its text. Write the file data/report.md with this exact content: 'ada count\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fs-h-read-config",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Read the file src/config.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-h-read-many",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Read the files notes/standup.md and data/totals.md and report their text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-h-tree-notes",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Show the directory tree of notes and report the entry names. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-h-edit-readme",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "In the file README.md, replace the text 'A small demo project' with 'A small sample project'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-h-mkdir-archive",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Create the directory notes/archive. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fs-h-move-retro",
+      "server": "filesystem",
+      "split": "heldout",
+      "prompt": "Move notes/retro.md to docs/retro.md. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-guide",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/guide and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-api",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/api and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-index",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/index and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-post",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://blog.example.test/post/1 and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-install",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/install and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-faq",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/faq and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-config",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/config and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-cli",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/cli and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-glossary",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/glossary and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-tutorial",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/tutorial and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-post3",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://blog.example.test/post/3 and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-archive",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://blog.example.test/archive and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-about",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://blog.example.test/about and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-annual",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://files.example.test/download/annual.md and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-two-docs",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/guide and report the page text. Fetch http://docs.example.test/api and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-two-blog",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://blog.example.test/post/1 and report the page text. Fetch http://blog.example.test/post/3 and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-docs-blog",
+      "server": "fetch",
+      "split": "train",
+      "prompt": "Fetch http://docs.example.test/index and report the page text. Fetch http://blog.example.test/archive and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-guide",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://docs.example.test/guide and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-h-post2",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://blog.example.test/post/2 and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-h-changelog",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://docs.example.test/changelog and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-h-quarter",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://files.example.test/download/quarter.md and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": true
+    },
+    {
+      "id": "fetch-h-api",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://docs.example.test/api and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-release-notes",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://docs.example.test/release-notes and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-support",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://docs.example.test/support and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-post4",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://blog.example.test/post/4 and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-roadmap",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://files.example.test/download/roadmap.md and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-wiki-home",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://wiki.example.test/home and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-wiki-team",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://wiki.example.test/team and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-status",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://status.example.test/now and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "fetch-h-two",
+      "server": "fetch",
+      "split": "heldout",
+      "prompt": "Fetch http://docs.example.test/changelog and report the page text. Fetch http://blog.example.test/post/2 and report the page text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-status",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the git status of the project repository and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-log",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the last 5 commits of the project repository and report their messages. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-log-2",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the last 2 commits of the project repository and report their messages. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-show-head",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show commit HEAD in the project repository and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-show-head1",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show commit HEAD~1 in the project repository and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-show-readme",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the file README.md as of commit HEAD in the project repository and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-show-app",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the file src/app.py as of commit HEAD in the project repository and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-branch-local",
+      "server": "git",
+      "split": "train",
+      "prompt": "List the local branches of the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-branch-all",
+      "server": "git",
+      "split": "train",
+      "prompt": "List all branches of the project repository, local and remote. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-diff-unstaged",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the unstaged changes in the project repository and report them. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-diff-release",
+      "server": "git",
+      "split": "train",
+      "prompt": "Show the differences between the working tree and the branch release in the project repository and report them. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-stage-standup",
+      "server": "git",
+      "split": "train",
+      "prompt": "Stage the file notes/standup.md in the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-stage-retro",
+      "server": "git",
+      "split": "train",
+      "prompt": "Stage the file notes/retro.md in the project repository. Show the staged changes in the project repository and report them. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-stage-two",
+      "server": "git",
+      "split": "train",
+      "prompt": "Stage the files notes/standup.md and notes/retro.md in the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-commit-standup",
+      "server": "git",
+      "split": "train",
+      "prompt": "Stage the file notes/standup.md in the project repository. Commit the staged changes in the project repository with this exact message: 'Record standup'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-branch-create",
+      "server": "git",
+      "split": "train",
+      "prompt": "Create a branch named 'feature-a' in the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-checkout-release",
+      "server": "git",
+      "split": "train",
+      "prompt": "Switch the project repository to the branch release. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-status",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Show the git status of the project repository and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-log",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Show the last 3 commits of the project repository and report their messages. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-show-head2",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Show commit HEAD~2 in the project repository and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-show-util",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Show the file src/util.py as of commit HEAD in the project repository and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-show-release",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Show the latest commit on the branch release in the project repository and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-branch",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "List the local branches of the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-diff-unstaged",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Show the unstaged changes in the project repository and report them. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-stage-overview",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Stage the file docs/overview.md in the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-stage-totals",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Stage the file data/totals.md in the project repository. Show the staged changes in the project repository and report them. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-commit-retro",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Stage the file notes/retro.md in the project repository. Commit the staged changes in the project repository with this exact message: 'Record retro'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-branch-create",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Create a branch named 'hotfix' from the branch release in the project repository. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-checkout-new",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Create a branch named 'topic' in the project repository. Switch the project repository to the branch topic. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "git-h-commit-extra",
+      "server": "git",
+      "split": "heldout",
+      "prompt": "Stage the file src/extra.py in the project repository. Commit the staged changes in the project repository with this exact message: 'Add extra'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-read-graph",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Read the whole knowledge graph and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-open-project",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Open the knowledge graph entity Project and report its observations. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-open-alice",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Open the knowledge graph entity Alice and report its observations. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-open-two",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Open the knowledge graph entities Alice and Bob and report their observations. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-search-project",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Search the knowledge graph for 'Project' and report the matching entities. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-search-person",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Search the knowledge graph for 'person' and report the matching entities. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-search-q4",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Search the knowledge graph for 'Q4' and report the matching entities. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-create-note",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Create a knowledge graph entity named 'Note' of type 'note' with the observation 'first note'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-create-carol",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Create a knowledge graph entity named 'Carol' of type 'person' with the observation 'designer'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-observe-project",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Add the observation 'status green' to the knowledge graph entity Project. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-observe-alice",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Add the observation 'on call' to the knowledge graph entity Alice. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-relate-mentor",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Add a knowledge graph relation of type 'mentors' from Bob to Alice. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-relate-roadmap",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Add a knowledge graph relation of type 'describes' from Roadmap to Project. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-forget-q4",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Delete the observation 'due in Q4' from the knowledge graph entity Project. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-unrelate-bob",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Delete the knowledge graph relation of type 'reviews' from Bob to Project. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-create-task",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Create a knowledge graph entity named 'Task1' of type 'task' with the observation 'write docs'. Add a knowledge graph relation of type 'belongs_to' from Task1 to Project. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-delete-bob",
+      "server": "memory",
+      "split": "train",
+      "prompt": "Delete the knowledge graph entity Bob. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-read-graph",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Read the whole knowledge graph and report it. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-open-roadmap",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Open the knowledge graph entity Roadmap and report its observations. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-open-bob",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Open the knowledge graph entity Bob and report its observations. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-search-milestone",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Search the knowledge graph for 'milestone' and report the matching entities. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-search-project",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Search the knowledge graph for 'Project' and report the matching entities. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-create-weekly",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Create a knowledge graph entity named 'Weekly' of type 'note' with the observation 'week 42'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-create-dave",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Create a knowledge graph entity named 'Dave' of type 'person' with the observation 'tester'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-observe-roadmap",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Add the observation 'milestone two' to the knowledge graph entity Roadmap. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-observe-bob",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Add the observation 'on leave' to the knowledge graph entity Bob. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-relate-review",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Add a knowledge graph relation of type 'reviews' from Alice to Roadmap. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-forget-maintainer",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Delete the observation 'maintainer' from the knowledge graph entity Alice. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-unrelate-alice",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Delete the knowledge graph relation of type 'maintains' from Alice to Project. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "mem-h-delete-roadmap",
+      "server": "memory",
+      "split": "heldout",
+      "prompt": "Delete the knowledge graph entity Roadmap. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-now-tokyo",
+      "server": "time",
+      "split": "train",
+      "prompt": "Report the current time in the timezone Asia/Tokyo. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-now-utc",
+      "server": "time",
+      "split": "train",
+      "prompt": "Report the current time in the timezone UTC. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-now-kolkata",
+      "server": "time",
+      "split": "train",
+      "prompt": "Report the current time in the timezone Asia/Kolkata. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-now-london",
+      "server": "time",
+      "split": "train",
+      "prompt": "Report the current time in the timezone Europe/London. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-now-ny",
+      "server": "time",
+      "split": "train",
+      "prompt": "Report the current time in the timezone America/New_York. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-now-sydney",
+      "server": "time",
+      "split": "train",
+      "prompt": "Report the current time in the timezone Australia/Sydney. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-tokyo-utc",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 09:00 in the timezone Asia/Tokyo to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-utc-tokyo",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 12:00 in the timezone UTC to the timezone Asia/Tokyo and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-kolkata-utc",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 10:00 in the timezone Asia/Kolkata to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-utc-kolkata",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 06:00 in the timezone UTC to the timezone Asia/Kolkata and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-tokyo-kolkata",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 18:00 in the timezone Asia/Tokyo to the timezone Asia/Kolkata and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-kolkata-tokyo",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 08:15 in the timezone Asia/Kolkata to the timezone Asia/Tokyo and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-utc-tokyo-late",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 23:30 in the timezone UTC to the timezone Asia/Tokyo and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-tokyo-utc-early",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 07:45 in the timezone Asia/Tokyo to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-shanghai-utc",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 09:00 in the timezone Asia/Shanghai to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-utc-shanghai",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 15:00 in the timezone UTC to the timezone Asia/Shanghai and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-shanghai-tokyo",
+      "server": "time",
+      "split": "train",
+      "prompt": "Convert 12:00 in the timezone Asia/Shanghai to the timezone Asia/Tokyo and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-now-tokyo",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Report the current time in the timezone Asia/Tokyo. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-now-utc",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Report the current time in the timezone UTC. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-now-dubai",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Report the current time in the timezone Asia/Dubai. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-now-nairobi",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Report the current time in the timezone Africa/Nairobi. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-now-honolulu",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Report the current time in the timezone Pacific/Honolulu. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-tokyo-utc",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 11:00 in the timezone Asia/Tokyo to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-utc-kolkata",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 03:00 in the timezone UTC to the timezone Asia/Kolkata and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-dubai-utc",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 10:00 in the timezone Asia/Dubai to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-utc-dubai",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 09:00 in the timezone UTC to the timezone Asia/Dubai and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-nairobi-tokyo",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 14:00 in the timezone Africa/Nairobi to the timezone Asia/Tokyo and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-honolulu-utc",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 08:00 in the timezone Pacific/Honolulu to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-kathmandu-utc",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 12:00 in the timezone Asia/Kathmandu to the timezone UTC and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "time-h-shanghai-kolkata",
+      "server": "time",
+      "split": "heldout",
+      "prompt": "Convert 20:00 in the timezone Asia/Shanghai to the timezone Asia/Kolkata and report the result. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-readme",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note README.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-app",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note src/app.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-util",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note src/util.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-guide",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note docs/guide.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-csv",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note data/sample.csv and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-draft",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note notes/draft.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-changelog",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note docs/changelog.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-config",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note src/config.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-write-todo",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Write the note notes/todo.md with this exact content: 'todo: tests\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-write-plan",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Write the note notes/plan.md with this exact content: 'plan: v2\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-write-faq",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Write the note docs/faq.md with this exact content: 'faq\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-write-log",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Write the note notes/log.md with this exact content: 'log entry\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-write-summary",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Write the note data/summary.md with this exact content: 'two rows\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-readme-summary",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note README.md and report its text. Write the note notes/readme-summary.md with this exact content: 'saw project\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-app-notes",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note src/app.py and report its text. Write the note notes/app-notes.md with this exact content: 'main found\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-guide-notes",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note docs/guide.md and report its text. Write the note docs/guide-notes.md with this exact content: 'guide read\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-read-two",
+      "server": "fixture",
+      "split": "train",
+      "prompt": "Read the note src/app.py and report its text. Read the note src/util.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-readme",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note README.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-app",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note src/app.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-standup",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note notes/standup.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-retro",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note notes/retro.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-totals",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note data/totals.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-extra",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note src/extra.py and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-write-weekly-summary",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Write the note notes/weekly-summary.md with this exact content: 'week 42 done\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-write-q4",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Write the note data/q4.md with this exact content: 'q4 plan\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-write-src-notes",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Write the note src/notes.txt with this exact content: 'src notes\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-write-docs-index",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Write the note docs/index.md with this exact content: 'index\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-changelog-notes",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note docs/changelog.md and report its text. Write the note notes/changelog-notes.md with this exact content: 'changelog read\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-csv-report",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note data/sample.csv and report its text. Write the note data/report2.md with this exact content: 'ada seen\\n'. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    },
+    {
+      "id": "note-h-read-two",
+      "server": "fixture",
+      "split": "heldout",
+      "prompt": "Read the note docs/guide.md and report its text. Read the note docs/changelog.md and report its text. Use paths relative to the project directory. Stop when that is done.",
+      "gaps": [],
+      "tool_named": [],
+      "pilot_prompt_kept": null
+    }
+  ]
+}

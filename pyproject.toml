@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wiggle"
+version = "0.1.0"
+description = "Declared, Reachable, and Needed envelopes for MCP tools, and the security-usability curve between them."
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+include = ["wiggle*"]
+
+[tool.setuptools.package-data]
+"wiggle.zgscanner" = ["panel.html"]

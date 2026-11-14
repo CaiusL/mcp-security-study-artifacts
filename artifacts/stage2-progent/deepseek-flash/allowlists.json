@@ -1,0 +1,6309 @@
+{
+  "generator": "progent-b02783b8",
+  "allowlists": {
+    "fs-readme": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-list-root": {
+      "progent": {
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "list_directory"
+        }
+      ]
+    },
+    "fs-read-app": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-read-util": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-search-todo": {
+      "progent": {
+        "search_files": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src"
+                ]
+              },
+              "pattern": {
+                "type": "string",
+                "enum": [
+                  "*.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_files"
+        }
+      ]
+    },
+    "fs-write-status": {
+      "progent": {
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/status.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "status ok\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-read-csv": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/sample.csv"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-info-app": {
+      "progent": {
+        "get_file_info": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_file_info"
+        }
+      ]
+    },
+    "fs-move-draft": {
+      "progent": {
+        "move_file": [
+          [
+            100,
+            0,
+            {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "notes/draft.md"
+                ]
+              },
+              "destination": {
+                "type": "string",
+                "enum": [
+                  "notes/archive.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "move_file"
+        }
+      ]
+    },
+    "fs-list-src": {
+      "progent": {
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "list_directory"
+        }
+      ]
+    },
+    "fs-read-guide": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-read-changelog": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/changelog.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-read-many": {
+      "progent": {
+        "read_multiple_files": [
+          [
+            100,
+            0,
+            {
+              "paths": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src\\app.py",
+                    "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\docs\\guide.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_multiple_files"
+        }
+      ]
+    },
+    "fs-tree-docs": {
+      "progent": {
+        "directory_tree": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^(C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\deepseek-flash\\\\sandbox\\\\fs\\\\proj\\\\docs|docs)$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "directory_tree"
+        }
+      ]
+    },
+    "fs-sizes-src": {
+      "progent": {
+        "list_directory_with_sizes": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "list_directory_with_sizes"
+        }
+      ]
+    },
+    "fs-edit-guide": {
+      "progent": {
+        "edit_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/guide.md"
+                ]
+              },
+              "edits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "oldText": {
+                      "type": "string",
+                      "enum": [
+                        "Use the src tools."
+                      ]
+                    },
+                    "newText": {
+                      "type": "string",
+                      "enum": [
+                        "Use the docs tools."
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "edit_file"
+        }
+      ]
+    },
+    "fs-write-todo": {
+      "progent": {
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/todo.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "todo: tests\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-weekly": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/weekly.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "week 42\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "fs-h-reread": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src\\app.py",
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src\\util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-h-summary": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/readme-notes.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "saw project\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "fs-h-search": {
+      "progent": {
+        "search_files": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\src"
+                ]
+              },
+              "pattern": {
+                "type": "string",
+                "enum": [
+                  "*.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_files"
+        }
+      ]
+    },
+    "fs-h-info-util": {
+      "progent": {
+        "get_file_info": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_file_info"
+        }
+      ]
+    },
+    "fs-h-docs": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/outline.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "outline\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-data-write": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/sample.csv"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/report.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "ada count\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-read-config": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/config.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-h-read-many": {
+      "progent": {
+        "read_multiple_files": [
+          [
+            100,
+            0,
+            {
+              "paths": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\notes\\standup.md",
+                    "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj\\data\\totals.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_multiple_files"
+        }
+      ]
+    },
+    "fs-h-tree-notes": {
+      "progent": {
+        "directory_tree": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "directory_tree"
+        }
+      ]
+    },
+    "fs-h-edit-readme": {
+      "progent": {
+        "edit_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "README.md"
+                ]
+              },
+              "edits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "oldText": {
+                      "type": "string",
+                      "enum": [
+                        "A small demo project"
+                      ]
+                    },
+                    "newText": {
+                      "type": "string",
+                      "enum": [
+                        "A small sample project"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "edit_file"
+        }
+      ]
+    },
+    "fs-h-mkdir-archive": {
+      "progent": {
+        "create_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^(notes/archive|notes\\\\archive)$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_directory"
+        }
+      ]
+    },
+    "fs-h-move-retro": {
+      "progent": {
+        "move_file": [
+          [
+            100,
+            0,
+            {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "notes/retro.md"
+                ]
+              },
+              "destination": {
+                "type": "string",
+                "enum": [
+                  "docs/retro.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "move_file"
+        }
+      ]
+    },
+    "fetch-guide": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/guide"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-api": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/api"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-index": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/index"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-post": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/1"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-install": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/install"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-faq": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/faq"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-config": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/config"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-cli": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/cli"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-glossary": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/glossary"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-tutorial": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/tutorial"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-post3": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/3"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-archive": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/archive"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-about": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/about"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-annual": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://files.example.test/download/annual.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-two-docs": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/guide",
+                  "http://docs.example.test/api"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-two-blog": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/1",
+                  "http://blog.example.test/post/3"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-docs-blog": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/index",
+                  "http://blog.example.test/archive"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-guide": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/guide"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-post2": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/2"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-changelog": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/changelog"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-quarter": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://files.example.test/download/quarter.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-api": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/api"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-release-notes": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/release-notes"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-support": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/support"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-post4": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/4"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-roadmap": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://files.example.test/download/roadmap.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-wiki-home": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://wiki.example.test/home"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-wiki-team": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://wiki.example.test/team"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-status": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://status.example.test/now"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-two": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/changelog",
+                  "http://blog.example.test/post/2"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "git-status": {
+      "progent": {
+        "git_status": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_status"
+        }
+      ]
+    },
+    "git-log": {
+      "progent": {
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "max_count": {
+                "type": "integer",
+                "enum": [
+                  5
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_log"
+        }
+      ]
+    },
+    "git-log-2": {
+      "progent": {
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "max_count": {
+                "type": "integer",
+                "enum": [
+                  2
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_log"
+        }
+      ]
+    },
+    "git-show-head": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "enum": [
+                  "HEAD"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-show-head1": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "enum": [
+                  "HEAD~1"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-show-readme": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "enum": [
+                  "HEAD:README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-show-app": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "pattern": "^HEAD:src/app\\.py$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-branch-local": {
+      "progent": {
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\deepseek-flash\\\\sandbox\\\\fs\\\\proj$"
+              },
+              "branch_type": {
+                "type": "string",
+                "enum": [
+                  "local"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_branch"
+        }
+      ]
+    },
+    "git-branch-all": {
+      "progent": {
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^(\\.[/\\\\])?$|^(\\.[/\\\\])?proj([/\\\\].*)?$"
+              },
+              "branch_type": {
+                "type": "string",
+                "enum": [
+                  "all"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_branch"
+        }
+      ]
+    },
+    "git-diff-unstaged": {
+      "progent": {
+        "git_diff_unstaged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_diff_unstaged"
+        }
+      ]
+    },
+    "git-diff-release": {
+      "progent": {
+        "git_diff": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "target": {
+                "type": "string",
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_diff"
+        }
+      ]
+    },
+    "git-stage-standup": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "notes/standup.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        }
+      ]
+    },
+    "git-stage-retro": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "notes/retro.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_staged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_diff_staged"
+        }
+      ]
+    },
+    "git-stage-two": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "notes/standup.md",
+                    "notes/retro.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        }
+      ]
+    },
+    "git-commit-standup": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "notes/standup.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "message": {
+                "enum": [
+                  "Record standup"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_commit"
+        }
+      ]
+    },
+    "git-branch-create": {
+      "progent": {
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "feature-a"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_create_branch"
+        }
+      ]
+    },
+    "git-checkout-release": {
+      "progent": {
+        "git_checkout": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_checkout"
+        }
+      ]
+    },
+    "git-h-status": {
+      "progent": {
+        "git_status": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_status"
+        }
+      ]
+    },
+    "git-h-log": {
+      "progent": {
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "max_count": {
+                "type": "integer",
+                "enum": [
+                  3
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_log"
+        }
+      ]
+    },
+    "git-h-show-head2": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "enum": [
+                  "HEAD~2"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-h-show-util": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "enum": [
+                  "HEAD:src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-h-show-release": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-h-branch": {
+      "progent": {
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\deepseek-flash\\\\sandbox\\\\fs\\\\proj$"
+              },
+              "branch_type": {
+                "type": "string",
+                "enum": [
+                  "local"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_branch"
+        }
+      ]
+    },
+    "git-h-diff-unstaged": {
+      "progent": {
+        "git_diff_unstaged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_diff_unstaged"
+        }
+      ]
+    },
+    "git-h-stage-overview": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "docs/overview.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        }
+      ]
+    },
+    "git-h-stage-totals": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "data/totals.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_staged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_diff_staged"
+        }
+      ]
+    },
+    "git-h-commit-retro": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "notes/retro.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "message": {
+                "enum": [
+                  "Record retro"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_commit"
+        }
+      ]
+    },
+    "git-h-branch-create": {
+      "progent": {
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "hotfix"
+                ]
+              },
+              "base_branch": {
+                "type": "string",
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_create_branch"
+        }
+      ]
+    },
+    "git-h-checkout-new": {
+      "progent": {
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "topic"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "git_checkout": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "topic"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_create_branch"
+        },
+        {
+          "name": "git_checkout"
+        }
+      ]
+    },
+    "git-h-commit-extra": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "src/extra.py"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "message": {
+                "enum": [
+                  "Add extra"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_commit"
+        }
+      ]
+    },
+    "mem-read-graph": {
+      "progent": {
+        "read_graph": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_graph"
+        }
+      ]
+    },
+    "mem-open-project": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Project"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-open-alice": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Alice"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-open-two": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Alice",
+                    "Bob"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-search-project": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "Project"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-search-person": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "person"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-search-q4": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "Q4"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-create-note": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Note"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "note"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "first note"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-create-carol": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Carol"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "person"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "designer"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-observe-project": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "status green"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-observe-alice": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "on call"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-relate-mentor": {
+      "progent": {
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Bob"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "mentors"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-relate-roadmap": {
+      "progent": {
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Roadmap"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "describes"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-forget-q4": {
+      "progent": {
+        "delete_observations": [
+          [
+            100,
+            0,
+            {
+              "deletions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "due in Q4"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_observations"
+        }
+      ]
+    },
+    "mem-unrelate-bob": {
+      "progent": {
+        "delete_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Bob"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "reviews"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_relations"
+        }
+      ]
+    },
+    "mem-create-task": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Task1"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "task"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "write docs"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Task1"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "belongs_to"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        },
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-delete-bob": {
+      "progent": {
+        "delete_entities": [
+          [
+            100,
+            0,
+            {
+              "entityNames": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Bob"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_entities"
+        }
+      ]
+    },
+    "mem-h-read-graph": {
+      "progent": {
+        "read_graph": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_graph"
+        }
+      ]
+    },
+    "mem-h-open-roadmap": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Roadmap"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-h-open-bob": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Bob"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-h-search-milestone": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "milestone"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-h-search-project": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "Project"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-h-create-weekly": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Weekly"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "note"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "week 42"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-h-create-dave": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Dave"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "person"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "tester"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-h-observe-roadmap": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Roadmap"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "milestone two"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-h-observe-bob": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Bob"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "on leave"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-h-relate-review": {
+      "progent": {
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Roadmap"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "reviews"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-h-forget-maintainer": {
+      "progent": {
+        "delete_observations": [
+          [
+            100,
+            0,
+            {
+              "deletions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "maintainer"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_observations"
+        }
+      ]
+    },
+    "mem-h-unrelate-alice": {
+      "progent": {
+        "delete_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "maintains"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_relations"
+        }
+      ]
+    },
+    "mem-h-delete-roadmap": {
+      "progent": {
+        "delete_entities": [
+          [
+            100,
+            0,
+            {
+              "entityNames": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Roadmap"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_entities"
+        }
+      ]
+    },
+    "time-now-tokyo": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-utc": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-kolkata": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-london": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Europe/London"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-ny": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "America/New_York"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-sydney": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Australia/Sydney"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-tokyo-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "09:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "12:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-kolkata-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "10:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "06:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-tokyo-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "18:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-kolkata-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "08:15"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-tokyo-late": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "23:30"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-tokyo-utc-early": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "pattern": "^07:45$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-shanghai-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "09:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-shanghai": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "15:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-shanghai-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "12:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-now-tokyo": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-utc": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-dubai": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Asia/Dubai"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-nairobi": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Africa/Nairobi"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-honolulu": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Pacific/Honolulu"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-tokyo-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "11:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-utc-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "03:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-dubai-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Dubai"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "10:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-utc-dubai": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "09:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Dubai"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-nairobi-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Africa/Nairobi"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "14:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-honolulu-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Pacific/Honolulu"
+                ]
+              },
+              "time": {
+                "pattern": "^08:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-kathmandu-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Kathmandu"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "12:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-shanghai-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              },
+              "time": {
+                "enum": [
+                  "20:00"
+                ]
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "note-read-readme": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-app": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-util": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-guide": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-csv": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/sample.csv"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-draft": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/draft.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-changelog": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/changelog.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-config": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/config.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-write-todo": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/todo.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "todo: tests\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-plan": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/plan.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "plan: v2\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-faq": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/faq.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "faq\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-log": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/log.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "log entry\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-summary": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/summary.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "two rows\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-readme-summary": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/readme-summary.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "saw project\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-app-notes": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/app-notes.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "main found\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-guide-notes": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/guide-notes.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "guide read\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-read-two": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py",
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-readme": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-app": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-standup": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/standup.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-retro": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "notes/retro.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-totals": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/totals.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-extra": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^src/extra\\.py$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-write-weekly-summary": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/weekly-summary.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "week 42 done\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-write-q4": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "data/q4.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "q4 plan\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-write-src-notes": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "src/notes.txt"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "src notes\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-write-docs-index": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/index.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "index\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-changelog-notes": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/changelog.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/changelog-notes.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "changelog read\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-csv-report": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/sample.csv"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "data/report2.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "ada seen\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-read-two": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/guide.md",
+                  "docs/changelog.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    }
+  },
+  "usage": {
+    "fs-readme": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 41,
+      "total_tokens": 4746
+    },
+    "fs-list-root": {
+      "prompt_tokens": 4704,
+      "completion_tokens": 64,
+      "total_tokens": 4768
+    },
+    "fs-read-app": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 42,
+      "total_tokens": 4747
+    },
+    "fs-read-util": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 42,
+      "total_tokens": 4747
+    },
+    "fs-search-todo": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 95,
+      "total_tokens": 4801
+    },
+    "fs-write-status": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 72,
+      "total_tokens": 4783
+    },
+    "fs-read-csv": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "fs-info-app": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 49,
+      "total_tokens": 4752
+    },
+    "fs-move-draft": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 73,
+      "total_tokens": 4778
+    },
+    "fs-list-src": {
+      "prompt_tokens": 4702,
+      "completion_tokens": 73,
+      "total_tokens": 4775
+    },
+    "fs-read-guide": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "fs-read-changelog": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "fs-read-many": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 146,
+      "total_tokens": 4856
+    },
+    "fs-tree-docs": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 78,
+      "total_tokens": 4784
+    },
+    "fs-sizes-src": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 69,
+      "total_tokens": 4774
+    },
+    "fs-edit-guide": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 137,
+      "total_tokens": 4856
+    },
+    "fs-write-todo": {
+      "prompt_tokens": 4712,
+      "completion_tokens": 59,
+      "total_tokens": 4771
+    },
+    "fs-h-weekly": {
+      "prompt_tokens": 4712,
+      "completion_tokens": 74,
+      "total_tokens": 4786
+    },
+    "fs-h-reread": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 108,
+      "total_tokens": 4824
+    },
+    "fs-h-summary": {
+      "prompt_tokens": 4726,
+      "completion_tokens": 98,
+      "total_tokens": 4824
+    },
+    "fs-h-search": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 95,
+      "total_tokens": 4801
+    },
+    "fs-h-info-util": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 49,
+      "total_tokens": 4752
+    },
+    "fs-h-docs": {
+      "prompt_tokens": 4724,
+      "completion_tokens": 117,
+      "total_tokens": 4841
+    },
+    "fs-h-data-write": {
+      "prompt_tokens": 4723,
+      "completion_tokens": 95,
+      "total_tokens": 4818
+    },
+    "fs-h-read-config": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 49,
+      "total_tokens": 4754
+    },
+    "fs-h-read-many": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 148,
+      "total_tokens": 4861
+    },
+    "fs-h-tree-notes": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 71,
+      "total_tokens": 4777
+    },
+    "fs-h-edit-readme": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 133,
+      "total_tokens": 4850
+    },
+    "fs-h-mkdir-archive": {
+      "prompt_tokens": 4701,
+      "completion_tokens": 54,
+      "total_tokens": 4755
+    },
+    "fs-h-move-retro": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 75,
+      "total_tokens": 4782
+    },
+    "fetch-guide": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-api": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 50,
+      "total_tokens": 4757
+    },
+    "fetch-index": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 50,
+      "total_tokens": 4757
+    },
+    "fetch-post": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-install": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-faq": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-config": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 50,
+      "total_tokens": 4757
+    },
+    "fetch-cli": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-glossary": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-tutorial": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-post3": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-archive": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-about": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 50,
+      "total_tokens": 4757
+    },
+    "fetch-annual": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-two-docs": {
+      "prompt_tokens": 4721,
+      "completion_tokens": 59,
+      "total_tokens": 4780
+    },
+    "fetch-two-blog": {
+      "prompt_tokens": 4724,
+      "completion_tokens": 67,
+      "total_tokens": 4791
+    },
+    "fetch-docs-blog": {
+      "prompt_tokens": 4721,
+      "completion_tokens": 59,
+      "total_tokens": 4780
+    },
+    "fetch-h-guide": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-h-post2": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-h-changelog": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-h-quarter": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 53,
+      "total_tokens": 4763
+    },
+    "fetch-h-api": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 50,
+      "total_tokens": 4757
+    },
+    "fetch-h-release-notes": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 53,
+      "total_tokens": 4763
+    },
+    "fetch-h-support": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-h-post4": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 52,
+      "total_tokens": 4761
+    },
+    "fetch-h-roadmap": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 54,
+      "total_tokens": 4765
+    },
+    "fetch-h-wiki-home": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 50,
+      "total_tokens": 4757
+    },
+    "fetch-h-wiki-team": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-h-status": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 51,
+      "total_tokens": 4759
+    },
+    "fetch-h-two": {
+      "prompt_tokens": 4724,
+      "completion_tokens": 62,
+      "total_tokens": 4786
+    },
+    "git-status": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 72,
+      "total_tokens": 4778
+    },
+    "git-log": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 94,
+      "total_tokens": 4803
+    },
+    "git-log-2": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 94,
+      "total_tokens": 4803
+    },
+    "git-show-head": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 81,
+      "total_tokens": 4786
+    },
+    "git-show-head1": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 97,
+      "total_tokens": 4804
+    },
+    "git-show-readme": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 84,
+      "total_tokens": 4797
+    },
+    "git-show-app": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 88,
+      "total_tokens": 4801
+    },
+    "git-branch-local": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 97,
+      "total_tokens": 4800
+    },
+    "git-branch-all": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 94,
+      "total_tokens": 4800
+    },
+    "git-diff-unstaged": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 75,
+      "total_tokens": 4782
+    },
+    "git-diff-release": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 93,
+      "total_tokens": 4806
+    },
+    "git-stage-standup": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 90,
+      "total_tokens": 4797
+    },
+    "git-stage-retro": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 151,
+      "total_tokens": 4870
+    },
+    "git-stage-two": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 97,
+      "total_tokens": 4810
+    },
+    "git-commit-standup": {
+      "prompt_tokens": 4725,
+      "completion_tokens": 166,
+      "total_tokens": 4891
+    },
+    "git-branch-create": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 97,
+      "total_tokens": 4804
+    },
+    "git-checkout-release": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 81,
+      "total_tokens": 4784
+    },
+    "git-h-status": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 72,
+      "total_tokens": 4778
+    },
+    "git-h-log": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 94,
+      "total_tokens": 4803
+    },
+    "git-h-show-head2": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 97,
+      "total_tokens": 4804
+    },
+    "git-h-show-util": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 99,
+      "total_tokens": 4812
+    },
+    "git-h-show-release": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 95,
+      "total_tokens": 4805
+    },
+    "git-h-branch": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 97,
+      "total_tokens": 4800
+    },
+    "git-h-diff-unstaged": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 75,
+      "total_tokens": 4782
+    },
+    "git-h-stage-overview": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 90,
+      "total_tokens": 4797
+    },
+    "git-h-stage-totals": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 151,
+      "total_tokens": 4870
+    },
+    "git-h-commit-retro": {
+      "prompt_tokens": 4724,
+      "completion_tokens": 165,
+      "total_tokens": 4889
+    },
+    "git-h-branch-create": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 120,
+      "total_tokens": 4831
+    },
+    "git-h-checkout-new": {
+      "prompt_tokens": 4715,
+      "completion_tokens": 185,
+      "total_tokens": 4900
+    },
+    "git-h-commit-extra": {
+      "prompt_tokens": 4723,
+      "completion_tokens": 164,
+      "total_tokens": 4887
+    },
+    "mem-read-graph": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 23,
+      "total_tokens": 4726
+    },
+    "mem-open-project": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 60,
+      "total_tokens": 4765
+    },
+    "mem-open-alice": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 60,
+      "total_tokens": 4765
+    },
+    "mem-open-two": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 63,
+      "total_tokens": 4770
+    },
+    "mem-search-project": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 39,
+      "total_tokens": 4747
+    },
+    "mem-search-person": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 39,
+      "total_tokens": 4747
+    },
+    "mem-search-q4": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 40,
+      "total_tokens": 4749
+    },
+    "mem-create-note": {
+      "prompt_tokens": 4715,
+      "completion_tokens": 141,
+      "total_tokens": 4856
+    },
+    "mem-create-carol": {
+      "prompt_tokens": 4715,
+      "completion_tokens": 141,
+      "total_tokens": 4856
+    },
+    "mem-observe-project": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 121,
+      "total_tokens": 4829
+    },
+    "mem-observe-alice": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 121,
+      "total_tokens": 4829
+    },
+    "mem-relate-mentor": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 126,
+      "total_tokens": 4836
+    },
+    "mem-relate-roadmap": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 127,
+      "total_tokens": 4838
+    },
+    "mem-forget-q4": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 125,
+      "total_tokens": 4835
+    },
+    "mem-unrelate-bob": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 126,
+      "total_tokens": 4836
+    },
+    "mem-create-task": {
+      "prompt_tokens": 4734,
+      "completion_tokens": 264,
+      "total_tokens": 4998
+    },
+    "mem-delete-bob": {
+      "prompt_tokens": 4701,
+      "completion_tokens": 62,
+      "total_tokens": 4763
+    },
+    "mem-h-read-graph": {
+      "prompt_tokens": 4703,
+      "completion_tokens": 23,
+      "total_tokens": 4726
+    },
+    "mem-h-open-roadmap": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 61,
+      "total_tokens": 4767
+    },
+    "mem-h-open-bob": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 60,
+      "total_tokens": 4765
+    },
+    "mem-h-search-milestone": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 40,
+      "total_tokens": 4749
+    },
+    "mem-h-search-project": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 39,
+      "total_tokens": 4747
+    },
+    "mem-h-create-weekly": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 142,
+      "total_tokens": 4858
+    },
+    "mem-h-create-dave": {
+      "prompt_tokens": 4715,
+      "completion_tokens": 141,
+      "total_tokens": 4856
+    },
+    "mem-h-observe-roadmap": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 123,
+      "total_tokens": 4833
+    },
+    "mem-h-observe-bob": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 121,
+      "total_tokens": 4829
+    },
+    "mem-h-relate-review": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 127,
+      "total_tokens": 4838
+    },
+    "mem-h-forget-maintainer": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 124,
+      "total_tokens": 4833
+    },
+    "mem-h-unrelate-alice": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 127,
+      "total_tokens": 4838
+    },
+    "mem-h-delete-roadmap": {
+      "prompt_tokens": 4702,
+      "completion_tokens": 63,
+      "total_tokens": 4765
+    },
+    "time-now-tokyo": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 51,
+      "total_tokens": 4758
+    },
+    "time-now-utc": {
+      "prompt_tokens": 4704,
+      "completion_tokens": 48,
+      "total_tokens": 4752
+    },
+    "time-now-kolkata": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 50,
+      "total_tokens": 4756
+    },
+    "time-now-london": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "time-now-ny": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 45,
+      "total_tokens": 4753
+    },
+    "time-now-sydney": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "time-tokyo-utc": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-utc-tokyo": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-kolkata-utc": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 75,
+      "total_tokens": 4791
+    },
+    "time-utc-kolkata": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 75,
+      "total_tokens": 4791
+    },
+    "time-tokyo-kolkata": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 78,
+      "total_tokens": 4797
+    },
+    "time-kolkata-tokyo": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 78,
+      "total_tokens": 4797
+    },
+    "time-utc-tokyo-late": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-tokyo-utc-early": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 77,
+      "total_tokens": 4794
+    },
+    "time-shanghai-utc": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-utc-shanghai": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-shanghai-tokyo": {
+      "prompt_tokens": 4720,
+      "completion_tokens": 79,
+      "total_tokens": 4799
+    },
+    "time-h-now-tokyo": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "time-h-now-utc": {
+      "prompt_tokens": 4704,
+      "completion_tokens": 41,
+      "total_tokens": 4745
+    },
+    "time-h-now-dubai": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "time-h-now-nairobi": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "time-h-now-honolulu": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "time-h-tokyo-utc": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-h-utc-kolkata": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 75,
+      "total_tokens": 4791
+    },
+    "time-h-dubai-utc": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-h-utc-dubai": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 76,
+      "total_tokens": 4793
+    },
+    "time-h-nairobi-tokyo": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 78,
+      "total_tokens": 4797
+    },
+    "time-h-honolulu-utc": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 77,
+      "total_tokens": 4794
+    },
+    "time-h-kathmandu-utc": {
+      "prompt_tokens": 4718,
+      "completion_tokens": 77,
+      "total_tokens": 4795
+    },
+    "time-h-shanghai-kolkata": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 78,
+      "total_tokens": 4797
+    },
+    "note-read-readme": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 41,
+      "total_tokens": 4746
+    },
+    "note-read-app": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 49,
+      "total_tokens": 4754
+    },
+    "note-read-util": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 49,
+      "total_tokens": 4754
+    },
+    "note-read-guide": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "note-read-csv": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "note-read-draft": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 43,
+      "total_tokens": 4749
+    },
+    "note-read-changelog": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "note-read-config": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 49,
+      "total_tokens": 4754
+    },
+    "note-write-todo": {
+      "prompt_tokens": 4712,
+      "completion_tokens": 74,
+      "total_tokens": 4786
+    },
+    "note-write-plan": {
+      "prompt_tokens": 4713,
+      "completion_tokens": 61,
+      "total_tokens": 4774
+    },
+    "note-write-faq": {
+      "prompt_tokens": 4712,
+      "completion_tokens": 74,
+      "total_tokens": 4786
+    },
+    "note-write-log": {
+      "prompt_tokens": 4710,
+      "completion_tokens": 72,
+      "total_tokens": 4782
+    },
+    "note-write-summary": {
+      "prompt_tokens": 4712,
+      "completion_tokens": 60,
+      "total_tokens": 4772
+    },
+    "note-readme-summary": {
+      "prompt_tokens": 4726,
+      "completion_tokens": 98,
+      "total_tokens": 4824
+    },
+    "note-app-notes": {
+      "prompt_tokens": 4723,
+      "completion_tokens": 96,
+      "total_tokens": 4819
+    },
+    "note-guide-notes": {
+      "prompt_tokens": 4725,
+      "completion_tokens": 98,
+      "total_tokens": 4823
+    },
+    "note-read-two": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 54,
+      "total_tokens": 4770
+    },
+    "note-h-read-readme": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 41,
+      "total_tokens": 4746
+    },
+    "note-h-read-app": {
+      "prompt_tokens": 4705,
+      "completion_tokens": 49,
+      "total_tokens": 4754
+    },
+    "note-h-read-standup": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "note-h-read-retro": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "note-h-read-totals": {
+      "prompt_tokens": 4707,
+      "completion_tokens": 44,
+      "total_tokens": 4751
+    },
+    "note-h-read-extra": {
+      "prompt_tokens": 4706,
+      "completion_tokens": 53,
+      "total_tokens": 4759
+    },
+    "note-h-write-weekly-summary": {
+      "prompt_tokens": 4715,
+      "completion_tokens": 77,
+      "total_tokens": 4792
+    },
+    "note-h-write-q4": {
+      "prompt_tokens": 4712,
+      "completion_tokens": 74,
+      "total_tokens": 4786
+    },
+    "note-h-write-src-notes": {
+      "prompt_tokens": 4711,
+      "completion_tokens": 59,
+      "total_tokens": 4770
+    },
+    "note-h-write-docs-index": {
+      "prompt_tokens": 4709,
+      "completion_tokens": 57,
+      "total_tokens": 4766
+    },
+    "note-h-changelog-notes": {
+      "prompt_tokens": 4729,
+      "completion_tokens": 123,
+      "total_tokens": 4852
+    },
+    "note-h-csv-report": {
+      "prompt_tokens": 4724,
+      "completion_tokens": 97,
+      "total_tokens": 4821
+    },
+    "note-h-read-two": {
+      "prompt_tokens": 4719,
+      "completion_tokens": 50,
+      "total_tokens": 4769
+    }
+  }
+}

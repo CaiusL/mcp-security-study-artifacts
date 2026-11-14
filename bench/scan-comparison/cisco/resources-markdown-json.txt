@@ -1,0 +1,12 @@
+2026-10-22 15:06:16,214 - mcpscanner.core.scanner - INFO - Skipping resource 'ui://veterical/clinic-overview-v2.html' with MIME type 'text/html'
+2026-10-22 15:06:16,214 - mcpscanner.core.scanner - INFO - Skipping resource 'ui://veterical/workspace-v2.html' with MIME type 'text/html'
+2026-10-22 15:06:16,215 - mcpscanner.core.scanner - INFO - Skipping resource 'ui://veterical/workspace-v1.html' with MIME type 'text/html'
+2026-10-22 15:06:16,215 - mcpscanner.core.scanner - INFO - Skipping resource 'ui://veterical/schedule-summary-v1.html' with MIME type 'text/html'
+mcp.veterical.com ui://veterical/clinic-overview-v2.html skipped []
+mcp.veterical.com ui://veterical/workspace-v2.html skipped []
+mcp.veterical.com ui://veterical/workspace-v1.html skipped []
+mcp.veterical.com ui://veterical/schedule-summary-v1.html skipped []
+mcp.veterical.com skill://veterical/clinic-administration/SKILL.md completed []
+mcp.veterical.com skill://veterical/veterical/SKILL.md completed [('HIGH', 'YARA', 'Detected 1 threat: credential harvesting')]
+api.blvkware.dev hallux://verdicts completed []
+api.blvkware.dev hallux://coverage completed []

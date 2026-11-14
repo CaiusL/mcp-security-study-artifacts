@@ -1,0 +1,1786 @@
+{
+  "scope": "Original ten-page group-project report only",
+  "source_archive_sha256": "c053a1c58a35a8f671f0b4e460c736da08456a0d3036794851e567d4c4db8a97",
+  "source_archive_files": 1139,
+  "source_archive_uncompressed_bytes": 148351700,
+  "retained_original_files": 289,
+  "retained_original_bytes": 23647129,
+  "excluded_original_entries": 850,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 830,
+      "sha256": "4efab79821df0cecf3f962c70999fb9fc54a2f33a7cfccd0108d46377636a0c6",
+      "reason": "Project setup and historical experimental protocol"
+    },
+    {
+      "path": "PROMPT.md",
+      "bytes": 8757,
+      "sha256": "729e4beb08559feee1fcfa22fa3b8a552afc78d57c7c5eed7a6be72dd539171e",
+      "reason": "Project setup and historical experimental protocol"
+    },
+    {
+      "path": "artifacts/figures/stage2-ladder.svg",
+      "bytes": 5906,
+      "sha256": "4df92d3fb0e5bc12801de8e3364c25a43bbd77c5f1234fc68c366c2e745ddac4",
+      "reason": "Figure 1 in original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/coder-1.json",
+      "bytes": 812,
+      "sha256": "7fd976e77c070b2551c65a84b637acc2750c585a863cdd9afdafc0e09e72268e",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/coder-2.json",
+      "bytes": 1883,
+      "sha256": "ea70ffe36f16e8f93f72cdc620f03c9812832e29d9132a3fb3e3c6c27e1f0a2b",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/freeze.json",
+      "bytes": 1257,
+      "sha256": "52167b5016dbf7703740cd9a71c075e0c4a25d45bce88d01d49eb40df6cc8756",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/label-sheet.md",
+      "bytes": 2819,
+      "sha256": "435177726ac7811b075af934392ece896810c805123bb5c8eec67bd6705967cd",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/report.json",
+      "bytes": 97609,
+      "sha256": "99e84518b43504e6cc06f9dbb365c6527e888ca318d6461024760581eb30c03c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/report.md",
+      "bytes": 6758,
+      "sha256": "6e5c8a8128adcc5122fcd7c67e6f0b159493241fb77b155a6aae6e3d051d0c8a",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot-2/traces.jsonl",
+      "bytes": 716051,
+      "sha256": "c0fb010f62532cd578bdc6867c8dd13acb47dc22242f7bc2e8310c0a3cfcd221",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot/freeze.json",
+      "bytes": 1257,
+      "sha256": "08c207a2604f535b308fd7724899fc5b94ece1f12a80a712dadf98d0eff6fdb9",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot/report.json",
+      "bytes": 83432,
+      "sha256": "9de1779c94dae18229b4478c9abec010f2588317a637112be2d9faa6be58eeb7",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot/report.md",
+      "bytes": 6055,
+      "sha256": "105dfbcf054215259863d884a2fa5e381df0f562773f02b521875d7323375b85",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/injection-pilot/traces.jsonl",
+      "bytes": 654248,
+      "sha256": "3b98140e58562285e195331806b5a9454da5886c80b09cbc4990f00c93fc1e57",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-fetch/curve.csv",
+      "bytes": 475,
+      "sha256": "f0b3b046098e871ffb5577094892b0a0324ad0fcb2ddc80653e1fa0f8cfd13d9",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-fetch/curve.svg",
+      "bytes": 1728,
+      "sha256": "3c15b7f594077ca3fd0965c1c26bf3aedfcc0d618ba54d158ea2bbdd93fd0126",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-fetch/report.md",
+      "bytes": 1524,
+      "sha256": "063efc0394312b498066bd87098181ccb03cdd15275f5447cf03e1cc63975572",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-fetch/results.json",
+      "bytes": 23063,
+      "sha256": "eff2d44f75699b13a4f44f200b11304c0c0d388bb16744bc7620618a3ba55579",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-git/curve.csv",
+      "bytes": 475,
+      "sha256": "edbc7070a1848301e5c7b4335d211d516004bf8d5a7fb5e0205a0e4983b4c9b5",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-git/curve.svg",
+      "bytes": 1726,
+      "sha256": "fc32ae522b2e79e0ff1c116d0161d5b26dd4744458012243a1fd5adfe81c4c3c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-git/report.md",
+      "bytes": 1636,
+      "sha256": "dc4dc4c39072f11672f1ecde82004735be2104d6fe392aa95aebb77e324480df",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-git/results.json",
+      "bytes": 31627,
+      "sha256": "e5284b05d3cec0fd8acddb2ff36d08287ce3a97b26c44cb846fe3d4dd2f22427",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-memory/curve.csv",
+      "bytes": 475,
+      "sha256": "e88df1292047c2399c15fa440bda29dd082bd420227bedbcd66994f8200f098e",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-memory/curve.svg",
+      "bytes": 1740,
+      "sha256": "771788be9d36e0d4e873a909ac8616109e05629556209103e1b849fcbaef46b9",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-memory/memory.jsonl",
+      "bytes": 187,
+      "sha256": "fb86fa4ef66225c3fbf0be7ab535609ffaf72912b5ae84324f95a20556d5064a",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-memory/report.md",
+      "bytes": 1391,
+      "sha256": "22ff52c294ca75d3586c1ac15aa8deefc573ff1a079516613a955d8ac611f955",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-memory/results.json",
+      "bytes": 22114,
+      "sha256": "166830b4a7889bf7c5e3a2aea3839766841dcb6a6044025f61ec1ba0ecca9245",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-sequential/curve.csv",
+      "bytes": 475,
+      "sha256": "c8d62aba4ae89b9c0471cdf91a16893afc08b992ac287c9f436f23d2e7cb8d0b",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-sequential/curve.svg",
+      "bytes": 1755,
+      "sha256": "bba3dae3316d5ee0bc9574c772c88f299d57681de58e071e266a30322d06d9f1",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-sequential/report.md",
+      "bytes": 1378,
+      "sha256": "d29afbdeb59b43a68d0a7dd1f5d7e00be692d2313a72e0bab7069f9cf12fe102",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-sequential/results.json",
+      "bytes": 17866,
+      "sha256": "7db854c910e47987db44cd0fdaaef59709d045ccfd717882714e90a39ac9eb62",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-time/curve.csv",
+      "bytes": 475,
+      "sha256": "0824268d4d8e9604e0c79e2df448d28489e0821299f142d8473113ccbfc70aaf",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-time/curve.svg",
+      "bytes": 1724,
+      "sha256": "9cacb994c4be32a94588bca783a2e47755eec43cb1080f41c106a8d123e6d029",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-time/report.md",
+      "bytes": 1270,
+      "sha256": "937c30433c2799ea19789241dfedc9c8b6b3762a6c14043344d2f9252b3b9001",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live-time/results.json",
+      "bytes": 15130,
+      "sha256": "875da366e3ed285b0ab978bf929465b33eed4e625c17bdfd047432cc85fea793",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live/curve.csv",
+      "bytes": 475,
+      "sha256": "bf20100fd6819d7e609b5dd8ede883cdf40b10920ecc358343c24cd90871214f",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live/curve.svg",
+      "bytes": 1746,
+      "sha256": "4fea85e27d188c2786e26af25e6cd54536c4e9185720009e12590147761097cd",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live/report.md",
+      "bytes": 1840,
+      "sha256": "153cc37235956c23176e78d6f8a00fee86380855510ad32b04b0e5524459d50c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/live/results.json",
+      "bytes": 49703,
+      "sha256": "5e679fb52c97b68994bceab69eedf1b8c0f040cd1a1b57cedefa258d38d01fcd",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/phase1/comparison.md",
+      "bytes": 2874,
+      "sha256": "270c458eb7cbfdfbdab10a30fe3af304a2ba49edc1d127f6ee755e79f88c6407",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/phase1/curve.csv",
+      "bytes": 1153,
+      "sha256": "dc68e9805bf814d63d309c5870203376c7bfa31235dd595418cbd114a9e552f2",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/phase1/curve.svg",
+      "bytes": 4203,
+      "sha256": "d0e982e92032f2af27d8e320320b5607c0f4c5ffae9f0673b1d4ddfaa5cb2051",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/phase1/report.md",
+      "bytes": 4528,
+      "sha256": "a3907287b9da7c4a554bb3102ba6366c352f83fb0f15ae9739d5cba1ae987b92",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/phase1/results.json",
+      "bytes": 149334,
+      "sha256": "8a55237e2ca4952d895fad6e98f2ff64ba969e698e25a3662ac4ac83a378ca44",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/phase1/traces.jsonl",
+      "bytes": 164830,
+      "sha256": "6c6af55e6c176e375d0ecc72a16d7486b23d7f56c14953a3ae9eb95faa01a828",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-budget/budget.json",
+      "bytes": 7459,
+      "sha256": "d32f030427a65f62c4dda7f1c5865237606250036f5ebb3bd27b28a88e2c5f79",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-budget/budget.md",
+      "bytes": 3907,
+      "sha256": "3122949c7f67be4df50d7a0f686301bbabcd618bdb111453ad0064995e30fbed",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-cases/cases.json",
+      "bytes": 16492,
+      "sha256": "b5223ca351d46a21342ccbf1b432547218fdb8a8b74745c7a178df98ec2aa146",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-cases/cases.md",
+      "bytes": 7691,
+      "sha256": "44f9a5d95b111460b9a17028c7171639ce0d65f6381822b39521a1bd51b0cc3c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-freeze/freeze.json",
+      "bytes": 1361,
+      "sha256": "6888de2c98d9d33ce5af5f530bc02dc6979275fbadbe0087bfd54b64660765a1",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-oracles/report.json",
+      "bytes": 42870,
+      "sha256": "35e1b869cf7555e1972117ad2401f74e644f3ea3b2ea170337ecdca52325a9c9",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-oracles/report.md",
+      "bytes": 23943,
+      "sha256": "8346f0742c7ef576209bd019c62d65ebcbd901e4c02a33ba57fc780ec9814301",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent-freeze/freeze.json",
+      "bytes": 2422,
+      "sha256": "9d2d22e1859fab65d2e7b5d9ab322772fcb95a091de710792d483924bd7e7b7d",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/allowlists.json",
+      "bytes": 128398,
+      "sha256": "8049a9b22df9cf093eed19db1972382eb3b767093820ee457918dc5e682051a8",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/model-usage.jsonl",
+      "bytes": 27079,
+      "sha256": "3177e7dc3e460de87e65d77a2058848032985100b4f87d8070d559b24f22af42",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/report.json",
+      "bytes": 181429,
+      "sha256": "1844c5f37a72c5db66b102a373911d6d9bba803354c66274ac48a0800db39f89",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/report.md",
+      "bytes": 11401,
+      "sha256": "55e259dba7279f2d0f01e4839f918e5d052b95033130ac835c670ee41772dcab",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/run.json",
+      "bytes": 268,
+      "sha256": "5d307b2542920f00045010fc619cdbfb09c508b29960f4892c4cb2cfaa6b5c90",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/tools.json",
+      "bytes": 52534,
+      "sha256": "91000a2b798379d2d5754d4374bb89465b77e7b6a25e1606874fd604e3557906",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/deepseek-flash/traces.jsonl",
+      "bytes": 2276563,
+      "sha256": "556d0467f4f7e349e7032bc2059253e77f185f8f2bb4b197564ec0b392f50093",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/allowlists.json",
+      "bytes": 162694,
+      "sha256": "7f813a45629a882e138b50a9ed60ba303ea2d274f53d454fd082d25628cb168e",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/model-usage.jsonl",
+      "bytes": 30549,
+      "sha256": "b2857c098c6eff994bc6ddab58e88f4cfc69b71b6b95637303cc597dc7991178",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/report.json",
+      "bytes": 201845,
+      "sha256": "bc782ccb2f3dbe01cd96928c8777d30878471ad1d38acbb9a04f41a6aefee68e",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/report.md",
+      "bytes": 14259,
+      "sha256": "f6cde1e70e44ac5f09d97e3e815d5cc20e7c86e9e8a5d0e00ab74fd231e51903",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/run.json",
+      "bytes": 266,
+      "sha256": "77b7e1d7f8d0e8d285d84172c5ed734625e064992de470addc27d88c6c32d046",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/tools.json",
+      "bytes": 52534,
+      "sha256": "91000a2b798379d2d5754d4374bb89465b77e7b6a25e1606874fd604e3557906",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-progent/qwen3.8-flash/traces.jsonl",
+      "bytes": 2555687,
+      "sha256": "5ea6e09ed1fb8f48475b9d9597a6c31886658973c80af1a69ff6c726f755e419",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-prompts/prompts.json",
+      "bytes": 60051,
+      "sha256": "dcf578216fdae151120cf363c3d0c61b929419527fc81de55896f4fc024f09c8",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-prompts/prompts.md",
+      "bytes": 32433,
+      "sha256": "e9844b2ddb3d637d9a1496420172238df312121b01d9e09c79360daec263cd06",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2-qwen-thinking-on-2026-11-02/invalid-endpoint-2026-11-02.md",
+      "bytes": 3013,
+      "sha256": "8eb89f6b9092299a2c71dc55e043a946c469e281f6517d2ad667b6b6c61915e9",
+      "reason": "Recorded verification or endpoint limitation cited by retained methods"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/allowlists.json",
+      "bytes": 84980,
+      "sha256": "ff274575713ef8d1b79aa2b82cb4639d9e57f984bbe19af37ac345295c57d17c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/hand-checks.json",
+      "bytes": 6623,
+      "sha256": "64ce21ad8f6676ebc7a384ceaee455b3985533c7c34ff6ec11fd2daa1b5f89c0",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/report.json",
+      "bytes": 193213,
+      "sha256": "674fcdd01d3ad812b9a485395c85f129c6c4edf05cbc1221bc39a3c8fad82a24",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/report.md",
+      "bytes": 9244,
+      "sha256": "cb82799a564f17e34fc656c5f9444d3c05da08caf0ba5790f34bd056f4b981c6",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/run.json",
+      "bytes": 173,
+      "sha256": "abeff3781a4bc01ee212a0988ef977c0f4e87e1c94de7be656db911217c63e1f",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/tools.json",
+      "bytes": 52534,
+      "sha256": "91000a2b798379d2d5754d4374bb89465b77e7b6a25e1606874fd604e3557906",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/deepseek-flash/traces.jsonl",
+      "bytes": 2278562,
+      "sha256": "5fd230b3b1d36d7e5ebe39812f03e0492c31cc19609a28382dc05fe5982d4b9c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/pooled.json",
+      "bytes": 44570,
+      "sha256": "5d25f5e5e2f9de0bef9adefe969a1adccdce39e2281de424dd26539998672800",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/pooled.md",
+      "bytes": 5800,
+      "sha256": "050bf07f15a5428eafb9dae69179b4f7513bd0f100ce112fd2112493fb6d1f5b",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/allowlists.json",
+      "bytes": 82893,
+      "sha256": "c6427eda2d004f89bd4ba74000f3487311e886ba2f2c76c9f8f86d61fe4139b3",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/coder-1.json",
+      "bytes": 5042,
+      "sha256": "590b8c3fd1a925614197f051602344457395c33d4fa70adb75d0c3ec1150df30",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/coder-2.json",
+      "bytes": 3964,
+      "sha256": "b25f79948a264c86e6d3f10b0b3febb4667f4748d21d7971d71f251c0683a900",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/hand-checks.json",
+      "bytes": 6911,
+      "sha256": "96f5c306cec21ed470ecf2264fde1a93964643152dda344c990b3bffe64ee11c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/label-sheet.md",
+      "bytes": 17177,
+      "sha256": "545d7baa448be2d82661e76dcd5978a794ee33d218a2ac0a4903031696f2f5a8",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/owasp-rule-a.md",
+      "bytes": 1757,
+      "sha256": "33b46ae3234ef998683536e7b133f7b23bc40cf0e6e3520dfe31198340f074a9",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/report.json",
+      "bytes": 224496,
+      "sha256": "0ec4937e7edbfd819ed0eea14a1d71cb4352a3e207b7b6dd31c5b0144e795d2a",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/report.md",
+      "bytes": 12793,
+      "sha256": "ef06444123fb7795e0174ce6d0b5a39e90ce20ca7caa896bfc00783670ea94c9",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/rubric-clarification.md",
+      "bytes": 3653,
+      "sha256": "6f20a5b8300a1ef29079ccbdb10694edb88bee8fbc6e3e42b9bc7cee281edf9c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/run.json",
+      "bytes": 171,
+      "sha256": "7cc3507523c75e924dd35ef464127d3f6077f3a120beacc83b915a14f232e7cc",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/tools.json",
+      "bytes": 52534,
+      "sha256": "91000a2b798379d2d5754d4374bb89465b77e7b6a25e1606874fd604e3557906",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage2/qwen3.8-flash/traces.jsonl",
+      "bytes": 2560363,
+      "sha256": "52a7d73afb49f928b01fee8272c6ff62742be21c782cd17fca49c6b0cb51322a",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/deepseek-flash/baseline.jsonl",
+      "bytes": 38920,
+      "sha256": "9a3288c1fc592850ffd3d647577155c6bba21edefdb52f47db5297487ed8004d",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/deepseek-flash/record.json",
+      "bytes": 551899,
+      "sha256": "ee97c537a63d4d3f4720a81424d8f5e6fbeb213fd750e131e7fe7e32ebd7a7a1",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/deepseek-flash/record.md",
+      "bytes": 1972,
+      "sha256": "f02d6e7a1df586d59c812854c8e99ba31a6c7f0d99a5f69cb71399e79290baa4",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/deepseek-flash/records.jsonl",
+      "bytes": 251665,
+      "sha256": "059c793138e3f4fc6da0611650d47e969f0189e38a5ff96e6c92f4f692049d2b",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/qwen3.8-flash/baseline.jsonl",
+      "bytes": 36149,
+      "sha256": "1087bd221f80d4ff552e5712ad5c2e8f2718a67bdc9aefa8eda2693b76825f9f",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/qwen3.8-flash/record.json",
+      "bytes": 236848,
+      "sha256": "e98bf1933770116e119cf3f3b5c3a7c65b6c7f8778392f6f6b18284de43bbc9d",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/qwen3.8-flash/record.md",
+      "bytes": 1976,
+      "sha256": "731596b2557082e4d52c7bdbd28721d37653c34e2b54dd0ded2c8d02c7d07a99",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-birth/qwen3.8-flash/records.jsonl",
+      "bytes": 104447,
+      "sha256": "8696763f2c174d93c8484cd3793ccb8f1a8ce95e0fc8c1f4149c605f338edb99",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/freeze.json",
+      "bytes": 1496,
+      "sha256": "fbfd79db284783edb76cbd0048e9e407a679df4c129fd0bd52b61dee01d0df6c",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/mechanism.json",
+      "bytes": 27881,
+      "sha256": "aa05321ecdfd7884a9b4ea528ed3ad05ae8279e47533e9e266ab51df718b58ef",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/mechanism.md",
+      "bytes": 3005,
+      "sha256": "c12a23efb34388cdc4e5c19075c94c60a7864412deb60ade1c2cca907793ef12",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/report.json",
+      "bytes": 665056,
+      "sha256": "55d1e39d655de3f4ced862bc03162c3d99362e7e48f540b2a5321ed0e402eca6",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/report.md",
+      "bytes": 10185,
+      "sha256": "b8857833a670d5aa690e52ddf2cfc83450d61254cbfff8f9ac416ef34a3bee8f",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/run.json",
+      "bytes": 1030,
+      "sha256": "7da9825f77e017a88b3bd58f1e835929707bfbd056669558f08b2993ce868f12",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage3-widening/traces.jsonl",
+      "bytes": 257176,
+      "sha256": "5c6c60a43a01da19a83382436171605668f3b112740438cfdf1416e42e3c9585",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4-freeze/freeze.json",
+      "bytes": 1629,
+      "sha256": "684db083acedf21e529ef0ff032655f90ef31d6f1d015d64bd2ba280931633b6",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/qwen3.8-flash/attempts.jsonl",
+      "bytes": 1659194,
+      "sha256": "88629bc06220304052d5c8348b5af371c9cdf6d17dd3b69868168631d451c9f6",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/qwen3.8-flash/report.json",
+      "bytes": 103210,
+      "sha256": "29e0a712b8d8c91ef9aa71e0d8a1e45042c4b8d11815d449f622e1ce39e888f5",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/qwen3.8-flash/report.md",
+      "bytes": 26963,
+      "sha256": "92d9f322c97e822564550385a1810319e5f34a79621646c5181a048d60dfafb7",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/qwen3.8-flash/run.json",
+      "bytes": 1897,
+      "sha256": "d259b2af41bd74704e558c0e5cb6df2a47843bf76c8cebeabc978b029c023d8a",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/qwen3.8-flash/tools.json",
+      "bytes": 52534,
+      "sha256": "91000a2b798379d2d5754d4374bb89465b77e7b6a25e1606874fd604e3557906",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/step0.json",
+      "bytes": 14733,
+      "sha256": "c1df85bfa4673573b2da1b79a8211894e122ab2fa9c785f24d5ee574fa05abe6",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/stage4/step0.md",
+      "bytes": 7082,
+      "sha256": "00f4760ec419a441bec2a070db30f5e88679c9f1092fb14ed4851d8f2eac74d2",
+      "reason": "Saved evidence or frozen input supporting original report"
+    },
+    {
+      "path": "artifacts/verification/saved-results-2026-11-03.json",
+      "bytes": 21650,
+      "sha256": "7376c85b40fdc655ac726adaba792db50ec7409880acafed3a201524a66bbcda",
+      "reason": "Recorded verification or endpoint limitation cited by retained methods"
+    },
+    {
+      "path": "artifacts/verification/stage4-provider-errors-2026-11-03.jsonl",
+      "bytes": 116,
+      "sha256": "eaf72d9c933dd541e8004394b115d114e2272242b86a9f356862d7896b8d5410",
+      "reason": "Recorded verification or endpoint limitation cited by retained methods"
+    },
+    {
+      "path": "bench/README.md",
+      "bytes": 3334,
+      "sha256": "4c9565777aa7840b0ffdf518a9b2339e808e2c0aa0dd78e47722529f4d033bf9",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/fr2endly-mcp-scan.cmd",
+      "bytes": 280,
+      "sha256": "1587b01344f49652280806251ea501bcb51c255cbc6c68e80fd016ad9be55bad",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/mcp-fence.cmd",
+      "bytes": 84,
+      "sha256": "26d081de78c372e28e16b63f26374c6c90ebfcf537b96b8ac951e544ad9fc3b5",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/mcp-shield.cmd",
+      "bytes": 102,
+      "sha256": "5ef2302e74ef5ec55c9137300d4618944b136e75774286de7016c076c4a171d0",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/mcp-shield/package-lock.json",
+      "bytes": 78909,
+      "sha256": "40c020aa3b98dafe59dab6e32ce11be402ecda33158b3f8ecf5ea61eef842455",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/mcp-shield/package.json",
+      "bytes": 298,
+      "sha256": "7a0d3566fa9014d794965c3c05a91a095483e01c2f59ce0393c7cfeb8fdc594f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/mcp-shield/scan-urls.mjs",
+      "bytes": 1381,
+      "sha256": "671068839c9f9b57d6746d4648a650b73e74ca70732fd692c1f2a1d9e1cbecc5",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/novaprox.cmd",
+      "bytes": 202,
+      "sha256": "d4232fd42fa7d4f8d6c2dee94cfb55e5422bb88f06abd6dd2f27e9c3ad683527",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/patches/cisco-mcp-scanner.patch",
+      "bytes": 6238,
+      "sha256": "e77b5d54c41a30afc3d1891da404f852b96f6b4325be293021bc441455595861",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/ramparts.cmd",
+      "bytes": 130,
+      "sha256": "fee596a1729620698aaf5cde7c060fb7d415dc68bce1b31ac13ae8a26c4de8ea",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/COMPARISON.md",
+      "bytes": 4504,
+      "sha256": "8ea4d8d0ebe8e2e72444bf005ab94a39f720786280f5d90fa367985c910da09a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/cisco/all.txt",
+      "bytes": 7172,
+      "sha256": "749e9a1b600ebb84a21104abdaa7812857a903ec2e81c75b28b2dcf33c1de13e",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/cisco/rerun-4000tokens.txt",
+      "bytes": 2145,
+      "sha256": "4875b5a5d88f339ea89445c818197d2260450a826f8e12f69d257e336d79c7ea",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/cisco/resources-markdown-json.txt",
+      "bytes": 1134,
+      "sha256": "ae2177cee92fe83b8ea6371be925e3c3b3f553674789d8342517e01baf89e454",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/CONTROL-REVIEW.md",
+      "bytes": 5162,
+      "sha256": "87ff94b02558ec6d95f34b58ca4123de8499a8f92f8c983e14ec28018a441122",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/api.blvkware.dev/control.json",
+      "bytes": 28586,
+      "sha256": "1c0a9d479c1b3d87642f4516e8414c447ef89c2f7fe55f2d0e3e61f62224316c",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/api.blvkware.dev/res_0_coverage",
+      "bytes": 2103,
+      "sha256": "61ad1251a80d28aab24258626d38c8d76546919095f1a50623f7ab4e36558440",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/api.blvkware.dev/res_0_verdicts",
+      "bytes": 1324,
+      "sha256": "9bf374254de7f267ba1ba4f1e2a0dc0cb78cb57443a18f328685ca81b710cbf1",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.aikstockdata.com/control.json",
+      "bytes": 30702,
+      "sha256": "1bdb85e8c78cafc6d17c306cbb7e5927177ffad9ac9e407b5d6d4a32f231beab",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/SKILL-clinic-administration.md",
+      "bytes": 8214,
+      "sha256": "cc5020e65ea6c5321c0a7ed024c3527f1184291d9f28736295f997a00f6e2ab5",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/SKILL-veterical.md",
+      "bytes": 15295,
+      "sha256": "bf29e1a68281335cee2586cb9c91a83456d29d1f66478f06ded0722ed620ac9d",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/control.json",
+      "bytes": 66111,
+      "sha256": "a3566bac70bb1f6de80a3d9744141bc5e36d4d6e5ed2ab668e935e4b02ed07df",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/res_0_clinic-overview-v2.html",
+      "bytes": 479439,
+      "sha256": "d08b2bbd61a2fe67234ee13cfb018058df98bc5f8448de7782e481cff3191f7a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/res_0_schedule-summary-v1.html",
+      "bytes": 478108,
+      "sha256": "495909a8f95a0322454187d0b11d037ec5ee97c29ff79e9139f2eaf878478209",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/res_0_workspace-v1.html",
+      "bytes": 489542,
+      "sha256": "f190d6e657f02484da4f93a41522769273e1e3bfb3672499312e033400917af4",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/mcp.veterical.com/res_0_workspace-v2.html",
+      "bytes": 489542,
+      "sha256": "f190d6e657f02484da4f93a41522769273e1e3bfb3672499312e033400917af4",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/vuntum.com/control.json",
+      "bytes": 21165,
+      "sha256": "36e461bacabcaee79d6bcba503d329ad4af589413302db4961928ecdb8888ef6",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/control/wealthmcp.ai/control.json",
+      "bytes": 11492,
+      "sha256": "99baf2aac6ad681281338844c1835aab3a2ec731aab22191b5490f5e8ebc5f4f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/api.blvkware.dev.json",
+      "bytes": 3712,
+      "sha256": "755e362707dd013c50d7f0ed805d19060f992b53ea699cedb2bc004eef531b3d",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/api.blvkware.dev.txt",
+      "bytes": 4478,
+      "sha256": "735c35dfd9551d4f9b2b2696a0f95bcaceeebca5eba28a30a1ece4492641493b",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/mcp.aikstockdata.com.json",
+      "bytes": 10515,
+      "sha256": "df4545523b6de083476a57939e8514346009cabb3bf0cee59aa20483efe3da44",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/mcp.aikstockdata.com.txt",
+      "bytes": 11442,
+      "sha256": "de0d63571d592705f57f11ab91bf98d63e6409fe5a37c072ec73518e9751fd7e",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/mcp.veterical.com.json",
+      "bytes": 23102,
+      "sha256": "c32175efd4b594ddd8f6d284b9da48a168fa64d4865be382670feae501c9d068",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/mcp.veterical.com.txt",
+      "bytes": 28434,
+      "sha256": "2e04eae7d4fe8f0ea739f208e554d905d3db2c4c12f071b57fc7e6b9f9c8128c",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/vuntum.com.json",
+      "bytes": 9679,
+      "sha256": "6c79446070e7c30ae25d3b34e9eefe41cc418991c02c8872f6f7d13ec1a06fee",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/vuntum.com.txt",
+      "bytes": 12508,
+      "sha256": "99cbbeceb8f2fff94aefcbd8e253624ca7fbb278274e79ed13113df9da3abc2a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/wealthmcp.ai.json",
+      "bytes": 7921,
+      "sha256": "43be0ee353d64dc8b1627c24e14f90b68571d7b6325a8843ffd5ecea68de0f2d",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/fr2endly/wealthmcp.ai.txt",
+      "bytes": 10110,
+      "sha256": "56fde295d5da3fb51beabf4bca152de6ca375f1ff38266b6f61273719ff0e4cb",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-fence/inspect.txt",
+      "bytes": 153,
+      "sha256": "5327ea644dde62a59619c8b5f9fc11ec3b0b793bcf49f8ad7143349272c8ecca",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-fence/mcp.json",
+      "bytes": 932,
+      "sha256": "8ad22c6efb5850fa4c22e90763f52b738de61849df839ec1968e47c646294a9a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-fence/static.txt",
+      "bytes": 153,
+      "sha256": "5327ea644dde62a59619c8b5f9fc11ec3b0b793bcf49f8ad7143349272c8ecca",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-shield/api.blvkware.dev.txt",
+      "bytes": 3560,
+      "sha256": "9e969faf9eb473bd36d43d2990f99bb75e70ad959e34f41beabcb8f764aab758",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-shield/mcp.aikstockdata.com.txt",
+      "bytes": 18268,
+      "sha256": "3a60715d22521c184e41b873817ae9057b847a193724d73ded09e89b430e8a98",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-shield/mcp.veterical.com.txt",
+      "bytes": 15864,
+      "sha256": "e2af7e2142cf4e23a258ad8396bea51264ef334af2ab8340105ff474ad8cfe47",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-shield/vuntum.com.txt",
+      "bytes": 30208,
+      "sha256": "bb1c04cdcfb2f5a897508c766d498aae4cf948334f2f1f8ab86f8e2428c60613",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/mcp-shield/wealthmcp.ai.txt",
+      "bytes": 8730,
+      "sha256": "e43e4f245e7d76d716a4d1ac6175548195de2e0d29ea963ca66b3c8054ec85de",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/nova/api.blvkware.dev.txt",
+      "bytes": 73900,
+      "sha256": "c2b29897bac5b261e0f6cb2fad0b358f8c348fc6bb5ed59457b45a7cd3324f59",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/nova/mcp.aikstockdata.com.txt",
+      "bytes": 65782,
+      "sha256": "cf5a6d3ae9a81dd52955303daef8dcbf07d04256f77ce4a8531964bb25f0408f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/nova/mcp.veterical.com.txt",
+      "bytes": 80520,
+      "sha256": "1949e69fcf4ed6ae84ad2faf10de7740f73a67ae8ebd76d2ec55f07b25c78042",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/nova/vuntum.com.txt",
+      "bytes": 96660,
+      "sha256": "1c4aae1671fd2b976954782f32dba9cc376f0425e2934963107c62790cbee845",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/nova/wealthmcp.ai.txt",
+      "bytes": 58798,
+      "sha256": "81316788b634d7859eec629985693dc19d00745c17474c14539dc1472b211232",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/ramparts/api.blvkware.dev.json",
+      "bytes": 83010,
+      "sha256": "e58be3cc781504de9ef19e29a0f917cda62f0eb40a781ab753476f30df772b0e",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/ramparts/mcp.aikstockdata.com.json",
+      "bytes": 70504,
+      "sha256": "9b9343fadb25c6bd3f05e9a1264ac8f13e6b955c05fdcc5d58d228088789336d",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/ramparts/mcp.veterical.com.json",
+      "bytes": 41136,
+      "sha256": "a35d2ffd193e700d8df44875b4f001a50c5ccbc88bfdbd8d46a59bdeae17b28b",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/ramparts/vuntum.com.json",
+      "bytes": 41658,
+      "sha256": "7df9c236969d1061a34c8bf4b851314a3fbd60d878a516f49782dec88fe7373f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/ramparts/wealthmcp.ai.json",
+      "bytes": 18434,
+      "sha256": "cfc01e9217405746b119d815bbb629802746f8456341e4d53c5df430ca77931a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/raw/api.blvkware.dev.json",
+      "bytes": 26128,
+      "sha256": "328d35789ca9e4e2c24ce2c71ea38befaa5818adaeb80377faa8e91f5e50de6b",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/raw/mcp.aikstockdata.com.json",
+      "bytes": 24766,
+      "sha256": "c0d6c7f0b55c37f5e294ac63957f69c61c54b615fb12de3d76addc84c99c9dcd",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/raw/mcp.veterical.com.json",
+      "bytes": 53577,
+      "sha256": "b6cabf7a37c29c4decd9af8c24da46dfb1f050a0ba5665cec2aa1e86eb91bd78",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/raw/veterical-SKILL.md",
+      "bytes": 15295,
+      "sha256": "bf29e1a68281335cee2586cb9c91a83456d29d1f66478f06ded0722ed620ac9d",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/raw/vuntum.com.json",
+      "bytes": 19719,
+      "sha256": "c7dfc749338d25d7dcb0a7087d9dbb45203b00e8c6dcf5e3aab7e2e488224adf",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/raw/wealthmcp.ai.json",
+      "bytes": 9095,
+      "sha256": "076b7cf22cb89ae9e726e1cc2db8fe6b8d75b55c933171dc5c4cde357acf745d",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/scanner-bench.html",
+      "bytes": 33512,
+      "sha256": "e76a9e4444e2c1443a901033bde46d386ea064313f740d9c1fc49d48608bbfa4",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/README.md",
+      "bytes": 5167,
+      "sha256": "f087a196d68647c8384f213ac44af820a833bef769f2aefe1562083093f4206f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/api.blvkware.dev/report.json",
+      "bytes": 90398,
+      "sha256": "bb5993a02d92385ad1c3f420b15fdb8136a61ea21c8ebc7faefcf8a24c324494",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/api.blvkware.dev/report.md",
+      "bytes": 10230,
+      "sha256": "d887afd36f9939cb0eddbfb0350cafffeaeae920c82de78e22ea3a0636632b5b",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/captures/api.blvkware.dev.json",
+      "bytes": 26936,
+      "sha256": "5c10ee551ac2a8b77a518c24eb5806f60c4b2ad3260a7f82965fdf4b0570387e",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/captures/mcp.aikstockdata.com.json",
+      "bytes": 29754,
+      "sha256": "b4c86e1668f1a2a080bcf9163ca32d1164b56384a32f50a4fee2df096190c62f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/captures/mcp.veterical.com.json",
+      "bytes": 79529,
+      "sha256": "95d0ceea7ea4f9729048e19370669ecd3432491a9feedc275bc94f3ff40ece13",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/captures/vuntum.com.json",
+      "bytes": 20301,
+      "sha256": "91144e6cc241c49c28e9fad2b2b34bcd9adfd86c5891d4dad6251ffb7f8c2100",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/captures/wealthmcp.ai.json",
+      "bytes": 9234,
+      "sha256": "2cf6214616c285819ba3b4e23326aa8340b2d1504337b13d14cf43358fc3fb65",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/mcp.aikstockdata.com/report.json",
+      "bytes": 87185,
+      "sha256": "ef1c811a5f331b004451dba0ee4a1214b37de6e183342c16b3c49630d464111f",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/mcp.aikstockdata.com/report.md",
+      "bytes": 8642,
+      "sha256": "45e9bdc4fbdebced93b31d2cb5ae582b5a9f12026c7d26d63085d6033922744a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/mcp.veterical.com/report.json",
+      "bytes": 89817,
+      "sha256": "ca9d61fdabc16d0ab11e1d4a0ec0d6a6dcea02c05c1e4e4d15aaa938beea7ace",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/mcp.veterical.com/report.md",
+      "bytes": 8303,
+      "sha256": "c839c85d25e1d77e9371aaf703e65e0e967eefee4a875f6927ce74d9e7a9ad10",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/rebuild.py",
+      "bytes": 2560,
+      "sha256": "33c80fdd263e36cbb70884c3027bedd89325396b2e6acc0e7921e93af16bf249",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/vuntum.com/report.json",
+      "bytes": 83382,
+      "sha256": "46da4d8db96ddc97342e2d774fb0b630ab326a04ac596996decde9701271f4a4",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/vuntum.com/report.md",
+      "bytes": 8253,
+      "sha256": "82691f0efe3c5b6143794df97958ee2f832548f119140f9b89bf5c212560298e",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/wealthmcp.ai/report.json",
+      "bytes": 84870,
+      "sha256": "926cf6969c1d63e827043062fa8df2f9061ab46a9df00bbda963c74efe4cbc54",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner-current/wealthmcp.ai/report.md",
+      "bytes": 9642,
+      "sha256": "2d106fc33dc323368584e7b227708310eab9c6f320019fbc6451c8e549287c02",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/api.blvkware.dev/report.json",
+      "bytes": 81373,
+      "sha256": "a59fd0d409904432da6aea584eb86889a2f2ab83fefb409efafb159b00af13a4",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/api.blvkware.dev/report.md",
+      "bytes": 9106,
+      "sha256": "95e64d04de90c5ac4701a1a970f24cf7d39cb43e2c13abf28e08d5986d850074",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/mcp.aikstockdata.com/report.json",
+      "bytes": 81347,
+      "sha256": "aecbdee2c63d82a01577a3704736ab03196d96e86d6bda50ee4cd9d62ad29e47",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/mcp.aikstockdata.com/report.md",
+      "bytes": 7829,
+      "sha256": "739571ff696aaa0da254e6b59f30ed3c426ba9eef670e93369be9e84a44663ca",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/mcp.veterical.com/report.json",
+      "bytes": 78766,
+      "sha256": "5255e9d5b846c0c08c2cc8b561a5b56dd023e7746f8ac1ca1e050c2ab5797c25",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/mcp.veterical.com/report.md",
+      "bytes": 7726,
+      "sha256": "abba1bb4aa589150f011b3964eb69af574fc6b52c59de51e4dad93c4f050c9ae",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/vuntum.com/report.json",
+      "bytes": 89831,
+      "sha256": "2c4bf7c2be4b50961ebdc87a0d570f085d76794cf7322b1e5584d3aabcd39a21",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/vuntum.com/report.md",
+      "bytes": 9596,
+      "sha256": "ac94c3f4aba7b5fc5ba8a29c548d160d9072c114071c25def70ec0597f878326",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/wealthmcp.ai/report.json",
+      "bytes": 73354,
+      "sha256": "b8e59460fbcadf7894d6973f0a27d4011a857e834eb9ed19fa42019efe8f56dc",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-comparison/zgscanner/wealthmcp.ai/report.md",
+      "bytes": 7406,
+      "sha256": "43a8a7757de7e171c6c06bfa60952670ad3452e07ec3278270d84b73067738d2",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan-mcp.cmd",
+      "bytes": 58,
+      "sha256": "f1030dea96ebbec921917ecb9ab6372be8b4843a56487ef0732a3451c7ffebd6",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "bench/scan_mcp.py",
+      "bytes": 8556,
+      "sha256": "7acb49bde161db483d4b78d0e8c25bb87c6f6404c38002f700426cc5f7306e69",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "data/reachable_cases.json",
+      "bytes": 4173,
+      "sha256": "1cdf91175b10d373fff5afb647463233a3ca1579abe34847e1c42e88d10cab87",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "data/servers.json",
+      "bytes": 7989,
+      "sha256": "929dc3c09c93da710a5b79570a769602fc365c0e32d2b3afb484fc08703fde02",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "docs/artifact-delivery.md",
+      "bytes": 7877,
+      "sha256": "a8ebb8aa167e46a2b07d240bddda0237f37cfbb986c4298dafdf05b3d8bbfebb",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/injection-protocol.md",
+      "bytes": 46765,
+      "sha256": "6634583777011ff9850d4980c256486c4f61eb0c10b6b967f64436467bcd6dc6",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/methodology.md",
+      "bytes": 9703,
+      "sha256": "931262f253a17b7f95b32ca97370b65b23bf5ddce381da124f7448910abce58d",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/progent-license-check.md",
+      "bytes": 4232,
+      "sha256": "f87b72947693b1d75e24d4cb66ad977f126151351c08a29fa767bbad04ed2612",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/proposal-owasp-label-rule.md",
+      "bytes": 5297,
+      "sha256": "9c2941c74e0a1aa9f6f96daffd8128a9f6771f223550093e9fec8c105ee16d46",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/proposal-stage2-scoring-template.md",
+      "bytes": 4798,
+      "sha256": "6f66d14d7a381f2426c186fe1b7566dd06ebbe1afc1fe985f84fa029f4c898a4",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/proposal-stage3-widening-arm.md",
+      "bytes": 18618,
+      "sha256": "2f95831f8213a552343e1e5014cd6d1a83db2007c739738bfbcc43e86cb9254b",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/proposal-stage4-adaptive.md",
+      "bytes": 17596,
+      "sha256": "de8ad2694b69e6b6339eb08f1b186caefc9eb47847d2137e3ff673adc05751a9",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/writeup/04-method.md",
+      "bytes": 4947,
+      "sha256": "04e107b090617d8febfdd0e584e75df99f6e06bf6564fd2658a85b5f5a61a491",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/writeup/05-backdoor.md",
+      "bytes": 10048,
+      "sha256": "a6f63448cef6e83ce19ceb82a17043c80952965c46ebb0a23c092f5ee2ff8b93",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/writeup/06-results.md",
+      "bytes": 6007,
+      "sha256": "def3638e8c49c33e6d66d67ab09195e3c54cdf42ad5ff6f1dc2e685f011d52d2",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/writeup/07-tradeoff.md",
+      "bytes": 6332,
+      "sha256": "0bfb369fce41885c6891daf980fd6da970a6f7cf73155434dd3285251e3e0b15",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/writeup/10-limitations.md",
+      "bytes": 4313,
+      "sha256": "f693caf77916d790c9ee5943af208fd5c4b772e15475062d603bcdb65d3af834",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "docs/zgscanner-improvement-prompt.md",
+      "bytes": 12855,
+      "sha256": "ae99e62f8f41b333805571b6e6307426c3b8bd6060c39600c038a562699632b8",
+      "reason": "Original report citation or protocol detail needed to interpret retained results"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 421,
+      "sha256": "1f9332d2a274bdd570e882e858f6fd86b09842aa7431578f4adc053830966426",
+      "reason": "Project setup and historical experimental protocol"
+    },
+    {
+      "path": "scripts/check_saved_results.py",
+      "bytes": 11631,
+      "sha256": "7af3e0926e93a4169116375673e40130e855d8bf3da84f19f96a95932ee5c1af",
+      "reason": "Original saved-results verification script; Windows semantics needed for full replay"
+    },
+    {
+      "path": "tests/test_agent_loop.py",
+      "bytes": 2002,
+      "sha256": "f227f8daa13a943f66e3d78334b9a0448873eefe8de5ca35bd1c258f11db816b",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_budget.py",
+      "bytes": 2508,
+      "sha256": "8f9c9c66af433065839dc7e59a51d37d6c22a39ad940618e37ae20c517d21971",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_figures.py",
+      "bytes": 2239,
+      "sha256": "71740f36bb85850a47d312a3e05448d180d579197b8bf3c2e8b8e4391e673170",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_injection.py",
+      "bytes": 18296,
+      "sha256": "ae24df66af29991f25d3182f286852f766feb00b0cd50176a0ebfa7f6b8bcaa3",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_layer_d_generator.py",
+      "bytes": 2562,
+      "sha256": "53f45bee5a434650b902ff41534a75230af76f283f3ee56141bc7e8072d486e0",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_live.py",
+      "bytes": 11505,
+      "sha256": "8464aeb06a11a1e25900f8dfe19aee2cf4323fc877fd4a4ba0b7892fc1668968",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_poc.py",
+      "bytes": 10814,
+      "sha256": "7e1f3d38ea511477c7a21ea5b83266c8bde310c757330c6c1c1429d813d0e936",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_progent.py",
+      "bytes": 8106,
+      "sha256": "625d861fc58f8a8dfc133b42613cee16df960743d920aa55994983f9e2b50b0f",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_progent_rerun.py",
+      "bytes": 25956,
+      "sha256": "eeb6c6d40d18afcae38299660d329e45562c62622d07d6990afafbd032e2ea01",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_stage2.py",
+      "bytes": 9446,
+      "sha256": "5fbfc2ba0de35472b25341e40800afc68ff60d7c0daf4a5cc623f2d650f81927",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_stage2_birth.py",
+      "bytes": 9476,
+      "sha256": "a89559fa75b8e7e659ac330dda56621051b05d8a0f9eeee7e34ee2a9e64cba0a",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_stage2_run.py",
+      "bytes": 31354,
+      "sha256": "2feb56044a8097230a94a143a0252f8dc15a167e5a2b8e8ac39c1b750596bf45",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_stage4.py",
+      "bytes": 41811,
+      "sha256": "23df1da4c44e63a0ee6eb065f710076b302cf06572243e154950aeba81768760",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_widening.py",
+      "bytes": 51211,
+      "sha256": "082fccce00f5d92a609717a0020a62c5546b6334c34b6e82ed82fc402b8cc6b7",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "tests/test_zgscanner.py",
+      "bytes": 54224,
+      "sha256": "183e58bcb8e4a252f08fe1e3c1ff4a6c54e2b5d8aca808184ce050b5b6c519da",
+      "reason": "Existing tests for retained implementation"
+    },
+    {
+      "path": "vendor/mcp/package-lock.json",
+      "bytes": 13879,
+      "sha256": "24ea57ab3742d954b7b53da662e1a8c9534c6ecf37712327753022857f2f5a70",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "vendor/mcp/package.json",
+      "bytes": 200,
+      "sha256": "7cac3f4fb66e5b3bda375bf42a97d6ee79326815e259d7961385484623334b72",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "vendor/requirements.txt",
+      "bytes": 84,
+      "sha256": "011b5f2d209b215d7e16c13ec664e6d13d7856a7654fcb5d69549513abfab39a",
+      "reason": "Schemas, package pins, scanner wrappers or original scanner evidence"
+    },
+    {
+      "path": "wiggle/__init__.py",
+      "bytes": 100,
+      "sha256": "c89338c6cff3347ce01b5d365d94381c665ce47468aac8c1195f486d81a9be49",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/__main__.py",
+      "bytes": 1371,
+      "sha256": "878de771640e9e330264650f3fa6b4c9be67adda63d56315c224a0d18bd4e10d",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/agent_loop.py",
+      "bytes": 21075,
+      "sha256": "39ea7742bd5e1ffe3972d7fc1c85cca459571c40120ec88fe4cfa18bb68922e9",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/budget.py",
+      "bytes": 16210,
+      "sha256": "86ada86c354ff76145ff8266bceb6b6f8fe1bfcff43cb0b778e59eac46b1effe",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/compare.py",
+      "bytes": 10032,
+      "sha256": "2cf10c99e4951a69480d4f9038dd27f5ec292a657081ef839592ce38064ea6aa",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/corpus.py",
+      "bytes": 18521,
+      "sha256": "4b1561726ee5817ccb5d1194cf34a447bcda808beb805e301f35dd9efef626b7",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/declared.py",
+      "bytes": 5999,
+      "sha256": "90c16c70f4de160ce158c333b261dc520bf834216a0cebb13bab8de9d218daba",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/evaluate.py",
+      "bytes": 31096,
+      "sha256": "130fd65fe192d3fb7b9383cb60d1ef861a667745255143c35c9a6eb6984606dc",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/figures.py",
+      "bytes": 11550,
+      "sha256": "d9c16c1b28bcc48238fb3dd5c62364372180d6430eaa813a3b956c6fa1326e52",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/injection.py",
+      "bytes": 18744,
+      "sha256": "7bcd04a2d6bcd18124115fb249ed5823eeb4605a21216694cc3973b04c0c3039",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live.py",
+      "bytes": 1709,
+      "sha256": "1b61536cb9805ffc0c7b2ce4f2e495d94771a1007d5023b092fc9ef27dfa6fa5",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live_fetch.py",
+      "bytes": 8204,
+      "sha256": "924859098731af01f6b9b4ead888c0a72a9b5d50980ccbf58f8b35df7df06c29",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live_git.py",
+      "bytes": 14865,
+      "sha256": "4e9db884cd862b5bd5f633eb6e18972f7dbee943009695d815bdbad357052d45",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live_memory.py",
+      "bytes": 8865,
+      "sha256": "a0ed80725af16ee6e52bec5abc426dd5cde711f6dab9c462147242a50458a564",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live_sequential.py",
+      "bytes": 7645,
+      "sha256": "a86b44e625cbc1b7cfc481591203a7da5623c7b79a3cb2a5a174dcd4811eda51",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live_study.py",
+      "bytes": 26966,
+      "sha256": "39a8216c4efa2a8d65f830c67335f80f4659c16ae1296445ec44936bfbced2e5",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/live_time.py",
+      "bytes": 7538,
+      "sha256": "e22d99ce4e1a8b658ac4043cd38500029f5f951327d3968214ad9a7caff242c7",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/mcp_client.py",
+      "bytes": 8096,
+      "sha256": "af55f8c1d5f29f51950f8052c53d020f68efce592f6441f56467600f29c9a5a0",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/model.py",
+      "bytes": 2244,
+      "sha256": "ce4f8a7cb9f227c1a2819e2dd49b00cda9f5b1f973e976bcad6be81c38349139",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/normalize.py",
+      "bytes": 5440,
+      "sha256": "06e6cd2ad21c7e5c3d21d4cd9d8fe60f545fdedffbb4ef5c2009d2f4ab0e4534",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/pilot.py",
+      "bytes": 62284,
+      "sha256": "f9324b1e3e96a0e381200efb2f6091167f36477ab2e77b6764cf1f52e5917838",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/policy.py",
+      "bytes": 11552,
+      "sha256": "40831ebdb71091415f8ba3ac29d349a2bb1e64d48104a275ce6b7723829668c4",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/progent.py",
+      "bytes": 7452,
+      "sha256": "7dc475ed548c60f4b63214abd637ace499ba385440756257b1e838cc551e20e4",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/replay.py",
+      "bytes": 38276,
+      "sha256": "fdcc461be5bc7170e4da75a0665502b79f47d67b9b8b7182131ffe6f8efe57fd",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/sandbox_server.py",
+      "bytes": 7235,
+      "sha256": "5abed6515da0aab2fd8a643a5e1960c4dcc48ec33501832a67983761660c2c91",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/scan_classify.py",
+      "bytes": 7793,
+      "sha256": "1cf04313f189176055971a78c3ad013ddc0b42bc4955e549d66318a3083d2c72",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/scan_local.py",
+      "bytes": 11078,
+      "sha256": "4a2f2130c27c01aaa5179ca097bbaa519d104bb99e18f3a6d0d5ab5c0c6e07ac",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/servers.py",
+      "bytes": 8109,
+      "sha256": "4d7bc66cccb22136c3c2be748e57607983885a1afc90f492eb866db4507029cd",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/stage2.py",
+      "bytes": 91814,
+      "sha256": "8cca2ebb3a5df1888efac5104603be814c6aec2962d3c402c2fcb5d33543f55a",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/stage2_run.py",
+      "bytes": 117416,
+      "sha256": "22b8c6315fde88e948783b67eb21528c008ff1bc73d12c800fae317189bb9217",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/stage4.py",
+      "bytes": 105777,
+      "sha256": "eb02772994bca64e8c8406e215d459f721fe730c81de8a566f274b96fbd5d84e",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/widening.py",
+      "bytes": 81219,
+      "sha256": "8dcf01dd6217779bed04d48ad7d30830b2908eb4041b06ba866a1829ab35512a",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/__init__.py",
+      "bytes": 459,
+      "sha256": "6fc69518e7824455f41c0be132ee1ecd7a22268e48ca256a31da043bec5fe19d",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/__main__.py",
+      "bytes": 7025,
+      "sha256": "265677664c16e335f1787802219f77f70d9124761ca8f5300d4cd9dd8fda9953",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/catalog.py",
+      "bytes": 38091,
+      "sha256": "dcef6352bc4d4c4d0c469865fd651c93f1509269e02f11d11e00f032f41952a4",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/discover.py",
+      "bytes": 27162,
+      "sha256": "ed91a311c51079a6dc41a7a868c7fbc83f1f3567c84724eb02461d3c8bf82ffb",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/engine.py",
+      "bytes": 63080,
+      "sha256": "18d9893ae658ff3f7cfddce2ac3281c2f2dd1529721c3328f85253ee84b83a8e",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/flows.py",
+      "bytes": 14420,
+      "sha256": "8b751c788ad501157f4ddfad2c0df22d775c80e2c42accd3125e55095755e484",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/live.py",
+      "bytes": 22265,
+      "sha256": "efe1436ebe846840307fd97c573317be1673d5edf4969773bc1977ee3769554e",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/llm.py",
+      "bytes": 3866,
+      "sha256": "2c2616b4a1bffa4f3d72e76eba6f5b20ea7a630046a93929b80ba6a7d38be55f",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/panel.html",
+      "bytes": 76428,
+      "sha256": "4a556e9e2b231e77cec722e712a97217b281ea69b6e4f146bf0347e22a42c33d",
+      "reason": "Resource imported by retained scanner implementation"
+    },
+    {
+      "path": "wiggle/zgscanner/panel.py",
+      "bytes": 9782,
+      "sha256": "77d4ed93d5ebba5cbab896c6351f3c15181b2656716cefab8f1c7946ed655fe0",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/report.py",
+      "bytes": 6847,
+      "sha256": "5b97a279f05ba46919c6eb1e1a87a4ec0dbd04103d01ce33c72592eff8452ba0",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/rules.py",
+      "bytes": 34820,
+      "sha256": "37423b848af1392a28244b10b222f8ca5db155bc8458a37bac95eb29c972a307",
+      "reason": "Core report implementation or transitive Python dependency"
+    },
+    {
+      "path": "wiggle/zgscanner/supply.py",
+      "bytes": 13314,
+      "sha256": "34fc380d807283caeb4199b2ffa99f1d7a7fa1c25095983fd482743882700eed",
+      "reason": "Core report implementation or transitive Python dependency"
+    }
+  ],
+  "report_pdf": {
+    "path": "report/original-report.pdf",
+    "sha256": "2a7f47e701f2d6e4f1799d619ab12b01ab459d0b6b15b4a5efbc407f3ed038ba"
+  },
+  "limitations": [
+    "Source ZIP has no Git history; archive SHA-256 identifies this input.",
+    "No installed runtime environments, external Progent package or BadAgent evidence were included in the supplied ZIP.",
+    "Existing evidence/source bytes are preserved; this package is not a new experiment."
+  ],
+  "packaging_files": [
+    {
+      "path": "EXCLUDED_FILES.csv",
+      "bytes": 118544,
+      "sha256": "2f1b292cc4a157471c3c72c745e0c81a05c6ba46bde7434a02703ffa1333a7d8"
+    },
+    {
+      "path": "PACKAGE_CHECKS.json",
+      "bytes": 1927,
+      "sha256": "bb36249c8b01d887cb8bc27d99cc782a458b7d4e68cc4de79d9f5e13dfb2fe42"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4371,
+      "sha256": "84e3e2bba984cc2a6e74b1b92c6d6510d2baa41fb1e22948a2ff5d2b70eb8818"
+    },
+    {
+      "path": "REPORT_EVIDENCE.md",
+      "bytes": 3615,
+      "sha256": "ec1f55b6f9c2b5519e23461ecf253aef189532f6f5e6d3cf44c5e19f85232dab"
+    },
+    {
+      "path": "report/original-report.pdf",
+      "bytes": 104588,
+      "sha256": "2a7f47e701f2d6e4f1799d619ab12b01ab459d0b6b15b4a5efbc407f3ed038ba"
+    },
+    {
+      "path": "scripts/verify_report_package.py",
+      "bytes": 3817,
+      "sha256": "202ee539140535dc8e58260d916b20b2bd1422b4e3c57552662e3f1a48bc1cf7"
+    }
+  ]
+}

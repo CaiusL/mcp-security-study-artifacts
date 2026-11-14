@@ -1,0 +1,350 @@
+{
+ "servers": [
+  {
+   "name": "mcp.aikstockdata.com",
+   "transport": "http",
+   "serverInfo": {
+    "name": "aikstockdata-mcp",
+    "title": "\ud55c\uad6d\uc8fc\uc2dd\ub370\uc774\ud130 (aikstockdata.com)",
+    "version": "2.1.2"
+   },
+   "instructions": "\u2605What this server serves: post-filing price paths BY DISCLOSURE TYPE \u2014 market-adjusted median return at h0/h1/h5 with 95% CI and up-ratio, plus the underlying per-event ledger (2,940 events with receipt timestamp and session), with no sign-up or API key. Ask it things like \"\uacf5\uae09\uacc4\uc57d \uacf5\uc2dc \ub2e4\uc74c\ub0a0 \uc8fc\uac00\ub294 \ubcf4\ud1b5 \uc5b4\ub560\ub098\" via get_disclosure_impact. When a 95% CI includes zero the response says so \u2014 that means 'not distinguishable', not 'no effect'. h20 (+20 trading days) appears per type once that type has enough samples \u2014 read h20_status in disclosure_impact.json rather than assuming; missing is not the same as zero. | \u2605\uc774 \uc11c\ubc84\uac00 \uc8fc\ub294 \uac83: \uacf5\uc2dc \uc720\ud615\ubcc4 \uc774\ud6c4 \uc8fc\uac00 \uacbd\ub85c(\uc2dc\uc7a5\uc870\uc815 \uc911\uc559\uac12 h0/h1/h5\u00b7CI95\u00b7\uc0c1\uc2b9\ud655\ub960)\uc640 \uadf8 \uadfc\uac70\uac00 \ub418\ub294 \uc774\ubca4\ud2b8 \uc6d0\uc7a5 2,940\uac74(\uc811\uc218 \uc2dc\uac01\u00b7\uc138\uc158 \ud3ec\ud568) \u2014 \uac00\uc785\u00b7API \ud0a4 \uc5c6\uc774. | Korean stock data from aikstockdata.com (\ud55c\uad6d\uc8fc\uc2dd\ub370\uc774\ud130): DART disclosures in easy language, Financial Services Commission (\uae08\uc735\uc704) T+1 confirmed closing prices, and machine-computed rankings for KOSPI\u00b7KOSDAQ\u00b7KONEX. Refreshed every trading day around 18:30 KST (the run starts at 18:10). No auth, no API key. Derived from Korean government open data (DART, FSC). Non-commercial use with attribution; commercial redistribution is not permitted. Market prices are also subject to the FSC source licence (KOGL Type 4). All data is a dated snapshot, not real-time \u2014 always read the '\uae30\uc900\uc77c' (as-of date) in every tool response. A value of null means 'not provided' and is different from 0. Rankings are mechanical calculations from public financials, not stock picks. This server provides information only; it is not investment advice. IMPORTANT \u2014 the tool list is NOT the extent of the data. Preliminary quarterly earnings (filed ~2 weeks before the regular report), an accumulating daily price history per stock (one row added every trading day, never truncated), PER(TTM) and PBR computed from public filings (valuation in /data/public/s/{code}.json, pe_ttm/pb in screen.json; only consensus-based forward PER is absent), post-filing price paths by filing type, and an intraday (15:00 KST) disclosure list with receipt timestamps are all available. Call get_data_urls() before concluding that something is unavailable. | \u2605\ub3c4\uad6c \ubaa9\ub85d\uc774 \ub370\uc774\ud130\uc758 \uc804\ubd80\uac00 \uc544\ub2d9\ub2c8\ub2e4. \uc7a0\uc815\uc2e4\uc801\u00b7PER(TTM)\u00b7PBR\u00b7\uc885\ubaa9\ubcc4 \uc77c\ubcc4 \uc2dc\uacc4\uc5f4\u00b7\uacf5\uc2dc \uc720\ud615\ubcc4 \uc774\ud6c4 \uc8fc\uac00\u00b7\uc7a5\uc911 \uacf5\uc2dc(\uc811\uc218 \uc2dc\uac01)\uac00 \ubaa8\ub450 \uc788\uc2b5\ub2c8\ub2e4. '\uc5c6\ub2e4'\uace0 \uacb0\ub860\ub0b4\uae30 \uc804\uc5d0 get_data_urls() \ub97c \ubd80\ub974\uc138\uc694. | Fair use: this data changes once per trading day (around 18:30 KST) \u2014 polling faster than that returns the same values, it doesn't get you fresher ones. | \uacf5\uc815 \uc774\uc6a9: \uc774 \ub370\uc774\ud130\ub294 \ub9e4 \uac70\ub798\uc77c 18:30 \uc804\ud6c4 \ud55c \ubc88\ub9cc \ubc14\ub01d\ub2c8\ub2e4 \u2014 \uadf8\ubcf4\ub2e4 \uc790\uc8fc \ubd88\ub7ec\ub3c4 \uac19\uc740 \uac12\uc774 \ub3cc\uc544\uc62c \ubfd0 \uc0c8 \uac12\uc744 \uc548 \uc90d\ub2c8\ub2e4. | \uc774 \ub370\uc774\ud130\uc5d0 **\uc5c6\ub294 \uac83**: \uc120\ud589PER(\ucee8\uc13c\uc11c\uc2a4) \u00b7 \uc5c5\uc885 \u00b7 \ud22c\uc790\uc758\uacac \u00b7 \ubaa9\ud45c\uac00 \u00b7 \uc2e4\uc2dc\uac04\uac00 \u00b7 \ud22c\uc790\uc790\ubcc4 \uc218\uae09(\uc678\uad6d\uc778\u00b7\uae30\uad00\u00b7\uac1c\uc778 \uc21c\ub9e4\uc218) \u00b7 \ubd84\ubd09\u00b7\ud2f1 \u00b7 \ubc30\ub2f9 \u00b7 \uc7ac\ubb34\uc0c1\ud0dc\ud45c(\uc790\uc0b0\u00b7\ubd80\ucc44) (\uc774\uc720\ub294 index.json \uc758 quality.not_included_reasons). Not in this dataset \u2014 do not answer as if it were.",
+   "capabilities": {
+    "tools": {
+     "listChanged": false
+    }
+   },
+   "tools": [
+    {
+     "name": "get_today",
+     "title": "\uc624\ub298\uc758 \uc2dc\uc7a5 \uc694\uc57d (Today's market digest)",
+     "description": "Start here for \"how was the Korean market today?\" \u2014 index levels, breadth, 52-week high/low counts, top-3 disclosures, growth top-3, movers and disclosure-type counts in one call. Then drill down with get_stock / list_stocks / get_disclosures. Coverage: every listed stock in the FSC price feed (no ETFs/ETNs); markets and counts are in index.json coverage and in each response footer. | \"\uc624\ub298 \uc2dc\uc7a5 \uc5b4\ub560\uc5b4?\"\uc758 \ucd9c\ubc1c\uc810 \u2014 \uc9c0\uc218\u00b7\ub4f1\ub77d \ud3ed\u00b7\uc8fc\uc694 \uacf5\uc2dc\u00b7\uc131\uc7a5 \ub7ad\ud0b9\u00b7\ub4f1\ub77d\ub960 \uc0c1\ud558\uc704\ub97c \ud55c \ubc88\uc5d0. \uc774\uc5b4\uc11c get_stock / list_stocks / get_disclosures \ub85c \ud30c\uace0\ub4e4\uba74 \ub429\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "title": "\uc624\ub298\uc758 \uc2dc\uc7a5 \uc694\uc57d (Today's market digest)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "search_stock",
+     "title": "\uc885\ubaa9 \uac80\uc0c9 (Search stocks)",
+     "description": "Find a ticker from part of the name \u2014 Korean or Latin, case-insensitive \u2014 or a 6-digit code, across every listed stock we publish (no ETFs; markets are named in the response footer). Korean readings of Latin names also match ('\ub124\uc774\ubc84' finds NAVER, '\ucf00\uc774\ud2f0' finds KT/KTis), and so do common Korean nicknames for large caps ('\uc0bc\uc804' finds \uc0bc\uc131\uc804\uc790, '\ud558\ub2c9' SK\ud558\uc774\ub2c9\uc2a4). Large caps also match their official English name ('Samsung Electronics', 'SK hynix'; 'samsung' lists the Samsung group); smaller stocks need the Korean name. Up to 10 matches, market-cap sorted. | \uc774\ub984 \uc77c\ubd80(\ud55c\uae00\u00b7\uc601\ubb38 \ubaa8\ub450, \ub300\uc18c\ubb38\uc790 \ubb34\uc2dc)\ub098 6\uc790\ub9ac \ucf54\ub4dc\ub85c \ucc3e\uc2b5\ub2c8\ub2e4. \uc601\ubb38 \uc774\ub984\uc758 \ud55c\uae00 \uc77d\uae30('\ub124\uc774\ubc84'\u2192NAVER, '\ucf00\uc774\ud2f0'\u2192KT\u00b7KTis)\uc640 \ud754\ud55c \uc904\uc784\ub9d0('\uc0bc\uc804'\u2192\uc0bc\uc131\uc804\uc790, '\ud558\ub2c9'\u2192SK\ud558\uc774\ub2c9\uc2a4)\ub3c4 \ub9e4\uce58\ub429\ub2c8\ub2e4. \ub300\ud615\uc8fc\ub294 \uacf5\uc2dd \uc601\ubb38 \uc774\ub984\uc73c\ub85c\ub3c4 \ucc3e\uc2b5\ub2c8\ub2e4('Samsung Electronics'\u00b7'SK hynix'). \uadf8 \ubc16\uc758 \uc885\ubaa9\uc740 \ud55c\uad6d\uc5b4 \uc774\ub984\uc73c\ub85c \ucc3e\uc73c\uc138\uc694. \uc218\ub85d \uc804 \uc885\ubaa9 \u00b7 \uc2dc\ucd1d\uc21c \ucd5c\ub300 10\uac74.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "query": {
+        "type": "string",
+        "description": "Stock name or code fragment, e.g. '\uc0bc\uc131' or '005930'. | \uc885\ubaa9\uba85 \ub610\ub294 6\uc790\ub9ac \ucf54\ub4dc\uc758 \uc77c\ubd80"
+       }
+      },
+      "required": [
+       "query"
+      ]
+     },
+     "annotations": {
+      "title": "\uc885\ubaa9 \uac80\uc0c9 (Search stocks)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_stock",
+     "title": "\uc885\ubaa9 \uc0c1\uc138 (Stock detail)",
+     "description": "One Korean stock by 6-digit code: T+1 confirmed close & change, market cap, latest financials from the latest periodic report (revenue / operating income / net income, with YoY; Korean reports are cumulative year-to-date, so H1 = Jan-Jun, not Q2 alone), PER(TTM) and PBR computed from public filings, and ranking signals. Two as-of dates move independently \u2014 price (quote_as_of) and filings (disclosure_through); the response header carries both, do not merge them into one \"today\". null means not provided, never 0. Name \u2192 code: search_stock. Daily price history (accumulating): get_history. Filings with receipt times: get_disclosures. Screening a list: list_stocks. | 6\uc790\ub9ac \ucf54\ub4dc\ub85c \ud55c \uc885\ubaa9 \u2014 \ud655\uc815 \uc885\uac00\u00b7\ub4f1\ub77d\u00b7\uc2dc\ucd1d\u00b7\ucd5c\uadfc \uc815\uae30\ubcf4\uace0\uc11c \uc2e4\uc801(\uc804\ub144\ube44 \u00b7 \ubc18\uae30\ub294 1~6\uc6d4 \ub204\uc801)\u00b7PER(TTM)\u00b7PBR\u00b7\ub7ad\ud0b9 \uc2e0\ud638. \uae30\uc900\uc77c\uc774 \ub458\uc774\uace0 \ub530\ub85c \uc6c0\uc9c1\uc785\ub2c8\ub2e4(\uc2dc\uc138\u00b7\uacf5\uc2dc) \u2014 \uc751\ub2f5 \uba38\ub9ac\ub9d0\uc5d0 \ub458 \ub2e4 \uc2e4\ub9ac\ub2c8 \ud558\ub098\ub85c \ud569\uce58\uc9c0 \ub9c8\uc138\uc694. null \uc740 '\ubbf8\uc81c\uacf5'\uc774\uba70 0\uc774 \uc544\ub2d9\ub2c8\ub2e4. \uc774\ub984\uc73c\ub85c \ucc3e\uae30\ub294 search_stock, \uc77c\ubcc4 \uc2dc\uc138\ub294 get_history, \uc811\uc218 \uc2dc\uac01\uc774 \uc788\ub294 \uacf5\uc2dc\ub294 get_disclosures, \uc870\uac74 \ubaa9\ub85d\uc740 list_stocks.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "code": {
+        "type": "string",
+        "description": "6-digit ticker as a STRING with leading zeros kept \u2014 '000020', not 20. e.g. '005930' (\uc0bc\uc131\uc804\uc790). Unknown but well-formed code returns a short note (not an error); a malformed one tells you to use search_stock. | 6\uc790\ub9ac \uc885\ubaa9\ucf54\ub4dc **\ubb38\uc790\uc5f4**(\uc55e\uc790\ub9ac 0 \uc720\uc9c0 \u2014 '000020'\uc744 20\uc73c\ub85c \uc77d\uc73c\uba74 \uc548 \ub9de\uc2b5\ub2c8\ub2e4). \ud615\uc2dd\uc774 \ub9de\ub294\ub370 \uc5c6\ub294 \ucf54\ub4dc\uba74 \uc624\ub958\uac00 \uc544\ub2c8\ub77c \uc548\ub0b4\ub97c \ub3cc\ub824\uc8fc\uace0, \ud615\uc2dd\uc774 \ud2c0\ub9ac\uba74 search_stock \uc744 \uc548\ub0b4\ud569\ub2c8\ub2e4."
+       }
+      },
+      "required": [
+       "code"
+      ]
+     },
+     "annotations": {
+      "title": "\uc885\ubaa9 \uc0c1\uc138 (Stock detail)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_rankings",
+     "title": "\ub7ad\ud0b9 \uc870\ud68c (Rankings)",
+     "description": "Answers \"which stocks scored highest on measured DART financials?\" \u2014 kind='growth' is \uc131\uc7a5 TOP8 (max 8 rows), kind='quiet' is \uc870\uc6a9\ud55c \uc2e4\uc801\uc8fc. Scores come from a published formula over ACTUAL filed financials only \u2014 no prices, no analyst estimates. Mechanical, not stock picks. For 52-week high/low or turnaround LISTS use list_stocks(). | \"\uc2e4\uce21 \uc7ac\ubb34\ub85c \uc810\uc218\uac00 \ub192\uc740 \uc885\ubaa9\"\uc5d0 \ub2f5\ud569\ub2c8\ub2e4 \u2014 growth \ub294 \ucd5c\ub300 8\uac74, quiet \ub294 \uc870\uc6a9\ud55c \uc2e4\uc801\uc8fc. \uc2dc\uc138\u00b7\uc804\ub9dd\uce58\ub97c \uc4f0\uc9c0 \uc54a\uace0 DART \uc2e4\uce21 \uc7ac\ubb34\ub9cc \uc501\ub2c8\ub2e4. 52\uc8fc \uc2e0\uace0\uc800\u00b7\ud751\uc790\uc804\ud658 \ubaa9\ub85d\uc740 list_stocks().",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "kind": {
+        "type": "string",
+        "enum": [
+         "growth",
+         "quiet"
+        ],
+        "description": "'growth' (\uc131\uc7a5 TOP8) or 'quiet' (\uc870\uc6a9\ud55c \uc2e4\uc801\uc8fc)"
+       },
+       "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "description": "Number of rows, 1-20 (default 8). | \ubc18\ud658 \uac1c\uc218"
+       }
+      },
+      "required": [
+       "kind"
+      ]
+     },
+     "annotations": {
+      "title": "\ub7ad\ud0b9 \uc870\ud68c (Rankings)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_market_summary",
+     "title": "\uc9c0\uc218\u00b7\ub4f1\ub77d \ud3ed (Index & breadth)",
+     "description": "Index levels (KOSPI/KOSDAQ close, change, %) and up/down breadth \u2014 nothing else. Prices are the previous session's T+1 settled close, never real-time. Index and breadth routinely disagree \u2014 the index is cap-weighted, breadth is one vote per stock \u2014 which is why both are returned; do not infer one from the other. For the full daily digest (disclosures, rankings, movers) use get_today(). | \uc9c0\uc218\uc640 \ub4f1\ub77d \ud3ed\ub9cc \ubd05\ub2c8\ub2e4. \ud558\ub8e8 \uc804\uccb4 \uc694\uc57d\uc740 get_today(), \uc870\uac74\ubcc4 \uc885\ubaa9 \ubaa9\ub85d\uc740 list_stocks().",
+     "inputSchema": {
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "title": "\uc9c0\uc218\u00b7\ub4f1\ub77d \ud3ed (Index & breadth)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_data_urls",
+     "title": "\uacf5\uac1c \ub370\uc774\ud130 URL (Open data URLs)",
+     "description": "Direct URLs for every public dataset (JSON/CSV) \u2014 no signup, no API key. Call this BEFORE concluding something is unavailable: the tool list is not the extent of the data. Returns the endpoint catalog (quotes, disclosures, rankings, per-stock JSON, search index) plus the 30-trading-day dated archive with the exact dates held per pattern. Most AI fetch tools cut responses near 150 KB and a truncated JSON is unparseable \u2014 the catalog names a smaller alternative for every large file, so read that instead of guessing. | \uc804\uccb4 \uacf5\uac1c \ub370\uc774\ud130(JSON\u00b7CSV) \uc9c1\ub9c1\ud06c \uce74\ud0c8\ub85c\uadf8 \u2014 \ubb34\uac00\uc785\u00b7\ubb34\ud0a4. **\uc5c6\ub2e4\uace0 \uacb0\ub860\ub0b4\uae30 \uc804\uc5d0 \uba3c\uc800 \ubd80\ub974\uc138\uc694**: \ub3c4\uad6c \ubaa9\ub85d\uc774 \ub370\uc774\ud130\uc758 \uc804\ubd80\uac00 \uc544\ub2d9\ub2c8\ub2e4. \ucd5c\uadfc 30\uc601\uc5c5\uc77c \ub0a0\uc9dc\ubcc4 \uc544\uce74\uc774\ube0c(\ud328\ud134\ubcc4 \ubcf4\uc720 \ub0a0\uc9dc \ud3ec\ud568)\ub3c4 \ud568\uaed8 \ub0c5\ub2c8\ub2e4. \ub300\ubd80\ubd84\uc758 AI \uac00 \uc751\ub2f5\uc744 150KB \uc548\ud30e\uc5d0\uc11c \uc790\ub974\uace0 \uc798\ub9b0 JSON \uc740 \ud30c\uc2f1\ub418\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4 \u2014 \ud070 \ud30c\uc77c\ub9c8\ub2e4 \uc18c\ud615 \ub300\uccb4\ubcf8\uc774 \uce74\ud0c8\ub85c\uadf8\uc5d0 \uc801\ud600 \uc788\uc73c\ub2c8 \uadf8\ucabd\uc744 \uc4f0\uc138\uc694.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "title": "\uacf5\uac1c \ub370\uc774\ud130 URL (Open data URLs)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_earnings",
+     "title": "\uc7a0\uc815\u00b7\uc815\uae30 \uc2e4\uc801 (Quarterly earnings, incl. preliminary)",
+     "description": "Earnings from DART, INCLUDING preliminary (\uc7a0\uc815) results filed ~2 weeks before the regular report. Each row says whether the figure is year-to-date cumulative or a single quarter. Pass a code for one stock's history, or omit it for the largest caps. get_stock shows the regular report and flags a newer preliminary filing when one exists; this tool gives the preliminary figures in full. | DART \uc2e4\uc801 \u2014 \uc815\uae30\ubcf4\uace0\uc11c\ubcf4\ub2e4 2\uc8fc \ube60\ub978 \uc7a0\uc815\uc2e4\uc801 \ud3ec\ud568. \ud589\ub9c8\ub2e4 \ub204\uc801\uc778\uc9c0 \ub2e8\ub3c5 \ubd84\uae30\uc778\uc9c0 \uc801\uc2b5\ub2c8\ub2e4. code \ub97c \uc8fc\uba74 \uadf8 \uc885\ubaa9 \uc774\ub825, \uc0dd\ub7b5\ud558\uba74 \uc2dc\ucd1d \uc0c1\uc704. get_stock \uc740 \uc815\uae30\ubcf4\uace0\uc11c \uc218\uce58\uc5d0 \ub354 \ucd5c\uc2e0 \uc7a0\uc815\uc2e4\uc801\uc774 \uc788\ub2e4\ub294 \ud45c\uc2dc\ub97c \ubd99\uc774\uace0, \uc7a0\uc815 \uc218\uce58 \uc804\uccb4\ub294 \uc774 \ub3c4\uad6c\uac00 \uc90d\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "code": {
+        "type": "string",
+        "description": "6-digit ticker, optional | 6\uc790\ub9ac \uc885\ubaa9\ucf54\ub4dc(\uc120\ud0dd)"
+       },
+       "limit": {
+        "type": "number",
+        "description": "max rows, default 15 | \ucd5c\ub300 \uac74\uc218(\uae30\ubcf8 15)"
+       }
+      }
+     },
+     "annotations": {
+      "title": "\uc7a0\uc815\u00b7\uc815\uae30 \uc2e4\uc801 (Quarterly earnings, incl. preliminary)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_history",
+     "title": "\uc885\ubaa9 \uc77c\ubcc4 \uc2dc\uc138 (Daily price history)",
+     "description": "Answers \"is this stock near its high or deep in a drawdown, and is volume unusual?\" \u2014 the stock's accumulated daily CLOSES, plus period high/low, drawdown from the high, and volume vs the 60-day average. Close-based (this history file carries daily closes only; the latest day's high/low is in the stock file), so it will differ from an HTS 52-week range. | \"\uc804 \uad6c\uac04 \uace0\uc810 \ub300\ube44 \uc5bc\ub9c8\ub098 \ube60\uc84c\ub098\u00b7\uac70\ub798\ub7c9\uc774 \ud3c9\uc18c\ubcf4\ub2e4 \ub9ce\ub098\"\uc5d0 \ub2f5\ud569\ub2c8\ub2e4 \u2014 \ubcf4\uc720 \uad6c\uac04 \uc804\uccb4\uc758 **\uc885\uac00 \uae30\uc900** \uace0\uc800\u00b7\ub099\ud3ed\u00b7\uac70\ub798\ub7c9 \ubc30\uc218. \uc7a5\uc911 \uace0\uc800\uac00 \uc544\ub2c8\ub77c HTS 52\uc8fc \ubc94\uc704\uc640 \ub2e4\ub97c \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "code": {
+        "type": "string",
+        "description": "6-digit ticker | 6\uc790\ub9ac \uc885\ubaa9\ucf54\ub4dc"
+       },
+       "days": {
+        "type": "number",
+        "description": "recent N days to list, default 20, max 60 \u2014 for the full history read /data/public/s/{code}_history.json | \ub098\uc5f4\ud560 \ucd5c\uadfc \uc77c\uc218(\uae30\ubcf8 20, **\ucd5c\ub300 60**. \uc804\uccb4 \uc774\ub825\uc740 s/{code}_history.json)"
+       }
+      },
+      "required": [
+       "code"
+      ]
+     },
+     "annotations": {
+      "title": "\uc885\ubaa9 \uc77c\ubcc4 \uc2dc\uc138 (Daily price history)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_disclosure_impact",
+     "title": "\uacf5\uc2dc \uc720\ud615\ubcc4 \uc774\ud6c4 \uc8fc\uac00 (Post-filing price path)",
+     "description": "Answers \"what usually happened after this kind of filing?\" \u2014 median MARKET-ADJUSTED return at +1/+5/+20 trading days per DART filing type (+20 only where that type has enough samples \u2014 see h20_status), with 95% intervals, sample window and n. A historical record, not a forecast. Coverage: every listed stock in the FSC price feed (no ETFs/ETNs); markets and counts are in index.json coverage and in each response footer. | \"\uc774 \uacf5\uc2dc \ub098\uc624\uba74 \ubcf4\ud1b5 \uc5b4\ub560\ub098\"\uc5d0 \ub2f5\ud569\ub2c8\ub2e4 \u2014 \uacf5\uc2dc \uc720\ud615\ubcc4\ub85c \uc811\uc218 \uc774\ud6c4 1\u00b75\u00b720\uac70\ub798\uc77c \ub4a4\uae4c\uc9c0(20\uac70\ub798\uc77c\uc740 \ud45c\ubcf8\uc774 \ucc2c \uc720\ud615\ub9cc) \uc2dc\uc7a5 \ub4f1\ub77d\uc744 \ube80 \uc218\uc775\ub960 \uc911\uc559\uac12\u00b795% \uad6c\uac04\u00b7\ud45c\ubcf8\uae30\uac04. \uacfc\uac70 \uae30\ub85d\uc774\uba70 \uc608\uce21\u00b7\ucd94\ucc9c\uc774 \uc544\ub2d9\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string",
+        "description": "filing type in Korean, e.g. \ubc30\ub2f9 \uacb0\uc815 | \uacf5\uc2dc \uc720\ud615(\uc120\ud0dd)"
+       }
+      }
+     },
+     "annotations": {
+      "title": "\uacf5\uc2dc \uc720\ud615\ubcc4 \uc774\ud6c4 \uc8fc\uac00 (Post-filing price path)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_earnings_calendar",
+     "title": "\uc2e4\uc801 \uce98\ub9b0\ub354 (Earnings calendar & new filings)",
+     "description": "Answers \"who has filed this quarter's results, who hasn't, and what came in since last time?\" \u2014 filed / not-yet lists against the statutory deadline, plus a diff of filings new since the previous publish. Built for stateless agents: polling this replaces a webhook. | \"\ub204\uac00 \ub0c8\uace0 \ub204\uac00 \uc544\uc9c1\uc778\uac00 \u00b7 \uc9c0\ub09c\ubc88 \uc774\ud6c4 \uc0c8\ub85c \ub72c \uac74 \ubb54\uac00\"\uc5d0 \ub2f5\ud569\ub2c8\ub2e4. \ubc95\uc815 \ub9c8\uac10 D-day \uc640 \uc9c1\uc804 \ubc1c\ud589 \ub300\ube44 \uc2e0\uaddc \ubaa9\ub85d\uae4c\uc9c0. \uc0c1\ud0dc\ub97c \ubabb \ub4e4\uace0 \ub2e4\ub2c8\ub294 \uc5d0\uc774\uc804\ud2b8\ub97c \uc704\ud55c \ub3c4\uad6c\uc785\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "view": {
+        "type": "string",
+        "description": "summary(\uae30\ubcf8) | not_yet(\ubbf8\uc811\uc218 \ubaa9\ub85d) | filed(\uc811\uc218 \ubaa9\ub85d) | new(\uc9c1\uc804 \ubc1c\ud589 \uc774\ud6c4 \uc2e0\uaddc)"
+       },
+       "limit": {
+        "type": "number",
+        "description": "\ubaa9\ub85d \ucd5c\ub300 \uac74\uc218(\uae30\ubcf8 20, \ucd5c\ub300 100)"
+       }
+      }
+     },
+     "annotations": {
+      "title": "\uc2e4\uc801 \uce98\ub9b0\ub354 (Earnings calendar & new filings)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "get_disclosures",
+     "title": "\uacf5\uc2dc \ubaa9\ub85d (Disclosures with receipt times)",
+     "description": "Answers \"what was filed, and when exactly?\" \u2014 DART filings with RECEIPT TIME (HH:MM) and session (pre-open / intraday / after-close), filterable by date, type and importance. OpenDART's filing-list API returns the receipt date only; we add the HH:MM. About half of tracked filings arrive AFTER the close (daily counts: /data/public/press_owl_filings.csv), so that day's price move is not a reaction to them. date=today serves the 15:00 intraday collection (no importance scores yet); any other date serves the ranked list of the last 7 days. | \"\ubb34\uc2a8 \uacf5\uc2dc\uac00 \uba87 \uc2dc\uc5d0 \ub0ac\ub098\"\uc5d0 \ub2f5\ud569\ub2c8\ub2e4 \u2014 \uc811\uc218 \uc2dc\uac01(HH:MM)\uacfc \uc7a5 \uad6c\ubd84\uae4c\uc9c0. \uacf5\uac1c \uacf5\uc2dc \ubaa9\ub85d API(OpenDART)\ub294 \uc811\uc218 \ub0a0\uc9dc\uae4c\uc9c0\ub9cc \uc90d\ub2c8\ub2e4 \u2014 \uc2dc:\ubd84\uc740 \uc800\ud76c\uac00 \ubaa8\uc74d\ub2c8\ub2e4. \ub0a0\uc9dc\u00b7\uc720\ud615\u00b7\uc911\uc694\ub3c4\ub85c \uac70\ub97c \uc218 \uc788\uc2b5\ub2c8\ub2e4. \ucd94\uc801 \uc720\ud615 \uae30\uc900 **\uc808\ubc18 \uc548\ud30e\uc774 \uc7a5 \ub9c8\uac10 \ud6c4** \uc811\uc218\ub77c(\ub0a0\uc9dc\ubcc4\uc740 press_owl_filings.csv) \uadf8\ub0a0 \ub4f1\ub77d\uc740 \uadf8 \uacf5\uc2dc\uc758 \ubc18\uc751\uc774 \uc544\ub2d9\ub2c8\ub2e4. date=\uc624\ub298\uc774\uba74 15:00 \uc7a5\uc911 \uc218\uc9d1\ubcf8(\uc544\uc9c1 \uc911\uc694\ub3c4 \uc810\uc218 \uc5c6\uc74c), \ub2e4\ub978 \ub0a0\uc9dc\uba74 \ucd5c\uadfc 7\uc77c \uc0c1\uc704 \ubaa9\ub85d\uc785\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "date": {
+        "type": "string",
+        "description": "YYYYMMDD (\uc608: 20260910). \"today\" \ub3c4 \ubc1b\uc2b5\ub2c8\ub2e4 \u2014 \uc624\ub298(KST)\ub85c \ud480\uc5b4 \uc7a5\uc911 \uc218\uc9d1\ubcf8\uc744 \uc90d\ub2c8\ub2e4. \uc0dd\ub7b5\ud558\uba74 \ucd5c\uadfc 7\uc77c \uc911\uc694\ub3c4 \uc0c1\uc704 \ubaa9\ub85d\uc785\ub2c8\ub2e4. | YYYYMMDD, or \"today\" for the intraday snapshot; omit for the last 7 days by importance."
+       },
+       "session": {
+        "type": "string",
+        "description": "pre_open | intraday | after_close"
+       },
+       "label": {
+        "type": "string",
+        "description": "\uacf5\uc2dc \uc720\ud615 \ubd80\ubd84\uc77c\uce58(\uc608: \ubc30\ub2f9, \uc790\uc0ac\uc8fc)"
+       },
+       "min_score": {
+        "type": "number",
+        "description": "\uc911\uc694\ub3c4 \uc810\uc218 \ud558\ud55c(\uc7a5\uc911 \uc218\uc9d1\ubcf8\uc5d0\ub294 \uc810\uc218\uac00 \uc5c6\uc2b5\ub2c8\ub2e4)"
+       },
+       "limit": {
+        "type": "number",
+        "description": "\ucd5c\ub300 \uac74\uc218(\uae30\ubcf8 20, \ucd5c\ub300 100)"
+       },
+       "include_unlisted": {
+        "type": "boolean",
+        "description": "\uc7a5\uc911 \uc218\uc9d1\ubcf8\uc5d0\uc11c \ube44\uc0c1\uc7a5 \ubc95\uc778\u00b7\uc6b0\ub9ac\uac00 \ubc1c\ud589\ud558\uc9c0 \uc54a\ub294 \uc885\ubaa9\uc758 \uacf5\uc2dc(\ucc44\uad8c \uc2e0\uace0\uc11c \ub4f1)\uae4c\uc9c0 \ubcfc\uc9c0. \uae30\ubcf8 false \u2014 \uc0c1\uc7a5 \uc885\ubaa9(in_universe)\ub9cc. | include filings of unlisted issuers in the intraday snapshot (default false)"
+       }
+      }
+     },
+     "annotations": {
+      "title": "\uacf5\uc2dc \ubaa9\ub85d (Disclosures with receipt times)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    },
+    {
+     "name": "list_stocks",
+     "title": "\uc870\uac74\uc73c\ub85c \uc885\ubaa9 \ubaa9\ub85d (Screen stocks by condition)",
+     "description": "Return the LIST of stocks matching a condition \u2014 turnaround to profit, 52-week high/low, growth or quiet-performer rankings \u2014 with optional market-cap range and a cap-to-operating-income multiple ceiling. Other tools give counts; this one gives the names. new_high/new_low return at most 30 names per side (the published list); the full count is in get_market_summary(). | \uc870\uac74\uc5d0 \ub9de\ub294 \uc885\ubaa9 \ubaa9\ub85d\uc744 \ub3cc\ub824\uc90d\ub2c8\ub2e4 \u2014 \ud751\uc790\uc804\ud658\u00b752\uc8fc \uc2e0\uace0\uc800\u00b7\uc131\uc7a5/\uc870\uc6a9\ud55c \uc2e4\uc801\uc8fc. \uc2dc\ucd1d \ubc94\uc704\uc640 \uc2dc\ucd1d\u00f7\uc5f0\ud658\uc0b0\uc601\uc5c5\uc774\uc775 \ubc30\uc218 \uc0c1\ud55c\ub3c4 \uac78 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \ub2e4\ub978 \ub3c4\uad6c\uac00 \uac1c\uc218\ub97c \uc900\ub2e4\uba74 \uc774\uac74 \ubaa9\ub85d\uc744 \uc90d\ub2c8\ub2e4. 52\uc8fc \uc2e0\uace0\uac00\u00b7\uc2e0\uc800\uac00\ub294 \ubc1c\ud589 \ubaa9\ub85d\uc774 \ucabd\ub9c8\ub2e4 \ucd5c\ub300 30\uc885\ubaa9\uc774\uace0, \uc804\uccb4 \uc218\ub294 get_market_summary \uac00 \uc90d\ub2c8\ub2e4.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {
+       "filter": {
+        "type": "string",
+        "description": "turnaround(\ud751\uc790\uc804\ud658) | new_high(52\uc8fc \uc2e0\uace0\uac00) | new_low(52\uc8fc \uc2e0\uc800\uac00) | growth(\uc131\uc7a5 TOP) | quiet(\uc870\uc6a9\ud55c \uc2e4\uc801\uc8fc) | all(\uc804\uccb4). \uae30\ubcf8 turnaround"
+       },
+       "max_multiple": {
+        "type": "number",
+        "description": "\uc2dc\ucd1d\u00f7\uc5f0\ud658\uc0b0\uc601\uc5c5\uc774\uc775 \uc0c1\ud55c(\uc608: 10). \uc601\uc5c5\uc774\uc775 \ud751\uc790 \uc885\ubaa9\ub9cc \ub0a8\uc2b5\ub2c8\ub2e4"
+       },
+       "min_cap_eok": {
+        "type": "number",
+        "description": "\uc2dc\uac00\ucd1d\uc561 \ud558\ud55c(\uc5b5\uc6d0)"
+       },
+       "max_cap_eok": {
+        "type": "number",
+        "description": "\uc2dc\uac00\ucd1d\uc561 \uc0c1\ud55c(\uc5b5\uc6d0)"
+       },
+       "sort": {
+        "type": "string",
+        "description": "cap(\uc2dc\ucd1d \ud070 \uc21c, \uae30\ubcf8) | multiple(\ubc30\uc218 \ub0ae\uc740 \uc21c) | change(\ub4f1\ub77d\ub960 \ub192\uc740 \uc21c) | turnover(\uac70\ub798\ub300\uae08 \ud070 \uc21c) | drawdown(\ub099\ud3ed \ud070 \uc21c)"
+       },
+       "limit": {
+        "type": "number",
+        "description": "\ucd5c\ub300 \uac74\uc218(\uae30\ubcf8 20, \ucd5c\ub300 100)"
+       },
+       "max_turnover_pctile": {
+        "type": "number",
+        "description": "\uac70\ub798\ub300\uae08 \ubc31\ubd84\uc704 \uc0c1\ud55c(0~100). \uc608: 30 \uc774\uba74 \uac70\ub798\ub300\uae08 \ud558\uc704 30% \u2014 \uc18c\uc678\uc8fc"
+       },
+       "min_turnover_pctile": {
+        "type": "number",
+        "description": "\uac70\ub798\ub300\uae08 \ubc31\ubd84\uc704 \ud558\ud55c(0~100). \uc608: 70 \uc774\uba74 \uac70\ub798\ub300\uae08 \uc0c1\uc704 30%"
+       },
+       "min_drawdown_pct": {
+        "type": "number",
+        "description": "52\uc8fc(\ucd5c\uadfc 250\uac70\ub798\uc77c) \uace0\uc810 \ub300\ube44 \ub099\ud3ed \ud558\ud55c(%, \uc591\uc218\ub85c). \uc608: 30 \uc774\uba74 52\uc8fc \ucd5c\uace0 \uc885\uac00 \ub300\ube44 30% \uc774\uc0c1 \ud558\ub77d\ud55c \uc885\ubaa9\ub9cc. \u2605\uc804 \uad6c\uac04(\uc0c1\uc7a5 \uc774\ud6c4) \ucd5c\ub300\ub099\ud3ed(MDD)\uacfc \ub2e4\ub985\ub2c8\ub2e4 \u2014 \uadf8\ucabd\uc740 /mdd \uc7a5\uc785\ub2c8\ub2e4"
+       },
+       "max_drawdown_pct": {
+        "type": "number",
+        "description": "52\uc8fc(\ucd5c\uadfc 250\uac70\ub798\uc77c) \uace0\uc810 \ub300\ube44 \ub099\ud3ed \uc0c1\ud55c(%, \uc591\uc218\ub85c). \uc608: 10 \uc774\uba74 52\uc8fc \uace0\uc810 \uadfc\ucc98(10% \uc774\ub0b4)\ub9cc"
+       }
+      }
+     },
+     "annotations": {
+      "title": "\uc870\uac74\uc73c\ub85c \uc885\ubaa9 \ubaa9\ub85d (Screen stocks by condition)",
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+     }
+    }
+   ],
+   "prompts": [],
+   "resources": []
+  }
+ ]
+}

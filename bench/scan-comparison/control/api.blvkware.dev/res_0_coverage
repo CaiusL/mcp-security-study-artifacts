@@ -1,0 +1,84 @@
+{
+  "live": [
+    {
+      "namespace": "cite.doi",
+      "authority": "doi.org",
+      "actionKind": "cite"
+    },
+    {
+      "namespace": "pkg.crates",
+      "authority": "crates.io",
+      "actionKind": "install"
+    },
+    {
+      "namespace": "pkg.go",
+      "authority": "proxy.golang.org",
+      "actionKind": "install"
+    },
+    {
+      "namespace": "pkg.maven",
+      "authority": "search.maven.org",
+      "actionKind": "install"
+    },
+    {
+      "namespace": "pkg.npm",
+      "authority": "registry.npmjs.org",
+      "actionKind": "install"
+    },
+    {
+      "namespace": "pkg.nuget",
+      "authority": "api.nuget.org",
+      "actionKind": "install"
+    },
+    {
+      "namespace": "pkg.pypi",
+      "authority": "pypi.org",
+      "actionKind": "install"
+    }
+  ],
+  "planned": [
+    {
+      "namespace": "api.endpoint",
+      "covers": "HTTP routes on known vendor APIs",
+      "authority": "vendor OpenAPI documents"
+    },
+    {
+      "namespace": "cli.flag",
+      "covers": "command-line flags on common tools",
+      "authority": "shipped man pages and --help output"
+    },
+    {
+      "namespace": "code.symbol",
+      "covers": "functions, classes and methods in indexed libraries",
+      "authority": "parsed source at version"
+    },
+    {
+      "namespace": "cite.legal",
+      "covers": "US case and statute citations",
+      "authority": "CourtListener, govinfo"
+    },
+    {
+      "namespace": "model.id",
+      "covers": "model identifiers and API model strings",
+      "authority": "vendor documentation"
+    }
+  ],
+  "inputs": {
+    "commands": [
+      "npm / yarn / pnpm / bun",
+      "pip / pip3 / uv / poetry / pipenv / pipx / conda",
+      "cargo",
+      "go get / go install",
+      "dotnet add package / nuget install",
+      "mvn -Dartifact="
+    ],
+    "manifests": [
+      "cargo.toml",
+      "go.mod",
+      "package.json",
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "note": "A token that cannot be confidently classified is dropped rather than guessed at. An empty result means nothing was recognised, never that the command is safe."
+  }
+}

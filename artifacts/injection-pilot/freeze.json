@@ -1,0 +1,37 @@
+{
+  "recorded": "2026-10-25",
+  "model_run": false,
+  "sha256": "222aebbdf70409ce8a7738ecc9b7c841007042758cbe26897becf2779aab92b3",
+  "items": {
+    "task_prompts": {
+      "sha256": "b34d3a1f165351b7ae1e42673b040da47baa78d7c6e74e32ca4ad16d40f57d51"
+    },
+    "live_task_prompts": {
+      "sha256": "f3812035b42faa155883ec69394e8c1bcd0717fd6488e80e994cb9ad4ceb9152"
+    },
+    "task_oracles": {
+      "sha256": "57253532879f796cc497d68a0a1d3fc2e3ee66812e4129c6efee048e8c24766b"
+    },
+    "goal_oracles": {
+      "sha256": "0d2b92186a89bd6066b54ce040724b05e22bf467c3a3bfe735d4057521397afa"
+    },
+    "templates": {
+      "sha256": "43dac339a9fb83df1db1292ed3ae43fa00e3d97150e1671a81f56e5e2c9fd926"
+    },
+    "cases": {
+      "sha256": "bb89e5c5406aa83aaf72fe6f1032adb8f9a01a42303b60a1abc1f311ed387e5b"
+    },
+    "host_prompt": {
+      "sha256": "b4ef05cedce174e8e22cf981d4d552e83754f55a02a9fdb7eb93877425f35c9f"
+    },
+    "policy_prompt": {
+      "sha256": "59d0202b0efdc577cffa855d978022aa1a24de80d17c4549629c996d7302de11"
+    },
+    "rule_r1": {
+      "sha256": "3260b10530c170eec091429f4a207cf3cdab2eb76fc1992d42b743c28e7e11c8"
+    },
+    "zgscanner": {
+      "sha256": "8be18cbc82f98a28629b75cb54ce0544b12a4f4cf9cbc99d6eac8a8329281230"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "stage2-progent-freeze",
+  "recorded": "2026-11-03",
+  "model_run": false,
+  "extends_sha256": "bbaecb1a727b28167580f6f64cf458055f3e084e2b06ddd0950a5d39a5cc0cbd",
+  "oracle_sha256": "d44c74c424560add3caa18ff424ac7599e9fb936369068c2bc773cd965c0c853",
+  "sha256": "65b5e4c91c1e2b47bd6778d100e5942338332fb406fb992b6fc615eeb9ffeb1c",
+  "layer_d_item": "policy_prompt",
+  "secagent_files": {
+    "secagent/__init__.py": "4ffaaabcf976262ef1010943db76ca645808e178674b335af30b5806ae8bdd14",
+    "secagent/mcp_proxy.py": "e3e86dcfa6389cbedadce152dacf1031f60064b2a549297cc1287d1a3fc4327a",
+    "secagent/policy_analysis.py": "23053f621e459b5dcc8c5c51aa387e438482fee73f93feefb0ce248063feccba",
+    "secagent/policy_type_check.py": "9c3dc678596d70b967af5689b088ea1159285f928ba84b5fcdf9fa32bee10dbf",
+    "secagent/progent_proxy.py": "9e0f4632a4577bc3808c4465d0b5be659cc6f6cca9c893b64bc5ddec05e55358",
+    "secagent/role_analyzer.py": "b512a96256c608dc36ad73ccfa7aad394ddbf5dd559325c31a0e0da4994e3f69",
+    "secagent/tool.py": "c0d4caf85dae95e4db309a3153aef1d3005080babcf7a1277e67b6481e63800e",
+    "secagent/utils.py": "37309da56bf25a097c379b706be2ee981091ac90eb679674e1a3638318a37125"
+  },
+  "secagent_settings": {
+    "SECAGENT_POLICY_MODEL": "gpt-4o-2024-08-06",
+    "SECAGENT_TASK_TYPE": "general"
+  },
+  "items": {
+    "task_prompts": {
+      "sha256": "f159e2bea7c5be8bbac6ce4a90c32fc600fb94bfb978d28b0f3111fc370db591"
+    },
+    "task_oracles": {
+      "sha256": "7f05245a52f170d23676977ac74316a3430b4d9a93d40917d348c7dc80c664c5"
+    },
+    "fixture": {
+      "sha256": "26e9050e5cdb7a4543dbb64e7cee51885fbb4cf7af04d9d1bca482743b69c47b"
+    },
+    "goal_oracles": {
+      "sha256": "709c0def89caeb9e97b3bed0cea525f27155bd6ba8925c19bc38e65ff877b881"
+    },
+    "templates": {
+      "sha256": "e0d428d0ab376fbd9827fd516ecae1f2985242e42a0e1d386f52df1a7a2a3fd5"
+    },
+    "cases": {
+      "sha256": "f72a1c8050ada6ded41a10ea4700295c100f9bc6a7c50d8de66e96cca439836c"
+    },
+    "host_prompt": {
+      "sha256": "b4ef05cedce174e8e22cf981d4d552e83754f55a02a9fdb7eb93877425f35c9f"
+    },
+    "policy_prompt": {
+      "sha256": "7e4e5e13abee0b80059352a3b24a3b50e24be72a670102b219f72688b320b8c8"
+    },
+    "rule_r1": {
+      "sha256": "3260b10530c170eec091429f4a207cf3cdab2eb76fc1992d42b743c28e7e11c8"
+    },
+    "zgscanner": {
+      "sha256": "8be18cbc82f98a28629b75cb54ce0544b12a4f4cf9cbc99d6eac8a8329281230"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="704" viewBox="0 0 760 704">
+<rect width="100%" height="100%" fill="#fbfbf9"/>
+<text x="56" y="30" font-family="Segoe UI, sans-serif" font-size="16" fill="#222">Vulnerable stand-ins (prefix check, symlink follow, open fetch)</text>
+<line x1="56" y1="48" x2="56" y2="304" stroke="#ccc"/>
+<line x1="56" y1="304" x2="740" y2="304" stroke="#ccc"/>
+<text x="48" y="308" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">0%</text>
+<text x="48" y="180.0" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">50%</text>
+<text x="48" y="52" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">100%</text>
+<text x="56.0" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L0</text>
+<text x="192.8" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L1</text>
+<text x="329.6" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L2</text>
+<text x="466.4" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L3</text>
+<text x="603.2" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L4</text>
+<text x="740.0" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L5</text>
+<polyline fill="none" stroke="#9b2226" stroke-width="2.5" points="56.0,304.0 192.8,167.5 329.6,150.4 466.4,65.1 603.2,48.0 740.0,48.0"/>
+<polyline fill="none" stroke="#1b7f5a" stroke-width="2.5" points="56.0,48.0 192.8,48.0 329.6,71.3 466.4,141.1 603.2,164.4 740.0,234.2"/>
+<polyline fill="none" stroke="#1d4e89" stroke-width="2.5" points="56.0,48.0 192.8,48.0 329.6,48.0 466.4,48.0 603.2,48.0 740.0,48.0"/>
+<circle cx="466.4" cy="65.1" r="5" fill="#9b2226"/>
+<text x="56" y="370" font-family="Segoe UI, sans-serif" font-size="16" fill="#222">Patched stand-ins (canonical root, public http only)</text>
+<line x1="56" y1="388" x2="56" y2="644" stroke="#ccc"/>
+<line x1="56" y1="644" x2="740" y2="644" stroke="#ccc"/>
+<text x="48" y="648" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">0%</text>
+<text x="48" y="520.0" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">50%</text>
+<text x="48" y="392" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">100%</text>
+<text x="56.0" y="662" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L0</text>
+<text x="192.8" y="662" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L1</text>
+<text x="329.6" y="662" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L2</text>
+<text x="466.4" y="662" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L3</text>
+<text x="603.2" y="662" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L4</text>
+<text x="740.0" y="662" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">L5</text>
+<polyline fill="none" stroke="#9b2226" stroke-width="2.5" points="56.0,507.5 192.8,507.5 329.6,490.4 466.4,405.1 603.2,388.0 740.0,388.0"/>
+<polyline fill="none" stroke="#1b7f5a" stroke-width="2.5" points="56.0,388.0 192.8,388.0 329.6,411.3 466.4,481.1 603.2,504.4 740.0,574.2"/>
+<polyline fill="none" stroke="#1d4e89" stroke-width="2.5" points="56.0,388.0 192.8,388.0 329.6,388.0 466.4,388.0 603.2,388.0 740.0,388.0"/>
+<circle cx="466.4" cy="405.1" r="5" fill="#9b2226"/>
+<rect x="56" y="678" width="14" height="8" fill="#9b2226"/>
+<text x="74" y="686" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">Attack probes blocked</text>
+<rect x="266" y="678" width="14" height="8" fill="#1b7f5a"/>
+<text x="284" y="686" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">Held-out tasks succeeding</text>
+<rect x="476" y="678" width="14" height="8" fill="#1d4e89"/>
+<text x="494" y="686" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">Training tasks succeeding</text>
+</svg>

@@ -1,0 +1,57 @@
+{
+  "kind": "stage4-run",
+  "label": "adaptive arm, reported apart",
+  "scripted": false,
+  "target": {
+    "model_argument": "qwen3.8-flash",
+    "base_url": "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+    "temperature": 0.0,
+    "top_p": null,
+    "thinking_off": true,
+    "step_cap": 8
+  },
+  "attacker": {
+    "model_argument": "deepseek-flash",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.0,
+    "top_p": null,
+    "thinking_off": true,
+    "max_tokens": 2000
+  },
+  "fallback": {
+    "model_argument": "qwen3.8-flash",
+    "base_url": "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+    "temperature": 0.0,
+    "top_p": null,
+    "thinking_off": true,
+    "max_tokens": 2000
+  },
+  "cases": [
+    "page-G1-fetch-h-guide",
+    "page-G1-fetch-h-post2",
+    "page-G2-fetch-h-guide",
+    "page-G2-fetch-h-post2",
+    "repo-file-G1-fs-h-reread",
+    "repo-file-G1-fs-h-summary",
+    "repo-file-G2-fs-h-reread",
+    "repo-file-G2-fs-h-summary",
+    "commit-message-G1-git-h-log",
+    "commit-message-G1-git-h-show-release",
+    "commit-message-G2-git-h-log",
+    "commit-message-G2-git-h-show-release",
+    "memory-entity-G1-mem-h-read-graph",
+    "memory-entity-G1-mem-h-open-roadmap",
+    "memory-entity-G2-mem-h-read-graph",
+    "memory-entity-G2-mem-h-open-roadmap",
+    "description-G1-fs-h-weekly",
+    "description-G1-fs-h-reread",
+    "description-G2-fs-h-weekly",
+    "description-G2-fs-h-reread"
+  ],
+  "layer_d": "frozen",
+  "sandbox": "C:\\On9MCP\\artifacts\\stage4\\qwen3.8-flash\\sandbox",
+  "freeze_sha256": "97fa9b072cf258ad9f7cd74741e0dd7c116f85d28c0374aa2502fec99ae90322",
+  "stage2_freeze_sha256": "bbaecb1a727b28167580f6f64cf458055f3e084e2b06ddd0950a5d39a5cc0cbd",
+  "host_prompt_sha256": "b4ef05cedce174e8e22cf981d4d552e83754f55a02a9fdb7eb93877425f35c9f",
+  "started": "2026-11-03T08:28:33.363220+00:00"
+}

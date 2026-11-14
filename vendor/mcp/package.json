@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@modelcontextprotocol/server-filesystem": "2.0.0",
+    "@modelcontextprotocol/server-memory": "2.0.0",
+    "@modelcontextprotocol/server-sequential-thinking": "2.0.0"
+  }
+}

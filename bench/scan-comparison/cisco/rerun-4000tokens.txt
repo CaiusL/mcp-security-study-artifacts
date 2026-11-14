@@ -1,0 +1,25 @@
+﻿
+Scanning https://api.blvkware.dev/hallux/mcp (tools, instructions, prompts, resources) ...
+  [HIGH] LLM - tools - hallux_check_command: Detected 1 threat: prompt injection
+  [HIGH] LLM - tools - hallux_check: Detected 1 threat: prompt injection
+  [HIGH] LLM - instructions - server instructions: Detected 1 threat: prompt injection
+UNSAFE - the LLM flagged 3 item(s) (tools: 4, instructions: 1, prompts: 0, resources: 2)
+
+Scanning https://wealthmcp.ai/mcp (tools, instructions, prompts, resources) ...
+  [HIGH] LLM - tools - list_skills: Detected 1 threat: prompt injection
+UNSAFE - the LLM flagged 1 item(s) (tools: 8, instructions: 1, prompts: 0, resources: 0)
+
+Scanning https://mcp.veterical.com/mcp (tools, instructions, prompts, resources) ...
+  [INFO] MCP - resources - veterical-clinic-overview: MCP analysis did not complete for veterical-clinic-overview: Coverage budget exceeded during analysis (observed 479437, limit 100000)
+  [INFO] MCP - resources - veterical-workspace: MCP analysis did not complete for veterical-workspace: Coverage budget exceeded during analysis (observed 489540, limit 100000)
+  [INFO] MCP - resources - veterical-workspace-v1: MCP analysis did not complete for veterical-workspace-v1: Coverage budget exceeded during analysis (observed 489540, limit 100000)
+  [INFO] MCP - resources - veterical-schedule-summary: MCP analysis did not complete for veterical-schedule-summary: Coverage budget exceeded during analysis (observed 478106, limit 100000)
+INCOMPLETE - some checks did not run, see the lines above; for an LLM failure check the key and balance in mcp-scanner/.env (tools: 11, instructions: 1, prompts: 0, resources: 6)
+
+=== Results ===
+UNSAFE - the LLM flagged 3 item(s) (tools: 4, instructions: 1, prompts: 0, resources: 2)
+    https://api.blvkware.dev/hallux/mcp
+UNSAFE - the LLM flagged 1 item(s) (tools: 8, instructions: 1, prompts: 0, resources: 0)
+    https://wealthmcp.ai/mcp
+INCOMPLETE - some checks did not run, see the lines above; for an LLM failure check the key and balance in mcp-scanner/.env (tools: 11, instructions: 1, prompts: 0, resources: 6)
+    https://mcp.veterical.com/mcp

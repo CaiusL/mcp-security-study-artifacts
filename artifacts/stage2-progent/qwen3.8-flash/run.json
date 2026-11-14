@@ -1,0 +1,7 @@
+{
+  "model": "qwen3.8-flash",
+  "scripted": false,
+  "sandbox": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox",
+  "progent_freeze_sha256": "65b5e4c91c1e2b47bd6778d100e5942338332fb406fb992b6fc615eeb9ffeb1c",
+  "started": "2026-11-03T07:19:35.005211+00:00"
+}

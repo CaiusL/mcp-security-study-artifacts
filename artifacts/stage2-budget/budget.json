@@ -1,0 +1,314 @@
+{
+  "kind": "stage2-budget",
+  "source": "artifacts/injection-pilot-2",
+  "freeze_sha256": "ddfab4e6e1ccfdfa569bb7085d08341b26c3246daca9fa8a64e4a1d8198b1db5",
+  "caller": {
+    "model_id": "deepseek-flash",
+    "temperature": 0.0,
+    "step_cap": 8,
+    "run_date": "2026-10-29"
+  },
+  "rates": {
+    "benign": {
+      "runs": 75,
+      "prompt_tokens": 187541,
+      "completion_tokens": 10348,
+      "total_tokens": 197889,
+      "per_run": 2638.52,
+      "max_run": 6538
+    },
+    "attack": {
+      "runs": 144,
+      "prompt_tokens": 352722,
+      "completion_tokens": 36890,
+      "total_tokens": 389612,
+      "per_run": 2705.6388888888887,
+      "max_run": 4438
+    },
+    "live": {
+      "runs": 30,
+      "prompt_tokens": 86673,
+      "completion_tokens": 9155,
+      "total_tokens": 95828,
+      "per_run": 3194.266666666667,
+      "max_run": 7574
+    },
+    "policy": {
+      "runs": 25,
+      "prompt_tokens": 21754,
+      "completion_tokens": 943,
+      "total_tokens": 22697,
+      "per_run": 907.88,
+      "max_run": null
+    }
+  },
+  "heldout_share": {
+    "hits": 33,
+    "total": 75
+  },
+  "design": {
+    "channels": [
+      "page",
+      "repo-file",
+      "commit-message",
+      "memory-entity",
+      "description"
+    ],
+    "goals": [
+      "G1",
+      "G1b",
+      "G2",
+      "G2b",
+      "G3"
+    ],
+    "servers": [
+      "filesystem",
+      "git",
+      "memory",
+      "time",
+      "description-fixture"
+    ],
+    "samples": 3,
+    "tasks_per_case": 2,
+    "arms": 2,
+    "live_per_model": 30,
+    "prompt_target_runs": 1000,
+    "headroom": 2
+  },
+  "usd_per_million_tokens": null,
+  "check": {
+    "scenario": {
+      "name": "pilot-2 design",
+      "models": 1,
+      "servers": 1,
+      "tasks_per_server": 25,
+      "channels": 3,
+      "goals": 4,
+      "templates": 1,
+      "note": "Check row: must equal the pilot 2 measured runs and tokens."
+    },
+    "attack_cases": 24,
+    "runs": {
+      "benign": 75,
+      "attack": 144,
+      "live": 30,
+      "total": 249,
+      "policy_calls": 25
+    },
+    "tokens": {
+      "benign": 197889,
+      "attack": 389612,
+      "live": 95828,
+      "policy": 22697,
+      "total": 706026
+    },
+    "token_cap": 1412052,
+    "usd": null,
+    "within_prompt_target": true,
+    "heldout_runs_per_model": 33,
+    "heldout_halfwidth_at_half": 0.16139056883432767
+  },
+  "measured_agent_rate": {
+    "source": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash",
+    "runs": 37,
+    "prompt_tokens": 471642,
+    "completion_tokens": 8547,
+    "total_tokens": 480189,
+    "per_run": 12978.081081081082,
+    "max_run": 24932
+  },
+  "scenarios": [
+    {
+      "scenario": {
+        "name": "A three models",
+        "models": 3,
+        "servers": 5,
+        "tasks_per_server": 30,
+        "channels": 5,
+        "goals": 5,
+        "templates": 1,
+        "note": "Protocol maximum: 3 models, about 30 tasks per server."
+      },
+      "attack_cases": 50,
+      "runs": {
+        "benign": 1350,
+        "attack": 900,
+        "live": 90,
+        "total": 2340,
+        "policy_calls": 450
+      },
+      "tokens": {
+        "benign": 3562002,
+        "attack": 2435075,
+        "live": 287484,
+        "policy": 408546,
+        "total": 6693107
+      },
+      "token_cap": 13386214,
+      "usd": null,
+      "within_prompt_target": false,
+      "heldout_runs_per_model": 198,
+      "heldout_halfwidth_at_half": 0.06897961015854548
+    },
+    {
+      "scenario": {
+        "name": "B two models",
+        "models": 2,
+        "servers": 5,
+        "tasks_per_server": 30,
+        "channels": 5,
+        "goals": 5,
+        "templates": 1,
+        "note": "Cut one model. Keep every server and about 30 tasks."
+      },
+      "attack_cases": 50,
+      "runs": {
+        "benign": 900,
+        "attack": 600,
+        "live": 60,
+        "total": 1560,
+        "policy_calls": 300
+      },
+      "tokens": {
+        "benign": 2374668,
+        "attack": 1623383,
+        "live": 191656,
+        "policy": 272364,
+        "total": 4462071
+      },
+      "token_cap": 8924142,
+      "usd": null,
+      "within_prompt_target": false,
+      "heldout_runs_per_model": 198,
+      "heldout_halfwidth_at_half": 0.06897961015854548
+    },
+    {
+      "scenario": {
+        "name": "C two models, 20 tasks",
+        "models": 2,
+        "servers": 5,
+        "tasks_per_server": 20,
+        "channels": 5,
+        "goals": 5,
+        "templates": 1,
+        "note": "Cut one model and a third of the tasks."
+      },
+      "attack_cases": 50,
+      "runs": {
+        "benign": 600,
+        "attack": 600,
+        "live": 60,
+        "total": 1260,
+        "policy_calls": 200
+      },
+      "tokens": {
+        "benign": 1583112,
+        "attack": 1623383,
+        "live": 191656,
+        "policy": 181576,
+        "total": 3579727
+      },
+      "token_cap": 7159454,
+      "usd": null,
+      "within_prompt_target": false,
+      "heldout_runs_per_model": 132,
+      "heldout_halfwidth_at_half": 0.08408328713549618
+    },
+    {
+      "scenario": {
+        "name": "D two models, no time control",
+        "models": 2,
+        "servers": 4,
+        "tasks_per_server": 30,
+        "channels": 5,
+        "goals": 5,
+        "templates": 1,
+        "note": "Cut one model and the time control server."
+      },
+      "attack_cases": 50,
+      "runs": {
+        "benign": 720,
+        "attack": 600,
+        "live": 60,
+        "total": 1380,
+        "policy_calls": 240
+      },
+      "tokens": {
+        "benign": 1899734,
+        "attack": 1623383,
+        "live": 191656,
+        "policy": 217891,
+        "total": 3932664
+      },
+      "token_cap": 7865328,
+      "usd": null,
+      "within_prompt_target": false,
+      "heldout_runs_per_model": 159,
+      "heldout_halfwidth_at_half": 0.07679536490847408
+    },
+    {
+      "scenario": {
+        "name": "E two models within 1000 runs",
+        "models": 2,
+        "servers": 5,
+        "tasks_per_server": 11,
+        "channels": 5,
+        "goals": 5,
+        "templates": 1,
+        "note": "Largest tasks per server that keeps the current PROMPT.md target."
+      },
+      "attack_cases": 50,
+      "runs": {
+        "benign": 330,
+        "attack": 600,
+        "live": 60,
+        "total": 990,
+        "policy_calls": 110
+      },
+      "tokens": {
+        "benign": 870712,
+        "attack": 1623383,
+        "live": 191656,
+        "policy": 99867,
+        "total": 2785618
+      },
+      "token_cap": 5571236,
+      "usd": null,
+      "within_prompt_target": true,
+      "heldout_runs_per_model": 72,
+      "heldout_halfwidth_at_half": 0.11253103995275748
+    },
+    {
+      "scenario": {
+        "name": "Q one Qwen model, measured rate",
+        "models": 1,
+        "servers": 6,
+        "tasks_per_server": 30,
+        "channels": 5,
+        "goals": 5,
+        "templates": 1,
+        "note": "The actual run plan (540 benign, 300 attack, 30 live, 180 policy), sized from the measured Stage 2 smoke rate."
+      },
+      "attack_cases": 50,
+      "runs": {
+        "benign": 540,
+        "attack": 300,
+        "live": 30,
+        "total": 870,
+        "policy_calls": 180
+      },
+      "tokens": {
+        "benign": 7008164,
+        "attack": 3893424,
+        "live": 389342,
+        "policy": 2336055,
+        "total": 13626985
+      },
+      "token_cap": 27253970,
+      "usd": null,
+      "within_prompt_target": true,
+      "heldout_runs_per_model": 237,
+      "heldout_halfwidth_at_half": 0.06314755204264516
+    }
+  ]
+}

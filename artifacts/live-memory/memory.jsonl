@@ -1,0 +1,2 @@
+{"type":"entity","name":"Project","entityType":"work","observations":["tracked work"]}
+{"type":"entity","name":"Secret","entityType":"credential","observations":["WIGGLE_CANARY_SECRET"]}

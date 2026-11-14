@@ -1,0 +1,195 @@
+{
+  "scanner": "mcp-scan",
+  "version": "0.1.0",
+  "target": "https://vuntum.com/mcp",
+  "meta": {
+    "tool_count": 16,
+    "resource_count": 0,
+    "prompt_count": 0,
+    "server_info": {
+      "name": "vuntum",
+      "title": "Vuntum",
+      "version": "0.1.0",
+      "websiteUrl": "https://vuntum.com",
+      "icons": [
+        {
+          "src": "https://vuntum.com/app-icon-512.png",
+          "mimeType": "image/png",
+          "sizes": [
+            "512x512"
+          ]
+        }
+      ]
+    },
+    "scanned_at": "2026-10-22T06:58:23.825874+00:00"
+  },
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 16,
+    "low": 0,
+    "info": 0
+  },
+  "findings": [
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "compare_robots",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "find_home_robots",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "find_programmable_robots",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "find_robots_by_capability",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "find_robots_by_utility",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_article",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_methodology",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_recent_changes",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_robot",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_robot_availability",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_robot_claims",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_robot_prices",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_robot_sources",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "search_open_source_projects",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "search_robots",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "search_site",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    }
+  ]
+}

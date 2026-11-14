@@ -1,0 +1,1670 @@
+{
+ "initialize": {
+  "protocolVersion": "2025-06-18",
+  "capabilities": {
+   "tools": {
+    "listChanged": false
+   },
+   "events": {},
+   "resources": {
+    "listChanged": false
+   },
+   "extensions": {
+    "io.modelcontextprotocol/skills": {}
+   }
+  },
+  "serverInfo": {
+   "name": "veterical-mcp",
+   "title": "Veterical",
+   "version": "0.1.2",
+   "icons": [
+    {
+     "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjM0JCMjczIi8+PHN2ZyB4PSIxMyIgeT0iMTMiIHdpZHRoPSI3NCIgaGVpZ2h0PSI3NCIgdmlld0JveD0iLTIgMzAgMjYwIDIwMCIgY29sb3I9IndoaXRlIiBmaWxsPSJ3aGl0ZSI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTI2IDExNmw1IDIgMSAyaDJsMSAyIDggNCAxIDJoMmw3IDZoMmw5IDloMmwxMyAxNHYybDIgMSA1IDEwIDIgOC0xIDE1LTIgMnYzbC00IDR2MmwtNSA1aC0ybC0xIDItNCAyLTcgMXYxaC0xMnYtMWwtNy0xLTYtNWgtMmwtNi03LTEtNGgtMmwtMiA1LTMgMnYyaC0ybC0zIDQtOCA0aC00djFIOTF2LTFoLTRsLTgtNC04LTgtMS00LTItMS0xLTctMS0xNCAxLTEwIDMtMyAxLTQgMTgtMTloMmwzLTRoMmw1LTVoMmwxLTJoMmwxLTJoMmwxLTJoMmwxLTJoMmwxLTJoMmwxLTIgNi01Wm0zMC02OSAxMyAxIDcgNnYybDMgMyAxIDZoMXYxOGgtMWwtMiA5LTIgMS0xIDQtNyA4aC0ybC0xIDItNCAyLTEwIDF2LTFsLTctMi02LTYtMi00di0zbC0yLTNWNzRsMS03IDMtNiAyLTF2LTJsOC04IDctMiAxLTFaTTg5IDQ3bDkgMSA0IDIgMSAyaDJsNyA4IDMgMTBoMXY0aDF2MTVoLTF2NGwtMyA2LTYgNy00IDJoLTR2MWwtOS0xLTExLTh2LTJsLTItMS0zLTZ2LTNsLTItM3YtNmgtMWwxLTE0aDFsMi04IDYtNyA0LTIgNC0xWm0xMTAgNTBoMTF2MWw1IDEgNSA1IDIgN2gxdjE0aC0xbC0zIDEwLTEwIDExLTYgM2gtM3YxaC05di0xbC01LTEtNy05LTEtOS0xLTkgOC0xNCA2LTYgOC00Wk00MyA5N2gxMXYxbDUgMSA5IDh2MmwyIDEgMiA0djNsMiAzdjE2aC0xbC0yIDctNyA2aC0zdjFsLTEyLTEtNC0yLTEtMmgtMmwtNC00LTItNS0yLTF2LTNsLTMtNnYtMTVsNS0xMCA3LTRaIi8+PC9zdmc+PC9zdmc+",
+     "mimeType": "image/svg+xml",
+     "sizes": [
+      "any"
+     ],
+     "title": "Veterical"
+    }
+   ]
+  },
+  "instructions": "# Clinic administration with Veterical\n\nThis skill drives the hosted Veterical MCP connector. The user must connect\nVeterical and authorize an account that can access the intended organization.\nIf authorization fails, ask the user to connect or reauthorize; never guess an\nidentifier or retry with a different tenant.\n\n## Hard privacy, financial and clinical boundary\n\nThis connector is administrative-only. It intentionally does not expose:\n\n- animal/patient or owner/client identities, records, contact details or\n  record counts;\n- individual appointment records, identifiers, statuses, animal/owner links\n  or exact booked times;\n- diagnoses, treatments, procedure names/descriptions, prescriptions,\n  vaccinations, reminders, images or notes;\n- provider identifiers, contacts, roles, credentials or organization\n  internals;\n- transaction identifiers/dates, animal or owner linkage, line items,\n  discounts, payment methods, card/bank information or processor identifiers;\n  or\n- tools that create, update, book, message, cancel, charge, refund, transfer or\n  delete anything.\n\nNever ask the user to paste excluded personal or clinical data into chat,\ninfer it from aggregate counts, or imply that another tool can approximate a\nmissing capability. The connector does not diagnose, triage, prescribe,\nrecommend treatment, determine urgency or make any medical decision. It cannot\nmove funds.\n\nBookable availability is unassigned clinic capacity inside the clinic's own\nonline-booking window. Numeric catalog data is administrative configuration,\nnot evidence that an animal received or should receive a treatment. Patient\nand appointment numbers in subscription results are plan caps, not record\ncounts.\n\n## Available tools\n\n| Tool                          | Use it when someone asks…                                                     |\n| ----------------------------- | ----------------------------------------------------------------------------- |\n| `list_clinics`                | which clinics they manage; also resolves the clinic ID every other tool needs |\n| `get_clinic`                  | about one clinic's currency, language or timezone                             |\n| `get_clinic_availability`     | when there are free online-booking slots (up to 14 days with openings)        |\n| `list_clinic_providers`       | which vets, nurses or assistants can be booked (up to 100 display names)      |\n| `get_clinic_schedule_summary` | how busy each UTC day is (appointment counts, at most 31 days)                |\n| `list_calendar_events`        | when the clinic is closed or time is blocked (holidays, vacations, meetings)  |\n| `list_procedures`             | about the catalog's price range (rows carry no treatment names)               |\n| `list_payments`               | how much was taken in, by currency and payment status, one page at a time     |\n| `list_subscriptions`          | which plan the clinic is on and its plan caps                                 |\n| `show_clinic_overview`        | for a one-card overview of one clinic                                         |\n\nEvery tool is read-only. There is no operation for animal/owner lookup,\nindividual appointment access, booking, rescheduling, cancellation, messaging,\nclinical-record access, diagnosis, treatment, payment execution or funds\nmovement.\n\n## Identifiers and cursors\n\nNever guess a clinic ID. Start with `list_clinics`, choose the clinic matching\nthe user's request and reuse its returned 24-character lowercase hexadecimal\nID. If several clinics match, ask which one they mean. A cross-organization ID\nfails closed.\n\nTools returning `nextCursor` use opaque cursors. Reuse a cursor only with the\nsame clinic, date range and limit that produced it. Start a new listing when a\nfilter changes. Never inspect, edit or manufacture a cursor.\n\nCounts marked `+` are lower bounds from bounded reads. Do not describe them as\ncomplete totals. Payment groups summarize one bounded page; follow the cursor\nonly if the user needs subsequent pages, and do not combine pages without\nclearly stating what was added.\n\n## Administrative overview workflow\n\nWhen the user wants a broad snapshot:\n\n1. Call `list_clinics`.\n2. Resolve the intended clinic without guessing.\n3. Call `show_clinic_overview` with that clinic ID.\n4. Interpret only safe clinic metadata, aggregate next-seven-day schedule,\n   provider/availability counts and numeric catalog previews.\n\nThe card does not identify an appointment, owner, animal, provider record or\nprocedure label. Never infer one.\n\n## Schedule and capacity workflow\n\nFor workload over a period:\n\n1. Resolve the clinic with `list_clinics`.\n2. Call `get_clinic_schedule_summary` with ISO 8601 start/end values. Omit\n   both for the default seven-day range. Never request more than 31 days.\n3. Report only the aggregate count and UTC day rows. Counts include canceled\n   appointments; say so when describing workload.\n4. Use `get_clinic_availability` separately for open capacity and\n   `list_clinic_providers` for display names.\n\nSchedule summaries deliberately omit individual records and times. Do not try\nto reconstruct them by comparing availability, provider or calendar output.\n\n## Calendar and numeric catalog workflow\n\nUse `list_calendar_events` for closures, meetings, courses, days off and other\nnon-appointment blocks. It exposes time, all-day state, scope, effect and type.\nTitles, notes, IDs and staff references are unavailable. Do not infer a reason\nor person from a block.\n\nUse `list_procedures` for numeric price/duration/edit-time configuration at a\nresolved clinic. Names and descriptions are intentionally absent. Never label\na row, map it to an animal, or describe it as a diagnosis, treatment history\nor care recommendation.\n\n## Payment aggregates and entitlements\n\nUse `list_payments` only for operational amount/count totals grouped by\ncurrency and status. State that totals cover the bounded page reported by the\ntool. Never claim access to a transaction, payment method, processor account\nor settlement, and never imply that Claude can authorize, capture, refund or\ntransfer money.\n\nUse `list_subscriptions` for plan status, billing frequency and configuration\ncaps. It contains no billed amount or processor customer/subscription record.\nDo not interpret patient or appointment caps as actual record counts.\n\n## Unsupported requests\n\nFor an animal, owner, individual-appointment or clinical request, state that\nthe public connector cannot access the requested data. For a write request,\nstate that every tool is read-only. For payment execution or processor data,\nstate that only aggregate operational totals are available. For diagnosis,\nurgency, medication or treatment advice, do not invoke Veterical as a clinical\nauthority; follow current host safety guidance and make clear that the\nconnector provides no medical decision.\n\n## Clinic sidebar\n\nUse `open_veterical` when the user asks to open Veterical or browse their clinics. Select an owned clinic for aggregate schedules, booking capacity and numeric catalog prices and durations. The selection supplies clinic context to the assistant. Every view is read-only and excludes animal, owner and clinical records. Counts marked “At least” are lower bounds.\n"
+ },
+ "tools/list": {
+  "tools": [
+   {
+    "name": "list_clinics",
+    "title": "List your vet clinics",
+    "description": "Use this when the user wants to list veterinary clinics accessible to the connected Veterical account and retrieve their identifiers for subsequent administrative reads. Returns each clinic's id, name, currency, default language and timezone, 20 per page by default. Not for finding a pet, owner or appointment.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "limit": {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 100,
+       "description": "Clinics per page, from 1 to 100; defaults to 20"
+      },
+      "cursor": {
+       "type": "string",
+       "maxLength": 4096,
+       "description": "The nextCursor of the previous page of this listing; absent for the first page"
+      }
+     },
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "List your vet clinics",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "clinics": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "anyOf": [
+           {
+            "type": "string",
+            "pattern": "^[0-9a-f]{24}$"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "name": {
+          "type": "string",
+          "maxLength": 200
+         },
+         "currency": {
+          "anyOf": [
+           {
+            "type": "string",
+            "pattern": "^[A-Za-z]{3}$"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "defaultLocale": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 35
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "timezone": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 64
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "lastEditTime": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 32
+           },
+           {
+            "type": "null"
+           }
+          ]
+         }
+        },
+        "required": [
+         "id",
+         "name",
+         "currency",
+         "defaultLocale",
+         "timezone",
+         "lastEditTime"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "Clinics in the signed-in organization, administrative metadata only. Animal, owner, appointment and clinical records are never returned."
+      },
+      "nextCursor": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 4096
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Cursor for the next page; null on the last page"
+      }
+     },
+     "required": [
+      "clinics",
+      "nextCursor"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "get_clinic",
+    "title": "Get vet clinic details",
+    "description": "Use this when the user wants to read the name, currency, language, timezone and edit time of one Veterical clinic selected by its identifier. Returns the clinic's name, currency, default language, timezone and last edit time; an id outside the organization returns not-found. Not for free appointment slots.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Clinic id: 24 lowercase hexadecimal characters"
+      }
+     },
+     "required": [
+      "clinicId"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "Get vet clinic details",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "status": {
+       "type": "string",
+       "enum": [
+        "found",
+        "not-found"
+       ]
+      },
+      "clinic": {
+       "anyOf": [
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "anyOf": [
+            {
+             "type": "string",
+             "pattern": "^[0-9a-f]{24}$"
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "name": {
+           "type": "string",
+           "maxLength": 200
+          },
+          "currency": {
+           "anyOf": [
+            {
+             "type": "string",
+             "pattern": "^[A-Za-z]{3}$"
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "defaultLocale": {
+           "anyOf": [
+            {
+             "type": "string",
+             "maxLength": 35
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "timezone": {
+           "anyOf": [
+            {
+             "type": "string",
+             "maxLength": 64
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "lastEditTime": {
+           "anyOf": [
+            {
+             "type": "string",
+             "maxLength": 32
+            },
+            {
+             "type": "null"
+            }
+           ]
+          }
+         },
+         "required": [
+          "id",
+          "name",
+          "currency",
+          "defaultLocale",
+          "timezone",
+          "lastEditTime"
+         ],
+         "additionalProperties": false
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Administrative clinic metadata only; opening hours, staff, animal, owner and appointment data are not included. Null when not found."
+      }
+     },
+     "required": [
+      "status",
+      "clinic"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "get_clinic_availability",
+    "title": "Summarize clinic booking capacity",
+    "description": "Use this when the user wants to summarize unassigned online-booking capacity for one Veterical clinic as daily slot counts and first/last slot times. Returns the open online-booking slots per day for one clinic: how many, plus the first start and last end time. Covers the next days that have openings, up to 14 days and 100 slots (no pet, owner or medical data). Not for booking an appointment.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Clinic id: 24 lowercase hexadecimal characters"
+      }
+     },
+     "required": [
+      "clinicId"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "Summarize clinic booking capacity",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "status": {
+       "type": "string",
+       "enum": [
+        "found",
+        "not-found"
+       ]
+      },
+      "slotCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "slotCountIsLowerBound": {
+       "type": "boolean",
+       "description": "True when more open slots exist beyond the 14-day, 100-slot cap"
+      },
+      "days": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "day": {
+          "anyOf": [
+           {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "slotCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+         },
+         "firstStartTime": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 32
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "lastEndTime": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 32
+           },
+           {
+            "type": "null"
+           }
+          ]
+         }
+        },
+        "required": [
+         "day",
+         "slotCount",
+         "firstStartTime",
+         "lastEndTime"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 14,
+       "description": "One row per day that has open online-booking slots, in date order. Unassigned capacity only; appointments, animals, owners, staff and clinical data are never included."
+      }
+     },
+     "required": [
+      "status",
+      "slotCount",
+      "slotCountIsLowerBound",
+      "days"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "list_clinic_providers",
+    "title": "List bookable vets and staff",
+    "description": "Use this when the user wants to list the display names of staff offered by one Veterical clinic for online booking. Returns up to 100 staff display names for one clinic (no contact details, roles or pet data). Not for staff days off or vacations.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Clinic id: 24 lowercase hexadecimal characters"
+      }
+     },
+     "required": [
+      "clinicId"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "List bookable vets and staff",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "status": {
+       "type": "string",
+       "enum": [
+        "found",
+        "not-found"
+       ]
+      },
+      "providerCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "providerCountIsLowerBound": {
+       "type": "boolean"
+      },
+      "providers": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "displayName": {
+          "type": "string",
+          "maxLength": 200
+         }
+        },
+        "required": [
+         "displayName"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "Display names of staff with a doctor, nurse or assistant role. Staff identifiers, contact details, roles, colors, avatars and all animal or clinical data are excluded."
+      }
+     },
+     "required": [
+      "status",
+      "providerCount",
+      "providerCountIsLowerBound",
+      "providers"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "get_clinic_schedule_summary",
+    "title": "Count appointments per day",
+    "description": "Use this when the user wants to count scheduled records by UTC day for one Veterical clinic and a bounded date range, including canceled records. Returns appointment counts per UTC day for one clinic, canceled ones included, for the next 7 days by default and at most 31 days; counting stops at 100. Not for seeing individual appointments, pets or owners.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Clinic id: 24 lowercase hexadecimal characters"
+      },
+      "startTime": {
+       "type": "string",
+       "maxLength": 64,
+       "description": "Start of the range as an ISO 8601 date-time; defaults to now"
+      },
+      "endTime": {
+       "$ref": "#/properties/startTime",
+       "description": "End of the range as an ISO 8601 date-time, after startTime and at most 31 days later; defaults to 7 days after the start"
+      }
+     },
+     "required": [
+      "clinicId"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "Count appointments per day",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "ui": {
+      "resourceUri": "ui://veterical/schedule-summary-v1.html"
+     },
+     "ui/resourceUri": "ui://veterical/schedule-summary-v1.html",
+     "openai/outputTemplate": "ui://veterical/schedule-summary-v1.html",
+     "openai/toolInvocation/invoking": "Counting Veterical schedule…",
+     "openai/toolInvocation/invoked": "Veterical schedule summary ready.",
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "range": {
+       "type": "object",
+       "properties": {
+        "startTime": {
+         "type": "string",
+         "maxLength": 32
+        },
+        "endTime": {
+         "type": "string",
+         "maxLength": 32
+        }
+       },
+       "required": [
+        "startTime",
+        "endTime"
+       ],
+       "additionalProperties": false
+      },
+      "appointmentCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "appointmentCountIsLowerBound": {
+       "type": "boolean",
+       "description": "True when more than 100 appointments fall in the range"
+      },
+      "days": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "day": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+         },
+         "appointmentCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+         }
+        },
+        "required": [
+         "day",
+         "appointmentCount"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "One row per UTC day that has appointments, canceled ones included. Aggregate counts only: appointment identifiers and times, animals, owners, diagnoses, treatments, reminders and notes are never returned."
+      }
+     },
+     "required": [
+      "range",
+      "appointmentCount",
+      "appointmentCountIsLowerBound",
+      "days"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "list_calendar_events",
+    "title": "List closures, holidays and blocked time",
+    "description": "Use this when the user wants to list non-appointment calendar blocks and additional opening periods for a Veterical clinic. Returns each block or extra opening with start, end, all-day flag, scope (clinic, staff or room) and type, without titles, notes or names. Not for appointments.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Only this clinic (24 lowercase hexadecimal characters); every clinic when absent"
+      },
+      "startTime": {
+       "type": "string",
+       "maxLength": 64,
+       "description": "Only blocks starting at or after this ISO 8601 date-time"
+      },
+      "endTime": {
+       "$ref": "#/properties/startTime",
+       "description": "Only blocks ending before this ISO 8601 date-time"
+      },
+      "limit": {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 100,
+       "description": "Blocks per page, from 1 to 100; defaults to 20"
+      },
+      "cursor": {
+       "type": "string",
+       "maxLength": 4096,
+       "description": "The nextCursor of the previous page with the same filters; absent for the first page"
+      }
+     },
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "List closures, holidays and blocked time",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "calendarEvents": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "startTime": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 32
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "endTime": {
+          "$ref": "#/properties/calendarEvents/items/properties/startTime"
+         },
+         "allDay": {
+          "type": "boolean"
+         },
+         "scope": {
+          "anyOf": [
+           {
+            "type": "string",
+            "enum": [
+             "CLINIC",
+             "PROVIDER",
+             "SEAT"
+            ]
+           },
+           {
+            "type": "null"
+           }
+          ],
+          "description": "CLINIC: the whole clinic; PROVIDER: one or more staff; SEAT: one room"
+         },
+         "effect": {
+          "anyOf": [
+           {
+            "type": "string",
+            "enum": [
+             "BLOCK",
+             "OPEN"
+            ]
+           },
+           {
+            "type": "null"
+           }
+          ],
+          "description": "BLOCK removes bookable time; OPEN adds hours on a normally closed time"
+         },
+         "type": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 64
+           },
+           {
+            "type": "null"
+           }
+          ],
+          "description": "Label such as COURSE, MEETING, VACATION, SICK, HOLIDAY, MAINTENANCE or OTHER"
+         }
+        },
+        "required": [
+         "startTime",
+         "endTime",
+         "allDay",
+         "scope",
+         "effect",
+         "type"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "Non-appointment calendar blocks, earliest first. Event identifiers, clinic or staff references, titles, notes, owner or animal linkage and clinical fields are never returned."
+      },
+      "nextCursor": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 4096
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Cursor for the next page; null on the last page"
+      }
+     },
+     "required": [
+      "calendarEvents",
+      "nextCursor"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "list_procedures",
+    "title": "List numeric clinic catalog rows",
+    "description": "Use this when the user wants to read anonymous numeric catalog rows from a Veterical clinic to inspect configured prices, durations and edit times. Returns price, duration where recorded and last edit time per catalog row, without treatment names. Not for the price of a specific named treatment.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Clinic id: 24 lowercase hexadecimal characters"
+      },
+      "limit": {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 100,
+       "description": "Catalog rows per page, from 1 to 100; defaults to 50"
+      },
+      "cursor": {
+       "type": "string",
+       "maxLength": 4096,
+       "description": "The nextCursor of the previous page with the same filters; absent for the first page"
+      }
+     },
+     "required": [
+      "clinicId"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "List numeric clinic catalog rows",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "procedures": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "price": {
+          "type": [
+           "number",
+           "null"
+          ],
+          "description": "Price in the clinic's currency"
+         },
+         "duration": {
+          "type": [
+           "number",
+           "null"
+          ],
+          "description": "Configured duration, or null when none was recorded"
+         },
+         "lastEditTime": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 32
+           },
+           {
+            "type": "null"
+           }
+          ]
+         }
+        },
+        "required": [
+         "price",
+         "duration",
+         "lastEditTime"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "Numeric catalog rows, most recently edited first. Names, descriptions, identifiers, patient-linked treatments, diagnoses, notes, reminders and every other free-text or clinical field are excluded."
+      },
+      "nextCursor": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 4096
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Cursor for the next page; null on the last page"
+      }
+     },
+     "required": [
+      "procedures",
+      "nextCursor"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "list_payments",
+    "title": "Summarize a page of payment totals",
+    "description": "Use this when the user wants to aggregate one bounded page of recorded Veterical payments by currency and status; this is not a full revenue or settlement report. Returns totals and counts by currency and status for one page of payments, newest first (20 by default), with a cursor for the rest (no client, pet or card data). Not for refunds or charging a client.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Only this clinic (24 lowercase hexadecimal characters); every clinic when absent"
+      },
+      "startTime": {
+       "type": "string",
+       "maxLength": 64,
+       "description": "Only payments dated at or after this ISO 8601 date-time"
+      },
+      "endTime": {
+       "$ref": "#/properties/startTime",
+       "description": "Only payments dated before this ISO 8601 date-time"
+      },
+      "limit": {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 100,
+       "description": "Payments to summarize in this page, from 1 to 100; defaults to 20"
+      },
+      "cursor": {
+       "type": "string",
+       "maxLength": 4096,
+       "description": "The nextCursor of the previous page with the same filters; absent for the first page"
+      }
+     },
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "Summarize a page of payment totals",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "recordsSummarized": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100,
+       "description": "How many payment records this page summarized"
+      },
+      "moreRecordsAvailable": {
+       "type": "boolean",
+       "description": "True when older payments exist beyond this page"
+      },
+      "totals": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "currency": {
+          "anyOf": [
+           {
+            "type": "string",
+            "pattern": "^[A-Za-z]{3}$"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "status": {
+          "anyOf": [
+           {
+            "type": "string",
+            "enum": [
+             "CANCELED",
+             "FAILED",
+             "SUCCEEDED"
+            ]
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "paymentCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+         },
+         "totalAmount": {
+          "type": "number"
+         },
+         "amountMissingCount": {
+          "type": "integer",
+          "minimum": 0
+         }
+        },
+        "required": [
+         "currency",
+         "status",
+         "paymentCount",
+         "totalAmount",
+         "amountMissingCount"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "One row per currency and status within this page only. Transaction identifiers and dates, animal or owner linkage, line items, discounts, payment methods, card or bank data and processor identifiers are never returned."
+      },
+      "nextCursor": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 4096
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Cursor for the next page; null on the last page"
+      }
+     },
+     "required": [
+      "recordsSummarized",
+      "moreRecordsAvailable",
+      "totals",
+      "nextCursor"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "list_subscriptions",
+    "title": "Check Veterical plan and limits",
+    "description": "Use this when the user wants to read the subscription plan, status, billing frequency and configured capacity limits for a Veterical clinic. Returns plan name, status, billing frequency and plan caps per subscription; caps are limits, not usage. Not for invoices or amounts billed.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Only this clinic (24 lowercase hexadecimal characters); every clinic when absent"
+      },
+      "limit": {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 100,
+       "description": "Subscriptions per page, from 1 to 100; defaults to 20"
+      },
+      "cursor": {
+       "type": "string",
+       "maxLength": 4096,
+       "description": "The nextCursor of the previous page with the same filters; absent for the first page"
+      }
+     },
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "annotations": {
+     "title": "Check Veterical plan and limits",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "type": "object",
+     "properties": {
+      "subscriptions": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "clinicId": {
+          "anyOf": [
+           {
+            "type": "string",
+            "pattern": "^[0-9a-f]{24}$"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "status": {
+          "anyOf": [
+           {
+            "type": "string",
+            "enum": [
+             "ACTIVE",
+             "CANCELED",
+             "INCOMPLETE",
+             "PAST_DUE"
+            ]
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "plan": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 200
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "billingFrequency": {
+          "anyOf": [
+           {
+            "type": "string",
+            "enum": [
+             "MONTHLY",
+             "ONCE",
+             "YEARLY"
+            ]
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "limits": {
+          "type": "object",
+          "properties": {
+           "appointments": {
+            "type": [
+             "number",
+             "null"
+            ]
+           },
+           "patients": {
+            "type": [
+             "number",
+             "null"
+            ]
+           },
+           "seats": {
+            "type": [
+             "number",
+             "null"
+            ]
+           },
+           "users": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "appointments",
+           "patients",
+           "seats",
+           "users"
+          ],
+          "additionalProperties": false,
+          "description": "Plan caps, not record counts; null when the subscription carries no cap"
+         }
+        },
+        "required": [
+         "clinicId",
+         "status",
+         "plan",
+         "billingFrequency",
+         "limits"
+        ],
+        "additionalProperties": false
+       },
+       "maxItems": 100,
+       "description": "Plan entitlements, newest first. Subscription or customer ids, billed amounts, payment methods, invoices and every processor field are excluded."
+      },
+      "nextCursor": {
+       "anyOf": [
+        {
+         "type": "string",
+         "maxLength": 4096
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Cursor for the next page; null on the last page"
+      }
+     },
+     "required": [
+      "subscriptions",
+      "nextCursor"
+     ],
+     "additionalProperties": false,
+     "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+   },
+   {
+    "name": "show_clinic_overview",
+    "title": "Show vet clinic overview",
+    "description": "Use this when the user wants to render a read-only administrative overview for one Veterical clinic selected by its identifier. Returns an overview card with the clinic's details, appointment counts for the next 7 days, how many staff can be booked, open online-booking slots and up to 12 catalog prices (no pet, owner or medical data). Not for a single appointment.",
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {
+      "clinicId": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{24}$",
+       "description": "Clinic id: 24 lowercase hexadecimal characters"
+      }
+     },
+     "required": [
+      "clinicId"
+     ]
+    },
+    "annotations": {
+     "title": "Show vet clinic overview",
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "_meta": {
+     "ui": {
+      "resourceUri": "ui://veterical/clinic-overview-v2.html"
+     },
+     "ui/resourceUri": "ui://veterical/clinic-overview-v2.html",
+     "openai/outputTemplate": "ui://veterical/clinic-overview-v2.html",
+     "openai/toolInvocation/invoking": "Loading Veterical clinic…",
+     "openai/toolInvocation/invoked": "Veterical clinic overview ready.",
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ]
+    },
+    "outputSchema": {
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "type": "object",
+     "properties": {
+      "clinic": {
+       "anyOf": [
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "anyOf": [
+            {
+             "type": "string",
+             "pattern": "^[0-9a-f]{24}$"
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "name": {
+           "type": "string",
+           "maxLength": 200
+          },
+          "currency": {
+           "anyOf": [
+            {
+             "type": "string",
+             "pattern": "^[A-Za-z]{3}$"
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "defaultLocale": {
+           "anyOf": [
+            {
+             "type": "string",
+             "maxLength": 35
+            },
+            {
+             "type": "null"
+            }
+           ]
+          },
+          "timezone": {
+           "anyOf": [
+            {
+             "type": "string",
+             "maxLength": 64
+            },
+            {
+             "type": "null"
+            }
+           ]
+          }
+         },
+         "required": [
+          "id",
+          "name",
+          "currency",
+          "defaultLocale",
+          "timezone"
+         ],
+         "additionalProperties": false
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "description": "Administrative clinic metadata; null when the clinic was not found. The overview never includes individual appointments, animal or owner records, diagnoses, treatments, reminders, notes, transaction details or other clinical or personal data."
+      },
+      "scheduleRange": {
+       "type": "object",
+       "properties": {
+        "startTime": {
+         "type": "string",
+         "maxLength": 32
+        },
+        "endTime": {
+         "type": "string",
+         "maxLength": 32
+        }
+       },
+       "required": [
+        "startTime",
+        "endTime"
+       ],
+       "additionalProperties": false
+      },
+      "appointmentCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "appointmentCountIsLowerBound": {
+       "type": "boolean"
+      },
+      "scheduleDays": {
+       "maxItems": 100,
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "day": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+         },
+         "count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+         }
+        },
+        "required": [
+         "day",
+         "count"
+        ],
+        "additionalProperties": false
+       }
+      },
+      "procedureCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 12
+      },
+      "procedureCountIsLowerBound": {
+       "type": "boolean"
+      },
+      "procedures": {
+       "maxItems": 12,
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "price": {
+          "anyOf": [
+           {
+            "type": "number"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "duration": {
+          "anyOf": [
+           {
+            "type": "number"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         }
+        },
+        "required": [
+         "price",
+         "duration"
+        ],
+        "additionalProperties": false
+       }
+      },
+      "providerCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "providerCountIsLowerBound": {
+       "type": "boolean"
+      },
+      "availableDayCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 14
+      },
+      "availableSlotCount": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "availableSlotCountIsLowerBound": {
+       "type": "boolean"
+      },
+      "availabilityDays": {
+       "maxItems": 14,
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "day": {
+          "anyOf": [
+           {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+         }
+        },
+        "required": [
+         "day",
+         "count"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "clinic",
+      "scheduleRange",
+      "appointmentCount",
+      "appointmentCountIsLowerBound",
+      "scheduleDays",
+      "procedureCount",
+      "procedureCountIsLowerBound",
+      "procedures",
+      "providerCount",
+      "providerCountIsLowerBound",
+      "availableDayCount",
+      "availableSlotCount",
+      "availableSlotCountIsLowerBound",
+      "availabilityDays"
+     ],
+     "additionalProperties": false
+    }
+   },
+   {
+    "name": "open_veterical",
+    "title": "Veterical Veterinary Software",
+    "description": "Use this when the user wants to open the Veterical clinic-selection sidebar when the user requests an interactive clinic browser. Returns up to 100 clinics to start from (no pet, owner, appointment or clinical data). Not for booking appointments, editing records or medical decisions.",
+    "inputSchema": {
+     "type": "object",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "properties": {}
+    },
+    "annotations": {
+     "readOnlyHint": true,
+     "destructiveHint": false,
+     "idempotentHint": true,
+     "openWorldHint": false
+    },
+    "icons": [
+     {
+      "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-2%2030%20260%20200%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M126%20116l5%202%201%202h2l1%202%208%204%201%202h2l7%206h2l9%209h2l13%2014v2l2%201%205%2010%202%208-1%2015-2%202v3l-4%204v2l-5%205h-2l-1%202-4%202-7%201v1h-12v-1l-7-1-6-5h-2l-6-7-1-4h-2l-2%205-3%202v2h-2l-3%204-8%204h-4v1H91v-1h-4l-8-4-8-8-1-4-2-1-1-7-1-14%201-10%203-3%201-4%2018-19h2l3-4h2l5-5h2l1-2h2l1-2h2l1-2h2l1-2h2l1-2h2l1-2%206-5Zm30-69%2013%201%207%206v2l3%203%201%206h1v18h-1l-2%209-2%201-1%204-7%208h-2l-1%202-4%202-10%201v-1l-7-2-6-6-2-4v-3l-2-3V74l1-7%203-6%202-1v-2l8-8%207-2%201-1ZM89%2047l9%201%204%202%201%202h2l7%208%203%2010h1v4h1v15h-1v4l-3%206-6%207-4%202h-4v1l-9-1-11-8v-2l-2-1-3-6v-3l-2-3v-6h-1l1-14h1l2-8%206-7%204-2%204-1Zm110%2050h11v1l5%201%205%205%202%207h1v14h-1l-3%2010-10%2011-6%203h-3v1h-9v-1l-5-1-7-9-1-9-1-9%208-14%206-6%208-4ZM43%2097h11v1l5%201%209%208v2l2%201%202%204v3l2%203v16h-1l-2%207-7%206h-3v1l-12-1-4-2-1-2h-2l-4-4-2-5-2-1v-3l-3-6v-15l5-10%207-4Z%22%2F%3E%3C%2Fsvg%3E",
+      "mimeType": "image/svg+xml"
+     }
+    ],
+    "_meta": {
+     "securitySchemes": [
+      {
+       "type": "oauth2",
+       "scopes": [
+        "veterical:read"
+       ]
+      }
+     ],
+     "ui": {
+      "resourceUri": "ui://veterical/workspace-v2.html"
+     },
+     "openai/ui": {
+      "entrypoints": [
+       {
+        "type": "global"
+       }
+      ]
+     },
+     "openai/outputTemplate": "ui://veterical/workspace-v2.html",
+     "openai/widgetAccessible": true
+    },
+    "outputSchema": {
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "type": "object",
+     "properties": {
+      "items": {
+       "maxItems": 100,
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 200
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "name": {
+          "type": "string",
+          "maxLength": 200
+         },
+         "subtitle": {
+          "type": "string",
+          "maxLength": 300
+         },
+         "logoUrl": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 2048
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "defaultLocale": {
+          "anyOf": [
+           {
+            "type": "string",
+            "maxLength": 32
+           },
+           {
+            "type": "null"
+           }
+          ]
+         },
+         "locales": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+           "type": "string",
+           "maxLength": 32
+          }
+         }
+        },
+        "required": [
+         "id",
+         "name",
+         "subtitle",
+         "logoUrl",
+         "defaultLocale",
+         "locales"
+        ],
+        "additionalProperties": false
+       }
+      },
+      "truncated": {
+       "type": "boolean"
+      }
+     },
+     "required": [
+      "items",
+      "truncated"
+     ],
+     "additionalProperties": false
+    }
+   }
+  ]
+ },
+ "prompts/list": {
+  "code": -32601,
+  "message": "Method not found"
+ },
+ "resources/list": {
+  "resources": [
+   {
+    "uri": "ui://veterical/clinic-overview-v2.html",
+    "name": "veterical-clinic-overview",
+    "mimeType": "text/html;profile=mcp-app",
+    "description": "An inline Veterical view that presents aggregate, tenant-scoped clinic operations."
+   },
+   {
+    "uri": "ui://veterical/workspace-v2.html",
+    "name": "veterical-workspace",
+    "mimeType": "text/html;profile=mcp-app"
+   },
+   {
+    "uri": "ui://veterical/workspace-v1.html",
+    "name": "veterical-workspace-v1",
+    "mimeType": "text/html;profile=mcp-app"
+   },
+   {
+    "uri": "ui://veterical/schedule-summary-v1.html",
+    "name": "veterical-schedule-summary",
+    "mimeType": "text/html;profile=mcp-app",
+    "description": "An inline Veterical view for non-identifying, tenant-scoped administrative schedule counts."
+   },
+   {
+    "uri": "skill://veterical/clinic-administration/SKILL.md",
+    "name": "clinic-administration",
+    "title": "clinic-administration skill",
+    "description": "Review a Veterical clinic's safe administrative configuration and capacity — clinic metadata, bookable capacity summaries, provider display names, aggregate schedules, non-text calendar blocks, numeric catalog data, payment aggregates and plan entitlements. Use when asked about a vet clinic's free appointment slots, how busy each day is, closures and blocked time, bookable staff, catalog prices, payment totals or plan limits through the Veterical connector. Never use for animal or owner records, individual appointments, clinical information, payment execution, medical advice, diagnosis, triage, prescribing or treatment decisions.",
+    "mimeType": "text/markdown"
+   },
+   {
+    "uri": "skill://veterical/veterical/SKILL.md",
+    "name": "veterical",
+    "title": "veterical skill",
+    "description": "Read and manage veterinary-clinic data with the `veterical` CLI — the clients who own the animals, the patients (the animals themselves), appointments, invoices, payments and vaccination records, backed by the Veterical REST API at api.veterical.com. Use when asked to look up, create, update or delete Veterical clients, patients, appointments, invoices, payments or vaccinations, to check a clinic's calendar or client list, to register an animal, or for anything involving the `veterical` command or app.veterical.com data.",
+    "mimeType": "text/markdown"
+   }
+  ]
+ }
+}

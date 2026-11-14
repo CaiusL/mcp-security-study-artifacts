@@ -1,0 +1,165 @@
+{
+  "scanner": "mcp-scan",
+  "version": "0.1.0",
+  "target": "https://mcp.aikstockdata.com/mcp",
+  "meta": {
+    "tool_count": 12,
+    "resource_count": 0,
+    "prompt_count": 0,
+    "server_info": {
+      "name": "aikstockdata-mcp",
+      "title": "한국주식데이터 (aikstockdata.com)",
+      "version": "2.1.2"
+    },
+    "scanned_at": "2026-10-22T06:58:26.654895+00:00"
+  },
+  "summary": {
+    "critical": 1,
+    "high": 0,
+    "medium": 1,
+    "low": 12,
+    "info": 0
+  },
+  "findings": [
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "get_earnings_calendar",
+      "evidence": "description: ['webhook']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-005",
+      "title": "Tool makes network requests to arbitrary addresses",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_data_urls",
+      "evidence": "matched: ['fetch']",
+      "recommendation": "Constrain egress with a domain allowlist at the host network layer. Asking the model nicely in a prompt is not a control.",
+      "reference": "OWASP LLM06: Excessive Agency"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_stock)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_earnings",
+      "evidence": "description excerpt: \"Earnings from DART, INCLUDING preliminary (잠정) results filed ~2 weeks before the regular report. Each row says whether the figure is year-to-date cumulative or a single quarter. Pass a code for one stock's history, or omit it for the largest caps. get_stock shows the regular report and flags a newer\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_today)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_market_summary",
+      "evidence": "description excerpt: \"Index levels (KOSPI/KOSDAQ close, change, %) and up/down breadth — nothing else. Prices are the previous session's T+1 settled close, never real-time. Index and breadth routinely disagree — the index is cap-weighted, breadth is one vote per stock — which is why both are returned; do not infer one fr\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (list_stocks)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_market_summary",
+      "evidence": "description excerpt: \"Index levels (KOSPI/KOSDAQ close, change, %) and up/down breadth — nothing else. Prices are the previous session's T+1 settled close, never real-time. Index and breadth routinely disagree — the index is cap-weighted, breadth is one vote per stock — which is why both are returned; do not infer one fr\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (list_stocks)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_rankings",
+      "evidence": "description excerpt: \"Answers \"which stocks scored highest on measured DART financials?\" — kind='growth' is 성장 TOP8 (max 8 rows), kind='quiet' is 조용한 실적주. Scores come from a published formula over ACTUAL filed financials only — no prices, no analyst estimates. Mechanical, not stock picks. For 52-week high/low or turnarou\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (search_stock)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_stock",
+      "evidence": "description excerpt: \"One Korean stock by 6-digit code: T+1 confirmed close & change, market cap, latest financials from the latest periodic report (revenue / operating income / net income, with YoY; Korean reports are cumulative year-to-date, so H1 = Jan-Jun, not Q2 alone), PER(TTM) and PBR computed from public filings,\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_history)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_stock",
+      "evidence": "description excerpt: \"One Korean stock by 6-digit code: T+1 confirmed close & change, market cap, latest financials from the latest periodic report (revenue / operating income / net income, with YoY; Korean reports are cumulative year-to-date, so H1 = Jan-Jun, not Q2 alone), PER(TTM) and PBR computed from public filings,\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_disclosures)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_stock",
+      "evidence": "description excerpt: \"One Korean stock by 6-digit code: T+1 confirmed close & change, market cap, latest financials from the latest periodic report (revenue / operating income / net income, with YoY; Korean reports are cumulative year-to-date, so H1 = Jan-Jun, not Q2 alone), PER(TTM) and PBR computed from public filings,\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (list_stocks)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_stock",
+      "evidence": "description excerpt: \"One Korean stock by 6-digit code: T+1 confirmed close & change, market cap, latest financials from the latest periodic report (revenue / operating income / net income, with YoY; Korean reports are cumulative year-to-date, so H1 = Jan-Jun, not Q2 alone), PER(TTM) and PBR computed from public filings,\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_stock)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_today",
+      "evidence": "description excerpt: \"Start here for \"how was the Korean market today?\" — index levels, breadth, 52-week high/low counts, top-3 disclosures, growth top-3, movers and disclosure-type counts in one call. Then drill down with get_stock / list_stocks / get_disclosures. Coverage: every listed stock in the FSC price feed (no E\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_disclosures)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_today",
+      "evidence": "description excerpt: \"Start here for \"how was the Korean market today?\" — index levels, breadth, 52-week high/low counts, top-3 disclosures, growth top-3, movers and disclosure-type counts in one call. Then drill down with get_stock / list_stocks / get_disclosures. Coverage: every listed stock in the FSC price feed (no E\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (list_stocks)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_today",
+      "evidence": "description excerpt: \"Start here for \"how was the Korean market today?\" — index levels, breadth, 52-week high/low counts, top-3 disclosures, growth top-3, movers and disclosure-type counts in one call. Then drill down with get_stock / list_stocks / get_disclosures. Coverage: every listed stock in the FSC price feed (no E\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_market_summary)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "list_stocks",
+      "evidence": "description excerpt: \"Return the LIST of stocks matching a condition — turnaround to profit, 52-week high/low, growth or quiet-performer rankings — with optional market-cap range and a cap-to-operating-income multiple ceiling. Other tools give counts; this one gives the names. new_high/new_low return at most 30 names per\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    }
+  ]
+}

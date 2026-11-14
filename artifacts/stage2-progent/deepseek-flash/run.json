@@ -1,0 +1,7 @@
+{
+  "model": "deepseek-flash",
+  "scripted": false,
+  "sandbox": "C:\\On9MCP\\artifacts\\stage2\\deepseek-flash\\sandbox",
+  "progent_freeze_sha256": "65b5e4c91c1e2b47bd6778d100e5942338332fb406fb992b6fc615eeb9ffeb1c",
+  "started": "2026-11-03T07:41:18.574897+00:00"
+}

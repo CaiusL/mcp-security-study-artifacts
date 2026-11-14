@@ -1,0 +1,479 @@
+<title>MCP Scanner Bench</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column for prose; full-width scrollable test matrix and scorecard, like a lab bench sheet. */
+:root {
+  --bg: #f3f5f3;
+  --surface: #ffffff;
+  --ink: #1a2220;
+  --muted: #56625d;
+  --line: #d6dcd8;
+  --accent: #1d6a63;
+  --accent-soft: #e3f0ee;
+  --crit: #b42318;  --crit-soft: #fbe7e5;
+  --high: #b9500a;  --high-soft: #fcebdc;
+  --med:  #8a6500;  --med-soft:  #f7eecf;
+  --low:  #3f6385;  --low-soft:  #e4ecf4;
+  --ok:   #2a7449;  --ok-soft:   #e1f1e7;
+  --na:   #6f7672;  --na-soft:   #eceeec;
+  --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111615; --surface: #19201e; --ink: #e4eae7; --muted: #9ba6a1; --line: #2c3532;
+    --accent: #62c3b7; --accent-soft: #173431;
+    --crit: #f27d72; --crit-soft: #3a1c1a;
+    --high: #f0a06a; --high-soft: #3a2616;
+    --med:  #e2c25c; --med-soft:  #332a12;
+    --low:  #93b6d8; --low-soft:  #1b2735;
+    --ok:   #72cf95; --ok-soft:   #16301f;
+    --na:   #8b938f; --na-soft:   #232a28;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111615; --surface: #19201e; --ink: #e4eae7; --muted: #9ba6a1; --line: #2c3532;
+  --accent: #62c3b7; --accent-soft: #173431;
+  --crit: #f27d72; --crit-soft: #3a1c1a;
+  --high: #f0a06a; --high-soft: #3a2616;
+  --med:  #e2c25c; --med-soft:  #332a12;
+  --low:  #93b6d8; --low-soft:  #1b2735;
+  --ok:   #72cf95; --ok-soft:   #16301f;
+  --na:   #8b938f; --na-soft:   #232a28;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+.page { max-width: 1180px; margin: 0 auto; padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 48px; }
+.prose { max-width: 68ch; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; line-height: 1.05; }
+h2 { font-size: 22px; font-weight: 800; }
+h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; }
+code, .mono { font-family: var(--mono); font-size: 0.88em; }
+code { background: var(--na-soft); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+a { color: var(--accent); }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+section { display: grid; gap: 16px; min-width: 0; }
+.section-head { display: grid; gap: 6px; }
+.section-head p { color: var(--muted); max-width: 72ch; }
+
+header { display: grid; gap: 18px; }
+.lede { font-size: 17px; max-width: 70ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.meta b { color: var(--ink); font-weight: 500; }
+
+/* Matrix */
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.matrix { min-width: 1040px; }
+th, td { text-align: left; vertical-align: top; padding: 12px 12px; border-bottom: 1px solid var(--line); }
+tr:last-child > td, tr:last-child > th { border-bottom: 0; }
+thead th { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: var(--muted); background: var(--surface); }
+thead th .ver { display: block; font-size: 11px; letter-spacing: 0; opacity: 0.85; }
+tbody th { width: 180px; font-weight: 600; }
+tbody th .url { display: block; font-family: var(--mono); font-size: 11.5px; font-weight: 400; color: var(--muted); overflow-wrap: anywhere; }
+tbody th .count { display: block; font-size: 12.5px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+.ours { background: var(--accent-soft); }
+thead th.ours { color: var(--accent); }
+.cell { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.chip { justify-self: start; font-family: var(--mono); font-size: 12px; font-weight: 500; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid currentColor; }
+.v-crit { color: var(--crit); background: var(--crit-soft); }
+.v-high { color: var(--high); background: var(--high-soft); }
+.v-med  { color: var(--med);  background: var(--med-soft); }
+.v-low  { color: var(--low);  background: var(--low-soft); }
+.v-ok   { color: var(--ok);   background: var(--ok-soft); }
+.v-na   { color: var(--na);   background: var(--na-soft); }
+.foot { font-size: 13px; color: var(--muted); display: grid; gap: 4px; max-width: 90ch; }
+
+/* Control column and review cards */
+.control { box-shadow: inset 3px 0 0 var(--ink); }
+thead th.control { color: var(--ink); }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 14px; }
+.review { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.review .top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.review .host { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.review li { font-size: 14px; }
+.missed { font-family: var(--mono); font-size: 11.5px; color: var(--crit); white-space: nowrap; }
+.checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px 24px; padding: 0; list-style: none; }
+.checks li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; font-size: 14px; }
+.checks .res { font-family: var(--mono); font-size: 12px; color: var(--ok); }
+
+/* Scorecard */
+.score { min-width: 860px; }
+.score td, .score th { padding: 10px 12px; }
+.score tbody th { width: 150px; }
+.mark { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; border: 2px solid var(--line); }
+.dot.hit { background: var(--ok); border-color: var(--ok); }
+.dot.weak { background: linear-gradient(90deg, var(--med) 50%, transparent 50%); border-color: var(--med); }
+.dot.miss { background: transparent; border-color: var(--line); }
+.dot.na { background: var(--na-soft); border-color: var(--na-soft); }
+.tally { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--muted); }
+
+/* Signal cards */
+.signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.signal { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.signal .tag { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.signal p { font-size: 14px; }
+.caught { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+.caught b { color: var(--ink); font-weight: 600; }
+
+/* zgScanner panel */
+.ours-panel { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 6px; padding: 20px 22px; display: grid; gap: 18px; }
+.grades { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.grade { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; display: grid; gap: 4px; }
+.grade .g { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1; }
+.grade .g small { font-family: var(--mono); font-weight: 400; font-size: 13px; color: var(--muted); margin-left: 6px; }
+.grade .n { font-size: 13px; color: var(--muted); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px 28px; }
+.cols > div { display: grid; gap: 8px; align-content: start; min-width: 0; }
+ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+li { font-size: 14px; }
+
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px 28px; }
+.method > div { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.method p, .method li { font-size: 14px; color: var(--muted); }
+.method b { color: var(--ink); font-weight: 600; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 520px) { body { font-size: 14.5px; } .page { gap: 36px; padding-block: 28px 48px; } }
+</style>
+
+<main class="page">
+
+<header>
+  <div class="eyebrow">Read-only test · 22 Oct 2026 · mcpservers.org</div>
+  <h1>MCP Scanner Bench</h1>
+  <p class="lede">Seven scanners, including our own zgScanner, ran against five hosted MCP servers picked at random. I then reviewed every definition by hand as a control. None of the five shows malicious content. The control rates Veterical High: a skill it serves breaks its own read-only promise and pre-approves an unpinned <code>npx</code> command. No scanner explained that. Cisco's scanner came closest overall. zgScanner caught one of the four main issues, with the right reason.</p>
+  <div class="meta">
+    <span><b>5</b> servers</span>
+    <span><b>51</b> tools, <b>8</b> resources</span>
+    <span><b>7</b> scanners + 1 hand review</span>
+    <span><b>0</b> tools called</span>
+  </div>
+</header>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Results</div>
+    <h2>What each scanner reported</h2>
+    <p>One row per server, one column per scanner. The chip is the scanner's own verdict or its worst severity. The line under it says what triggered it.</p>
+  </div>
+  <div class="scroll">
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th scope="col">Server</th>
+          <th scope="col" class="control">Control: Claude by hand<span class="ver">all definitions read</span></th>
+          <th scope="col" class="ours">zgScanner (ours)<span class="ver">0.1.0, static rules</span></th>
+          <th scope="col">Cisco mcp-scanner<span class="ver">YARA + LLM</span></th>
+          <th scope="col">Ramparts<span class="ver">0.8.10, YARA</span></th>
+          <th scope="col">MCP-Shield<span class="ver">1.0.4</span></th>
+          <th scope="col">fr2endly mcp-scan<span class="ver">@12fe4a1</span></th>
+          <th scope="col">Nova-Proximity<span class="ver">keyword rule</span></th>
+          <th scope="col">mcp-fence<span class="ver">0.1.2</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Hallux<span class="url">api.blvkware.dev/hallux/mcp</span><span class="count">4 tools, 2 resources</span></th>
+          <td class="control"><div class="cell"><span class="chip v-med">MEDIUM</span>Sits on the install path: gets full commands and manifests, and its <code>successor</code> field picks replacement packages</div></td>
+          <td class="ours"><div class="cell"><span class="chip v-crit">D · risk 74</span>1 Critical toxic flow; 2 High (command argument, exec capability); 11 more</div></td>
+          <td><div class="cell"><span class="chip v-high">UNSAFE</span>3 High "prompt injection": 2 tools and the server instructions*</div></td>
+          <td><div class="cell"><span class="chip v-ok">Pass</span>0 YARA matches on 6 items</div></td>
+          <td><div class="cell"><span class="chip v-ok">Clean</span>All 4 tools verified</div></td>
+          <td><div class="cell"><span class="chip v-crit">4 Critical</span>+1 High. Matched "auth", "secret", "webhook", "shell"</div></td>
+          <td><div class="cell"><span class="chip v-ok">0 of 6</span>No matches</div></td>
+          <td><div class="cell"><span class="chip v-na">Not scanned</span>Can't inspect hosted servers, prints PASS</div></td>
+        </tr>
+        <tr>
+          <th scope="row">WealthMCP<span class="url">wealthmcp.ai/mcp</span><span class="count">8 tools</span></th>
+          <td class="control"><div class="cell"><span class="chip v-med">MEDIUM</span>Runtime skills to "follow exactly"; relays listing install lines verbatim; scripted "stale cache" story for tool changes</div></td>
+          <td class="ours"><div class="cell"><span class="chip v-ok">A · risk 3</span>1 Low (no auth configured), 1 Info (tool list can change)</div></td>
+          <td><div class="cell"><span class="chip v-high">UNSAFE</span>1 High on <code>list_skills</code>*</div></td>
+          <td><div class="cell"><span class="chip v-ok">Pass</span>0 matches on 8 items</div></td>
+          <td><div class="cell"><span class="chip v-ok">Clean</span>All 8 tools verified</div></td>
+          <td><div class="cell"><span class="chip v-crit">2 Critical</span>+1 High, 7 Medium, 3 Low. An "auth" filter parameter, the word "system"</div></td>
+          <td><div class="cell"><span class="chip v-ok">0 of 8</span>No matches</div></td>
+          <td><div class="cell"><span class="chip v-na">Not scanned</span>Prints PASS</div></td>
+        </tr>
+        <tr>
+          <th scope="row">Veterical<span class="url">mcp.veterical.com/mcp</span><span class="count">11 tools, 6 resources</span></th>
+          <td class="control"><div class="cell"><span class="chip v-high">HIGH</span>Served skill breaks the read-only promise: full create/update/delete on patient records, pre-approves <code>npx veterical</code></div></td>
+          <td class="ours"><div class="cell"><span class="chip v-med">B · risk 16</span>1 Medium (<code>list_payments</code> as financial), 4 Low. Resources listed, not read</div></td>
+          <td><div class="cell"><span class="chip v-med">REVIEW</span>Tools clean. SKILL.md: YARA High "credential harvesting"**. 4 HTML pages over 100 KB skipped</div></td>
+          <td><div class="cell"><span class="chip v-high">1 High</span>On SKILL.md: several domains. +1 Medium for an http:// schema link</div></td>
+          <td><div class="cell"><span class="chip v-ok">Clean</span>All 11 tools verified</div></td>
+          <td><div class="cell"><span class="chip v-crit">11 Critical</span>+23 Medium, 3 Low. "auth" inside words like authorize; schema links</div></td>
+          <td><div class="cell"><span class="chip v-ok">0 of 15</span>No matches</div></td>
+          <td><div class="cell"><span class="chip v-na">Not scanned</span>Prints PASS</div></td>
+        </tr>
+        <tr>
+          <th scope="row">Vuntum<span class="url">vuntum.com/mcp</span><span class="count">16 tools</span></th>
+          <td class="control"><div class="cell"><span class="chip v-ok">CLEAN</span>Read-only; warns the agent about quoted source text</div></td>
+          <td class="ours"><div class="cell"><span class="chip v-med">B · risk 16</span>6 Medium: <code>slug</code> arguments read as URLs; 13 Low flow labels</div></td>
+          <td><div class="cell"><span class="chip v-ok">SAFE</span>No findings</div></td>
+          <td><div class="cell"><span class="chip v-ok">Pass</span>0 matches on 16 items</div></td>
+          <td><div class="cell"><span class="chip v-ok">Clean</span>All 16 tools verified</div></td>
+          <td><div class="cell"><span class="chip v-med">16 Medium</span>Every <code>$schema</code> link read as an external endpoint</div></td>
+          <td><div class="cell"><span class="chip v-ok">0 of 16</span>No matches</div></td>
+          <td><div class="cell"><span class="chip v-na">Not scanned</span>Prints PASS</div></td>
+        </tr>
+        <tr>
+          <th scope="row">AIK Stock Data<span class="url">mcp.aikstockdata.com/mcp</span><span class="count">12 tools</span></th>
+          <td class="control"><div class="cell"><span class="chip v-low">LOW</span>Steers the agent to <code>get_data_urls</code> and raw dataset fetches</div></td>
+          <td class="ours"><div class="cell"><span class="chip v-med">B · risk 13</span>2 Medium: "publish" wording on read-only tools; 3 Low</div></td>
+          <td><div class="cell"><span class="chip v-high">UNSAFE</span>2 High: <code>get_data_urls</code> and the server instructions</div></td>
+          <td><div class="cell"><span class="chip v-ok">Pass</span>0 matches on 12 items</div></td>
+          <td><div class="cell"><span class="chip v-high">1 High</span><code>get_data_urls</code>: matched "instead of" and "API key" in text that says no key is needed</div></td>
+          <td><div class="cell"><span class="chip v-crit">1 Critical</span>+1 Medium, 12 Low. The word "webhook"; tools naming other tools</div></td>
+          <td><div class="cell"><span class="chip v-ok">0 of 12</span>No matches</div></td>
+          <td><div class="cell"><span class="chip v-na">Not scanned</span>Prints PASS</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <p>* Cisco's first run came back incomplete because DeepSeek returned empty answers. A re-run with a 4,000-token answer budget completed.</p>
+    <p>** Found only in a separate run. The <code>scan_mcp.py</code> helper skips markdown and JSON resources but counts them as checked.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Scorecard</div>
+    <h2>Did each scanner find what matters?</h2>
+    <p>Graded against the control review below. The four columns are its main finding on each server that has one. The last column shows how much each scanner flagged on Vuntum, which the control rates clean. Claude is left out of this table, because grading the control against itself would prove nothing.</p>
+  </div>
+  <div class="legend">
+    <span class="mark"><span class="dot hit"></span>Flagged, with a sound reason</span>
+    <span class="mark"><span class="dot weak"></span>Flagged the right item for a weak or wrong reason</span>
+    <span class="mark"><span class="dot miss"></span>Missed</span>
+  </div>
+  <div class="scroll">
+    <table class="score">
+      <thead>
+        <tr>
+          <th scope="col">Scanner</th>
+          <th scope="col">1 · Veterical SKILL.md</th>
+          <th scope="col">2 · WealthMCP runtime skills</th>
+          <th scope="col">3 · Hallux data flow</th>
+          <th scope="col">4 · AIK steering</th>
+          <th scope="col">Signals</th>
+          <th scope="col">Flags on Vuntum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ours">
+          <th scope="row">zgScanner (ours)</th>
+          <td><span class="mark"><span class="dot miss"></span>Doesn't read resources</span></td>
+          <td><span class="mark"><span class="dot miss"></span>Graded A</span></td>
+          <td><span class="mark"><span class="dot hit"></span>Toxic flow</span></td>
+          <td><span class="mark"><span class="dot miss"></span>Wrong tools</span></td>
+          <td class="tally">1 of 4</td>
+          <td class="tally">6 Med, 13 Low</td>
+        </tr>
+        <tr>
+          <th scope="row">Cisco mcp-scanner</th>
+          <td><span class="mark"><span class="dot weak"></span>YARA only, extra run</span></td>
+          <td><span class="mark"><span class="dot hit"></span>LLM</span></td>
+          <td><span class="mark"><span class="dot hit"></span>LLM</span></td>
+          <td><span class="mark"><span class="dot hit"></span>LLM</span></td>
+          <td class="tally">3 + 1 weak</td>
+          <td class="tally">0</td>
+        </tr>
+        <tr>
+          <th scope="row">Ramparts</th>
+          <td><span class="mark"><span class="dot weak"></span>"Several domains"</span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td class="tally">0 + 1 weak</td>
+          <td class="tally">0</td>
+        </tr>
+        <tr>
+          <th scope="row">MCP-Shield</th>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot weak"></span>Keyword match</span></td>
+          <td class="tally">0 + 1 weak</td>
+          <td class="tally">0</td>
+        </tr>
+        <tr>
+          <th scope="row">fr2endly mcp-scan</th>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot weak"></span>"webhook" word</span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td class="tally">0 + 1 weak</td>
+          <td class="tally">16 Med</td>
+        </tr>
+        <tr>
+          <th scope="row">Nova-Proximity</th>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td><span class="mark"><span class="dot miss"></span></span></td>
+          <td class="tally">0 of 4</td>
+          <td class="tally">0</td>
+        </tr>
+        <tr>
+          <th scope="row">mcp-fence</th>
+          <td colspan="4"><span class="mark"><span class="dot na"></span>Did not connect to any hosted server</span></td>
+          <td class="tally">n/a</td>
+          <td class="tally">n/a</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">Total findings raised across the five servers: fr2endly 85, zgScanner 46, Cisco 7, Ramparts 2, MCP-Shield 1, Nova 0. A higher count did not mean more of the four signals were found. Three further issues from the control review were missed by every scanner: Veterical's pre-approved <code>npx</code> skill, Hallux's <code>successor</code> redirect, and WealthMCP's verbatim install relay.</p>
+</section>
+
+<section id="control">
+  <div class="section-head">
+    <div class="eyebrow">Control review</div>
+    <h2>Claude's own read of the five servers</h2>
+    <p>Same rule as the scanners: initialize, the list calls and resource reads, and no tool calls. I fetched everything fresh. I read all 51 tool definitions in full, with the instructions, annotations, schemas, <code>_meta</code> and both skill files. Evidence: <code>control/CONTROL-REVIEW.md</code>.</p>
+  </div>
+  <div class="reviews">
+    <article class="review">
+      <div class="top"><span class="chip v-high">HIGH</span><h3>Veterical</h3><span class="host">11 tools · 6 resources</span></div>
+      <ul>
+        <li>The connector's instructions promise an administrative, read-only boundary: no owner or animal records, and no tools that create, update or delete anything.</li>
+        <li>The same server serves <code>skill://veterical/veterical/SKILL.md</code> and declares the MCP skills extension. That skill drives the <code>veterical</code> CLI with full create, update and permanent delete of clients, patients, appointments, invoices, payments and vaccination records. <span class="missed">missed by all scanners</span></li>
+        <li>Its header sets <code>allowed-tools: Bash(npx veterical:*)</code>. In clients that honor that field, this pre-approves running an unpinned npm package on the user's machine. It also covers account signup and a device-code login.</li>
+        <li>In mitigation, it is the vendor's own CLI, and the skill says to confirm deletes and keep keys out of transcripts. The tools themselves are careful, and the HTML widgets ship a strict CSP that blocks forms and network calls.</li>
+      </ul>
+    </article>
+    <article class="review">
+      <div class="top"><span class="chip v-med">MEDIUM</span><h3>Hallux</h3><span class="host">4 tools · 2 resources</span></div>
+      <ul>
+        <li>It receives every install command and full dependency file. These can carry private package names and index URLs with embedded tokens.</li>
+        <li>For a deprecated or blocked name, the agent is told to use the server's <code>successor</code>. So the server can choose which package gets installed instead. <span class="missed">missed by all scanners</span></li>
+        <li>It inserts itself before every install ("Call this BEFORE..."). That fits its purpose, but it is still steering.</li>
+        <li>It fails closed (<code>unknown</code> is never permission), and the annotations are honest about <code>hallux_watch</code> writing.</li>
+      </ul>
+    </article>
+    <article class="review">
+      <div class="top"><span class="chip v-med">MEDIUM</span><h3>WealthMCP</h3><span class="host">8 tools</span></div>
+      <ul>
+        <li><code>get_skill</code> returns runtime workflows that the agent is told to follow exactly. That content is not in the metadata.</li>
+        <li>The instructions say to relay install commands and config snippets from listings verbatim, and some listings are "Community". A bad listing would reach the user as a ready-to-run install line. <span class="missed">missed by all scanners</span></li>
+        <li>When tools differ from <code>server_info</code>, the agent is scripted to blame a stale client cache. With <code>listChanged: true</code>, this normalizes the change a rug-pull check looks for.</li>
+      </ul>
+    </article>
+    <article class="review">
+      <div class="top"><span class="chip v-low">LOW</span><h3>AIK Stock Data</h3><span class="host">12 tools</span></div>
+      <ul>
+        <li>The instructions and <code>get_data_urls</code> push the agent to call that tool "before concluding something is unavailable", then to fetch dataset URLs with its own fetch tool, outside MCP.</li>
+        <li>A read-only data server with a clear not-investment-advice notice. The scanners' "prompt injection, High" overstates it.</li>
+      </ul>
+    </article>
+    <article class="review">
+      <div class="top"><span class="chip v-ok">CLEAN</span><h3>Vuntum</h3><span class="host">16 tools</span></div>
+      <ul>
+        <li>Sixteen read-only lookups. The instructions tell the agent not to follow quoted source text.</li>
+        <li>Tool output includes third-party quotes and repository text, so some injection risk exists at runtime, and the server says so. <code>openWorldHint: false</code> is arguably inaccurate for that content.</li>
+      </ul>
+    </article>
+  </div>
+  <h3>Checks run on all five</h3>
+  <ul class="checks">
+    <li><span class="res">none</span>Tool changes since this morning's fetch</li>
+    <li><span class="res">none</span>Different tools when the client says it is <code>claude-ai</code></li>
+    <li><span class="res">none</span>Tools hidden past a pagination cursor</li>
+    <li><span class="res">none</span>Zero-width, bidi or tag characters, ANSI codes, encoded payloads</li>
+    <li><span class="res">clean</span>Veterical's base64 SVG icon: no script, handlers or links</li>
+    <li><span class="res">strict CSP</span>Veterical's four HTML widgets, pattern-scanned and spot-read</li>
+  </ul>
+  <p class="foot">Limits: this control is not blind, because I had already seen the scanner output and part of the metadata. Without tool calls, runtime output stays unseen: WealthMCP's skills, AIK's URL catalog and Hallux's <code>successor</code> values. These are judgments from metadata, not a code audit. An LLM reviewer can also be steered by the text it reads. Nothing here was addressed to me, and I treated all of it as data.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Our scanner</div>
+    <h2>zgScanner in detail</h2>
+    <p>Run once per server: <code>python -m wiggle.zgscanner scan &lt;url&gt; --no-discover --no-skills</code>. Pasted URLs turn off config and skill discovery, and only the pasted server is contacted. The LLM judge did not run, because the <code>anthropic</code> package and a key are not installed.</p>
+  </div>
+  <div class="ours-panel">
+    <div class="grades">
+      <div class="grade"><span class="g">D<small>74</small></span><span class="n">Hallux · 14 findings</span></div>
+      <div class="grade"><span class="g">A<small>3</small></span><span class="n">WealthMCP · 2 findings</span></div>
+      <div class="grade"><span class="g">B<small>16</small></span><span class="n">Veterical · 5 findings</span></div>
+      <div class="grade"><span class="g">B<small>16</small></span><span class="n">Vuntum · 20 findings</span></div>
+      <div class="grade"><span class="g">B<small>13</small></span><span class="n">AIK Stock Data · 5 findings</span></div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>What it got right</h3>
+        <ul>
+          <li>Its toxic-flow check (TF007) described Hallux's real risk most accurately of the seven: one server both reads private data (dependency files) and has an outbound sink (the webhook).</li>
+          <li>It did not flag the word "auth" or <code>$schema</code> links, the two patterns behind most of fr2endly's noise.</li>
+          <li>It noted that WealthMCP and Vuntum can change their tool list at runtime (RP004). That is the precondition for a rug pull.</li>
+          <li>Each finding names its check ID, its OWASP MCP tag and the scanners whose feature it reproduces, which made triage fast.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What it missed or got wrong</h3>
+        <ul>
+          <li><b>Resources are listed but never read.</b> Live introspection stops at <code>resources/list</code>, so the Veterical SKILL.md was never seen. A <code>resources/read</code> for text types would have caught signal 1.</li>
+          <li><b>No rule for steering language.</b> Phrases like "follow the skill exactly" or "call this before concluding" pass the static rules. That missed signals 2 and 4. The LLM judge might cover them, but it was not tested here.</li>
+          <li><b>SC002 false positives.</b> A free-string argument whose description says "URL identifier" counts as a URL. That made the 6 Medium findings on Vuntum's <code>slug</code> arguments.</li>
+          <li><b>TP016 false positives.</b> It matched "publish" and even "do not run the command" against <code>readOnlyHint</code>. That caused the Medium findings on AIK and Hallux.</li>
+          <li><b>No check on skills served over MCP.</b> Veterical's skill pre-approves <code>npx</code> commands and contradicts the connector's own boundary. That is a Declared-versus-Reachable gap of exactly the kind the wiggle study measures. With <code>--no-skills</code> and no resource reads, zgScanner could not see it.</li>
+          <li>23 of its 67 checks were skipped. They need source code, skills, pins, OSV, VirusTotal, an allowlist or the LLM.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Method</div>
+    <h2>How this was run</h2>
+  </div>
+  <div class="method">
+    <div>
+      <h3>Picking the servers</h3>
+      <p>I took random listing pages (40, 84, 107, 113) on mcpservers.org and kept third-party entries: no "official" or "sponsor" badge, a hosted URL, and a tool list that loads without a key. Of 34 candidates probed, 17 answered; 5 were drawn at random from those. Listings older than about page 130 are almost all local packages, so testing them would mean running unknown code on this PC. They were left out.</p>
+    </div>
+    <div>
+      <h3>What was sent to the servers</h3>
+      <p>Only <code>initialize</code>, the tools, prompts and resources list calls, and resource reads. No tool was called. The site rate-limited the listing crawl after about 60 page loads, so later pages could not be sampled.</p>
+    </div>
+    <div>
+      <h3>Scanner setup</h3>
+      <ul>
+        <li><b>Cisco</b>: main @10032f9 with local fixes; LLM is DeepSeek <code>deepseek-flash</code>.</li>
+        <li><b>Ramparts</b> 0.8.10: Linux build through WSL with YARA rules, no LLM.</li>
+        <li><b>MCP-Shield</b> 1.0.4: patched for Streamable HTTP, no Claude key.</li>
+        <li><b>Nova-Proximity</b> @d752174: keyless, so only the <code>DetectJailbreaking</code> keyword rule ran.</li>
+        <li><b>mcp-fence</b> 0.1.2: static config scan only; it reports "Live inspection unavailable".</li>
+        <li><b>fr2endly mcp-scan</b> @12fe4a1, drift snapshots off.</li>
+        <li><b>zgScanner</b> 0.1.0 (wiggle), static rules plus live list calls.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Control review</h3>
+      <p>After the scans, I fetched the servers fresh, then again under the client name <code>claude-ai</code>. I followed every list's pagination and read every resource. Then I read every definition. Scripts ran the hidden-character and encoded-payload checks; the judgments are mine.</p>
+    </div>
+    <div>
+      <h3>Files</h3>
+      <p>Everything is in <code>C:\Test\scan-comparison</code>. <code>raw/</code> holds each server's metadata, and there is one folder per scanner. <code>zgscanner/&lt;host&gt;/report.json</code> holds zgScanner's full results. <code>cisco/rerun-4000tokens.txt</code> and <code>cisco/resources-markdown-json.txt</code> are the two follow-up Cisco runs. <code>control/</code> holds the control fetch and review.</p>
+    </div>
+  </div>
+</section>
+
+</main>

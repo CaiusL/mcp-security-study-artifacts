@@ -1,0 +1,155 @@
+{
+  "scanner": "mcp-scan",
+  "version": "0.1.0",
+  "target": "https://wealthmcp.ai/mcp",
+  "meta": {
+    "tool_count": 8,
+    "resource_count": 0,
+    "prompt_count": 0,
+    "server_info": {
+      "name": "wealth-mcp-connect",
+      "version": "1.3.2",
+      "title": "Wealth MCP Connect"
+    },
+    "scanned_at": "2026-10-22T06:58:14.697449+00:00"
+  },
+  "summary": {
+    "critical": 2,
+    "high": 1,
+    "medium": 7,
+    "low": 3,
+    "info": 0
+  },
+  "findings": [
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "get_server",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "search_servers",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-004",
+      "title": "Tool executes arbitrary commands",
+      "severity": "High",
+      "severity_score": 3,
+      "tool": "search_servers",
+      "evidence": "matched: ['system']",
+      "recommendation": "Not hostile by itself; shell tools are legitimate. But they should never reach an agent without a sandbox, a command allowlist and human confirmation on each invocation.",
+      "reference": "OWASP LLM06: Excessive Agency"
+    },
+    {
+      "check_id": "MCP-PERM-005",
+      "title": "Tool makes network requests to arbitrary addresses",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_server",
+      "evidence": "matched: ['connect']",
+      "recommendation": "Constrain egress with a domain allowlist at the host network layer. Asking the model nicely in a prompt is not a control.",
+      "reference": "OWASP LLM06: Excessive Agency"
+    },
+    {
+      "check_id": "MCP-PERM-005",
+      "title": "Tool makes network requests to arbitrary addresses",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_skills",
+      "evidence": "matched: ['request']",
+      "recommendation": "Constrain egress with a domain allowlist at the host network layer. Asking the model nicely in a prompt is not a control.",
+      "reference": "OWASP LLM06: Excessive Agency"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_practice_stack",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_server",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_skill",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_skills",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "search_servers",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (list_practice_stacks)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_practice_stack",
+      "evidence": "description excerpt: \"Return one WealthMCP Practice Stack: the MCP servers that make up the workflow plus the starter prompts written for it. Use list_practice_stacks first to get a valid stack id. {'readOnlyHint': True, 'idempotentHint': True, 'openWorldHint': False}\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (list_skills)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_skill",
+      "evidence": "description excerpt: \"Return one guided workflow's full instructions and guardrails. Use list_skills first for a valid slug. Follow the skill exactly; never improvise from the blurb. {'readOnlyHint': True, 'idempotentHint': True, 'openWorldHint': False}\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    },
+    {
+      "check_id": "MCP-SHADOW-002",
+      "title": "Tool references another tool (get_skill)",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "list_skills",
+      "evidence": "description excerpt: \"List the guided workflows (skills) this server ships. Load one with get_skill(slug) and follow it before answering a composition request from the raw tools alone. {'readOnlyHint': True, 'idempotentHint': True, 'openWorldHint': False}\"",
+      "recommendation": "Check the context of the mention. Cross-references between tools are fine in documentation, not as directives to the agent.",
+      "reference": "Tool shadowing (Invariant Labs, 2025)"
+    }
+  ]
+}

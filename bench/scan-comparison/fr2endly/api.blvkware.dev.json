@@ -1,0 +1,92 @@
+{
+  "scanner": "mcp-scan",
+  "version": "0.1.0",
+  "target": "https://api.blvkware.dev/hallux/mcp",
+  "meta": {
+    "tool_count": 4,
+    "resource_count": 2,
+    "prompt_count": 0,
+    "server_info": {
+      "icons": [
+        {
+          "mimeType": "image/png",
+          "sizes": [
+            "512x512"
+          ],
+          "src": "https://blvkware.dev/assets/logo-512.png"
+        },
+        {
+          "mimeType": "image/png",
+          "sizes": [
+            "192x192"
+          ],
+          "src": "https://blvkware.dev/assets/logo-192.png"
+        }
+      ],
+      "name": "hallux",
+      "title": "HALLUX",
+      "version": "0.1.0",
+      "websiteUrl": "https://blvkware.dev/hallux/"
+    },
+    "scanned_at": "2026-10-22T06:58:10.999245+00:00"
+  },
+  "summary": {
+    "critical": 4,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "findings": [
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "hallux_check_command",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "hallux_watch",
+      "evidence": "keys: ['secret']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "hallux_watch",
+      "evidence": "description: ['webhook']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "hallux_watch",
+      "evidence": "outputSchema.properties.registered.items.properties.signingSecret.description: ['webhook']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-004",
+      "title": "Tool executes arbitrary commands",
+      "severity": "High",
+      "severity_score": 3,
+      "tool": "hallux_check_command",
+      "evidence": "matched: ['shell']",
+      "recommendation": "Not hostile by itself; shell tools are legitimate. But they should never reach an agent without a sandbox, a command allowlist and human confirmation on each invocation.",
+      "reference": "OWASP LLM06: Excessive Agency"
+    }
+  ]
+}

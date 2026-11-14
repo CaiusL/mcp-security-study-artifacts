@@ -1,0 +1,46 @@
+{
+  "kind": "stage4-freeze",
+  "recorded": "2026-11-03",
+  "model_run": false,
+  "label": "adaptive arm, reported apart",
+  "sha256": "97fa9b072cf258ad9f7cd74741e0dd7c116f85d28c0374aa2502fec99ae90322",
+  "stage2": {
+    "freeze_sha256": "bbaecb1a727b28167580f6f64cf458055f3e084e2b06ddd0950a5d39a5cc0cbd",
+    "allowlists": {
+      "path": "artifacts/stage2/qwen3.8-flash/allowlists.json",
+      "sha256": "c6427eda2d004f89bd4ba74000f3487311e886ba2f2c76c9f8f86d61fe4139b3",
+      "generator": "minimal-generator"
+    },
+    "sandbox": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox",
+    "operating_level": 0
+  },
+  "items": {
+    "attacker_prompt": {
+      "sha256": "f6b42bfd834357754690cba780a619a3a30c7d188cc342bb6e5b7c3c942da2f1"
+    },
+    "settings": {
+      "sha256": "4655d1c12b9b0438ac1aaceefbc0bec0e27584f1381c15511d6bf2302fcfe08a"
+    },
+    "budget": {
+      "sha256": "bdb73175bb0266d2c32517b7784dd3e12c508e35f5fac8fe45b1ea3a7b3c6e7b"
+    },
+    "best_text_rule": {
+      "sha256": "133bed34fe548c0ae34e734c2299b62afa9461b24fe4d1859d5e0fb2cf16536f"
+    },
+    "refusal_rule": {
+      "sha256": "758e54d4997e4bac3d9ad164c1b7f63aa358e3ffeee9dbda64843f0fb1b53fc6"
+    },
+    "text_check": {
+      "sha256": "9aaa7c6e01f6514d8804312fdbf211c26e08d740989e805b5eb36a9d2301f32e"
+    },
+    "harness_safety": {
+      "sha256": "1c882b7efd9e35b80ae6b29eda43d98812793f0bdfabc9fd1eb89b189a75781d"
+    },
+    "cases": {
+      "sha256": "b2da0d2de1dcd86698b79016b1004720544e9a51f6971aa0f590ce7dd9787d96"
+    },
+    "stage2": {
+      "sha256": "6601f197341b4abeb5f407044435e2c913b4415ea501b4ebc3a78e89e2a59d36"
+    }
+  }
+}

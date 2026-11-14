@@ -1,0 +1,39 @@
+{
+  "kind": "stage3-widening-collection",
+  "started": "2026-11-03T08:05:08.741176+00:00",
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "temperature": 0.0,
+  "thinking": "off",
+  "scripted": false,
+  "freeze_sha256": "4762fcd5086ae923c44714a35e2723b166b47254b440b227adb205662714e8ad",
+  "top_p": null,
+  "step_cap": 8,
+  "host_prompt_sha256": "b4ef05cedce174e8e22cf981d4d552e83754f55a02a9fdb7eb93877425f35c9f",
+  "token_cap": 530000,
+  "tokens_measured": 251895,
+  "patched_filesystem": {
+    "live": true,
+    "package": "@modelcontextprotocol/server-filesystem",
+    "pin": "2.0.0",
+    "name": "secure-filesystem-server",
+    "version": "2.0.0",
+    "protocol": "2025-11-25"
+  },
+  "endpoint_check": {
+    "task_id": "fetch-h-guide",
+    "tool": "fetch",
+    "model_id": "deepseek-flash",
+    "usage": {
+      "prompt_tokens": 1017,
+      "completion_tokens": 49,
+      "total_tokens": 1066
+    }
+  },
+  "runs": {
+    "planned": 96,
+    "complete": 96,
+    "errors": 0
+  },
+  "status": "complete"
+}

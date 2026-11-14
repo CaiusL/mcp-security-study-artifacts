@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+vendor/mcp/node_modules/
+vendor/py/
+vendor/py-live/
+vendor/py-progent/
+artifacts/sandbox/
+artifacts/live/sandbox/
+artifacts/stage2/*/sandbox/
+artifacts/stage2-qwen-thinking-on-2026-11-02/sandbox/
+artifacts/stage3-birth/*/sandbox/
+artifacts/stage3-widening/sandbox/
+artifacts/stage4/*/sandbox/
+artifacts/slides/.build/
+artifacts/zgscanner/
+# Narrated progress videos. Local only, not part of this study.
+artifacts/explainer/
+
+# Third-party scanner installs for the bench. See bench/README.md.
+bench/mcp-scanner/
+bench/fr2endly-mcp-scan/
+bench/mcp-fence/
+bench/nova-proximity/
+bench/ramparts/
+bench/mcp-shield/node_modules/
+.env
+# Hosted-model API keys (DeepSeek, Qwen/Model Studio, ...). Pass with --api-key-file.
+*.key
+
+# Nested clone of github.com/CaiusL/BadAgent. Never embed it.
+BadAgent/

@@ -1,0 +1,98 @@
+{
+  "recorded_on": "2026-10-19",
+  "rule": "Class, impact, and which PoC probe represents it. No reproduction steps and no payloads.",
+  "cases": [
+    {
+      "id": "CVE-2025-53110",
+      "alias": "EscapeRoute prefix",
+      "ghsa": "GHSA-hc55-p739-j48w",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "affected": "<=0.6.2 or >=2025.1.14 and <2025.7.1",
+      "class": "string prefix used as a directory boundary",
+      "impact": "a path that shares the allowed directory's prefix can be read or written",
+      "poc_probes": ["fs-sibling-read", "fs-sibling-write"],
+      "source": "GHSA-hc55-p739-j48w as listed for the filesystem npm package"
+    },
+    {
+      "id": "CVE-2025-53109",
+      "alias": "EscapeRoute symlink",
+      "ghsa": "GHSA-q66q-fx2p-7w4m",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "affected": "<=0.6.2 or >=2025.1.14 and <2025.7.1",
+      "class": "symlink or '..' resolved after the containment check",
+      "impact": "a path that passes the check can resolve outside the root",
+      "poc_probes": ["fs-symlink-read", "fs-dotdot-read"],
+      "source": "GHSA-q66q-fx2p-7w4m as listed for the filesystem npm package"
+    },
+    {
+      "id": "CVE-2025-68143",
+      "ghsa": "GHSA-5cgr-j3jf-jw3v",
+      "server": "mcp-server-git",
+      "affected": "< 2025.9.25, patched in 2025.9.25",
+      "class": "git_init accepts a path outside the configured repository",
+      "impact": "a new repository can be created outside the intended root",
+      "poc_probes": [],
+      "full_study": true,
+      "source": "https://github.com/advisories/GHSA-5cgr-j3jf-jw3v"
+    },
+    {
+      "id": "CVE-2025-68144",
+      "ghsa": "GHSA-9xwc-hfwc-8w59",
+      "server": "mcp-server-git",
+      "affected": "GHSA: < 2025.12.18, patched in 2025.12.18. CVE record: < 2025.12.17",
+      "class": "git_diff and git_checkout argument injection",
+      "impact": "unsanitized input reaches the git command line",
+      "poc_probes": [],
+      "full_study": true,
+      "source": "https://github.com/advisories/GHSA-9xwc-hfwc-8w59"
+    },
+    {
+      "id": "CVE-2025-68145",
+      "ghsa": "GHSA-j22h-9j4x-23w5",
+      "server": "mcp-server-git",
+      "affected": "GHSA: < 2025.12.18, patched in 2025.12.18. CVE record: < 2025.12.17",
+      "class": "repo_path not checked against the configured repository",
+      "impact": "later git tools can operate on another repository the process can see",
+      "poc_probes": [],
+      "full_study": true,
+      "source": "https://github.com/advisories/GHSA-j22h-9j4x-23w5"
+    },
+    {
+      "id": "CVE-2026-27735",
+      "ghsa": "GHSA-vjqx-cfc4-9h6v",
+      "server": "mcp-server-git",
+      "affected": "< 2026.1.14, patched in 2026.1.14 (GHSA-vjqx-cfc4-9h6v)",
+      "class": "git_add of a path outside the repository, readable back through a diff or show",
+      "impact": "file contents outside the repo can enter tool output",
+      "poc_probes": [],
+      "full_study": true,
+      "source": "https://arxiv.org/abs/2610.22301"
+    },
+    {
+      "id": "fetch-nonpublic-url",
+      "server": "mcp-server-fetch",
+      "affected": "no CVE id confirmed in this pass",
+      "class": "fetch of loopback, link-local, private, or non-http URLs",
+      "impact": "a tool whose description promises public http still returns a non-public body when the check is absent",
+      "poc_probes": ["fetch-loopback", "fetch-linklocal", "fetch-private", "fetch-file"],
+      "source": "declared behavior of current mcp-server-fetch; the PoC stand-in omits the check in vulnerable mode"
+    },
+    {
+      "id": "in-scope-excess",
+      "server": "filesystem and fetch stand-ins",
+      "affected": "present on the patched stand-in",
+      "class": "argument values inside declared intent and outside the benign traces",
+      "impact": "a correct root check still allows reads, writes, and fetches the task suite never uses",
+      "poc_probes": [
+        "fs-secret-read",
+        "fs-secret-list",
+        "fs-secret-info",
+        "fs-write-sh-notes",
+        "fs-write-sh-src",
+        "fetch-admin",
+        "fetch-other-host"
+      ],
+      "source": "this proof of concept"
+    }
+  ]
+}

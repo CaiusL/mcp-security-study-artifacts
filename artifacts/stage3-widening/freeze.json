@@ -1,0 +1,45 @@
+{
+  "kind": "stage3-widening-freeze",
+  "recorded": "2026-11-03",
+  "model_run": false,
+  "sha256": "4762fcd5086ae923c44714a35e2723b166b47254b440b227adb205662714e8ad",
+  "items": {
+    "requests": {
+      "sha256": "64b508ce6edf935d053f6c00f57cebb8c528080ab8fbff9317c940477b9ba11e"
+    },
+    "w_oracles": {
+      "sha256": "b93f2fe93237b4b573985a48ecb76206a18cc2f1f43c83a47407f309962d11a9"
+    },
+    "cases": {
+      "sha256": "6cb6b859627c2e20cf3870b335246cdc9b640617a64ffdf8131c166db664c8ec"
+    },
+    "model": {
+      "sha256": "1cc728b19748c1c6884a525f9d8c5822061d224dc1cd35f62d01fe7631d2aecb"
+    },
+    "pilot2": {
+      "sha256": "b057f7254693048b94d4720f11749e716489e3911236a804c346db649be73be8"
+    }
+  },
+  "pilot2": {
+    "sha256": "ddfab4e6e1ccfdfa569bb7085d08341b26c3246daca9fa8a64e4a1d8198b1db5",
+    "items": {
+      "host_prompt": "b4ef05cedce174e8e22cf981d4d552e83754f55a02a9fdb7eb93877425f35c9f",
+      "templates": "93762c27dd2b7f7ef9a8e84d4f7653be97ba6c20f9c0ab030f16fff9a07cd5c8",
+      "task_prompts": "b34d3a1f165351b7ae1e42673b040da47baa78d7c6e74e32ca4ad16d40f57d51",
+      "live_task_prompts": "f3812035b42faa155883ec69394e8c1bcd0717fd6488e80e994cb9ad4ceb9152",
+      "task_oracles": "57253532879f796cc497d68a0a1d3fc2e3ee66812e4129c6efee048e8c24766b"
+    }
+  },
+  "model": {
+    "model_id": "deepseek-flash",
+    "temperature": 0.0,
+    "thinking": "off",
+    "step_cap": 8,
+    "samples": 3
+  },
+  "runs": {
+    "clean": 42,
+    "poisoned": 54,
+    "total": 96
+  }
+}

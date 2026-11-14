@@ -1,0 +1,39 @@
+{
+  "verdicts": [
+    {
+      "verdict": "exists",
+      "meaning": "Present in the authoritative registry now.",
+      "agentAction": "Proceed."
+    },
+    {
+      "verdict": "deprecated",
+      "meaning": "Exists but is retired, yanked, or superseded.",
+      "agentAction": "Proceed with the replacement in `successor`."
+    },
+    {
+      "verdict": "absent",
+      "meaning": "Not present. No record of model emission.",
+      "agentAction": "Do not proceed. Likely a typo or a private name."
+    },
+    {
+      "verdict": "phantom",
+      "meaning": "Not present, and emitted by production models at or above the attestation threshold.",
+      "agentAction": "Do not proceed. This is a hallucination with a track record."
+    },
+    {
+      "verdict": "squat",
+      "meaning": "Was phantom, and has since been registered.",
+      "agentAction": "Do not install. Treat as hostile until proven otherwise."
+    },
+    {
+      "verdict": "unknown",
+      "meaning": "Namespace supported but registry unreachable, or identifier outside coverage.",
+      "agentAction": "Fail open or closed per your own policy. Do not treat as `exists`."
+    }
+  ],
+  "safeToProceed": [
+    "deprecated",
+    "exists"
+  ],
+  "note": "HALLUX never returns `exists` on uncertainty. An unreachable registry returns `unknown` with a reason."
+}

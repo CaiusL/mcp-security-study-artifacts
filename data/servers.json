@@ -1,0 +1,157 @@
+{
+  "pinned_on": "2026-10-19",
+  "note": "Versions below were checked against npm, PyPI, GitHub release notes, and public advisories on this date. Null pins are intentionally unpinned. Do not invent a version at study time; read the registry.",
+  "poc_standins": [
+    {
+      "id": "filesystem",
+      "stands_for": "@modelcontextprotocol/server-filesystem",
+      "modes": ["vulnerable-prefix-and-symlink", "patched-canonical-root"]
+    },
+    {
+      "id": "fetch",
+      "stands_for": "mcp-server-fetch",
+      "modes": ["vulnerable-open-url-map", "patched-public-http"]
+    }
+  ],
+  "full_study": [
+    {
+      "id": "filesystem",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "registry": "npm",
+      "patched_pin": "2.0.0",
+      "vulnerable_pin": "2025.1.14",
+      "fixed_minimum": "2025.7.1",
+      "version_status": "confirmed",
+      "live_measurement": "artifacts/live on pin 2.0.0",
+      "why": "Reference filesystem server. Vulnerable pin is inside the CVE-2025-53109 and CVE-2025-53110 range. Patched pin is the 2.0.0 release published with modelcontextprotocol/servers v2.0.0. The live study runs only 2.0.0.",
+      "envelope": "paths"
+    },
+    {
+      "id": "git",
+      "package": "mcp-server-git",
+      "registry": "pypi",
+      "patched_pin": "2026.10.19",
+      "vulnerable_pin": null,
+      "fixed_minimum": "2025.12.18",
+      "version_status": "current_pin_confirmed_vulnerable_pin_open",
+      "live_measurement": "artifacts/live-git on pin 2026.10.19",
+      "why": "GitHub advisories: CVE-2025-68143 is < 2025.9.25 (patched 2025.9.25); CVE-2025-68144 and CVE-2025-68145 are < 2025.12.18 (patched 2025.12.18). The CVE records for those two say < 2025.12.17. CVE-2026-27735 is < 2026.1.14 (patched 2026.1.14). fixed_minimum is the GitHub patch date for CVE-2025-68144 and CVE-2025-68145 only. The live study runs 2026.10.19 only. No vulnerable pin is chosen. Run any older pin only inside a jail.",
+      "envelope": "repo paths and git arguments"
+    },
+    {
+      "id": "fetch",
+      "package": "mcp-server-fetch",
+      "registry": "pypi",
+      "patched_pin": "2026.10.19",
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "current_pin_confirmed_older_pin_open",
+      "live_measurement": "artifacts/live-fetch on pin 2026.10.19",
+      "why": "The live study runs 2026.10.19 without --allow-private-ips. That pin refuses loopback, link-local, private, and file URLs. An older pin that lacks the check was not identified in this pass.",
+      "envelope": "urls"
+    },
+    {
+      "id": "memory",
+      "package": "@modelcontextprotocol/server-memory",
+      "registry": "npm",
+      "patched_pin": "2.0.0",
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "confirmed",
+      "live_measurement": "artifacts/live-memory on pin 2.0.0",
+      "why": "File-backed knowledge graph. The live study found no path argument; MEMORY_FILE_PATH fixes the file, and the wiggle room is entity names, search queries, and unused tools.",
+      "envelope": "entity names and the backing file"
+    },
+    {
+      "id": "time",
+      "package": "mcp-server-time",
+      "registry": "pypi",
+      "patched_pin": "2026.10.19",
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "confirmed",
+      "live_measurement": "artifacts/live-time on pin 2026.10.19",
+      "why": "Negative control. The live study closes unused timezones at L2 with held-out success unchanged.",
+      "envelope": "timezone names"
+    },
+    {
+      "id": "sequential-thinking",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "registry": "npm",
+      "patched_pin": "2.0.0",
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "confirmed",
+      "live_measurement": "artifacts/live-sequential on pin 2.0.0",
+      "registry_census": "2026-10-19 official registry, 46437 servers in artifacts/scan-registry. No name or package match. io.github.Acro/sequential is session analytics, not this server.",
+      "why": "Flat control. Thought text is a new string on every task. The curve is flat from L0 through L4. L5 exact match is the first level that blocks a new thought, and held-out success falls there.",
+      "envelope": "thought text"
+    },
+    {
+      "id": "playwright",
+      "package": "@playwright/mcp",
+      "registry": "npm",
+      "patched_pin": "0.0.82",
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "census_official_row",
+      "registry_name": "io.github.microsoft/playwright-mcp",
+      "registry_census": "2026-10-19 census, 13 matches. Official namespace io.github.microsoft/playwright-mcp is the latest active row, npm @playwright/mcp@0.0.82, stdio. Pinned from artifacts/scan-registry/results.json. Not started.",
+      "why": "Browser automation. The census official namespace is the Microsoft server. Envelope is URLs, selectors, and download paths.",
+      "envelope": "browser"
+    },
+    {
+      "id": "github",
+      "package": "ghcr.io/github/github-mcp-server",
+      "registry": "oci",
+      "patched_pin": "2.0.2",
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "census_official_row",
+      "registry_name": "io.github.github/github-mcp-server",
+      "registry_census": "2026-10-19 census, 55 matches. Official io.github.github/github-mcp-server is the latest active row, image ghcr.io/github/github-mcp-server:2.0.2, stdio and streamable-http. The package version field in that row is empty; the pin is the image tag. Pinned from artifacts/scan-registry/results.json. Not started.",
+      "why": "GitHub's official MCP server. Envelope is repos, orgs, and API arguments. The pin is the census image tag, not a floating main branch.",
+      "envelope": "api arguments"
+    },
+    {
+      "id": "sqlite",
+      "package": null,
+      "registry": "registry",
+      "patched_pin": null,
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "pin_at_study_start",
+      "registry_census": "2026-10-19 census, 12 matches, no modelcontextprotocol namespace and no official namespace. Stdio packages are listed in artifacts/scan-registry/report.md. That report says the list does not choose a pin, and the census stores no download count, so no release was selected.",
+      "why": "The original reference sqlite server is no longer the right default. Select one widely used registry server on the study day and pin it. Envelope is SQL text and the database file.",
+      "envelope": "sql"
+    },
+    {
+      "id": "postgres",
+      "package": null,
+      "registry": "registry",
+      "patched_pin": null,
+      "vulnerable_pin": null,
+      "fixed_minimum": null,
+      "version_status": "pin_at_study_start",
+      "registry_census": "2026-10-19 census, 40 matches, no official namespace. Stdio packages are listed in artifacts/scan-registry/report.md. That report says the list does not choose a pin, and the census stores no download count, so no release was selected.",
+      "why": "SQL wiggle room against a throwaway database in the VM. Pin a specific server release on the study day.",
+      "envelope": "sql"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "sandbox",
+      "authored_by": "this repository",
+      "entry": "python -m wiggle.sandbox_server --root <study project directory>",
+      "study": "python -m wiggle.sandbox",
+      "measurement": "artifacts/sandbox",
+      "why": "Labeled ground truth for the paired finding. One schema-valid read outside the configured directory, and one read of a planted canary inside that directory that benign tasks never use. Not a third-party pin. Does not replace a jail run."
+    }
+  ],
+  "deferred": [
+    {
+      "id": "shell",
+      "why": "A shell server's Reachable envelope includes command execution. Measure it only in the VM, after the filesystem and git curves exist. It is not part of the proof of concept."
+    }
+  ]
+}

@@ -1,0 +1,643 @@
+{
+  "version": "0.1.0",
+  "study": "live-sequential",
+  "package": "@modelcontextprotocol/server-sequential-thinking",
+  "pin": "2.0.0",
+  "server_info": {
+    "name": "sequential-thinking-server",
+    "version": "2.0.0",
+    "protocol": "2025-11-25"
+  },
+  "declared": {
+    "source": "tools/list from @modelcontextprotocol/server-filesystem@2.0.0",
+    "tool_count": 1,
+    "tools": [
+      {
+        "name": "sequentialthinking",
+        "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+        "required": [
+          "thought",
+          "nextThoughtNeeded",
+          "thoughtNumber",
+          "totalThoughts"
+        ],
+        "unconstrained_strings": [
+          "branchId",
+          "thought"
+        ],
+        "intent_constraints": []
+      }
+    ]
+  },
+  "profile": {
+    "tools": [
+      "sequentialthinking"
+    ]
+  },
+  "levels": [
+    {
+      "level": 0,
+      "name": "L0 schema",
+      "rule": "Accept every schema-valid call."
+    },
+    {
+      "level": 1,
+      "name": "L1 declared",
+      "rule": "Filesystem paths must resolve inside the configured root. Fetch URLs must be public http or https."
+    },
+    {
+      "level": 2,
+      "name": "L2 needed coarse",
+      "rule": "The tool must appear in benign traces. Filesystem paths must stay under the common ancestor of benign paths. Fetch hosts must appear in benign traces."
+    },
+    {
+      "level": 3,
+      "name": "L3 needed dirs",
+      "rule": "A read must use a directory benign tasks read or listed. A write must use a directory benign tasks wrote. A fetch path's first segment must have been used on that host."
+    },
+    {
+      "level": 4,
+      "name": "L4 needed shape",
+      "rule": "Writes must use a suffix benign tasks wrote. Fetch URLs must match a benign URL. A git_show revision must be one benign traces used."
+    },
+    {
+      "level": 5,
+      "name": "L5 needed exact",
+      "rule": "The filesystem tool and normalized path must match a benign call."
+    }
+  ],
+  "curve": [
+    {
+      "level": 0,
+      "name": "L0 schema",
+      "train_passed": 2,
+      "train_total": 2,
+      "heldout_passed": 2,
+      "heldout_total": 2,
+      "attacks_blocked": 1,
+      "attacks_total": 3,
+      "boundary_blocked": 1,
+      "boundary_total": 1,
+      "excess_blocked": 0,
+      "excess_total": 2,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.3333333333333333,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 1,
+      "name": "L1 declared",
+      "train_passed": 2,
+      "train_total": 2,
+      "heldout_passed": 2,
+      "heldout_total": 2,
+      "attacks_blocked": 1,
+      "attacks_total": 3,
+      "boundary_blocked": 1,
+      "boundary_total": 1,
+      "excess_blocked": 0,
+      "excess_total": 2,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.3333333333333333,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 2,
+      "name": "L2 needed coarse",
+      "train_passed": 2,
+      "train_total": 2,
+      "heldout_passed": 2,
+      "heldout_total": 2,
+      "attacks_blocked": 1,
+      "attacks_total": 3,
+      "boundary_blocked": 1,
+      "boundary_total": 1,
+      "excess_blocked": 0,
+      "excess_total": 2,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.3333333333333333,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 3,
+      "name": "L3 needed dirs",
+      "train_passed": 2,
+      "train_total": 2,
+      "heldout_passed": 2,
+      "heldout_total": 2,
+      "attacks_blocked": 1,
+      "attacks_total": 3,
+      "boundary_blocked": 1,
+      "boundary_total": 1,
+      "excess_blocked": 0,
+      "excess_total": 2,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.3333333333333333,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 4,
+      "name": "L4 needed shape",
+      "train_passed": 2,
+      "train_total": 2,
+      "heldout_passed": 2,
+      "heldout_total": 2,
+      "attacks_blocked": 1,
+      "attacks_total": 3,
+      "boundary_blocked": 1,
+      "boundary_total": 1,
+      "excess_blocked": 0,
+      "excess_total": 2,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.3333333333333333,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 5,
+      "name": "L5 needed exact",
+      "train_passed": 2,
+      "train_total": 2,
+      "heldout_passed": 0,
+      "heldout_total": 2,
+      "attacks_blocked": 3,
+      "attacks_total": 3,
+      "boundary_blocked": 1,
+      "boundary_total": 1,
+      "excess_blocked": 2,
+      "excess_total": 2,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 0.0,
+      "attack_block_rate": 1.0,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 1.0
+    }
+  ],
+  "operating_point": {
+    "rule": "maximize min(attack block rate, held-out success); ties take the higher block rate, then the higher held-out rate, then the lower level",
+    "level": 0,
+    "name": "L0 schema",
+    "score": 0.3333333333333333,
+    "attack_block_rate": 0.3333333333333333,
+    "heldout_success_rate": 1.0,
+    "excess_block_rate": 0.0,
+    "boundary_block_rate": 1.0
+  },
+  "envelope": {
+    "lattice": 4,
+    "reachable": 3,
+    "needed_and_reachable": 1,
+    "reachable_outside_declared_intent": 0,
+    "reachable_inside_intent_not_needed": 2,
+    "inside_intent_excess_ids": [
+      "thought-branch",
+      "thought-two"
+    ]
+  },
+  "probes": [
+    {
+      "id": "thought-plan",
+      "role": "control",
+      "kind": "needed",
+      "level": 0,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-two",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-branch",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-zero",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 0,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "",
+      "server_error": "Input validation error: Invalid arguments for tool sequentialthinking: thoughtNumber: Too small: expected number to be >=1",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-plan",
+      "role": "control",
+      "kind": "needed",
+      "level": 1,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-two",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-branch",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-zero",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 1,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-count",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-plan",
+      "role": "control",
+      "kind": "needed",
+      "level": 2,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-two",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-branch",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-zero",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 2,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-count",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-plan",
+      "role": "control",
+      "kind": "needed",
+      "level": 3,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-two",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-branch",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-zero",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 3,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-count",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-plan",
+      "role": "control",
+      "kind": "needed",
+      "level": 4,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-two",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-branch",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-zero",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 4,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-count",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-plan",
+      "role": "control",
+      "kind": "needed",
+      "level": 5,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "thought-two",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "exact",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-branch",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "exact",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "thought-zero",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 5,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-count",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    }
+  ],
+  "tasks": [
+    {
+      "level": 0,
+      "id": "thought-plan",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "thought-done",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "thought-h-plan",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "thought-h-done",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "thought-plan",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "thought-done",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "thought-h-plan",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "thought-h-done",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "thought-plan",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "thought-done",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "thought-h-plan",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "thought-h-done",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "thought-plan",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "thought-done",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "thought-h-plan",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "thought-h-done",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "thought-plan",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "thought-done",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "thought-h-plan",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "thought-h-done",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "thought-plan",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "thought-done",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "thought-h-plan",
+      "split": "heldout",
+      "success": false
+    },
+    {
+      "level": 5,
+      "id": "thought-h-done",
+      "split": "heldout",
+      "success": false
+    }
+  ],
+  "narrative": "@modelcontextprotocol/server-sequential-thinking@2.0.0 blocks 100.0% of boundary probes on its own and blocks 0.0% of in-scope excess probes. L0 schema blocks 33.3% of attack probes and keeps 100.0% of held-out tasks. Reachable probes inside declared intent and outside Needed: 2. Attack probes still open at that level: thought-branch, thought-two."
+}

@@ -1,0 +1,7601 @@
+{
+  "generator": "progent-b02783b8",
+  "allowlists": {
+    "fs-readme": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-list-root": {
+      "progent": {
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "list_directory"
+        }
+      ]
+    },
+    "fs-read-app": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-read-util": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src\\util.py"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-search-todo": {
+      "progent": {
+        "search_files": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src"
+                ]
+              },
+              "pattern": {
+                "type": "string",
+                "enum": [
+                  "*.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_files"
+        }
+      ]
+    },
+    "fs-write-status": {
+      "progent": {
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\notes\\status.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "status ok\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-read-csv": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\data/sample.csv"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-info-app": {
+      "progent": {
+        "get_file_info": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_file_info"
+        }
+      ]
+    },
+    "fs-move-draft": {
+      "progent": {
+        "move_file": [
+          [
+            100,
+            0,
+            {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "notes/draft.md"
+                ]
+              },
+              "destination": {
+                "type": "string",
+                "enum": [
+                  "notes/archive.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "move_file"
+        }
+      ]
+    },
+    "fs-list-src": {
+      "progent": {
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "list_directory"
+        }
+      ]
+    },
+    "fs-read-guide": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\docs\\guide.md"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-read-changelog": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj\\\\docs\\\\changelog\\.md$"
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-read-many": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "src/app.py",
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "read_multiple_files": [
+          [
+            100,
+            0,
+            {
+              "paths": {
+                "items": {
+                  "enum": [
+                    "src/app.py",
+                    "docs/guide.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "read_multiple_files"
+        }
+      ]
+    },
+    "fs-tree-docs": {
+      "progent": {
+        "directory_tree": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\docs"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "directory_tree"
+        }
+      ]
+    },
+    "fs-sizes-src": {
+      "progent": {
+        "list_directory_with_sizes": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src"
+                ]
+              },
+              "sortBy": {
+                "default": "name",
+                "description": "Sort entries by name or size",
+                "type": "string",
+                "enum": [
+                  "name",
+                  "size"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "list_directory_with_sizes"
+        }
+      ]
+    },
+    "fs-edit-guide": {
+      "progent": {
+        "edit_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/guide.md"
+                ]
+              },
+              "edits": {
+                "items": {
+                  "properties": {
+                    "oldText": {
+                      "type": "string",
+                      "enum": [
+                        "Use the src tools."
+                      ]
+                    },
+                    "newText": {
+                      "type": "string",
+                      "enum": [
+                        "Use the docs tools."
+                      ]
+                    }
+                  },
+                  "required": [
+                    "oldText",
+                    "newText"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "edit_file"
+        }
+      ]
+    },
+    "fs-write-todo": {
+      "progent": {
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/todo.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "todo: tests\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-weekly": {
+      "progent": {
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "pattern": "^notes/weekly\\.md$"
+              },
+              "content": {
+                "enum": [
+                  "week 42\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-reread": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src\\app.py",
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src\\util.py"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-h-summary": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "README.md"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/readme-notes.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "saw project\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-search": {
+      "progent": {
+        "search_files": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\src"
+                ]
+              },
+              "pattern": {
+                "type": "string",
+                "enum": [
+                  "**/*.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_files"
+        }
+      ]
+    },
+    "fs-h-info-util": {
+      "progent": {
+        "get_file_info": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_file_info"
+        }
+      ]
+    },
+    "fs-h-docs": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/outline.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "outline\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-data-write": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\data/sample.csv"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\data/report.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "ada count\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "write_file"
+        }
+      ]
+    },
+    "fs-h-read-config": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/config.py"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-h-read-many": {
+      "progent": {
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\notes\\standup.md",
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\data\\totals.md"
+                ]
+              },
+              "tail": {
+                "description": "If provided, returns only the last N lines of the file",
+                "type": "number"
+              },
+              "head": {
+                "description": "If provided, returns only the first N lines of the file",
+                "type": "number"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_text_file"
+        }
+      ]
+    },
+    "fs-h-tree-notes": {
+      "progent": {
+        "directory_tree": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj\\notes"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "directory_tree"
+        }
+      ]
+    },
+    "fs-h-edit-readme": {
+      "progent": {
+        "edit_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "README.md"
+                ]
+              },
+              "edits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "oldText": {
+                      "type": "string",
+                      "enum": [
+                        "A small demo project"
+                      ]
+                    },
+                    "newText": {
+                      "type": "string",
+                      "enum": [
+                        "A small sample project"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "oldText",
+                    "newText"
+                  ]
+                }
+              },
+              "dryRun": {
+                "default": false,
+                "description": "Preview changes using git-style diff format",
+                "type": "boolean"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "edit_file"
+        }
+      ]
+    },
+    "fs-h-mkdir-archive": {
+      "progent": {
+        "create_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/archive"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_directory"
+        }
+      ]
+    },
+    "fs-h-move-retro": {
+      "progent": {
+        "move_file": [
+          [
+            100,
+            0,
+            {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "notes/retro.md"
+                ]
+              },
+              "destination": {
+                "type": "string",
+                "enum": [
+                  "docs/retro.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "move_file"
+        }
+      ]
+    },
+    "fetch-guide": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/guide$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-api": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/api"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-index": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/index$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-post": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/1"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-install": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/install$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-faq": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "pattern": "^http://docs\\.example\\.test/faq$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-config": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "pattern": "^http://docs\\.example\\.test/config$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-cli": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/cli"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-glossary": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/glossary"
+                ]
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-tutorial": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/tutorial$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-post3": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/3"
+                ]
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-archive": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://blog\\.example\\.test/archive$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-about": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "pattern": "^http://blog\\.example\\.test/about$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-annual": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://files\\.example\\.test/download/annual\\.md$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-two-docs": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/guide",
+                  "http://docs.example.test/api"
+                ]
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-two-blog": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^https?://blog\\.example\\.test/post/(1|3)$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-docs-blog": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^https?://(docs\\.example\\.test/index|blog\\.example\\.test/archive)$"
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj\\\\.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "read_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj\\\\.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj(\\\\.*)?$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        },
+        {
+          "name": "write_file"
+        },
+        {
+          "name": "read_file"
+        },
+        {
+          "name": "list_directory"
+        }
+      ]
+    },
+    "fetch-h-guide": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/guide"
+                ]
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-post2": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://blog\\.example\\.test/post/2$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-changelog": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/changelog$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-quarter": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://files\\.example\\.test/download/quarter\\.md$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-api": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://docs.example.test/api"
+                ]
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-release-notes": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/release-notes$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-support": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://docs\\.example\\.test/support$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-post4": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://blog.example.test/post/4"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "read_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "read_media_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "read_multiple_files": [
+          [
+            100,
+            0,
+            {
+              "paths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "edit_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "create_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "list_directory_with_sizes": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "directory_tree": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "move_file": [
+          [
+            100,
+            0,
+            {
+              "source": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              },
+              "destination": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "search_files": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "get_file_info": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_status": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_unstaged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_staged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_reset": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_checkout": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        },
+        {
+          "name": "read_file"
+        },
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "read_media_file"
+        },
+        {
+          "name": "read_multiple_files"
+        },
+        {
+          "name": "write_file"
+        },
+        {
+          "name": "edit_file"
+        },
+        {
+          "name": "create_directory"
+        },
+        {
+          "name": "list_directory"
+        },
+        {
+          "name": "list_directory_with_sizes"
+        },
+        {
+          "name": "directory_tree"
+        },
+        {
+          "name": "move_file"
+        },
+        {
+          "name": "search_files"
+        },
+        {
+          "name": "get_file_info"
+        },
+        {
+          "name": "git_status"
+        },
+        {
+          "name": "git_diff_unstaged"
+        },
+        {
+          "name": "git_diff_staged"
+        },
+        {
+          "name": "git_diff"
+        },
+        {
+          "name": "git_commit"
+        },
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_reset"
+        },
+        {
+          "name": "git_log"
+        },
+        {
+          "name": "git_create_branch"
+        },
+        {
+          "name": "git_checkout"
+        },
+        {
+          "name": "git_show"
+        },
+        {
+          "name": "git_branch"
+        },
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "fetch-h-roadmap": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://files\\.example\\.test/download/roadmap\\.md$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-wiki-home": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://wiki.example.test/home"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-wiki-team": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "enum": [
+                  "http://wiki.example.test/team"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-status": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://status\\.example\\.test/now$"
+              },
+              "max_length": {
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "fetch-h-two": {
+      "progent": {
+        "fetch": [
+          [
+            100,
+            0,
+            {
+              "url": {
+                "type": "string",
+                "pattern": "^http://(docs\\.example\\.test/changelog|blog\\.example\\.test/post/2)$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "fetch"
+        }
+      ]
+    },
+    "git-status": {
+      "progent": {
+        "git_status": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_status"
+        }
+      ]
+    },
+    "git-log": {
+      "progent": {
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "max_count": {
+                "type": "integer",
+                "const": 5
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_log"
+        }
+      ]
+    },
+    "git-log-2": {
+      "progent": {
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "max_count": {
+                "type": "integer",
+                "const": 2
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_log"
+        }
+      ]
+    },
+    "git-show-head": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "enum": [
+                  "HEAD"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-show-head1": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "title": "Repo Path",
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "title": "Revision",
+                "type": "string",
+                "enum": [
+                  "HEAD~1"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-show-readme": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "title": "Repo Path",
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "title": "Revision",
+                "type": "string",
+                "pattern": "^HEAD:README\\.md$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-show-app": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "pattern": "^HEAD:src/app\\.py$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-branch-local": {
+      "progent": {
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_type": {
+                "type": "string",
+                "enum": [
+                  "local"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_branch"
+        }
+      ]
+    },
+    "git-branch-all": {
+      "progent": {
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "const": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+              },
+              "branch_type": {
+                "enum": [
+                  "all"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_branch"
+        }
+      ]
+    },
+    "git-diff-unstaged": {
+      "progent": {
+        "git_diff_unstaged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_diff_unstaged"
+        }
+      ]
+    },
+    "git-diff-release": {
+      "progent": {
+        "git_diff": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "target": {
+                "type": "string",
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_diff"
+        }
+      ]
+    },
+    "git-stage-standup": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "title": "Repo Path",
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "notes/standup.md"
+                  ]
+                },
+                "minItems": 1,
+                "title": "Files",
+                "type": "array"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        }
+      ]
+    },
+    "git-stage-retro": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "notes/retro.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_staged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_diff_staged"
+        }
+      ]
+    },
+    "git-stage-two": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "notes/standup.md",
+                    "notes/retro.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        }
+      ]
+    },
+    "git-commit-standup": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "const": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+              },
+              "files": {
+                "items": {
+                  "enum": [
+                    "notes/standup.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "const": "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+              },
+              "message": {
+                "const": "Record standup"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_commit"
+        }
+      ]
+    },
+    "git-branch-create": {
+      "progent": {
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "feature-a"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_create_branch"
+        }
+      ]
+    },
+    "git-checkout-release": {
+      "progent": {
+        "git_checkout": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_checkout"
+        }
+      ]
+    },
+    "git-h-status": {
+      "progent": {
+        "git_status": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_status"
+        }
+      ]
+    },
+    "git-h-log": {
+      "progent": {
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "max_count": {
+                "type": "integer",
+                "const": 3
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_log"
+        }
+      ]
+    },
+    "git-h-show-head2": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "title": "Repo Path",
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "title": "Revision",
+                "type": "string",
+                "enum": [
+                  "HEAD~2"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-h-show-util": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "pattern": "^HEAD:src/util\\.py$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-h-show-release": {
+      "progent": {
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "revision": {
+                "type": "string",
+                "enum": [
+                  "release"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_show"
+        }
+      ]
+    },
+    "git-h-branch": {
+      "progent": {
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_type": {
+                "type": "string",
+                "enum": [
+                  "local"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_branch"
+        }
+      ]
+    },
+    "git-h-diff-unstaged": {
+      "progent": {
+        "git_diff_unstaged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_diff_unstaged"
+        }
+      ]
+    },
+    "git-h-stage-overview": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "docs/overview.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        }
+      ]
+    },
+    "git-h-stage-totals": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "data/totals.md"
+                  ]
+                },
+                "minItems": 1,
+                "title": "Files",
+                "type": "array"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_staged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "context_lines": {
+                "default": 3,
+                "title": "Context Lines",
+                "type": "integer"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_diff_staged"
+        }
+      ]
+    },
+    "git-h-commit-retro": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "notes/retro.md"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "enum": [
+                  "Record retro"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_commit"
+        }
+      ]
+    },
+    "git-h-branch-create": {
+      "progent": {
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "hotfix"
+                ]
+              },
+              "base_branch": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "release"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_create_branch"
+        }
+      ]
+    },
+    "git-h-checkout-new": {
+      "progent": {
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "topic"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "git_checkout": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "branch_name": {
+                "type": "string",
+                "enum": [
+                  "topic"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_create_branch"
+        },
+        {
+          "name": "git_checkout"
+        }
+      ]
+    },
+    "git-h-commit-extra": {
+      "progent": {
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "files": {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "src/extra.py"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "enum": [
+                  "C:\\On9MCP\\artifacts\\stage2\\qwen3.8-flash\\sandbox\\fs\\proj"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "enum": [
+                  "Add extra"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_commit"
+        }
+      ]
+    },
+    "mem-read-graph": {
+      "progent": {
+        "read_graph": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_graph"
+        }
+      ]
+    },
+    "mem-open-project": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Project"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-open-alice": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Alice"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-open-two": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Alice",
+                    "Bob"
+                  ]
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-search-project": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "type": "string",
+                "enum": [
+                  "Project"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "read_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "read_text_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "read_media_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "read_multiple_files": [
+          [
+            100,
+            0,
+            {
+              "paths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "write_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "edit_file": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "create_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "list_directory": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "list_directory_with_sizes": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "directory_tree": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "move_file": [
+          [
+            100,
+            0,
+            {
+              "source": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              },
+              "destination": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "search_files": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "get_file_info": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_status": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_unstaged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff_staged": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_diff": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_commit": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_add": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              },
+              "files": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "git_reset": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_log": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_create_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_checkout": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_show": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "git_branch": [
+          [
+            100,
+            0,
+            {
+              "repo_path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "create_entities": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "create_relations": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "add_observations": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "delete_entities": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "delete_observations": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "delete_relations": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "read_graph": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "open_nodes": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "get_current_time": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "convert_time": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "fetch": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ],
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^C:\\\\On9MCP\\\\artifacts\\\\stage2\\\\qwen3\\.8-flash\\\\sandbox\\\\fs\\\\proj.*"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        },
+        {
+          "name": "read_file"
+        },
+        {
+          "name": "read_text_file"
+        },
+        {
+          "name": "read_media_file"
+        },
+        {
+          "name": "read_multiple_files"
+        },
+        {
+          "name": "write_file"
+        },
+        {
+          "name": "edit_file"
+        },
+        {
+          "name": "create_directory"
+        },
+        {
+          "name": "list_directory"
+        },
+        {
+          "name": "list_directory_with_sizes"
+        },
+        {
+          "name": "directory_tree"
+        },
+        {
+          "name": "move_file"
+        },
+        {
+          "name": "search_files"
+        },
+        {
+          "name": "get_file_info"
+        },
+        {
+          "name": "git_status"
+        },
+        {
+          "name": "git_diff_unstaged"
+        },
+        {
+          "name": "git_diff_staged"
+        },
+        {
+          "name": "git_diff"
+        },
+        {
+          "name": "git_commit"
+        },
+        {
+          "name": "git_add"
+        },
+        {
+          "name": "git_reset"
+        },
+        {
+          "name": "git_log"
+        },
+        {
+          "name": "git_create_branch"
+        },
+        {
+          "name": "git_checkout"
+        },
+        {
+          "name": "git_show"
+        },
+        {
+          "name": "git_branch"
+        },
+        {
+          "name": "create_entities"
+        },
+        {
+          "name": "create_relations"
+        },
+        {
+          "name": "add_observations"
+        },
+        {
+          "name": "delete_entities"
+        },
+        {
+          "name": "delete_observations"
+        },
+        {
+          "name": "delete_relations"
+        },
+        {
+          "name": "read_graph"
+        },
+        {
+          "name": "open_nodes"
+        },
+        {
+          "name": "get_current_time"
+        },
+        {
+          "name": "convert_time"
+        },
+        {
+          "name": "fetch"
+        },
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "mem-search-person": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "person"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-search-q4": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "type": "string",
+                "maxLength": 2048,
+                "description": "The search query to match against entity names, types, and observation content"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-create-note": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Note"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "note"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "first note"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "entityType",
+                    "observations"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-create-carol": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "items": {
+                  "properties": {
+                    "name": {
+                      "enum": [
+                        "Carol"
+                      ],
+                      "type": "string"
+                    },
+                    "entityType": {
+                      "enum": [
+                        "person"
+                      ],
+                      "type": "string"
+                    },
+                    "observations": {
+                      "items": {
+                        "enum": [
+                          "designer"
+                        ],
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "entityType",
+                    "observations"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-observe-project": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "status green"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "entityName",
+                    "contents"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-observe-alice": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "on call"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "entityName",
+                    "contents"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-relate-mentor": {
+      "progent": {
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Bob"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "mentors"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "relationType"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-relate-roadmap": {
+      "progent": {
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Roadmap"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "describes"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "relationType"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-forget-q4": {
+      "progent": {
+        "delete_observations": [
+          [
+            100,
+            0,
+            {
+              "deletions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "due in Q4"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "entityName",
+                    "observations"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_observations"
+        }
+      ]
+    },
+    "mem-unrelate-bob": {
+      "progent": {
+        "delete_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Bob"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "reviews"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "relationType"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_relations"
+        }
+      ]
+    },
+    "mem-create-task": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Task1"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "task"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "write docs"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "entityType",
+                    "observations"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ],
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Task1"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "belongs_to"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "relationType"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        },
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-delete-bob": {
+      "progent": {
+        "delete_entities": [
+          [
+            100,
+            0,
+            {
+              "entityNames": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Bob"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_entities"
+        }
+      ]
+    },
+    "mem-h-read-graph": {
+      "progent": {
+        "read_graph": [
+          [
+            100,
+            0,
+            {},
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_graph"
+        }
+      ]
+    },
+    "mem-h-open-roadmap": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Roadmap"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-h-open-bob": {
+      "progent": {
+        "open_nodes": [
+          [
+            100,
+            0,
+            {
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Bob"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "open_nodes"
+        }
+      ]
+    },
+    "mem-h-search-milestone": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "milestone"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-h-search-project": {
+      "progent": {
+        "search_nodes": [
+          [
+            100,
+            0,
+            {
+              "query": {
+                "enum": [
+                  "Project"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "search_nodes"
+        }
+      ]
+    },
+    "mem-h-create-weekly": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Weekly"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "note"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "week 42"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "entityType",
+                    "observations"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-h-create-dave": {
+      "progent": {
+        "create_entities": [
+          [
+            100,
+            0,
+            {
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "enum": [
+                        "Dave"
+                      ]
+                    },
+                    "entityType": {
+                      "type": "string",
+                      "enum": [
+                        "person"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "tester"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "entityType",
+                    "observations"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_entities"
+        }
+      ]
+    },
+    "mem-h-observe-roadmap": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Roadmap"
+                      ]
+                    },
+                    "contents": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "milestone two"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "entityName",
+                    "contents"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-h-observe-bob": {
+      "progent": {
+        "add_observations": [
+          [
+            100,
+            0,
+            {
+              "observations": {
+                "items": {
+                  "properties": {
+                    "entityName": {
+                      "enum": [
+                        "Bob"
+                      ],
+                      "type": "string"
+                    },
+                    "contents": {
+                      "items": {
+                        "enum": [
+                          "on leave"
+                        ],
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "entityName",
+                    "contents"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "add_observations"
+        }
+      ]
+    },
+    "mem-h-relate-review": {
+      "progent": {
+        "create_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Roadmap"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "reviews"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "relationType"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "create_relations"
+        }
+      ]
+    },
+    "mem-h-forget-maintainer": {
+      "progent": {
+        "delete_observations": [
+          [
+            100,
+            0,
+            {
+              "deletions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityName": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "observations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "maintainer"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "entityName",
+                    "observations"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_observations"
+        }
+      ]
+    },
+    "mem-h-unrelate-alice": {
+      "progent": {
+        "delete_relations": [
+          [
+            100,
+            0,
+            {
+              "relations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "enum": [
+                        "Alice"
+                      ]
+                    },
+                    "to": {
+                      "type": "string",
+                      "enum": [
+                        "Project"
+                      ]
+                    },
+                    "relationType": {
+                      "type": "string",
+                      "enum": [
+                        "maintains"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "relationType"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_relations"
+        }
+      ]
+    },
+    "mem-h-delete-roadmap": {
+      "progent": {
+        "delete_entities": [
+          [
+            100,
+            0,
+            {
+              "entityNames": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Roadmap"
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "delete_entities"
+        }
+      ]
+    },
+    "time-now-tokyo": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-utc": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-kolkata": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-london": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Europe/London"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-ny": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "America/New_York"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-now-sydney": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "Australia/Sydney"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-tokyo-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "pattern": "^09:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^12:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-kolkata-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^10:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "pattern": "^06:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-tokyo-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "pattern": "^18:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-kolkata-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^08:15$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-tokyo-late": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^23:30$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-tokyo-utc-early": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "pattern": "^07:45$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-shanghai-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^09:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-utc-shanghai": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^15:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-shanghai-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              },
+              "time": {
+                "pattern": "^12:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-now-tokyo": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-utc": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-dubai": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Asia/Dubai"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-nairobi": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Africa/Nairobi"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-now-honolulu": {
+      "progent": {
+        "get_current_time": [
+          [
+            100,
+            0,
+            {
+              "timezone": {
+                "enum": [
+                  "Pacific/Honolulu"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "get_current_time"
+        }
+      ]
+    },
+    "time-h-tokyo-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              },
+              "time": {
+                "pattern": "^11:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-utc-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^03:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-dubai-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Dubai"
+                ]
+              },
+              "time": {
+                "pattern": "^10:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-utc-dubai": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "UTC"
+                ]
+              },
+              "time": {
+                "pattern": "^09:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Dubai"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-nairobi-tokyo": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Africa/Nairobi"
+                ]
+              },
+              "time": {
+                "pattern": "^14:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Tokyo"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-honolulu-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "Pacific/Honolulu"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^08:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-kathmandu-utc": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "type": "string",
+                "enum": [
+                  "Asia/Kathmandu"
+                ]
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^12:00$"
+              },
+              "target_timezone": {
+                "type": "string",
+                "enum": [
+                  "UTC"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "time-h-shanghai-kolkata": {
+      "progent": {
+        "convert_time": [
+          [
+            100,
+            0,
+            {
+              "source_timezone": {
+                "enum": [
+                  "Asia/Shanghai"
+                ]
+              },
+              "time": {
+                "pattern": "^20:00$"
+              },
+              "target_timezone": {
+                "enum": [
+                  "Asia/Kolkata"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "convert_time"
+        }
+      ]
+    },
+    "note-read-readme": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^README\\.md$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-app": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-util": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-guide": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/guide.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-csv": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "data/sample.csv"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-draft": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "const": "notes/draft.md"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-changelog": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "pattern": "^docs/changelog\\.md$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-read-config": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/config.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-write-todo": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/todo.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "todo: tests\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-plan": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/plan.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "plan: v2\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-faq": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "enum": [
+                  "docs/faq.md"
+                ]
+              },
+              "content": {
+                "enum": [
+                  "faq\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-log": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/log.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "log entry\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-write-summary": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "data/summary.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "two rows\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-readme-summary": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "README.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/readme-summary.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "saw project\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-app-notes": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/app-notes.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "main found\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-guide-notes": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^docs/guide\\.md$"
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^docs/guide-notes\\.md$"
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "guide read\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-read-two": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py",
+                  "src/util.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-readme": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^README\\.md$"
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-app": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/app.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-standup": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/standup.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-retro": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/retro.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-totals": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "data/totals.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-read-extra": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/extra.py"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    },
+    "note-h-write-weekly-summary": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/weekly-summary.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "week 42 done\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-write-q4": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "data/q4.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "q4 plan\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-write-src-notes": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "src/notes.txt"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "src notes\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-write-docs-index": {
+      "progent": {
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/index.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "index\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-changelog-notes": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/changelog.md"
+                ]
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "notes/changelog-notes.md"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "changelog read\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-csv-report": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^data/sample\\.csv$"
+              }
+            },
+            0
+          ]
+        ],
+        "write_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "pattern": "^data/report2\\.md$"
+              },
+              "content": {
+                "type": "string",
+                "enum": [
+                  "ada seen\n"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        },
+        {
+          "name": "write_note"
+        }
+      ]
+    },
+    "note-h-read-two": {
+      "progent": {
+        "read_note": [
+          [
+            100,
+            0,
+            {
+              "path": {
+                "type": "string",
+                "enum": [
+                  "docs/guide.md",
+                  "docs/changelog.md"
+                ]
+              }
+            },
+            0
+          ]
+        ]
+      },
+      "tools": [
+        {
+          "name": "read_note"
+        }
+      ]
+    }
+  },
+  "usage": {
+    "fs-readme": {
+      "prompt_tokens": 4635,
+      "completion_tokens": 86,
+      "total_tokens": 4721
+    },
+    "fs-list-root": {
+      "prompt_tokens": 4635,
+      "completion_tokens": 81,
+      "total_tokens": 4716
+    },
+    "fs-read-app": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 236,
+      "total_tokens": 4872
+    },
+    "fs-read-util": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 263,
+      "total_tokens": 4899
+    },
+    "fs-search-todo": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 115,
+      "total_tokens": 4752
+    },
+    "fs-write-status": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 165,
+      "total_tokens": 4806
+    },
+    "fs-read-csv": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 262,
+      "total_tokens": 4898
+    },
+    "fs-info-app": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 61,
+      "total_tokens": 4695
+    },
+    "fs-move-draft": {
+      "prompt_tokens": 4635,
+      "completion_tokens": 49,
+      "total_tokens": 4684
+    },
+    "fs-list-src": {
+      "prompt_tokens": 4633,
+      "completion_tokens": 89,
+      "total_tokens": 4722
+    },
+    "fs-read-guide": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 263,
+      "total_tokens": 4900
+    },
+    "fs-read-changelog": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 260,
+      "total_tokens": 4897
+    },
+    "fs-read-many": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 133,
+      "total_tokens": 4774
+    },
+    "fs-tree-docs": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 84,
+      "total_tokens": 4721
+    },
+    "fs-sizes-src": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 202,
+      "total_tokens": 4838
+    },
+    "fs-edit-guide": {
+      "prompt_tokens": 4649,
+      "completion_tokens": 112,
+      "total_tokens": 4761
+    },
+    "fs-write-todo": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 139,
+      "total_tokens": 4781
+    },
+    "fs-h-weekly": {
+      "prompt_tokens": 4644,
+      "completion_tokens": 40,
+      "total_tokens": 4684
+    },
+    "fs-h-reread": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 297,
+      "total_tokens": 4944
+    },
+    "fs-h-summary": {
+      "prompt_tokens": 4654,
+      "completion_tokens": 373,
+      "total_tokens": 5027
+    },
+    "fs-h-search": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 121,
+      "total_tokens": 4758
+    },
+    "fs-h-info-util": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 61,
+      "total_tokens": 4695
+    },
+    "fs-h-docs": {
+      "prompt_tokens": 4653,
+      "completion_tokens": 157,
+      "total_tokens": 4810
+    },
+    "fs-h-data-write": {
+      "prompt_tokens": 4652,
+      "completion_tokens": 203,
+      "total_tokens": 4855
+    },
+    "fs-h-read-config": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 236,
+      "total_tokens": 4872
+    },
+    "fs-h-read-many": {
+      "prompt_tokens": 4644,
+      "completion_tokens": 298,
+      "total_tokens": 4942
+    },
+    "fs-h-tree-notes": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 84,
+      "total_tokens": 4721
+    },
+    "fs-h-edit-readme": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 274,
+      "total_tokens": 4921
+    },
+    "fs-h-mkdir-archive": {
+      "prompt_tokens": 4631,
+      "completion_tokens": 59,
+      "total_tokens": 4690
+    },
+    "fs-h-move-retro": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 159,
+      "total_tokens": 4797
+    },
+    "fetch-guide": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 59,
+      "total_tokens": 4698
+    },
+    "fetch-api": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 62,
+      "total_tokens": 4700
+    },
+    "fetch-index": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 115,
+      "total_tokens": 4753
+    },
+    "fetch-post": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 69,
+      "total_tokens": 4709
+    },
+    "fetch-install": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 58,
+      "total_tokens": 4696
+    },
+    "fetch-faq": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 29,
+      "total_tokens": 4668
+    },
+    "fetch-config": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 28,
+      "total_tokens": 4666
+    },
+    "fetch-cli": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 101,
+      "total_tokens": 4739
+    },
+    "fetch-glossary": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 126,
+      "total_tokens": 4766
+    },
+    "fetch-tutorial": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 63,
+      "total_tokens": 4701
+    },
+    "fetch-post3": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 121,
+      "total_tokens": 4761
+    },
+    "fetch-archive": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 58,
+      "total_tokens": 4696
+    },
+    "fetch-about": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 28,
+      "total_tokens": 4666
+    },
+    "fetch-annual": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 269,
+      "total_tokens": 4910
+    },
+    "fetch-two-docs": {
+      "prompt_tokens": 4652,
+      "completion_tokens": 135,
+      "total_tokens": 4787
+    },
+    "fetch-two-blog": {
+      "prompt_tokens": 4655,
+      "completion_tokens": 121,
+      "total_tokens": 4776
+    },
+    "fetch-docs-blog": {
+      "prompt_tokens": 4651,
+      "completion_tokens": 298,
+      "total_tokens": 4949
+    },
+    "fetch-h-guide": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 120,
+      "total_tokens": 4759
+    },
+    "fetch-h-post2": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 60,
+      "total_tokens": 4700
+    },
+    "fetch-h-changelog": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 59,
+      "total_tokens": 4698
+    },
+    "fetch-h-quarter": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 119,
+      "total_tokens": 4760
+    },
+    "fetch-h-api": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 119,
+      "total_tokens": 4757
+    },
+    "fetch-h-release-notes": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 116,
+      "total_tokens": 4755
+    },
+    "fetch-h-support": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 115,
+      "total_tokens": 4753
+    },
+    "fetch-h-post4": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 2186,
+      "total_tokens": 6826
+    },
+    "fetch-h-roadmap": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 120,
+      "total_tokens": 4762
+    },
+    "fetch-h-wiki-home": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 62,
+      "total_tokens": 4700
+    },
+    "fetch-h-wiki-team": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 62,
+      "total_tokens": 4700
+    },
+    "fetch-h-status": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 116,
+      "total_tokens": 4755
+    },
+    "fetch-h-two": {
+      "prompt_tokens": 4654,
+      "completion_tokens": 75,
+      "total_tokens": 4729
+    },
+    "git-status": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 83,
+      "total_tokens": 4720
+    },
+    "git-log": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 108,
+      "total_tokens": 4748
+    },
+    "git-log-2": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 113,
+      "total_tokens": 4753
+    },
+    "git-show-head": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 496,
+      "total_tokens": 5132
+    },
+    "git-show-head1": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 160,
+      "total_tokens": 4798
+    },
+    "git-show-readme": {
+      "prompt_tokens": 4643,
+      "completion_tokens": 156,
+      "total_tokens": 4799
+    },
+    "git-show-app": {
+      "prompt_tokens": 4644,
+      "completion_tokens": 107,
+      "total_tokens": 4751
+    },
+    "git-branch-local": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 326,
+      "total_tokens": 4960
+    },
+    "git-branch-all": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 57,
+      "total_tokens": 4694
+    },
+    "git-diff-unstaged": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 78,
+      "total_tokens": 4716
+    },
+    "git-diff-release": {
+      "prompt_tokens": 9288,
+      "completion_tokens": 255,
+      "total_tokens": 9543
+    },
+    "git-stage-standup": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 175,
+      "total_tokens": 4813
+    },
+    "git-stage-retro": {
+      "prompt_tokens": 4650,
+      "completion_tokens": 237,
+      "total_tokens": 4887
+    },
+    "git-stage-two": {
+      "prompt_tokens": 4644,
+      "completion_tokens": 84,
+      "total_tokens": 4728
+    },
+    "git-commit-standup": {
+      "prompt_tokens": 4656,
+      "completion_tokens": 119,
+      "total_tokens": 4775
+    },
+    "git-branch-create": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 117,
+      "total_tokens": 4755
+    },
+    "git-checkout-release": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 113,
+      "total_tokens": 4747
+    },
+    "git-h-status": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 80,
+      "total_tokens": 4717
+    },
+    "git-h-log": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 108,
+      "total_tokens": 4748
+    },
+    "git-h-show-head2": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 160,
+      "total_tokens": 4798
+    },
+    "git-h-show-util": {
+      "prompt_tokens": 4644,
+      "completion_tokens": 113,
+      "total_tokens": 4757
+    },
+    "git-h-show-release": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 516,
+      "total_tokens": 5157
+    },
+    "git-h-branch": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 70,
+      "total_tokens": 4704
+    },
+    "git-h-diff-unstaged": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 86,
+      "total_tokens": 4724
+    },
+    "git-h-stage-overview": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 126,
+      "total_tokens": 4763
+    },
+    "git-h-stage-totals": {
+      "prompt_tokens": 4650,
+      "completion_tokens": 297,
+      "total_tokens": 4947
+    },
+    "git-h-commit-retro": {
+      "prompt_tokens": 4655,
+      "completion_tokens": 239,
+      "total_tokens": 4894
+    },
+    "git-h-branch-create": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 184,
+      "total_tokens": 4826
+    },
+    "git-h-checkout-new": {
+      "prompt_tokens": 4646,
+      "completion_tokens": 372,
+      "total_tokens": 5018
+    },
+    "git-h-commit-extra": {
+      "prompt_tokens": 4654,
+      "completion_tokens": 238,
+      "total_tokens": 4892
+    },
+    "mem-read-graph": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 24,
+      "total_tokens": 4658
+    },
+    "mem-open-project": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 69,
+      "total_tokens": 4705
+    },
+    "mem-open-alice": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 38,
+      "total_tokens": 4674
+    },
+    "mem-open-two": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 114,
+      "total_tokens": 4752
+    },
+    "mem-search-project": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 2475,
+      "total_tokens": 7114
+    },
+    "mem-search-person": {
+      "prompt_tokens": 9278,
+      "completion_tokens": 44,
+      "total_tokens": 9322
+    },
+    "mem-search-q4": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 122,
+      "total_tokens": 4762
+    },
+    "mem-create-note": {
+      "prompt_tokens": 4646,
+      "completion_tokens": 184,
+      "total_tokens": 4830
+    },
+    "mem-create-carol": {
+      "prompt_tokens": 4646,
+      "completion_tokens": 216,
+      "total_tokens": 4862
+    },
+    "mem-observe-project": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 157,
+      "total_tokens": 4796
+    },
+    "mem-observe-alice": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 169,
+      "total_tokens": 4808
+    },
+    "mem-relate-mentor": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 162,
+      "total_tokens": 4803
+    },
+    "mem-relate-roadmap": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 187,
+      "total_tokens": 4829
+    },
+    "mem-forget-q4": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 156,
+      "total_tokens": 4797
+    },
+    "mem-unrelate-bob": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 175,
+      "total_tokens": 4815
+    },
+    "mem-create-task": {
+      "prompt_tokens": 4664,
+      "completion_tokens": 340,
+      "total_tokens": 5004
+    },
+    "mem-delete-bob": {
+      "prompt_tokens": 4632,
+      "completion_tokens": 94,
+      "total_tokens": 4726
+    },
+    "mem-h-read-graph": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 24,
+      "total_tokens": 4658
+    },
+    "mem-h-open-roadmap": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 81,
+      "total_tokens": 4718
+    },
+    "mem-h-open-bob": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 38,
+      "total_tokens": 4674
+    },
+    "mem-h-search-milestone": {
+      "prompt_tokens": 4640,
+      "completion_tokens": 56,
+      "total_tokens": 4696
+    },
+    "mem-h-search-project": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 27,
+      "total_tokens": 4666
+    },
+    "mem-h-create-weekly": {
+      "prompt_tokens": 13944,
+      "completion_tokens": 495,
+      "total_tokens": 14439
+    },
+    "mem-h-create-dave": {
+      "prompt_tokens": 4645,
+      "completion_tokens": 107,
+      "total_tokens": 4752
+    },
+    "mem-h-observe-roadmap": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 171,
+      "total_tokens": 4812
+    },
+    "mem-h-observe-bob": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 156,
+      "total_tokens": 4795
+    },
+    "mem-h-relate-review": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 196,
+      "total_tokens": 4837
+    },
+    "mem-h-forget-maintainer": {
+      "prompt_tokens": 4639,
+      "completion_tokens": 159,
+      "total_tokens": 4798
+    },
+    "mem-h-unrelate-alice": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 176,
+      "total_tokens": 4817
+    },
+    "mem-h-delete-roadmap": {
+      "prompt_tokens": 4633,
+      "completion_tokens": 77,
+      "total_tokens": 4710
+    },
+    "time-now-tokyo": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 26,
+      "total_tokens": 4663
+    },
+    "time-now-utc": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 67,
+      "total_tokens": 4701
+    },
+    "time-now-kolkata": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 53,
+      "total_tokens": 4689
+    },
+    "time-now-london": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 25,
+      "total_tokens": 4661
+    },
+    "time-now-ny": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 56,
+      "total_tokens": 4693
+    },
+    "time-now-sydney": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 76,
+      "total_tokens": 4713
+    },
+    "time-tokyo-utc": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 51,
+      "total_tokens": 4699
+    },
+    "time-utc-tokyo": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 123,
+      "total_tokens": 4771
+    },
+    "time-kolkata-utc": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 122,
+      "total_tokens": 4769
+    },
+    "time-utc-kolkata": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 50,
+      "total_tokens": 4697
+    },
+    "time-tokyo-kolkata": {
+      "prompt_tokens": 4650,
+      "completion_tokens": 53,
+      "total_tokens": 4703
+    },
+    "time-kolkata-tokyo": {
+      "prompt_tokens": 4650,
+      "completion_tokens": 125,
+      "total_tokens": 4775
+    },
+    "time-utc-tokyo-late": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 111,
+      "total_tokens": 4759
+    },
+    "time-tokyo-utc-early": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 51,
+      "total_tokens": 4699
+    },
+    "time-shanghai-utc": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 122,
+      "total_tokens": 4769
+    },
+    "time-utc-shanghai": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 122,
+      "total_tokens": 4769
+    },
+    "time-shanghai-tokyo": {
+      "prompt_tokens": 4650,
+      "completion_tokens": 53,
+      "total_tokens": 4703
+    },
+    "time-h-now-tokyo": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 26,
+      "total_tokens": 4663
+    },
+    "time-h-now-utc": {
+      "prompt_tokens": 4634,
+      "completion_tokens": 29,
+      "total_tokens": 4663
+    },
+    "time-h-now-dubai": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 26,
+      "total_tokens": 4663
+    },
+    "time-h-now-nairobi": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 25,
+      "total_tokens": 4661
+    },
+    "time-h-now-honolulu": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 26,
+      "total_tokens": 4663
+    },
+    "time-h-tokyo-utc": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 51,
+      "total_tokens": 4699
+    },
+    "time-h-utc-kolkata": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 122,
+      "total_tokens": 4769
+    },
+    "time-h-dubai-utc": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 51,
+      "total_tokens": 4699
+    },
+    "time-h-utc-dubai": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 51,
+      "total_tokens": 4699
+    },
+    "time-h-nairobi-tokyo": {
+      "prompt_tokens": 4650,
+      "completion_tokens": 53,
+      "total_tokens": 4703
+    },
+    "time-h-honolulu-utc": {
+      "prompt_tokens": 4648,
+      "completion_tokens": 135,
+      "total_tokens": 4783
+    },
+    "time-h-kathmandu-utc": {
+      "prompt_tokens": 4649,
+      "completion_tokens": 124,
+      "total_tokens": 4773
+    },
+    "time-h-shanghai-kolkata": {
+      "prompt_tokens": 4649,
+      "completion_tokens": 52,
+      "total_tokens": 4701
+    },
+    "note-read-readme": {
+      "prompt_tokens": 4635,
+      "completion_tokens": 80,
+      "total_tokens": 4715
+    },
+    "note-read-app": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 30,
+      "total_tokens": 4666
+    },
+    "note-read-util": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 30,
+      "total_tokens": 4666
+    },
+    "note-read-guide": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 92,
+      "total_tokens": 4729
+    },
+    "note-read-csv": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 86,
+      "total_tokens": 4722
+    },
+    "note-read-draft": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 24,
+      "total_tokens": 4661
+    },
+    "note-read-changelog": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 26,
+      "total_tokens": 4663
+    },
+    "note-read-config": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 65,
+      "total_tokens": 4701
+    },
+    "note-write-todo": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 49,
+      "total_tokens": 4691
+    },
+    "note-write-plan": {
+      "prompt_tokens": 4644,
+      "completion_tokens": 96,
+      "total_tokens": 4740
+    },
+    "note-write-faq": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 77,
+      "total_tokens": 4718
+    },
+    "note-write-log": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 93,
+      "total_tokens": 4734
+    },
+    "note-write-summary": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 94,
+      "total_tokens": 4736
+    },
+    "note-readme-summary": {
+      "prompt_tokens": 4654,
+      "completion_tokens": 204,
+      "total_tokens": 4858
+    },
+    "note-app-notes": {
+      "prompt_tokens": 4653,
+      "completion_tokens": 203,
+      "total_tokens": 4856
+    },
+    "note-guide-notes": {
+      "prompt_tokens": 4655,
+      "completion_tokens": 195,
+      "total_tokens": 4850
+    },
+    "note-read-two": {
+      "prompt_tokens": 4647,
+      "completion_tokens": 93,
+      "total_tokens": 4740
+    },
+    "note-h-read-readme": {
+      "prompt_tokens": 4635,
+      "completion_tokens": 80,
+      "total_tokens": 4715
+    },
+    "note-h-read-app": {
+      "prompt_tokens": 4636,
+      "completion_tokens": 86,
+      "total_tokens": 4722
+    },
+    "note-h-read-standup": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 88,
+      "total_tokens": 4726
+    },
+    "note-h-read-retro": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 32,
+      "total_tokens": 4670
+    },
+    "note-h-read-totals": {
+      "prompt_tokens": 4638,
+      "completion_tokens": 88,
+      "total_tokens": 4726
+    },
+    "note-h-read-extra": {
+      "prompt_tokens": 4637,
+      "completion_tokens": 92,
+      "total_tokens": 4729
+    },
+    "note-h-write-weekly-summary": {
+      "prompt_tokens": 4646,
+      "completion_tokens": 98,
+      "total_tokens": 4744
+    },
+    "note-h-write-q4": {
+      "prompt_tokens": 9286,
+      "completion_tokens": 145,
+      "total_tokens": 9431
+    },
+    "note-h-write-src-notes": {
+      "prompt_tokens": 4642,
+      "completion_tokens": 120,
+      "total_tokens": 4762
+    },
+    "note-h-write-docs-index": {
+      "prompt_tokens": 9280,
+      "completion_tokens": 125,
+      "total_tokens": 9405
+    },
+    "note-h-changelog-notes": {
+      "prompt_tokens": 4656,
+      "completion_tokens": 206,
+      "total_tokens": 4862
+    },
+    "note-h-csv-report": {
+      "prompt_tokens": 4653,
+      "completion_tokens": 193,
+      "total_tokens": 4846
+    },
+    "note-h-read-two": {
+      "prompt_tokens": 4649,
+      "completion_tokens": 95,
+      "total_tokens": 4744
+    }
+  }
+}

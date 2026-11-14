@@ -1,0 +1,39 @@
+{
+  "kind": "stage2-freeze",
+  "recorded": "2026-11-02",
+  "model_run": false,
+  "oracle_sha256": "d44c74c424560add3caa18ff424ac7599e9fb936369068c2bc773cd965c0c853",
+  "sha256": "bbaecb1a727b28167580f6f64cf458055f3e084e2b06ddd0950a5d39a5cc0cbd",
+  "items": {
+    "task_prompts": {
+      "sha256": "f159e2bea7c5be8bbac6ce4a90c32fc600fb94bfb978d28b0f3111fc370db591"
+    },
+    "task_oracles": {
+      "sha256": "7f05245a52f170d23676977ac74316a3430b4d9a93d40917d348c7dc80c664c5"
+    },
+    "fixture": {
+      "sha256": "26e9050e5cdb7a4543dbb64e7cee51885fbb4cf7af04d9d1bca482743b69c47b"
+    },
+    "goal_oracles": {
+      "sha256": "709c0def89caeb9e97b3bed0cea525f27155bd6ba8925c19bc38e65ff877b881"
+    },
+    "templates": {
+      "sha256": "e0d428d0ab376fbd9827fd516ecae1f2985242e42a0e1d386f52df1a7a2a3fd5"
+    },
+    "cases": {
+      "sha256": "f72a1c8050ada6ded41a10ea4700295c100f9bc6a7c50d8de66e96cca439836c"
+    },
+    "host_prompt": {
+      "sha256": "b4ef05cedce174e8e22cf981d4d552e83754f55a02a9fdb7eb93877425f35c9f"
+    },
+    "policy_prompt": {
+      "sha256": "6eff261e3904a1d53080422431c3783ec73f7d5a81a875c6768f4772d87f8a0b"
+    },
+    "rule_r1": {
+      "sha256": "3260b10530c170eec091429f4a207cf3cdab2eb76fc1992d42b743c28e7e11c8"
+    },
+    "zgscanner": {
+      "sha256": "8be18cbc82f98a28629b75cb54ce0544b12a4f4cf9cbc99d6eac8a8329281230"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+﻿mcp-fence 0.1.2 :: scan :: target=C:\Test\scan-comparison\mcp-fence\mcp.json
+  summary: total=0 score=0/100 verdict=PASS
+
+# Findings
+  (no findings)
+

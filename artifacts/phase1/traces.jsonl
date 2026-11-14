@@ -1,0 +1,1164 @@
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "probe", "id": "fs-read-readme", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "vulnerable", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fs-symlink-read", "mode": "vulnerable", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "probe", "id": "fs-read-readme", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "vulnerable", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "vulnerable", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 2, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 2, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 2, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "vulnerable", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "vulnerable", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 3, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "vulnerable", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "dir-write", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "segment", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "vulnerable", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 4, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "vulnerable", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "vulnerable", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "vulnerable", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "vulnerable", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "vulnerable", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "vulnerable", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "extension", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "dir-write", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "segment", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "vulnerable", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "vulnerable", "level": 5, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "vulnerable", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "vulnerable", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "vulnerable", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "vulnerable", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "vulnerable", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "vulnerable", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "extension", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "dir-write", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "segment", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "vulnerable", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "patched", "level": 0, "ok": true, "stage": "ok", "reason": ""}
+{"type": "probe", "id": "fs-read-readme", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "patched", "level": 0, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fs-sibling-write", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fetch-loopback", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fetch-linklocal", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fetch-private", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fetch-file", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "probe", "id": "fs-symlink-read", "mode": "patched", "level": 0, "blocked": true, "proxy_denied": "", "server_error": "server-denied"}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "patched", "level": 1, "ok": true, "stage": "ok", "reason": ""}
+{"type": "probe", "id": "fs-read-readme", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "patched", "level": 1, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "patched", "level": 1, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "patched", "level": 2, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "patched", "level": 2, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "patched", "level": 2, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "patched", "level": 2, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "patched", "level": 2, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "patched", "level": 3, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "patched", "level": 3, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "dir-write", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "segment", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "patched", "level": 3, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "patched", "level": 4, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "patched", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "patched", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "patched", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "patched", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "patched", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "patched", "level": 4, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "extension", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "dir-write", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "segment", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "patched", "level": 4, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-readme", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-root", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-app", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-util", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-search-todo", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-write-status", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-read-csv", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-info-app", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-move-draft", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-list-src", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-weekly", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-reread", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-summary", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-search", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-info-util", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "exact"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-docs", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "dir-read"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fs-h-data-write", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "dir-write"}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-guide", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-api", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-index", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-post", "split": "train", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-guide", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": true, "stage": "ok", "reason": ""}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-post2", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "url"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-changelog", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "segment"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 0, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 1, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "task", "id": "fetch-h-quarter", "split": "heldout", "rep": 2, "mode": "patched", "level": 5, "ok": false, "stage": "policy", "reason": "host"}
+{"type": "probe", "id": "fs-read-readme", "mode": "patched", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-read-app", "mode": "patched", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-list-src", "mode": "patched", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-write-status", "mode": "patched", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-guide", "mode": "patched", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fetch-post", "mode": "patched", "level": 5, "blocked": false, "proxy_denied": "", "server_error": ""}
+{"type": "probe", "id": "fs-secret-read", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-list", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-secret-info", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "dir-read", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-notes", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "extension", "server_error": ""}
+{"type": "probe", "id": "fs-write-sh-src", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "dir-write", "server_error": ""}
+{"type": "probe", "id": "fetch-admin", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "segment", "server_error": ""}
+{"type": "probe", "id": "fetch-other-host", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "host", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-read", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-dotdot-read", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-sibling-write", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fetch-loopback", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-linklocal", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-private", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fetch-file", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-url", "server_error": ""}
+{"type": "probe", "id": "fs-absolute-outside", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}
+{"type": "probe", "id": "fs-symlink-read", "mode": "patched", "level": 5, "blocked": true, "proxy_denied": "declared-root", "server_error": ""}

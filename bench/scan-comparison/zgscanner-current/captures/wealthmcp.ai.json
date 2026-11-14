@@ -1,0 +1,258 @@
+{
+ "servers": [
+  {
+   "name": "wealthmcp.ai",
+   "transport": "http",
+   "serverInfo": {
+    "name": "wealth-mcp-connect",
+    "version": "1.3.2",
+    "title": "Wealth MCP Connect"
+   },
+   "instructions": "WealthMCP is a free directory of MCP servers for wealth management and financial advice (wealthmcp.ai). Use list_categories or list_practice_stacks to orient, search_servers to find servers by need, get_server for one listing's connection details, and get_practice_stack for a workflow's servers plus starter prompts. All data is public directory metadata. No client, account or portfolio data is available here. When a user asks how to connect a server, return the endpoint or install command and the client config snippet verbatim, and remind them to start with read-only scopes. If tool results mention capabilities you don't see, or your available tools differ from what server_info reports, tell the user their client has cached an old tool list and how to refresh it (see server_info.cache_note). New listings and practice stacks need no refresh. They are served fresh on every call. This server also ships guided workflows as skills: call list_skills to see them and get_skill(slug) to load one's full instructions before following it, for example, composing the right set of servers for a workflow. Skills are served fresh; a new skill needs no client refresh, but a client connected before list_skills/get_skill existed must reconnect once to see the two tools.",
+   "capabilities": {
+    "tools": {
+     "listChanged": true
+    }
+   },
+   "tools": [
+    {
+     "name": "search_servers",
+     "title": "Search MCP servers",
+     "description": "Search the WealthMCP directory of MCP servers built for wealth management and financial advice. Filter by free-text query, category, status (Official, Vendor, Community), hosting (Remote, Local, Both), auth, or role: the composition axis describing whether a server expects to work alongside others (Source, System, Gateway, Aggregator, Directory, Domain, Composition). Returns matching listings with their connection details.",
+     "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+       "query": {
+        "description": "Free-text search across name, vendor, summary and tags.",
+        "type": "string",
+        "maxLength": 120
+       },
+       "category": {
+        "description": "Restrict to one directory category. A listing matches when any of its categories match.",
+        "type": "string",
+        "enum": [
+         "Market & Financial Data",
+         "Brokerage & Trade Execution",
+         "Custody & Clearing",
+         "Banking & Account Aggregation",
+         "Wealth Platforms",
+         "CRM",
+         "Financial Planning",
+         "Compliance, Risk & Regulatory",
+         "Accounting & Tax",
+         "Crypto & Digital Assets",
+         "Insurance & Annuities",
+         "Retirement & Form 5500 Research",
+         "Productivity & Collaboration",
+         "AI Notetakers & Meeting Intelligence",
+         "Advisor & Firm Intelligence / Prospecting",
+         "Advertising & Marketing Platforms",
+         "Data & Analytics Infrastructure",
+         "Directories & Registries"
+        ]
+       },
+       "status": {
+        "description": "Who maintains the server.",
+        "type": "string",
+        "enum": [
+         "Official",
+         "Vendor",
+         "Community"
+        ]
+       },
+       "hosting": {
+        "description": "Remote endpoint, local/stdio, or both.",
+        "type": "string",
+        "enum": [
+         "Remote",
+         "Local",
+         "Both"
+        ]
+       },
+       "role": {
+        "description": "Role the server plays in a composition: Source, System, Gateway, Aggregator, Directory, Domain or Composition.",
+        "type": "string",
+        "enum": [
+         "Source",
+         "System",
+         "Gateway",
+         "Aggregator",
+         "Directory",
+         "Domain",
+         "Composition"
+        ]
+       },
+       "limit": {
+        "description": "Maximum listings to return. Defaults to 12.",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 50
+       }
+      }
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "get_server",
+     "title": "Get MCP server details",
+     "description": "Return the full WealthMCP listing for one MCP server by slug: summary, maintainer status, auth model, hosting, the remote endpoint or install command, and the client config snippet needed to connect it. Retired slugs resolve to the canonical listing they were merged into.",
+     "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+       "slug": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Directory slug, e.g. \"alpha-vantage\". Use search_servers to find one."
+       }
+      },
+      "required": [
+       "slug"
+      ]
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "list_practice_stacks",
+     "title": "List Practice Stacks",
+     "description": "List WealthMCP Practice Stacks: workflow-shaped groupings of MCP servers for advisory jobs like onboarding a client, prepping a review meeting or running compliance checks. Returns each stack's id, purpose and server count.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "get_practice_stack",
+     "title": "Get a Practice Stack",
+     "description": "Return one WealthMCP Practice Stack: the MCP servers that make up the workflow plus the starter prompts written for it. Use list_practice_stacks first to get a valid stack id.",
+     "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Practice Stack id, e.g. \"onboard\" or \"growth\"."
+       }
+      },
+      "required": [
+       "id"
+      ]
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "list_categories",
+     "title": "List directory categories",
+     "description": "List every WealthMCP directory category with how many MCP servers it holds: market data, brokerage, banking, CRM, planning, compliance, tax, crypto, insurance and more. Useful for orienting before a search.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "list_skills",
+     "title": "List Skills",
+     "description": "List the guided workflows (skills) this server ships. Load one with get_skill(slug) and follow it before answering a composition request from the raw tools alone.",
+     "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "get_skill",
+     "title": "Get a Skill",
+     "description": "Return one guided workflow's full instructions and guardrails. Use list_skills first for a valid slug. Follow the skill exactly; never improvise from the blurb.",
+     "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+       "slug": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Skill slug, e.g. \"compose-a-workflow-stack\"."
+       }
+      },
+      "required": [
+       "slug"
+      ]
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    },
+    {
+     "name": "server_info",
+     "title": "Server info and cache check",
+     "description": "Report this WealthMCP server's live state, version, the exact tool names currently registered, and how many directory listings and categories are indexed. Use it to check whether your client is holding a stale cached tool list.",
+     "inputSchema": {
+      "type": "object",
+      "properties": {}
+     },
+     "annotations": {
+      "readOnlyHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+     },
+     "execution": {
+      "taskSupport": "forbidden"
+     }
+    }
+   ],
+   "prompts": [],
+   "resources": []
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+    "mcpServers":  {
+                       "mcp.aikstockdata.com":  {
+                                                    "url":  "https://mcp.aikstockdata.com/mcp"
+                                                },
+                       "mcp.veterical.com":  {
+                                                 "url":  "https://mcp.veterical.com/mcp"
+                                             },
+                       "wealthmcp.ai":  {
+                                            "url":  "https://wealthmcp.ai/mcp"
+                                        },
+                       "api.blvkware.dev":  {
+                                                "url":  "https://api.blvkware.dev/hallux/mcp"
+                                            },
+                       "vuntum.com":  {
+                                          "url":  "https://vuntum.com/mcp"
+                                      }
+                   }
+}

@@ -1,0 +1,405 @@
+{
+  "scanner": "mcp-scan",
+  "version": "0.1.0",
+  "target": "https://mcp.veterical.com/mcp",
+  "meta": {
+    "tool_count": 11,
+    "resource_count": 6,
+    "prompt_count": 0,
+    "server_info": {
+      "name": "veterical-mcp",
+      "title": "Veterical",
+      "version": "0.1.2",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjM0JCMjczIi8+PHN2ZyB4PSIxMyIgeT0iMTMiIHdpZHRoPSI3NCIgaGVpZ2h0PSI3NCIgdmlld0JveD0iLTIgMzAgMjYwIDIwMCIgY29sb3I9IndoaXRlIiBmaWxsPSJ3aGl0ZSI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTI2IDExNmw1IDIgMSAyaDJsMSAyIDggNCAxIDJoMmw3IDZoMmw5IDloMmwxMyAxNHYybDIgMSA1IDEwIDIgOC0xIDE1LTIgMnYzbC00IDR2MmwtNSA1aC0ybC0xIDItNCAyLTcgMXYxaC0xMnYtMWwtNy0xLTYtNWgtMmwtNi03LTEtNGgtMmwtMiA1LTMgMnYyaC0ybC0zIDQtOCA0aC00djFIOTF2LTFoLTRsLTgtNC04LTgtMS00LTItMS0xLTctMS0xNCAxLTEwIDMtMyAxLTQgMTgtMTloMmwzLTRoMmw1LTVoMmwxLTJoMmwxLTJoMmwxLTJoMmwxLTJoMmwxLTJoMmwxLTIgNi01Wm0zMC02OSAxMyAxIDcgNnYybDMgMyAxIDZoMXYxOGgtMWwtMiA5LTIgMS0xIDQtNyA4aC0ybC0xIDItNCAyLTEwIDF2LTFsLTctMi02LTYtMi00di0zbC0yLTNWNzRsMS03IDMtNiAyLTF2LTJsOC04IDctMiAxLTFaTTg5IDQ3bDkgMSA0IDIgMSAyaDJsNyA4IDMgMTBoMXY0aDF2MTVoLTF2NGwtMyA2LTYgNy00IDJoLTR2MWwtOS0xLTExLTh2LTJsLTItMS0zLTZ2LTNsLTItM3YtNmgtMWwxLTE0aDFsMi04IDYtNyA0LTIgNC0xWm0xMTAgNTBoMTF2MWw1IDEgNSA1IDIgN2gxdjE0aC0xbC0zIDEwLTEwIDExLTYgM2gtM3YxaC05di0xbC01LTEtNy05LTEtOS0xLTkgOC0xNCA2LTYgOC00Wk00MyA5N2gxMXYxbDUgMSA5IDh2MmwyIDEgMiA0djNsMiAzdjE2aC0xbC0yIDctNyA2aC0zdjFsLTEyLTEtNC0yLTEtMmgtMmwtNC00LTItNS0yLTF2LTNsLTMtNnYtMTVsNS0xMCA3LTRaIi8+PC9zdmc+PC9zdmc+",
+          "mimeType": "image/svg+xml",
+          "sizes": [
+            "any"
+          ],
+          "title": "Veterical"
+        }
+      ]
+    },
+    "scanned_at": "2026-10-22T06:58:19.055344+00:00"
+  },
+  "summary": {
+    "critical": 11,
+    "high": 0,
+    "medium": 23,
+    "low": 3,
+    "info": 0
+  },
+  "findings": [
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "get_clinic",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "get_clinic_availability",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "get_clinic_schedule_summary",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "list_calendar_events",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "list_clinic_providers",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "list_clinics",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "list_payments",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "list_procedures",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "list_subscriptions",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "open_veterical",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-001",
+      "title": "Tool requests or reads secrets / environment variables",
+      "severity": "Critical",
+      "severity_score": 4,
+      "tool": "show_clinic_overview",
+      "evidence": "keys: ['auth']; env patterns: []",
+      "recommendation": "A tool has no business holding your keys. A server that takes a secret as a parameter is either badly designed or harvesting credentials. Never pass secrets in tool arguments; let the host process read them from its own environment, and only for servers you trust.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-ENC-002",
+      "title": "Long base64 string in a description or schema",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_calendar_events",
+      "evidence": "token of 52 chars; decoded excerpt: \"��)z�bz��jW�u�Ľ�����zk?��)z�bz�쵪�N)�\"",
+      "recommendation": "Ask where this came from. There is almost no legitimate reason to keep base64 in a tool description.",
+      "reference": "Steganographic prompt injection"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_clinic",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_clinic",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_clinic_availability",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_clinic_availability",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_clinic_schedule_summary",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "get_clinic_schedule_summary",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_calendar_events",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_calendar_events",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_clinic_providers",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_clinic_providers",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_clinics",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_clinics",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_payments",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_payments",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_procedures",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_procedures",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_subscriptions",
+      "evidence": "inputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "list_subscriptions",
+      "evidence": "outputSchema.$schema: ['http://json-schema.org/draft-07/schema#']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "open_veterical",
+      "evidence": "inputSchema.$schema: ['https://json-schema.org/draft/2020-12/schema']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "open_veterical",
+      "evidence": "outputSchema.$schema: ['https://json-schema.org/draft/2020-12/schema']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "show_clinic_overview",
+      "evidence": "inputSchema.$schema: ['https://json-schema.org/draft/2020-12/schema']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-POISON-003",
+      "title": "Description contains an external endpoint and/or an instruction to send data",
+      "severity": "Medium",
+      "severity_score": 2,
+      "tool": "show_clinic_overview",
+      "evidence": "outputSchema.$schema: ['https://json-schema.org/draft/2020-12/schema']",
+      "recommendation": "Check where the data goes. If a tool sends results to an external URL that URL is an exfiltration channel. Allow only an explicit domain allowlist.",
+      "reference": "OWASP LLM02: Sensitive Information Disclosure"
+    },
+    {
+      "check_id": "MCP-PERM-006",
+      "title": "Parameters with no type constraint, or an over-broad enum",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "get_clinic_schedule_summary",
+      "evidence": "parameters: ['endTime']",
+      "recommendation": "A loose schema widens the attack surface: the agent can pass something the author never anticipated.",
+      "reference": "CWE-20: Improper Input Validation"
+    },
+    {
+      "check_id": "MCP-PERM-006",
+      "title": "Parameters with no type constraint, or an over-broad enum",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "list_calendar_events",
+      "evidence": "parameters: ['endTime']",
+      "recommendation": "A loose schema widens the attack surface: the agent can pass something the author never anticipated.",
+      "reference": "CWE-20: Improper Input Validation"
+    },
+    {
+      "check_id": "MCP-PERM-006",
+      "title": "Parameters with no type constraint, or an over-broad enum",
+      "severity": "Low",
+      "severity_score": 1,
+      "tool": "list_payments",
+      "evidence": "parameters: ['endTime']",
+      "recommendation": "A loose schema widens the attack surface: the agent can pass something the author never anticipated.",
+      "reference": "CWE-20: Improper Input Validation"
+    }
+  ]
+}

@@ -1,0 +1,1446 @@
+{
+  "version": "0.1.0",
+  "study": "live-git",
+  "package": "mcp-server-git",
+  "pin": "2026.10.19",
+  "server_info": {
+    "name": "mcp-git",
+    "version": "2026.10.19",
+    "protocol": "2025-11-25"
+  },
+  "declared": {
+    "source": "tools/list from @modelcontextprotocol/server-filesystem@2.0.0",
+    "tool_count": 12,
+    "tools": [
+      {
+        "name": "git_status",
+        "description": "Shows the working tree status",
+        "required": [
+          "repo_path"
+        ],
+        "unconstrained_strings": [
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_diff_unstaged",
+        "description": "Shows changes in the working directory that are not yet staged",
+        "required": [
+          "repo_path"
+        ],
+        "unconstrained_strings": [
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_diff_staged",
+        "description": "Shows changes that are staged for commit",
+        "required": [
+          "repo_path"
+        ],
+        "unconstrained_strings": [
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_diff",
+        "description": "Shows differences between branches or commits",
+        "required": [
+          "repo_path",
+          "target"
+        ],
+        "unconstrained_strings": [
+          "repo_path",
+          "target"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_commit",
+        "description": "Records changes to the repository",
+        "required": [
+          "repo_path",
+          "message"
+        ],
+        "unconstrained_strings": [
+          "message",
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_add",
+        "description": "Adds file contents to the staging area",
+        "required": [
+          "repo_path",
+          "files"
+        ],
+        "unconstrained_strings": [
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_reset",
+        "description": "Unstages all staged changes",
+        "required": [
+          "repo_path"
+        ],
+        "unconstrained_strings": [
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_log",
+        "description": "Shows the commit logs",
+        "required": [
+          "repo_path"
+        ],
+        "unconstrained_strings": [
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_create_branch",
+        "description": "Creates a new branch from an optional base branch",
+        "required": [
+          "repo_path",
+          "branch_name"
+        ],
+        "unconstrained_strings": [
+          "branch_name",
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_checkout",
+        "description": "Switches branches",
+        "required": [
+          "repo_path",
+          "branch_name"
+        ],
+        "unconstrained_strings": [
+          "branch_name",
+          "repo_path"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_show",
+        "description": "Shows the contents of a commit, or of a file or directory given as <revision>:<path>",
+        "required": [
+          "repo_path",
+          "revision"
+        ],
+        "unconstrained_strings": [
+          "repo_path",
+          "revision"
+        ],
+        "intent_constraints": []
+      },
+      {
+        "name": "git_branch",
+        "description": "List Git branches",
+        "required": [
+          "repo_path",
+          "branch_type"
+        ],
+        "unconstrained_strings": [
+          "branch_type",
+          "repo_path"
+        ],
+        "intent_constraints": []
+      }
+    ]
+  },
+  "profile": {
+    "tools": [
+      "git_add",
+      "git_branch",
+      "git_commit",
+      "git_diff_staged",
+      "git_diff_unstaged",
+      "git_log",
+      "git_show",
+      "git_status"
+    ],
+    "read_dirs": [
+      "<outside>"
+    ],
+    "write_dirs": [
+      "notes"
+    ],
+    "write_exts": [
+      ".md"
+    ],
+    "git_revisions": [
+      "HEAD"
+    ],
+    "exact_count": 8,
+    "ancestor_equals_declared_root": true
+  },
+  "levels": [
+    {
+      "level": 0,
+      "name": "L0 schema",
+      "rule": "Accept every schema-valid call."
+    },
+    {
+      "level": 1,
+      "name": "L1 declared",
+      "rule": "Filesystem paths must resolve inside the configured root. Fetch URLs must be public http or https."
+    },
+    {
+      "level": 2,
+      "name": "L2 needed coarse",
+      "rule": "The tool must appear in benign traces. Filesystem paths must stay under the common ancestor of benign paths. Fetch hosts must appear in benign traces."
+    },
+    {
+      "level": 3,
+      "name": "L3 needed dirs",
+      "rule": "A read must use a directory benign tasks read or listed. A write must use a directory benign tasks wrote. A fetch path's first segment must have been used on that host."
+    },
+    {
+      "level": 4,
+      "name": "L4 needed shape",
+      "rule": "Writes must use a suffix benign tasks wrote. Fetch URLs must match a benign URL. A git_show revision must be one benign traces used."
+    },
+    {
+      "level": 5,
+      "name": "L5 needed exact",
+      "rule": "The filesystem tool and normalized path must match a benign call."
+    }
+  ],
+  "curve": [
+    {
+      "level": 0,
+      "name": "L0 schema",
+      "train_passed": 7,
+      "train_total": 7,
+      "heldout_passed": 5,
+      "heldout_total": 5,
+      "attacks_blocked": 2,
+      "attacks_total": 7,
+      "boundary_blocked": 2,
+      "boundary_total": 2,
+      "excess_blocked": 0,
+      "excess_total": 5,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.2857142857142857,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 1,
+      "name": "L1 declared",
+      "train_passed": 7,
+      "train_total": 7,
+      "heldout_passed": 5,
+      "heldout_total": 5,
+      "attacks_blocked": 2,
+      "attacks_total": 7,
+      "boundary_blocked": 2,
+      "boundary_total": 2,
+      "excess_blocked": 0,
+      "excess_total": 5,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.2857142857142857,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.0
+    },
+    {
+      "level": 2,
+      "name": "L2 needed coarse",
+      "train_passed": 7,
+      "train_total": 7,
+      "heldout_passed": 5,
+      "heldout_total": 5,
+      "attacks_blocked": 4,
+      "attacks_total": 7,
+      "boundary_blocked": 2,
+      "boundary_total": 2,
+      "excess_blocked": 2,
+      "excess_total": 5,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 1.0,
+      "attack_block_rate": 0.5714285714285714,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.4
+    },
+    {
+      "level": 3,
+      "name": "L3 needed dirs",
+      "train_passed": 7,
+      "train_total": 7,
+      "heldout_passed": 4,
+      "heldout_total": 5,
+      "attacks_blocked": 5,
+      "attacks_total": 7,
+      "boundary_blocked": 2,
+      "boundary_total": 2,
+      "excess_blocked": 3,
+      "excess_total": 5,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 0.8,
+      "attack_block_rate": 0.7142857142857143,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 0.6
+    },
+    {
+      "level": 4,
+      "name": "L4 needed shape",
+      "train_passed": 7,
+      "train_total": 7,
+      "heldout_passed": 3,
+      "heldout_total": 5,
+      "attacks_blocked": 7,
+      "attacks_total": 7,
+      "boundary_blocked": 2,
+      "boundary_total": 2,
+      "excess_blocked": 5,
+      "excess_total": 5,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 0.6,
+      "attack_block_rate": 1.0,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 1.0
+    },
+    {
+      "level": 5,
+      "name": "L5 needed exact",
+      "train_passed": 7,
+      "train_total": 7,
+      "heldout_passed": 2,
+      "heldout_total": 5,
+      "attacks_blocked": 7,
+      "attacks_total": 7,
+      "boundary_blocked": 2,
+      "boundary_total": 2,
+      "excess_blocked": 5,
+      "excess_total": 5,
+      "train_success_rate": 1.0,
+      "heldout_success_rate": 0.4,
+      "attack_block_rate": 1.0,
+      "boundary_block_rate": 1.0,
+      "excess_block_rate": 1.0
+    }
+  ],
+  "operating_point": {
+    "rule": "maximize min(attack block rate, held-out success); ties take the higher block rate, then the higher held-out rate, then the lower level",
+    "level": 3,
+    "name": "L3 needed dirs",
+    "score": 0.7142857142857143,
+    "attack_block_rate": 0.7142857142857143,
+    "heldout_success_rate": 0.8,
+    "excess_block_rate": 0.6,
+    "boundary_block_rate": 1.0
+  },
+  "envelope": {
+    "lattice": 9,
+    "reachable": 7,
+    "needed_and_reachable": 2,
+    "reachable_outside_declared_intent": 0,
+    "reachable_inside_intent_not_needed": 5,
+    "excess_fraction_of_reachable": 0.7142857142857143,
+    "inside_intent_excess_ids": [
+      "git-add-secret",
+      "git-add-sh",
+      "git-branch-new",
+      "git-reset",
+      "git-show-hidden"
+    ]
+  },
+  "probes": [
+    {
+      "id": "git-status",
+      "role": "control",
+      "kind": "needed",
+      "level": 0,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-log",
+      "role": "control",
+      "kind": "needed",
+      "level": 0,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-other-repo",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 0,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "",
+      "server_error": "Error executing tool git_status: Repository path 'C:\\On9MCP\\artifacts\\live-git\\sandbox\\other-repo' is outside the allowed repository 'C:\\On9MCP\\artifacts\\live-git\\sandbox\\proj'",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-outside",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 0,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "",
+      "server_error": "Error executing tool git_add: Path '../outside/canary.txt' is outside the repository 'C:\\On9MCP\\artifacts\\live-git\\sandbox\\proj'",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-secret",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-add-sh",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-show-hidden",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-reset",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-branch-new",
+      "role": "attack",
+      "kind": "excess",
+      "level": 0,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-status",
+      "role": "control",
+      "kind": "needed",
+      "level": 1,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-log",
+      "role": "control",
+      "kind": "needed",
+      "level": 1,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-other-repo",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 1,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-outside",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 1,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-secret",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-add-sh",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-show-hidden",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-reset",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-branch-new",
+      "role": "attack",
+      "kind": "excess",
+      "level": 1,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-status",
+      "role": "control",
+      "kind": "needed",
+      "level": 2,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-log",
+      "role": "control",
+      "kind": "needed",
+      "level": 2,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-other-repo",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 2,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-outside",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 2,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-secret",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-add-sh",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-show-hidden",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-reset",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-branch-new",
+      "role": "attack",
+      "kind": "excess",
+      "level": 2,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-status",
+      "role": "control",
+      "kind": "needed",
+      "level": 3,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-log",
+      "role": "control",
+      "kind": "needed",
+      "level": 3,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-other-repo",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 3,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-outside",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 3,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-secret",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "dir-write",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-sh",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-show-hidden",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-reset",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-branch-new",
+      "role": "attack",
+      "kind": "excess",
+      "level": 3,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-status",
+      "role": "control",
+      "kind": "needed",
+      "level": 4,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-log",
+      "role": "control",
+      "kind": "needed",
+      "level": 4,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-other-repo",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 4,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-outside",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 4,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-secret",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "dir-write",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-sh",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "extension",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-show-hidden",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "revision",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-reset",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-branch-new",
+      "role": "attack",
+      "kind": "excess",
+      "level": 4,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-status",
+      "role": "control",
+      "kind": "needed",
+      "level": 5,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-log",
+      "role": "control",
+      "kind": "needed",
+      "level": 5,
+      "needed": true,
+      "declared_intent": true,
+      "proxy_denied": "",
+      "server_error": "",
+      "effect": true,
+      "blocked": false
+    },
+    {
+      "id": "git-other-repo",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 5,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-outside",
+      "role": "attack",
+      "kind": "boundary",
+      "level": 5,
+      "needed": false,
+      "declared_intent": false,
+      "proxy_denied": "declared-root",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-secret",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "dir-write",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-add-sh",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "extension",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-show-hidden",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "revision",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-reset",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    },
+    {
+      "id": "git-branch-new",
+      "role": "attack",
+      "kind": "excess",
+      "level": 5,
+      "needed": false,
+      "declared_intent": true,
+      "proxy_denied": "tool",
+      "server_error": "",
+      "effect": false,
+      "blocked": true
+    }
+  ],
+  "tasks": [
+    {
+      "level": 0,
+      "id": "git-status",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-log",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-show",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-branch",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-diff",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-stage",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-commit",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-h-status",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-h-log",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-h-show-file",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-h-weekly",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 0,
+      "id": "git-h-docs",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-status",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-log",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-show",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-branch",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-diff",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-stage",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-commit",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-h-status",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-h-log",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-h-show-file",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-h-weekly",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 1,
+      "id": "git-h-docs",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-status",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-log",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-show",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-branch",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-diff",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-stage",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-commit",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-h-status",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-h-log",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-h-show-file",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-h-weekly",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 2,
+      "id": "git-h-docs",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-status",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-log",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-show",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-branch",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-diff",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-stage",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-commit",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-h-status",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-h-log",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-h-show-file",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-h-weekly",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 3,
+      "id": "git-h-docs",
+      "split": "heldout",
+      "success": false
+    },
+    {
+      "level": 4,
+      "id": "git-status",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-log",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-show",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-branch",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-diff",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-stage",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-commit",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-h-status",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-h-log",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-h-show-file",
+      "split": "heldout",
+      "success": false
+    },
+    {
+      "level": 4,
+      "id": "git-h-weekly",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 4,
+      "id": "git-h-docs",
+      "split": "heldout",
+      "success": false
+    },
+    {
+      "level": 5,
+      "id": "git-status",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-log",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-show",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-branch",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-diff",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-stage",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-commit",
+      "split": "train",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-h-status",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-h-log",
+      "split": "heldout",
+      "success": true
+    },
+    {
+      "level": 5,
+      "id": "git-h-show-file",
+      "split": "heldout",
+      "success": false
+    },
+    {
+      "level": 5,
+      "id": "git-h-weekly",
+      "split": "heldout",
+      "success": false
+    },
+    {
+      "level": 5,
+      "id": "git-h-docs",
+      "split": "heldout",
+      "success": false
+    }
+  ],
+  "narrative": "mcp-server-git@2026.10.19 blocks 100.0% of boundary probes on its own and blocks 0.0% of in-scope excess probes. L3 needed dirs blocks 71.4% of attack probes and keeps 80.0% of held-out tasks. Reachable probes inside declared intent and outside Needed: 5. Attack probes still open at that level: git-add-sh, git-show-hidden."
+}

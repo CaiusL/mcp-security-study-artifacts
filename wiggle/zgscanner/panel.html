@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zgScanner panel</title>
+<meta name="description" content="Combined MCP security scanner: risk, findings, checks, and scanner coverage for this machine.">
+<style>
+/* Framed sheet: one tinted L-frame (sidebar + 48px top bar), the work on a white sheet inset 8px.
+   Grid at 1440: sheet 1440 - 228 - 8 = 1204; padding 24 each side -> content 1156.
+   Two-thirds row: (1156 - 24) * 2/3 = 754.7 + 24 + 377.3 = 1156. */
+:root {
+  color-scheme: light;
+  --frame: #eff3f6;          /* blue-grey tint: the product's face (observability tool) */
+  --surface: #ffffff;
+  --raised: #f4f6f8;
+  --active: #e3e8ec;
+  --border: #e3e7ea;
+  --rule: #eef1f3;
+  --control: #c9cdd1;
+  --text: #131416;
+  --muted: #55595c;
+  --faint: #66696b;
+  --accent: #1b6c80;
+  --primary: #1d1f20; --primary-ink: #ffffff;
+  --positive: #1e7b4f;
+  --negative: #c4242a;
+  --sev-critical: #d03b3b; --sev-high: #ec835a; --sev-medium: #fab219; --sev-low: #2f70bb; --sev-info: #898781;
+  --pill-critical-bg: #ffedea; --pill-critical-ink: #831c1e;
+  --pill-high-bg: #fff0e7; --pill-high-ink: #85350f;
+  --pill-medium-bg: #fffbeb; --pill-medium-ink: #92400e;
+  --pill-low-bg: #e9f1fb; --pill-low-ink: #1d4a80;
+  --pill-neutral-bg: #e8ebed; --pill-neutral-ink: #353736;
+  --pill-positive-bg: #dcfae5; --pill-positive-ink: #04250e;
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: "Cascadia Mono", "Cascadia Code", Consolas, "SF Mono", Menlo, monospace;
+  --fs-title: 22px; --fs-section: 16px; --fs-kpi: 28px; --fs-lead: 32px; --fs-body: 14px; --fs-small: 12px;
+  --sidebar: 228px; --topbar: 48px; --inset: 8px; --radius-sheet: 16px; --radius-card: 8px; --radius-control: 6px;
+  --gap: 24px; --pad: 24px; --control-h: 32px; --row: 48px;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --frame: #0b0c0d; --surface: #141516; --raised: #1c1d1f; --active: #26282a;
+  --border: #2a2c2e; --rule: #202224; --control: #45484b;
+  --text: #f5f6f7; --muted: #b4b6b8; --faint: #9a9c9e;
+  --accent: #4fa8bf; --primary: #f5f6f7; --primary-ink: #111213;
+  --positive: #3fc07a; --negative: #ef6b6b;
+  --pill-critical-bg: #331a1c; --pill-critical-ink: #f59a9a;
+  --pill-high-bg: #33231a; --pill-high-ink: #f3ac86;
+  --pill-medium-bg: #2f2814; --pill-medium-ink: #ecbc52;
+  --pill-low-bg: #172434; --pill-low-ink: #8db9ee;
+  --pill-neutral-bg: #26282a; --pill-neutral-ink: #d8dadc;
+  --pill-positive-bg: #15291d; --pill-positive-ink: #5fd394;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --frame: #0b0c0d; --surface: #141516; --raised: #1c1d1f; --active: #26282a;
+    --border: #2a2c2e; --rule: #202224; --control: #45484b;
+    --text: #f5f6f7; --muted: #b4b6b8; --faint: #9a9c9e;
+    --accent: #4fa8bf; --primary: #f5f6f7; --primary-ink: #111213;
+    --positive: #3fc07a; --negative: #ef6b6b;
+    --pill-critical-bg: #331a1c; --pill-critical-ink: #f59a9a;
+    --pill-high-bg: #33231a; --pill-high-ink: #f3ac86;
+    --pill-medium-bg: #2f2814; --pill-medium-ink: #ecbc52;
+    --pill-low-bg: #172434; --pill-low-ink: #8db9ee;
+    --pill-neutral-bg: #26282a; --pill-neutral-ink: #d8dadc;
+    --pill-positive-bg: #15291d; --pill-positive-ink: #5fd394;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--frame); color: var(--text); font: var(--fs-body)/20px var(--font); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.num, table, .kpi-value { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--mono); font-size: 13px; }
+.muted { color: var(--muted); }
+.small { font-size: var(--fs-small); line-height: 16px; }
+[hidden] { display: none !important; }
+
+/* ---------- shell ---------- */
+.app { display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); grid-template-rows: var(--topbar) minmax(0, 1fr); height: 100vh; }
+.sidebar { grid-row: 1 / 3; display: flex; flex-direction: column; padding: 12px 12px 16px; gap: 2px; overflow: auto; }
+.brand { display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 8px; margin-bottom: 4px; font-weight: 600; font-size: 15px; }
+.brand svg { flex: none; }
+.scope { padding: 0 8px 12px; color: var(--muted); font-size: var(--fs-small); line-height: 16px; overflow-wrap: anywhere; }
+.nav a { display: flex; align-items: center; gap: 10px; height: 32px; margin-bottom: 2px; padding: 0 10px; border-radius: var(--radius-control); color: var(--muted); transition: background 150ms; }
+.nav a:hover { background: var(--raised); color: var(--text); }
+.nav a[aria-current="page"] { background: var(--active); color: var(--text); font-weight: 500; }
+.nav svg { flex: none; stroke: currentColor; }
+.nav .count { margin-left: auto; font-size: var(--fs-small); color: var(--muted); font-variant-numeric: tabular-nums; }
+.sidebar-foot { margin-top: auto; padding: 12px 8px 0; color: var(--muted); font-size: var(--fs-small); line-height: 16px; }
+.topbar { display: flex; align-items: center; gap: 16px; padding: 0 calc(var(--pad) + var(--inset)) 0 var(--pad); min-width: 0; }
+.search { flex: 0 1 420px; height: var(--control-h); display: flex; align-items: center; gap: 8px; padding: 0 10px; border: 1px solid var(--control); border-radius: var(--radius-control); background: var(--surface); }
+.search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; height: 30px; }
+.search kbd { font: 12px var(--mono); color: var(--faint); }
+.topbar .stamp { margin-left: auto; color: var(--muted); font-size: var(--fs-small); white-space: nowrap; }
+.btn.menu-btn, .topbar-name { display: none; }
+.sheet { margin: 0 var(--inset) var(--inset) 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sheet); overflow: auto; min-width: 0; }
+.view { padding: 20px var(--pad) 48px; }
+
+/* ---------- title row ---------- */
+.titlerow { display: flex; align-items: flex-start; gap: 16px; margin-bottom: var(--gap); }
+.titlerow .head { flex: 1; min-width: 0; }
+.crumb { color: var(--muted); font-size: var(--fs-small); line-height: 16px; margin-bottom: 4px; overflow-wrap: anywhere; }
+h1 { font-size: var(--fs-title); line-height: 28px; font-weight: 600; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.subline { margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 20px; max-width: 80ch; }
+.subline strong { color: var(--text); font-weight: 500; }
+.actions { display: flex; gap: 8px; flex: none; }
+.btn { height: var(--control-h); padding: 0 14px; border-radius: var(--radius-control); border: 1px solid var(--control); background: var(--surface); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; transition: background 150ms, transform 120ms; }
+.btn:hover { background: var(--raised); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--primary); color: var(--primary-ink); border-color: var(--primary); }
+.btn.primary:hover { opacity: .9; }
+.btn[disabled] { opacity: .55; cursor: progress; }
+.btn.text { border-color: transparent; background: transparent; padding: 0 6px; color: var(--text); }
+.btn.text:hover { background: var(--raised); }
+.link { color: var(--accent); cursor: pointer; background: none; border: 0; padding: 0; }
+.link:hover { text-decoration: underline; }
+
+/* ---------- cards ---------- */
+.card { border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--surface); min-width: 0; }
+.card-head { display: flex; align-items: baseline; gap: 12px; padding: 16px 20px 0; }
+.card-head h2 { font-size: var(--fs-section); line-height: 22px; font-weight: 600; }
+.card-head .aside { margin-left: auto; color: var(--muted); font-size: var(--fs-small); white-space: nowrap; }
+.card-body { padding: 12px 20px 16px; }
+.row { display: grid; gap: var(--gap); margin-bottom: var(--gap); align-items: start; }
+.row.two-one { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.empty { border: 1px dashed var(--control); border-radius: var(--radius-card); padding: 10px 14px; color: var(--muted); }
+
+/* ---------- KPI strip ---------- */
+.kpis { display: grid; grid-template-columns: 1.3fr 1.6fr 1fr 1fr 1fr; }
+.kpi { padding: 16px 20px; border-left: 1px solid var(--border); min-width: 0; }
+.kpi:first-child { border-left: 0; }
+.kpi-label { color: var(--muted); font-size: 13px; line-height: 18px; font-weight: 500; }
+.kpi-value { font-size: var(--fs-kpi); line-height: 36px; font-weight: 400; margin-top: 4px; letter-spacing: -0.01em; }
+.kpi-value.lead { font-size: var(--fs-lead); line-height: 38px; }
+.kpi-value .unit { font-size: 15px; color: var(--muted); margin-left: 2px; }
+.kpi-sub { color: var(--muted); font-size: 13px; line-height: 18px; margin-top: 6px; }
+.meter { height: 8px; border-radius: 999px; background: var(--raised); margin-top: 10px; overflow: hidden; }
+.meter > span { display: block; height: 100%; border-radius: 999px; }
+.stack { display: flex; gap: 2px; height: 10px; margin-top: 12px; }
+.stack > span { border-radius: 2px; min-width: 4px; }
+.stack.none { background: var(--raised); border-radius: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 10px; font-size: var(--fs-small); color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.legend b { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* ---------- severity glyphs: shape + label, never colour alone ---------- */
+.glyph { display: inline-block; width: 9px; height: 9px; flex: none; }
+.g-critical { background: var(--sev-critical); border-radius: 1px; }
+.g-high { background: var(--sev-high); clip-path: polygon(50% 0, 100% 100%, 0 100%); width: 10px; height: 9px; }
+.g-medium { background: var(--sev-medium); transform: rotate(45deg) scale(.85); border-radius: 1px; }
+.g-low { background: var(--sev-low); border-radius: 50%; }
+.g-info { border: 2px solid var(--sev-info); border-radius: 50%; }
+.pill { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 4px; font-size: var(--fs-small); font-weight: 500; white-space: nowrap; flex: none; line-height: 1; }
+.p-critical { background: var(--pill-critical-bg); color: var(--pill-critical-ink); }
+.p-high { background: var(--pill-high-bg); color: var(--pill-high-ink); }
+.p-medium { background: var(--pill-medium-bg); color: var(--pill-medium-ink); }
+.p-low { background: var(--pill-low-bg); color: var(--pill-low-ink); }
+.p-info, .p-neutral, .p-skipped { background: var(--pill-neutral-bg); color: var(--pill-neutral-ink); }
+.p-pass, .p-positive, .p-covered, .p-built-in { background: var(--pill-positive-bg); color: var(--pill-positive-ink); }
+.p-fail, .p-gap { background: var(--pill-critical-bg); color: var(--pill-critical-ink); }
+.chip { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 4px; background: var(--raised); font-size: var(--fs-small); color: var(--text); white-space: nowrap; flex: none; }
+.chip.inferred { color: var(--muted); font-style: italic; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* ---------- lists ---------- */
+.list > li { display: grid; gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--rule); cursor: pointer; }
+.list > li:first-child { border-top: 0; }
+.list > li:hover .line1 { text-decoration: underline; text-decoration-color: var(--control); }
+.fixlist > li { grid-template-columns: 92px minmax(0, 1fr) minmax(0, 220px); align-items: start; }
+.line1 { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.line2 { color: var(--muted); font-size: 13px; line-height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.where { text-align: right; color: var(--muted); font-size: 13px; line-height: 18px; min-width: 0; }
+.where div { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- OWASP grid ---------- */
+.owasp { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ow { display: grid; grid-template-columns: auto 1fr auto; gap: 2px 8px; align-items: start; padding: 8px 10px; border-radius: 6px; background: var(--raised); border-left: 3px solid transparent; cursor: pointer; min-height: 58px; }
+.ow:hover { background: var(--active); }
+.ow .id { font: 12px/16px var(--mono); color: var(--muted); }
+.ow .name { grid-column: 1 / 3; font-size: 12px; line-height: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ow .n { grid-row: 1; grid-column: 3; font-weight: 500; font-variant-numeric: tabular-nums; }
+.ow.zero .n { color: var(--muted); font-weight: 400; }
+.ow.w-critical { border-left-color: var(--sev-critical); } .ow.w-high { border-left-color: var(--sev-high); }
+.ow.w-medium { border-left-color: var(--sev-medium); } .ow.w-low { border-left-color: var(--sev-low); } .ow.w-info { border-left-color: var(--sev-info); }
+
+/* ---------- toxic flow (signature element) ---------- */
+.flow { display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr); align-items: stretch; margin-top: 4px; }
+.flow + .flow { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.flow-agent { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-weight: 500; }
+.lane { border-radius: 6px; background: var(--raised); padding: 10px; min-height: 84px; }
+.lane h3 { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--muted); margin-bottom: 8px; }
+.lane.hot { box-shadow: inset 0 0 0 1px var(--sev-high); }
+.arrow { display: flex; align-items: center; justify-content: center; color: var(--muted); }
+.flow-note { grid-column: 1 / -1; margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 18px; }
+
+/* ---------- bar list ---------- */
+.barlist > li { padding: 8px 0; cursor: pointer; }
+.barlist .lbl { display: flex; gap: 8px; align-items: baseline; }
+.barlist .lbl .name { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barlist .lbl .val { margin-left: auto; font-variant-numeric: tabular-nums; }
+.barlist .track { height: 4px; border-radius: 999px; background: var(--raised); margin-top: 6px; }
+.barlist .track span { display: block; height: 100%; border-radius: 999px; background: var(--accent); min-width: 0; }
+.barlist .meta { color: var(--muted); font-size: 12px; line-height: 16px; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- tabs, toolbar, tables ---------- */
+.tabs { display: flex; gap: 20px; border-bottom: 1px solid var(--border); margin-bottom: 16px; overflow-x: auto; scrollbar-width: none; }
+.tabs button { border: 0; background: none; padding: 8px 0 10px; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
+.tabs .n { font-variant-numeric: tabular-nums; margin-left: 6px; color: var(--muted); font-weight: 400; }
+.toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+.toolbar input[type="search"], .toolbar select { height: var(--control-h); border: 1px solid var(--control); border-radius: var(--radius-control); background: var(--surface); padding: 0 10px; }
+.toolbar input[type="search"] { width: 300px; max-width: 100%; }
+.toolbar .total { margin-left: auto; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-weight: 400; color: var(--muted); font-size: var(--fs-small); padding: 0 12px 8px 0; white-space: nowrap; }
+td { padding: 12px 12px 12px 0; border-top: 1px solid var(--rule); vertical-align: top; }
+th:last-child, td:last-child { padding-right: 0; }
+td.num, th.num { text-align: right; }
+tr.click { cursor: pointer; }
+tr.click:hover td { background: var(--raised); }
+tr.sel td { background: var(--active); }
+.trunc { max-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tablewrap { overflow-x: auto; }
+.section-h { font-size: var(--fs-section); font-weight: 600; line-height: 22px; margin: 28px 0 10px; display: flex; gap: 10px; align-items: baseline; }
+.section-h:first-of-type { margin-top: 0; }
+.section-h .aside { color: var(--muted); font-size: var(--fs-small); font-weight: 400; }
+
+/* ---------- drawer and dialogs (they float, so they may cast a shadow) ---------- */
+.drawer { position: fixed; top: 8px; right: 8px; bottom: 8px; width: min(480px, calc(100vw - 16px)); background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,.14); display: flex; flex-direction: column; z-index: 20; }
+.drawer-head { display: flex; align-items: flex-start; gap: 12px; padding: 20px 20px 12px; }
+.drawer-head h2 { font-size: 18px; line-height: 24px; font-weight: 600; flex: 1; }
+.drawer-body { padding: 0 20px 24px; overflow: auto; }
+.kv { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 8px 12px; margin: 8px 0 16px; }
+.kv dt { color: var(--muted); }
+.kv dd { overflow-wrap: anywhere; }
+.drawer h3 { font-size: 13px; font-weight: 600; margin: 16px 0 6px; }
+pre.evidence { margin: 0; padding: 10px 12px; background: var(--raised); border-radius: 6px; white-space: pre-wrap; overflow-wrap: anywhere; font: 13px/19px var(--mono); }
+.scrim { position: fixed; inset: 0; background: rgba(0,0,0,.18); z-index: 15; }
+.form-grid { display: grid; gap: 16px; }
+.field label, .field .label { display: block; font-weight: 500; margin-bottom: 4px; }
+.field .help { color: var(--muted); font-size: 13px; line-height: 18px; margin-top: 4px; }
+.field textarea, .field input[type="text"] { width: 100%; border: 1px solid var(--control); border-radius: var(--radius-control); background: var(--surface); padding: 8px 10px; }
+.field textarea { min-height: 64px; resize: vertical; font: 13px/19px var(--mono); }
+.check { display: flex; gap: 10px; align-items: flex-start; }
+.check input { margin-top: 3px; }
+.notice { background: var(--pill-medium-bg); color: var(--pill-medium-ink); border-radius: 6px; padding: 10px 12px; font-size: 13px; line-height: 18px; margin-bottom: 12px; }
+.error { color: var(--negative); }
+.lab textarea { width: 100%; min-height: 180px; border: 1px solid var(--control); border-radius: var(--radius-card); padding: 12px; font: 13px/19px var(--mono); background: var(--surface); resize: vertical; }
+details.cov { border-top: 1px solid var(--rule); }
+details.cov:first-of-type { border-top: 0; }
+details.cov summary { list-style: none; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr) 80px 20px; gap: 16px; align-items: center; padding: 12px 0; cursor: pointer; }
+details.cov summary::-webkit-details-marker { display: none; }
+details.cov summary .chev { transition: transform 150ms; color: var(--muted); }
+details.cov[open] summary .chev { transform: rotate(90deg); }
+details.cov .inner { padding: 0 0 16px; }
+.skel { display: inline-block; background: var(--raised); border-radius: 4px; color: transparent; }
+.paste { margin-bottom: var(--gap); }
+.paste .card-body { padding: 16px 20px; }
+.paste-label { display: block; font-size: var(--fs-section); font-weight: 600; line-height: 22px; margin-bottom: 10px; }
+.paste-row { display: flex; gap: 8px; }
+.paste-row input { flex: 1; min-width: 0; height: 40px; padding: 0 12px; border: 1px solid var(--control); border-radius: var(--radius-control); background: var(--surface); }
+.paste-row .btn { height: 40px; }
+.paste .help { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 18px; }
+.clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ---------- tablet and phone ---------- */
+@media (max-width: 1100px) {
+  .row.two-one { grid-template-columns: minmax(0, 1fr); }
+  .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kpi:nth-child(4) { border-left: 0; }
+  .kpi:nth-child(n+4) { border-top: 1px solid var(--border); }
+}
+@media (max-width: 760px) {
+  :root { --pad: 16px; --gap: 16px; }
+  .app { grid-template-columns: minmax(0, 1fr); grid-template-rows: var(--topbar) minmax(0, 1fr); }
+  .sidebar { position: fixed; inset: 0; z-index: 30; background: var(--frame); padding: 16px; display: none; }
+  .app.nav-open .sidebar { display: flex; }
+  .btn.menu-btn { display: inline-flex; }
+  .topbar-name { display: inline; font-weight: 600; }
+  .topbar .stamp { display: none; }
+  .topbar { padding: 0 12px; }
+  .search { display: none; }
+  .sheet { margin: 0; border-radius: 0; border-left: 0; border-right: 0; border-bottom: 0; }
+  .titlerow { flex-direction: column; }
+  .actions { flex-wrap: wrap; }
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .kpi { border-left: 0; border-top: 1px solid var(--border); }
+  .kpi:nth-child(-n+2) { border-top: 0; }
+  .kpi:nth-child(2n) { border-left: 1px solid var(--border); }
+  .kpi:last-child:nth-child(odd) { grid-column: 1 / -1; border-left: 0; }
+  .fixlist > li { grid-template-columns: minmax(0, 1fr); }
+  .paste-row { flex-direction: column; }
+  .paste-row input { flex: none; }
+  .where { text-align: left; }
+  .flow { grid-template-columns: minmax(0, 1fr); }
+  .arrow { transform: rotate(90deg); height: 24px; }
+  .owasp { grid-template-columns: 1fr; }
+  details.cov summary { grid-template-columns: minmax(0, 1fr) 70px 20px; }
+  details.cov summary .covbar { grid-column: 1 / -1; grid-row: 2; }
+  .hide-phone { display: none; }
+  table.stack-phone thead { display: none; }
+  table.stack-phone tr { display: block; padding: 10px 0; border-top: 1px solid var(--rule); }
+  table.stack-phone td { display: block; border: 0; padding: 2px 0; max-width: none; white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="sidebar" aria-label="Navigation">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="20" height="20" rx="5" fill="var(--accent)"/><path d="M6 11.5l3 3 7-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>zgScanner</span>
+    </div>
+    <div class="scope" id="scope">MCP security for this machine</div>
+    <nav class="nav" id="nav">
+      <a href="#overview" data-view="overview"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>Overview</a>
+      <a href="#findings" data-view="findings"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M8 2l6 11H2z"/><path d="M8 7v3M8 12v.5"/></svg>Findings<span class="count" id="nav-findings"></span></a>
+      <a href="#checks" data-view="checks"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M3 4.5l1.5 1.5L7 3.5M3 10.5l1.5 1.5L7 9.5M9.5 5h4M9.5 11h4"/></svg>Checks<span class="count" id="nav-checks"></span></a>
+      <a href="#coverage" data-view="coverage"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M2 13h12M4 13V8M8 13V4M12 13V6"/></svg>Scanner coverage</a>
+      <a href="#inventory" data-view="inventory"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="4" rx="1"/><rect x="2.5" y="9.5" width="11" height="4" rx="1"/><path d="M5 4.5h.5M5 11.5h.5"/></svg>Inventory</a>
+      <a href="#lab" data-view="lab" class="live-only"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M3 3h10v7H8l-3 3v-3H3z"/></svg>Text lab</a>
+    </nav>
+    <div class="sidebar-foot" id="foot"></div>
+  </aside>
+  <header class="topbar">
+    <button class="btn text menu-btn" data-action="menu" aria-label="Open navigation"><svg width="18" height="18" viewBox="0 0 18 18" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg></button>
+    <span class="topbar-name">zgScanner</span>
+    <label class="search"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg><input id="global-search" type="search" placeholder="Search findings, servers, checks" aria-label="Search findings"><kbd>/</kbd></label>
+    <span class="stamp" id="stamp"></span>
+    <button class="btn text" data-action="theme" id="theme-btn" aria-label="Switch colour theme">Theme: auto</button>
+  </header>
+  <main class="sheet" id="sheet"><div class="view" id="view"></div></main>
+</div>
+<div id="overlay"></div>
+
+<script>
+"use strict";
+const BOOT = /*__ZGSCANNER_BOOT__*/null;
+const LIVE = !!BOOT && BOOT.mode === "live";
+const SEVS = ["critical", "high", "medium", "low", "info"];
+const SEV_LABEL = { critical: "Critical", high: "High", medium: "Medium", low: "Low", info: "Info" };
+const CAP_LABEL = { untrusted: "untrusted content", private: "private data", sink: "outbound sink", destructive: "destructive", write: "writes", exec: "runs code", financial: "moves money", paid: "charges per call" };
+const state = {
+  report: BOOT && BOOT.report,
+  machine: BOOT && BOOT.report, targetReport: null, mode: "machine", targetText: recall("zgscanner.target", ""),
+  scanning: false, progress: "", error: "", startedAt: 0,
+  view: "overview", filters: { sev: "all", q: "", cat: "", target: "", check: "", owasp: "" },
+  checkTab: "all", selected: null, labHits: null, labError: "", connect: new Set(),
+  options: loadOptions(),
+};
+
+/* ---------- helpers ---------- */
+function esc(value) {
+  return String(value == null ? "" : value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function fmt(n) { return Number(n || 0).toLocaleString("en-US"); }
+function pill(sev) { return `<span class="pill p-${esc(sev)}"><span class="glyph g-${esc(sev)}"></span>${esc(SEV_LABEL[sev] || sev)}</span>`; }
+function statusPill(status) {
+  const label = { pass: "Passed", fail: "Failed", skipped: "Skipped", covered: "Covered", "built-in": "Built in", gap: "Gap" }[status] || status;
+  return `<span class="pill p-${esc(status)}">${esc(label)}</span>`;
+}
+function band(risk) {
+  if (risk < 10) return { label: "Low risk", cls: "positive", color: "var(--positive)" };
+  if (risk < 30) return { label: "Guarded", cls: "low", color: "var(--sev-low)" };
+  if (risk < 55) return { label: "Elevated", cls: "medium", color: "var(--sev-medium)" };
+  if (risk < 80) return { label: "High risk", cls: "high", color: "var(--sev-high)" };
+  return { label: "Critical risk", cls: "critical", color: "var(--sev-critical)" };
+}
+function store(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* private window */ } }
+function recall(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; } }
+function loadOptions() {
+  return Object.assign({ discover: true, skills: true, osv: false, virustotal: false, llm: false, pin: false,
+    identify_as: "", configs: "", sources: "", skill_paths: "", allowlist: "" }, recall("zgscanner.options", {}));
+}
+function catalogCheck(id) { return (state.report && state.report.checks || []).find((c) => c.id === id) || {}; }
+function scannerName(key) { const s = state.report && state.report.coverage[key]; return s ? s.name : key; }
+function timeOf(iso) { try { return new Date(iso).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }); } catch (e) { return iso; } }
+function icon(name) {
+  const paths = { arrow: '<path d="M3 8h9M9 5l3 3-3 3"/>', chev: '<path d="M6 4l4 4-4 4"/>', close: '<path d="M4 4l8 8M12 4l-8 8"/>' };
+  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">${paths[name]}</svg>`;
+}
+
+/* ---------- API ---------- */
+async function api(path, body) {
+  const init = { headers: { "X-zgScanner-Token": BOOT.token } };
+  if (body !== undefined) { init.method = "POST"; init.headers["Content-Type"] = "application/json"; init.body = JSON.stringify(body); }
+  const res = await fetch(path, init);
+  const data = (res.headers.get("Content-Type") || "").includes("json") ? await res.json() : await res.text();
+  if (!res.ok) throw new Error((data && data.error) || `HTTP ${res.status}`);
+  return data;
+}
+function lines(text) { return String(text || "").split(/\r?\n/).map((s) => s.trim()).filter(Boolean); }
+function scanBody(extra) {
+  const o = state.options;
+  return Object.assign({
+    discover: o.discover, skills: o.skills, osv: o.osv, virustotal: o.virustotal, llm: o.llm, pin: o.pin,
+    identify_as: o.identify_as, configs: lines(o.configs), sources: lines(o.sources), skill_paths: lines(o.skill_paths),
+    allowlist: lines(o.allowlist).length ? lines(o.allowlist) : null, connect: [...state.connect],
+  }, extra || {});
+}
+async function scanning(label, work) {
+  if (!LIVE || state.scanning) return;
+  state.scanning = true; state.error = ""; state.startedAt = Date.now(); state.progress = label;
+  render();
+  const poll = setInterval(async () => {
+    try { const p = await api("/api/progress"); state.progress = (p.progress || []).slice(-1)[0] || state.progress; } catch (e) { /* keep going */ }
+    paintScanButton();
+  }, 1000);
+  try { await work(); } catch (e) { state.error = `The scan failed: ${e.message}`; }
+  finally { clearInterval(poll); state.scanning = false; render(); }
+}
+function runScan(extra) {
+  return scanning("Starting", async () => {
+    const data = await api("/api/scan", scanBody(extra));
+    state.machine = data.report; state.mode = "machine"; state.report = data.report;
+  });
+}
+function scanTarget(text) {
+  text = String(text || "").trim();
+  if (!text) { state.error = "Paste a server URL, a config snippet, or a launch command first."; render(); return; }
+  state.targetText = text; store("zgscanner.target", text);
+  const o = state.options;
+  return scanning("Connecting", async () => {
+    const data = await api("/api/scan", { target: text, osv: o.osv, llm: o.llm, virustotal: o.virustotal, identify_as: o.identify_as, pin: o.pin });
+    state.targetReport = data.report; state.mode = "target"; state.report = data.report;
+    if (state.view !== "overview") go("overview");
+  });
+}
+function backToMachine() {
+  state.mode = "machine"; state.report = state.machine; state.error = "";
+  if (!state.machine) { runScan(); return; }
+  render();
+}
+function paintScanButton() {
+  document.querySelectorAll(".js-scan").forEach((b) => {
+    b.disabled = state.scanning;
+    b.textContent = state.scanning ? `Scanning ${Math.round((Date.now() - state.startedAt) / 1000)} s` : b.dataset.label;
+  });
+}
+async function exportReport(format) {
+  let blob;
+  if (LIVE) {
+    const which = state.mode === "target" ? "target" : "machine";
+    const res = await fetch(`/api/export?format=${encodeURIComponent(format)}&which=${which}`, { headers: { "X-zgScanner-Token": BOOT.token } });
+    if (!res.ok) { alert("Export failed"); return; }
+    blob = await res.blob();
+  } else {
+    blob = new Blob([JSON.stringify(state.report, null, 2)], { type: "application/json" });
+    format = "json";
+  }
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `zgscanner-report.${format}`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+/* ---------- routing ---------- */
+function route() {
+  const [view, query] = (location.hash.replace(/^#/, "") || "overview").split("?");
+  state.view = ["overview", "findings", "checks", "coverage", "inventory", "lab"].includes(view) ? view : "overview";
+  if (state.view === "lab" && !LIVE) state.view = "overview";
+  if (query) {
+    const p = new URLSearchParams(query);
+    state.filters = { sev: p.get("sev") || "all", q: p.get("q") || "", cat: p.get("cat") || "", target: p.get("target") || "", check: p.get("check") || "", owasp: p.get("owasp") || "" };
+  }
+  document.getElementById("app").classList.remove("nav-open");
+  render();
+  document.getElementById("sheet").scrollTop = 0;
+}
+function go(view, filters) {
+  const p = new URLSearchParams();
+  Object.entries(filters || {}).forEach(([k, v]) => { if (v && v !== "all") p.set(k, v); });
+  const q = p.toString();
+  location.hash = view + (q ? "?" + q : "");
+}
+
+/* ---------- shell ---------- */
+function renderShell() {
+  const r = state.report;
+  document.querySelectorAll(".nav a").forEach((a) => { if (a.dataset.view !== state.view) a.removeAttribute("aria-current"); else a.setAttribute("aria-current", "page"); });
+  document.querySelectorAll(".live-only").forEach((el) => { el.hidden = !LIVE; });
+  document.getElementById("nav-findings").textContent = r ? fmt(r.summary.findings) : "";
+  document.getElementById("nav-checks").textContent = r && r.summary.checks.fail ? `${r.summary.checks.fail} failed` : "";
+  document.getElementById("scope").textContent = state.mode === "target" && r ? `Pasted server: ${targetName(r)}` : r ? r.options.cwd : "MCP security for this machine";
+  document.getElementById("stamp").textContent = r ? `${LIVE ? "Scanned" : "Exported report from"} ${timeOf(r.scanned_at)}` : "";
+  document.getElementById("foot").textContent = `zgscanner ${BOOT ? BOOT.version : ""} · ${LIVE ? "local panel, 127.0.0.1 only" : "static export"}`;
+  const pref = recall("zgscanner.theme", "auto");
+  document.getElementById("theme-btn").textContent = `Theme: ${pref}`;
+}
+function titleRow(title, sub, opts) {
+  const o = opts || {};
+  const rescan = state.mode === "target"
+    ? `<button class="btn" data-action="machine">Back to this machine</button><button class="btn js-scan" data-action="scan-target" data-label="Rescan server">Rescan server</button>`
+    : `<button class="btn js-scan" data-action="scan" data-label="Rescan machine">Rescan machine</button>`;
+  const actions = LIVE ? `<div class="actions">${o.extra || ""}<button class="btn" data-action="options">Options</button>${rescan}</div>`
+    : `<div class="actions"><button class="btn" data-action="export" data-format="json">Download JSON</button></div>`;
+  return `<div class="titlerow"><div class="head">${o.crumb ? `<div class="crumb">${o.crumb}</div>` : ""}<h1>${title}</h1>${sub ? `<p class="subline">${sub}</p>` : ""}
+    ${state.error ? `<p class="subline error">${esc(state.error)}</p>` : ""}</div>${actions}</div>`;
+}
+
+/* ---------- overview ---------- */
+function findingSentence(r) {
+  if (!r.findings.length) return `No findings across ${fmt(r.summary.servers)} servers and ${fmt(r.summary.skills)} skills.`;
+  const top = r.findings[0];
+  const same = r.findings.filter((f) => f.check === top.check);
+  const targets = new Set(same.map((f) => f.target));
+  const more = targets.size > 1 ? ` and ${targets.size - 1} more` : "";
+  return `Fix first: <strong>${esc(top.title)}</strong> in ${esc(top.target)}${esc(more)}.`;
+}
+function kpiStrip(r) {
+  const s = r.summary, b = band(s.risk), total = s.findings;
+  const segs = SEVS.filter((k) => s.severity[k]).map((k) => `<span style="flex:${s.severity[k]};background:var(--sev-${k})" title="${esc(SEV_LABEL[k])}: ${s.severity[k]}"></span>`).join("");
+  const legend = SEVS.map((k) => `<span><span class="glyph g-${k}"></span>${SEV_LABEL[k]} <b>${fmt(s.severity[k])}</b></span>`).join("");
+  return `<section class="card kpis" aria-label="Summary">
+    <div class="kpi"><div class="kpi-label">Risk score</div><div class="kpi-value lead">${s.risk}<span class="unit">/100</span></div>
+      <div class="meter" role="meter" aria-valuenow="${s.risk}" aria-valuemin="0" aria-valuemax="100" aria-label="Risk ${s.risk} of 100"><span style="width:${s.risk}%;background:${b.color}"></span></div>
+      <div class="kpi-sub">Grade ${esc(s.grade)} · ${esc(b.label)}</div></div>
+    <div class="kpi"><div class="kpi-label">Findings</div><div class="kpi-value">${fmt(total)}</div>
+      <div class="stack ${total ? "" : "none"}" aria-hidden="true">${segs}</div><div class="legend">${legend}</div></div>
+    <div class="kpi"><div class="kpi-label">MCP servers</div><div class="kpi-value">${fmt(s.servers)}</div>
+      <div class="kpi-sub">${fmt(s.connected)} connected · ${fmt(s.tools)} tools<br>${s.clients.length ? esc(s.clients.length + " clients") : "no client configs"}</div></div>
+    <div class="kpi"><div class="kpi-label">Skills</div><div class="kpi-value">${fmt(s.skills)}</div>
+      <div class="kpi-sub">from ${fmt(s.config_files)} config files<br>and skill folders</div></div>
+    <div class="kpi"><div class="kpi-label">Checks</div><div class="kpi-value">${fmt(s.checks.fail)}<span class="unit"> failed</span></div>
+      <div class="kpi-sub">${fmt(s.checks.pass)} passed · ${fmt(s.checks.skipped)} skipped<br>of ${fmt(r.checks.length)} checks</div></div>
+  </section>`;
+}
+function findingRow(f) {
+  const where = [f.agent && f.agent !== f.target ? f.agent : "", f.location].filter(Boolean);
+  return `<li data-action="finding" data-id="${esc(f.id)}"><div>${pill(f.severity)}</div>
+    <div style="min-width:0"><div class="line1">${esc(f.title)} <span class="mono muted">${esc(f.check)}</span></div>
+    <div class="line2">${esc(f.detail || f.evidence)}</div></div>
+    <div class="where"><div>${esc(f.target)}</div><div>${esc(where.join(" · "))}</div></div></li>`;
+}
+function owaspGrid(r) {
+  return `<div class="owasp">${Object.entries(r.owasp).map(([id, o]) => `
+    <div class="ow ${o.findings ? "w-" + esc(o.worst) : "zero"}" data-action="owasp" data-id="${esc(id)}" role="button" tabindex="0"
+      title="${esc(id)} ${esc(o.name)}: ${o.findings} finding(s), ${o.checks.length} checks">
+      <span class="id">${esc(id)}</span><span class="n">${o.findings ? fmt(o.findings) : "0"}</span><span class="name">${esc(o.name)}</span></div>`).join("")}</div>`;
+}
+function flowBlock(r) {
+  const groups = {};
+  r.servers.filter((s) => !s.disabled).forEach((s) => { (groups[s.agent] = groups[s.agent] || []).push(s); });
+  const flows = Object.fromEntries(r.flows.map((f) => [f.agent, f]));
+  const agents = Object.keys(groups).sort((a, b) => (flows[b] ? 1 : 0) - (flows[a] ? 1 : 0));
+  if (!agents.length) return `<p class="empty">No MCP servers were found in any client config, so no agent can chain tools.</p>`;
+  return agents.slice(0, 3).map((agent) => {
+    const flow = flows[agent];
+    const lane = (cap, title) => {
+      const members = groups[agent].filter((s) => s.capabilities.includes(cap));
+      const chips = members.map((s) => `<span class="chip ${s.capabilities_inferred ? "inferred" : ""}" title="${s.capabilities_inferred ? "inferred from the server name" : "from tools/list"}">${esc(s.name)}</span>`).join("");
+      return `<div class="lane ${flow ? "hot" : ""}"><h3>${title}</h3><div class="chips">${chips || '<span class="muted small">none</span>'}</div></div>`;
+    };
+    const note = flow ? `${esc(flow.severity === "critical" ? "One server holds all three legs." : "The legs are spread across servers.")} Injected text read by the first lane can reach the second and leave through the third.${flow.inferred ? " Inferred from server names: connect the servers to confirm." : ""}`
+      : "No server in this agent combines untrusted content, private data and an outbound sink.";
+    return `<div class="flow"><div class="flow-agent">${esc(agent)} ${flow ? pill(flow.severity) : statusPill("pass")}</div>
+      ${lane("untrusted", "Reads untrusted content")}<div class="arrow">${icon("arrow")}</div>
+      ${lane("private", "Reaches private data")}<div class="arrow">${icon("arrow")}</div>
+      ${lane("sink", "Can send data out")}<p class="flow-note">${note}</p></div>`;
+  }).join("") + (agents.length > 3 ? `<p class="flow-note">${agents.length - 3} more agent(s) on the Inventory screen.</p>` : "");
+}
+function serverBars(r) {
+  const rows = [...r.servers].sort((a, b) => b.risk - a.risk || b.findings - a.findings).slice(0, 6);
+  if (!rows.length) return `<p class="empty">No servers configured.</p>`;
+  return `<ul class="barlist">${rows.map((s) => `<li data-action="target" data-target="${esc(s.name)}">
+    <div class="lbl"><span class="name">${esc(s.name)}</span><span class="val">${s.risk}</span></div>
+    <div class="track"><span style="width:${Math.max(0, Math.min(100, s.risk))}%"></span></div>
+    <div class="meta">${esc(s.client)} · ${esc(s.transport)} · ${s.live && s.live.ok ? fmt(s.live.tools) + " tools" : "not connected"} · ${fmt(s.findings)} findings</div></li>`).join("")}</ul>`;
+}
+function pasteCard() {
+  if (!LIVE) return "";
+  return `<section class="card paste"><div class="card-body"><form data-form="target">
+    <label for="target-input" class="paste-label">Scan an MCP server</label>
+    <div class="paste-row"><input id="target-input" type="text" spellcheck="false" autocomplete="off" placeholder="https://example.com/mcp" value="${esc(state.targetText)}">
+      <button class="btn primary js-scan" type="submit" data-label="Scan server">Scan server</button></div>
+    <p class="help">Paste a server URL, a JSON config snippet, or an install command such as <span class="mono">npx add-mcp 'https://example.com/mcp'</span>.
+      zgScanner sends a remote server its initialize and list requests only and calls no tool. Launch commands are checked without being run.</p>
+  </form></div></section>`;
+}
+function targetName(r) { return r.servers.length === 1 ? r.servers[0].name : `${r.servers.length} pasted servers`; }
+const TRANSPORT = { http: "streamable HTTP", sse: "legacy SSE", stdio: "stdio" };
+function connection(s) {
+  if (!s) return { value: "-", sub: "nothing parsed", sentence: "" };
+  if (s.transport === "static") return { value: "Not contacted", sub: "read from pasted JSON", sentence: "Read from the pasted JSON; nothing was contacted." };
+  if (s.transport === "stdio") return { value: "Not run", sub: "launch command checked only", sentence: "The launch command was checked without running it. To list its tools, add it to a client config and connect it from Inventory." };
+  if (!s.live) return { value: "Not contacted", sub: "", sentence: "" };
+  if (!s.live.ok) return { value: "Failed", sub: "see the server card", sentence: `Could not list its tools: ${esc(s.live.error)}` };
+  const info = s.live.server_info || {};
+  return { value: "Connected", sub: `${TRANSPORT[s.live.transport] || s.live.transport} · protocol ${esc(info.protocol || "-")}`,
+    sentence: `Connected over ${TRANSPORT[s.live.transport] || s.live.transport}: ${fmt(s.live.tools)} tools, ${fmt(s.live.prompts)} prompts, ${fmt(s.live.resources)} resources.` };
+}
+function unscored(r) {
+  return r.servers.length > 0 && r.servers.every((x) => (x.transport === "http" || x.transport === "sse") && x.live && !x.live.ok);
+}
+function targetKpis(r) {
+  const s = r.summary, b = band(s.risk), first = r.servers[0], c = connection(first);
+  const risk = unscored(r)
+    ? `<div class="kpi"><div class="kpi-label">Risk score</div><div class="kpi-value lead muted">&ndash;</div>
+        <div class="meter" aria-hidden="true"></div><div class="kpi-sub">Not scored: no tools were listed</div></div>`
+    : `<div class="kpi"><div class="kpi-label">Risk score</div><div class="kpi-value lead">${s.risk}<span class="unit">/100</span></div>
+      <div class="meter" role="meter" aria-valuenow="${s.risk}" aria-valuemin="0" aria-valuemax="100" aria-label="Risk ${s.risk} of 100"><span style="width:${s.risk}%;background:${b.color}"></span></div>
+      <div class="kpi-sub">Grade ${esc(s.grade)} · ${esc(b.label)}</div></div>`;
+  const live = r.servers.reduce((acc, x) => { const l = x.live || {}; return { tools: acc.tools + (l.tools || 0), prompts: acc.prompts + (l.prompts || 0), resources: acc.resources + (l.resources || 0) }; }, { tools: 0, prompts: 0, resources: 0 });
+  const segs = SEVS.filter((k) => s.severity[k]).map((k) => `<span style="flex:${s.severity[k]};background:var(--sev-${k})" title="${esc(SEV_LABEL[k])}: ${s.severity[k]}"></span>`).join("");
+  const legend = SEVS.map((k) => `<span><span class="glyph g-${k}"></span>${SEV_LABEL[k]} <b>${fmt(s.severity[k])}</b></span>`).join("");
+  return `<section class="card kpis" aria-label="Summary">
+    ${risk}
+    <div class="kpi"><div class="kpi-label">Findings</div><div class="kpi-value">${fmt(s.findings)}</div>
+      <div class="stack ${s.findings ? "" : "none"}" aria-hidden="true">${segs}</div><div class="legend">${legend}</div></div>
+    <div class="kpi"><div class="kpi-label">Tools</div><div class="kpi-value">${fmt(live.tools)}</div>
+      <div class="kpi-sub">${fmt(live.prompts)} prompts · ${fmt(live.resources)} resources</div></div>
+    <div class="kpi"><div class="kpi-label">Connection</div><div class="kpi-value" style="font-size:22px">${esc(c.value)}</div>
+      <div class="kpi-sub">${c.sub}</div></div>
+    <div class="kpi"><div class="kpi-label">Checks</div><div class="kpi-value">${fmt(s.checks.fail)}<span class="unit"> failed</span></div>
+      <div class="kpi-sub">${fmt(s.checks.pass)} passed · ${fmt(s.checks.skipped)} skipped<br>of ${fmt(r.checks.length)} checks</div></div>
+  </section>`;
+}
+function serverCard(s) {
+  if (!s) return `<p class="empty">Nothing was parsed from the pasted text.</p>`;
+  const info = (s.live && s.live.server_info) || {};
+  const where = s.command;
+  return `<dl class="kv">
+    <dt>Name</dt><dd>${esc(info.name || s.name)}</dd>
+    <dt>Version</dt><dd>${esc(info.version || "-")}</dd>
+    <dt>Protocol</dt><dd>${esc(info.protocol || "-")}</dd>
+    <dt>Transport</dt><dd>${esc((s.live && TRANSPORT[s.live.transport]) || TRANSPORT[s.transport] || s.transport)}</dd>
+    <dt>${s.transport === "http" || s.transport === "sse" ? "URL" : "Launch"}</dt><dd class="mono">${esc(where)}</dd></dl>
+    ${s.live && !s.live.ok ? `<p class="error">${esc(s.live.error)}</p>` : ""}
+    ${s.live && s.live.instructions ? `<h3 class="small muted" style="margin:12px 0 4px">Server instructions</h3><p class="clamp2 muted">${esc(s.live.instructions)}</p>` : ""}
+    ${s.live && (s.live.coverage || []).length ? `<h3 class="small muted" style="margin:12px 0 4px">Resource bodies</h3><ul class="small">${s.live.coverage.map((c) =>
+      `<li><span class="mono">${esc(c.uri)}</span> · ${c.status === "read" ? `read (${fmt(c.bytes)} bytes)` : "not read"}${c.reason ? ` · ${esc(c.reason)}` : ""}</li>`).join("")}</ul>` : ""}`;
+}
+function toolsBlock(r) {
+  const rows = r.servers.flatMap((s) => ((s.live && s.live.tool_list) || []).map((t) => ({ s, t })));
+  if (!rows.length) return `<p class="empty">No tools were listed. ${esc(connection(r.servers[0]).sentence.replace(/<[^>]+>/g, ""))}</p>`;
+  const hint = (a) => [a.readOnlyHint === true ? "read-only" : "", a.destructiveHint === true ? "destructive" : "", a.openWorldHint === true ? "open world" : ""].filter(Boolean).join(" · ") || "-";
+  return `<div class="tablewrap"><table class="stack-phone"><thead><tr><th style="width:20%">Tool</th><th>What it says it does</th><th style="width:22%">Capabilities</th><th style="width:14%" class="hide-phone">Hints</th><th class="num" style="width:80px">Findings</th></tr></thead><tbody>
+    ${rows.map(({ s, t }) => `<tr class="${t.findings ? "click" : ""}" ${t.findings ? `data-action="tool-findings" data-target="${esc(s.name)}" data-tool="${esc(t.name)}"` : ""}>
+      <td><div class="line1 mono" style="font-weight:500">${esc(t.name)}</div>${t.title ? `<div class="line2">${esc(t.title)}</div>` : ""}</td>
+      <td><p class="clamp2 muted">${esc(t.description || "-")}</p></td>
+      <td><div class="chips">${t.capabilities.map((c) => `<span class="chip">${esc(CAP_LABEL[c] || c)}</span>`).join("") || '<span class="muted">-</span>'}</div></td>
+      <td class="hide-phone small muted">${esc(hint(t.annotations || {}))}</td>
+      <td class="num">${t.findings ? fmt(t.findings) : '<span class="muted">0</span>'}</td></tr>`).join("")}
+  </tbody></table></div>`;
+}
+function renderTargetOverview(r) {
+  const top = r.findings.slice(0, 6), first = r.servers[0];
+  const sub = unscored(r) ? `Could not list its tools, so only the URL itself was checked. ${esc(first.live.error)}` : `${findingSentence(r)} ${connection(first).sentence}`;
+  return titleRow(esc(targetName(r)), sub, { crumb: `Pasted server · scanned ${esc(timeOf(r.scanned_at))}` })
+    + pasteCard()
+    + targetKpis(r)
+    + `<div class="row two-one" style="margin-top:var(--gap)">
+      <section class="card"><div class="card-head"><h2>Fix first</h2><span class="aside"><button class="link" data-action="go" data-view="findings">View all ${fmt(r.findings.length)}</button></span></div>
+        <div class="card-body">${top.length ? `<ul class="list fixlist">${top.map(findingRow).join("")}</ul>` : `<p class="empty">No findings for this server.</p>`}</div></section>
+      <section class="card"><div class="card-head"><h2>OWASP MCP Top 10</h2><span class="aside">findings per risk</span></div><div class="card-body">${owaspGrid(r)}</div></section>
+    </div>
+    <div class="row two-one">
+      <section class="card"><div class="card-head"><h2>Toxic flows</h2><span class="aside">untrusted content → private data → outbound sink</span></div><div class="card-body">${flowBlock(r)}</div></section>
+      <section class="card"><div class="card-head"><h2>Server</h2></div><div class="card-body">${r.servers.length > 1 ? serverBars(r) : serverCard(first)}</div></section>
+    </div>
+    <section class="card"><div class="card-head"><h2>Tools</h2><span class="aside">as the server describes them</span></div><div class="card-body">${toolsBlock(r)}</div></section>`;
+}
+function renderOverview(r) {
+  if (state.mode === "target") return renderTargetOverview(r);
+  const top = r.findings.slice(0, 6);
+  return titleRow("Overview", `${findingSentence(r)} ${fmt(r.summary.findings)} findings from ${fmt(r.checks.length)} checks over ${fmt(r.summary.servers)} servers and ${fmt(r.summary.skills)} skills.`,
+      { crumb: `This machine · ${esc(r.options.home)}` })
+    + pasteCard()
+    + kpiStrip(r)
+    + `<div class="row two-one" style="margin-top:var(--gap)">
+      <section class="card"><div class="card-head"><h2>Fix first</h2><span class="aside"><button class="link" data-action="go" data-view="findings">View all ${fmt(r.findings.length)}</button></span></div>
+        <div class="card-body">${top.length ? `<ul class="list fixlist">${top.map(findingRow).join("")}</ul>` : `<p class="empty">Nothing to fix. ${fmt(r.summary.checks.skipped)} checks were skipped; connect servers or add sources to run them.</p>`}</div></section>
+      <section class="card"><div class="card-head"><h2>OWASP MCP Top 10</h2><span class="aside">findings per risk</span></div><div class="card-body">${owaspGrid(r)}</div></section>
+    </div>
+    <div class="row two-one">
+      <section class="card"><div class="card-head"><h2>Toxic flows</h2><span class="aside">untrusted content → private data → outbound sink</span></div><div class="card-body">${flowBlock(r)}</div></section>
+      <section class="card"><div class="card-head"><h2>Servers by risk</h2><span class="aside">0-100</span></div><div class="card-body">${serverBars(r)}</div></section>
+    </div>`;
+}
+
+/* ---------- findings ---------- */
+function filteredFindings(r) {
+  const f = state.filters, q = f.q.toLowerCase();
+  return r.findings.filter((x) => (f.sev === "all" || x.severity === f.sev) && (!f.cat || x.category === f.cat) && (!f.target || x.target === f.target)
+    && (!f.check || x.check === f.check) && (!f.owasp || x.owasp.includes(f.owasp))
+    && (!q || [x.title, x.check, x.target, x.location, x.evidence, x.detail].join(" ").toLowerCase().includes(q)));
+}
+function renderFindings(r) {
+  const f = state.filters;
+  const base = r.findings.filter((x) => (!f.cat || x.category === f.cat) && (!f.target || x.target === f.target) && (!f.check || x.check === f.check) && (!f.owasp || x.owasp.includes(f.owasp)));
+  const counts = Object.fromEntries(SEVS.map((s) => [s, base.filter((x) => x.severity === s).length]));
+  const rows = filteredFindings(r);
+  const cats = Object.entries(r.categories).filter(([, c]) => c.findings);
+  const targets = [...new Set(r.findings.map((x) => x.target))].sort();
+  const scopeBits = [f.check && `check ${esc(f.check)}`, f.owasp && `${esc(f.owasp)} ${esc((r.owasp[f.owasp] || {}).name || "")}`].filter(Boolean);
+  return titleRow("Findings", `${fmt(r.findings.length)} findings from ${fmt(r.checks.length)} checks.${scopeBits.length ? ` Showing ${scopeBits.join(", ")}. <button class="link" data-action="clear-scope">Show all</button>` : ""}`,
+      { extra: LIVE ? `<button class="btn" data-action="export" data-format="sarif">SARIF</button><button class="btn" data-action="export" data-format="md">Markdown</button>` : "" })
+    + `<div class="tabs" role="tablist">${["all", ...SEVS].map((s) => `<button role="tab" aria-selected="${f.sev === s}" data-action="sev" data-sev="${s}">${s === "all" ? "All" : SEV_LABEL[s]}<span class="n">${fmt(s === "all" ? base.length : counts[s])}</span></button>`).join("")}</div>
+    <div class="toolbar"><input type="search" id="f-q" placeholder="Search title, target, evidence" value="${esc(f.q)}" aria-label="Search findings">
+      <select id="f-cat" aria-label="Category"><option value="">All categories</option>${cats.map(([k, c]) => `<option value="${esc(k)}" ${f.cat === k ? "selected" : ""}>${esc(c.name)} (${c.findings})</option>`).join("")}</select>
+      <select id="f-target" aria-label="Target"><option value="">All targets</option>${targets.map((t) => `<option ${f.target === t ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>
+      <span class="total">${fmt(rows.length)} shown</span></div>
+    ${rows.length ? `<div class="tablewrap"><table class="stack-phone"><thead><tr><th style="width:104px">Severity</th><th style="width:84px">Check</th><th>Finding</th><th style="width:22%">Target</th><th style="width:22%" class="hide-phone">Location</th></tr></thead><tbody>
+      ${rows.slice(0, 500).map((x) => `<tr class="click ${state.selected === x.id ? "sel" : ""}" data-action="finding" data-id="${esc(x.id)}">
+        <td>${pill(x.severity)}</td><td class="mono">${esc(x.check)}</td>
+        <td class="trunc"><div class="line1">${esc(x.title)}</div><div class="line2">${esc(x.detail || x.evidence)}</div></td>
+        <td class="trunc"><div class="line1" style="font-weight:400">${esc(x.target)}</div><div class="line2">${esc(x.agent)}</div></td>
+        <td class="trunc hide-phone"><div class="line2">${esc(x.location)}</div></td></tr>`).join("")}
+      </tbody></table></div>${rows.length > 500 ? `<p class="muted" style="margin-top:12px">Showing the first 500 of ${fmt(rows.length)}. Narrow the filters or export the report.</p>` : ""}`
+      : `<p class="empty">No findings match these filters.</p>`}`;
+}
+function drawer(f) {
+  const owasp = f.owasp.map((id) => `<span class="chip" title="${esc((state.report.owasp[id] || {}).name || "")}">${esc(id)} ${esc((state.report.owasp[id] || {}).name || "")}</span>`).join("");
+  const sources = f.sources.map((k) => `<span class="chip">${esc(scannerName(k))}</span>`).join("");
+  const check = catalogCheck(f.check);
+  return `<div class="scrim" data-action="close"></div><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title">
+    <div class="drawer-head"><h2 id="d-title">${esc(f.title)}</h2><button class="btn text" data-action="close" aria-label="Close">${icon("close")}</button></div>
+    <div class="drawer-body"><div style="display:flex;gap:8px;align-items:center">${pill(f.severity)}<span class="mono muted">${esc(f.check)} · ${esc(f.id)}</span></div>
+      <dl class="kv"><dt>Target</dt><dd>${esc(f.target)} <span class="muted">(${esc(f.target_type)})</span></dd>
+        ${f.agent ? `<dt>Agent</dt><dd>${esc(f.agent)}</dd>` : ""}<dt>Location</dt><dd class="mono">${esc(f.location || "-")}</dd>
+        ${f.file ? `<dt>File</dt><dd class="mono">${esc(f.file)}${f.line ? ":" + esc(f.line) : ""}</dd>` : ""}</dl>
+      <h3>Evidence</h3><pre class="evidence">${esc(f.evidence || "-")}</pre>
+      ${f.detail ? `<h3>Why it was flagged</h3><p>${esc(f.detail)}</p>` : ""}
+      ${check.description ? `<h3>What the check looks for</h3><p class="muted">${esc(check.description)}</p>` : ""}
+      <h3>How to fix</h3><p>${esc(f.remediation)}</p>
+      <h3>OWASP MCP Top 10</h3><div class="chips">${owasp || '<span class="muted">-</span>'}</div>
+      <h3>Also detected by</h3><div class="chips">${sources}</div>
+      <p style="margin-top:16px"><button class="link" data-action="go-check" data-check="${esc(f.check)}">Every finding from ${esc(f.check)}</button></p></div></aside>`;
+}
+
+/* ---------- checks ---------- */
+function renderChecks(r) {
+  const tab = state.checkTab;
+  const counts = { all: r.checks.length, fail: 0, pass: 0, skipped: 0 };
+  r.checks.forEach((c) => { counts[c.status] += 1; });
+  const rows = r.checks.filter((c) => tab === "all" || c.status === tab);
+  const byCat = {};
+  rows.forEach((c) => { (byCat[c.category] = byCat[c.category] || []).push(c); });
+  const body = Object.entries(r.categories).filter(([k]) => byCat[k]).map(([k, cat]) => `
+    <h2 class="section-h">${esc(cat.name)}<span class="aside">${byCat[k].length} checks · ${fmt(cat.findings)} findings</span></h2>
+    <div class="tablewrap"><table class="stack-phone"><thead><tr><th style="width:96px">Status</th><th style="width:84px">Check</th><th>What it looks for</th><th style="width:96px">Default</th><th style="width:26%" class="hide-phone">Also detected by</th><th class="num" style="width:80px">Findings</th></tr></thead><tbody>
+    ${byCat[k].map((c) => `<tr class="${c.findings ? "click" : ""}" ${c.findings ? `data-action="go-check" data-check="${esc(c.id)}"` : ""}>
+      <td>${statusPill(c.status)}</td><td class="mono">${esc(c.id)}</td>
+      <td><div class="line1" style="white-space:normal">${esc(c.title)}</div><div class="line2" style="white-space:normal">${esc(c.status === "skipped" ? c.reason : c.description)}</div>
+        <div class="small muted" style="margin-top:4px">${esc(c.owasp.join(" · "))}</div></td>
+      <td>${pill(c.severity)}</td><td class="hide-phone small muted">${esc(c.sources.map(scannerName).join(", "))}</td>
+      <td class="num">${c.findings ? fmt(c.findings) : '<span class="muted">0</span>'}</td></tr>`).join("")}
+    </tbody></table></div>`).join("");
+  return titleRow("Checks", `${fmt(counts.fail)} failed, ${fmt(counts.pass)} passed, ${fmt(counts.skipped)} skipped. Skipped checks list what they need, so you can turn them on in Options.`)
+    + `<div class="tabs" role="tablist">${[["all", "All"], ["fail", "Failed"], ["pass", "Passed"], ["skipped", "Skipped"]].map(([k, l]) => `<button role="tab" aria-selected="${tab === k}" data-action="check-tab" data-tab="${k}">${l}<span class="n">${fmt(counts[k])}</span></button>`).join("")}</div>`
+    + (body || `<p class="empty">No checks in this state.</p>`);
+}
+
+/* ---------- coverage ---------- */
+function renderCoverage(r) {
+  const scanners = Object.entries(r.coverage);
+  const total = scanners.reduce((n, [, s]) => n + s.total, 0), covered = scanners.reduce((n, [, s]) => n + s.covered, 0);
+  const gaps = scanners.flatMap(([, s]) => s.features.filter((f) => f.status === "gap"));
+  return titleRow("Scanner coverage", `zgScanner reproduces <strong>${fmt(covered)} of ${fmt(total)}</strong> documented features of ${fmt(scanners.length)} scanners. The ${fmt(gaps.length)} gaps are listed with the reason, inside each scanner.`)
+    + `<section class="card"><div class="card-body" style="padding-top:4px">${scanners.map(([key, s]) => `
+      <details class="cov"><summary><div style="min-width:0"><div class="line1">${esc(s.name)}</div><div class="line2">${esc(s.aka)}</div></div>
+        <div class="covbar"><div class="track" style="height:8px;border-radius:999px;background:var(--raised)"><span style="display:block;height:100%;border-radius:999px;background:var(--accent);width:${(100 * s.covered / s.total).toFixed(1)}%"></span></div></div>
+        <div class="num" style="text-align:right">${fmt(s.covered)} <span class="muted">of ${fmt(s.total)}</span></div><span class="chev">${icon("chev")}</span></summary>
+        <div class="inner tablewrap"><table class="stack-phone"><thead><tr><th>Feature</th><th style="width:100px">Status</th><th style="width:28%">zgScanner checks</th><th class="hide-phone">Note</th></tr></thead><tbody>
+        ${s.features.map((f) => `<tr><td>${esc(f.feature)}</td><td>${statusPill(f.status)}</td><td class="mono small">${esc(f.checks.join(" ")) || "-"}</td><td class="hide-phone muted">${esc(f.note || "")}</td></tr>`).join("")}
+        </tbody></table><p class="small muted" style="margin-top:8px">Source: ${esc(s.url)}</p></div></details>`).join("")}</div></section>`;
+}
+
+/* ---------- inventory ---------- */
+function renderInventory(r) {
+  const servers = r.servers;
+  const connectable = servers.filter((s) => s.transport === "stdio" || s.transport === "http");
+  const serverRows = servers.map((s) => {
+    const caps = s.capabilities.map((c) => `<span class="chip ${s.capabilities_inferred ? "inferred" : ""}">${esc(CAP_LABEL[c] || c)}</span>`).join("");
+    const liveText = !s.live ? '<span class="muted">Not connected</span>' : s.live.ok ? `Connected · ${fmt(s.live.tools)} tools${s.live.prompts ? ` · ${fmt(s.live.prompts)} prompts` : ""}`
+      : `<span class="error" title="${esc(s.live.error)}">Failed</span><div class="line2">${esc(s.live.error)}</div>`;
+    const canConnect = LIVE && state.mode === "machine" && (s.transport === "stdio" || s.transport === "http");
+    return `<tr><td>${canConnect ? `<input type="checkbox" data-action="connect" data-id="${esc(s.id)}" ${state.connect.has(s.id) ? "checked" : ""} aria-label="Connect ${esc(s.name)}">` : ""}</td>
+      <td><div class="line1">${esc(s.name)}</div><div class="line2">${esc(s.client)} · ${esc(s.scope)}${s.disabled ? " · disabled" : ""}</div></td>
+      <td>${esc(s.transport)}</td><td class="trunc mono small" title="${esc(s.command)}">${esc(s.command)}</td>
+      <td><div class="chips">${caps || '<span class="muted">-</span>'}</div></td><td>${liveText}</td>
+      <td class="num"><button class="link" data-action="target" data-target="${esc(s.name)}">${s.risk}</button></td></tr>`;
+  }).join("");
+  const files = r.config_files.map((f) => `<tr><td>${esc(f.client)}</td><td class="trunc mono small" title="${esc(f.path)}">${esc(f.path)}</td><td>${esc(f.scope)}</td><td class="num">${fmt(f.servers)}</td><td>${f.error ? `<span class="error">${esc(f.error)}</span>` : "Read"}</td></tr>`).join("");
+  const skills = [...r.skills].sort((a, b) => b.risk - a.risk || a.name.localeCompare(b.name));
+  const skillRows = skills.slice(0, state.allSkills ? skills.length : 25).map((k) => `<tr class="${k.findings ? "click" : ""}" ${k.findings ? `data-action="target" data-target="${esc(k.name)}"` : ""}>
+    <td><div class="line1">${esc(k.name)}</div></td><td>${esc(k.kind)}</td><td class="trunc mono small" title="${esc(k.path)}">${esc(k.path)}</td>
+    <td class="num">${fmt(k.files)}</td><td class="num">${k.findings ? fmt(k.findings) : '<span class="muted">0</span>'}</td><td class="num">${k.risk}</td></tr>`).join("");
+  return titleRow("Inventory", `${fmt(servers.length)} servers in ${fmt(r.config_files.length)} config files, and ${fmt(skills.length)} skills. Nothing here was started unless it says Connected.`,
+      { extra: LIVE && state.mode === "machine" && connectable.length ? `<button class="btn" data-action="connect-scan" ${state.connect.size ? "" : "disabled"}>Connect ${fmt(state.connect.size)} and scan</button>` : "" })
+    + (LIVE && state.mode === "machine" && connectable.length ? `<p class="notice">Connecting starts a stdio server's own code on this machine, or sends initialize and list requests to a remote one. No tool is called. Tick only servers you would let your agent start.</p>` : "")
+    + `<h2 class="section-h">Servers<span class="aside">capabilities in italics are inferred from the server name</span></h2>
+      ${servers.length ? `<div class="tablewrap"><table class="stack-phone"><thead><tr><th style="width:28px"></th><th style="width:20%">Server</th><th style="width:70px">Transport</th><th>Launch</th><th style="width:22%">Capabilities</th><th style="width:15%">Live</th><th class="num" style="width:56px">Risk</th></tr></thead><tbody>${serverRows}</tbody></table></div>`
+        : `<p class="empty">No MCP servers in any known client config. Add a config path under Options.</p>`}
+      <h2 class="section-h">Config files<span class="aside">${fmt(r.config_files.length)} read</span></h2>
+      ${files ? `<div class="tablewrap"><table class="stack-phone"><thead><tr><th style="width:140px">Client</th><th>Path</th><th style="width:80px">Scope</th><th class="num" style="width:70px">Servers</th><th style="width:120px">Status</th></tr></thead><tbody>${files}</tbody></table></div>` : `<p class="empty">No client config files were found in the known locations.</p>`}
+      <h2 class="section-h">Skills, commands and agents<span class="aside">identical copies are counted once</span></h2>
+      ${skills.length ? `<div class="tablewrap"><table class="stack-phone"><thead><tr><th style="width:22%">Name</th><th style="width:80px">Kind</th><th>Path</th><th class="num" style="width:60px">Files</th><th class="num" style="width:80px">Findings</th><th class="num" style="width:56px">Risk</th></tr></thead><tbody>${skillRows}</tbody></table></div>
+        ${skills.length > 25 && !state.allSkills ? `<p style="margin-top:10px"><button class="btn" data-action="all-skills">Show all ${fmt(skills.length)}</button></p>` : ""}` : `<p class="empty">No skills found.</p>`}
+      ${r.errors.length ? `<h2 class="section-h">Notes from the scan</h2><ul>${r.errors.map((e) => `<li class="muted">${esc(e)}</li>`).join("")}</ul>` : ""}`;
+}
+
+/* ---------- text lab ---------- */
+function renderLab() {
+  const hits = state.labHits;
+  const result = state.labError ? `<p class="error">${esc(state.labError)}</p>` : hits === null ? "" : hits.length
+    ? `<div class="tablewrap" style="margin-top:16px"><table class="stack-phone"><thead><tr><th style="width:104px">Severity</th><th style="width:84px">Check</th><th>Finding</th><th style="width:40%">Evidence</th></tr></thead><tbody>
+      ${hits.map((h) => `<tr><td>${pill(h.severity)}</td><td class="mono">${esc(h.check)}</td><td><div class="line1" style="white-space:normal">${esc(h.title || catalogCheck(h.check).title || "")}</div><div class="line2" style="white-space:normal">${esc(h.detail)}</div></td><td class="mono small" style="overflow-wrap:anywhere">${esc(h.evidence)}</td></tr>`).join("")}</tbody></table></div>`
+    : `<p class="empty" style="margin-top:16px">No detector fired on this text.</p>`;
+  return titleRow("Text lab", "Paste a tool description, a tool response, a resource body, or a saved tools/list JSON. Text is checked by every content detector; JSON runs the full tool checks without starting anything.")
+    + `<div class="lab"><textarea id="lab-text" aria-label="Text to scan" placeholder="Paste text or tools/list JSON">${esc(state.labText || "")}</textarea>
+      <div class="toolbar" style="margin-top:12px"><button class="btn primary" data-action="lab-scan">Scan text</button><span class="total">Nothing leaves this machine.</span></div>${result}</div>`;
+}
+async function labScan() {
+  const text = document.getElementById("lab-text").value;
+  state.labText = text; state.labError = ""; state.labHits = null;
+  let parsed = null;
+  try { parsed = JSON.parse(text); } catch (e) { parsed = null; }
+  try {
+    if (parsed && typeof parsed === "object") {
+      const data = await api("/api/scan", { discover: false, skills: false, tools_json: parsed, connect: [], ephemeral: true, pin: false, osv: false, llm: false, virustotal: false });
+      state.labHits = data.report.findings.map((f) => ({ check: f.check, severity: f.severity, title: f.title, evidence: `${f.location}: ${f.evidence}`, detail: f.detail }));
+    } else {
+      const data = await api("/api/text", { text });
+      state.labHits = data.hits;
+    }
+  } catch (e) { state.labError = e.message; }
+  render();
+}
+
+/* ---------- options dialog ---------- */
+function optionsDialog() {
+  const o = state.options;
+  const check = (key, label, help) => `<div class="field check"><input type="checkbox" id="o-${key}" data-opt="${key}" ${o[key] ? "checked" : ""}><div><label for="o-${key}">${label}</label><div class="help">${help}</div></div></div>`;
+  const area = (key, label, help) => `<div class="field"><label for="o-${key}">${label}</label><textarea id="o-${key}" data-opt="${key}" spellcheck="false">${esc(o[key])}</textarea><div class="help">${help}</div></div>`;
+  return `<div class="scrim" data-action="close"></div><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="o-title">
+    <div class="drawer-head"><h2 id="o-title">Scan options</h2><button class="btn text" data-action="close" aria-label="Close">${icon("close")}</button></div>
+    <div class="drawer-body"><div class="form-grid">
+      ${check("discover", "Read known client configs", "Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Cline, Gemini CLI, Codex, Zed, Kiro, Amazon Q, OpenCode and more.")}
+      ${check("skills", "Scan agent skills, commands and agents", "SKILL.md folders, .claude/commands, .claude/agents and plugin skills.")}
+      ${check("osv", "Look up advisories on OSV.dev", "Sends package names and versions to api.osv.dev.")}
+      ${check("llm", "Run the Claude LLM judge", "Sends connected servers' tool text, with secrets redacted, to the Anthropic API. Needs the anthropic package and credentials.")}
+      ${check("virustotal", "VirusTotal hash lookups", "Sends SHA-256 hashes, never files, for up to 20 files. Needs VT_API_KEY.")}
+      ${check("pin", "Pin this scan as the baseline", "Later scans report changed tools, configs and skills (rug pulls).")}
+      <div class="field"><label for="o-identify_as">Second client name</label><input type="text" id="o-identify_as" data-opt="identify_as" value="${esc(o.identify_as)}" placeholder="for example claude-ai"><div class="help">Connected servers are listed twice, once under this name, to catch tools that change by client.</div></div>
+      ${area("configs", "Extra config files", "One path per line.")}
+      ${area("sources", "Server source folders", "One path per line. Enables the source-code checks.")}
+      ${area("skill_paths", "Extra skill folders", "One path per line.")}
+      ${area("allowlist", "Allowlist", "Approved server or package names, one per line. Empty turns the check off.")}
+    </div><p style="margin-top:20px"><button class="btn primary js-scan" data-action="scan" data-label="Rescan machine">Rescan machine</button></p></div></aside>`;
+}
+
+/* ---------- render ---------- */
+function render() {
+  renderShell();
+  const view = document.getElementById("view");
+  const r = state.report;
+  if (!r) {
+    view.innerHTML = titleRow("Overview", state.scanning ? `Scanning: ${esc(state.progress)}` : "No scan yet. Paste a server to scan it, or rescan this machine's client configs and skills.")
+      + pasteCard() + `<section class="card kpis">${["Risk score", "Findings", "MCP servers", "Skills", "Checks"].map((l) => `<div class="kpi"><div class="kpi-label">${l}</div><div class="kpi-value"><span class="skel">000</span></div></div>`).join("")}</section>`;
+  } else {
+    view.innerHTML = { overview: renderOverview, findings: renderFindings, checks: renderChecks, coverage: renderCoverage, inventory: renderInventory, lab: renderLab }[state.view](r);
+  }
+  const overlay = document.getElementById("overlay");
+  const f = state.selected && r && r.findings.find((x) => x.id === state.selected);
+  overlay.innerHTML = state.dialog === "options" ? optionsDialog() : f ? drawer(f) : "";
+  paintScanButton();
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click", (event) => {
+  const el = event.target.closest("[data-action]");
+  if (!el) return;
+  const a = el.dataset.action;
+  if (a === "scan") { state.dialog = null; runScan(); }
+  else if (a === "options") { state.dialog = "options"; render(); }
+  else if (a === "close") { state.dialog = null; state.selected = null; render(); }
+  else if (a === "finding") { state.selected = el.dataset.id; render(); }
+  else if (a === "go") { go(el.dataset.view); }
+  else if (a === "sev") { state.filters.sev = el.dataset.sev; go("findings", state.filters); }
+  else if (a === "owasp") { go("findings", { owasp: el.dataset.id }); }
+  else if (a === "target") { go("findings", { target: el.dataset.target }); }
+  else if (a === "go-check") { state.selected = null; go("findings", { check: el.dataset.check }); }
+  else if (a === "clear-scope") { go("findings", {}); }
+  else if (a === "check-tab") { state.checkTab = el.dataset.tab; render(); }
+  else if (a === "export") { exportReport(el.dataset.format); }
+  else if (a === "connect") { el.checked ? state.connect.add(el.dataset.id) : state.connect.delete(el.dataset.id); render(); }
+  else if (a === "connect-scan") { runScan(); }
+  else if (a === "scan-target") { scanTarget(state.targetText); }
+  else if (a === "machine") { backToMachine(); }
+  else if (a === "tool-findings") { go("findings", { target: el.dataset.target, q: el.dataset.tool }); }
+  else if (a === "all-skills") { state.allSkills = true; render(); }
+  else if (a === "lab-scan") { labScan(); }
+  else if (a === "menu") { document.getElementById("app").classList.toggle("nav-open"); }
+  else if (a === "theme") {
+    const next = { auto: "light", light: "dark", dark: "auto" }[recall("zgscanner.theme", "auto")];
+    store("zgscanner.theme", next); applyTheme(); renderShell();
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && (state.selected || state.dialog)) { state.selected = null; state.dialog = null; render(); }
+  if (event.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { event.preventDefault(); document.getElementById("global-search").focus(); }
+  if (event.key === "Enter" && event.target.classList && event.target.classList.contains("ow")) event.target.click();
+});
+document.addEventListener("input", (event) => {
+  const t = event.target;
+  if (t.dataset.opt) { state.options[t.dataset.opt] = t.type === "checkbox" ? t.checked : t.value; store("zgscanner.options", state.options); return; }
+  if (t.id === "target-input") { state.targetText = t.value; return; }
+  if (t.id === "f-q") {
+    state.filters.q = t.value;
+    const pos = t.selectionStart; render();
+    const again = document.getElementById("f-q"); again.focus(); again.setSelectionRange(pos, pos);
+  }
+});
+document.addEventListener("change", (event) => {
+  const t = event.target;
+  if (t.id === "f-cat") { state.filters.cat = t.value; go("findings", state.filters); }
+  if (t.id === "f-target") { state.filters.target = t.value; go("findings", state.filters); }
+});
+document.addEventListener("submit", (event) => {
+  if (event.target.dataset.form === "target") { event.preventDefault(); scanTarget(document.getElementById("target-input").value); }
+});
+document.getElementById("global-search").addEventListener("keydown", (event) => {
+  if (event.key === "Enter") { go("findings", { q: event.target.value }); event.target.value = ""; }
+});
+function applyTheme() {
+  const pref = recall("zgscanner.theme", "auto");
+  if (pref === "auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", pref);
+}
+window.addEventListener("hashchange", route);
+applyTheme();
+route();
+</script>
+</body>
+</html>

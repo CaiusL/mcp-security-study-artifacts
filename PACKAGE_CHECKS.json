@@ -1,0 +1,75 @@
+{
+  "integrity": {
+    "status": "pass",
+    "retained_source_hashes_checked": 289,
+    "original_report_unchanged": true,
+    "saved_json_objects_and_jsonl_rows_parsed": 6933,
+    "stage2": {
+      "qwen3.8-flash": {
+        "rows": 870,
+        "composition": {
+          "benign": 540,
+          "attack": 300,
+          "live": 30
+        },
+        "attack_successes": {
+          "patched": {
+            "hits": 18,
+            "total": 150
+          },
+          "vulnerable": {
+            "hits": 15,
+            "total": 150
+          }
+        }
+      },
+      "deepseek-flash": {
+        "rows": 870,
+        "composition": {
+          "benign": 540,
+          "attack": 300,
+          "live": 30
+        },
+        "attack_successes": {
+          "patched": {
+            "hits": 0,
+            "total": 150
+          },
+          "vulnerable": {
+            "hits": 0,
+            "total": 150
+          }
+        }
+      }
+    },
+    "errors": [],
+    "limits": "Integrity and saved-count check only; no calls executed, no effect oracles rerun, no live enforcement or full policy rescoring."
+  },
+  "dependencies": {
+    "source_files_verified_against_original_zip": 289,
+    "internal_import_edges_checked": 222,
+    "missing_import_targets": []
+  },
+  "selected_existing_tests": {
+    "tests_run": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "success": true,
+    "modules": [
+      "test_poc",
+      "test_agent_loop",
+      "test_budget",
+      "test_injection",
+      "test_layer_d_generator",
+      "test_figures",
+      "test_stage2_birth"
+    ],
+    "network_blocked": true,
+    "only_allowed_subprocesses": "Git operations in temporary test fixtures",
+    "temporary_git_calls": 80,
+    "scope": "Selected existing deterministic tests only; not a full live-server or model reproduction"
+  },
+  "verified_against": "Original uploaded ZIP bytes",
+  "remote_repository_modified": false
+}

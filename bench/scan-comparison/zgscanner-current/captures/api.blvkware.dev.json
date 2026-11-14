@@ -1,0 +1,905 @@
+{
+ "servers": [
+  {
+   "name": "api.blvkware.dev",
+   "transport": "http",
+   "serverInfo": {
+    "icons": [
+     {
+      "mimeType": "image/png",
+      "sizes": [
+       "512x512"
+      ],
+      "src": "https://blvkware.dev/assets/logo-512.png"
+     },
+     {
+      "mimeType": "image/png",
+      "sizes": [
+       "192x192"
+      ],
+      "src": "https://blvkware.dev/assets/logo-192.png"
+     }
+    ],
+    "name": "hallux",
+    "title": "HALLUX",
+    "version": "0.1.0",
+    "websiteUrl": "https://blvkware.dev/hallux/"
+   },
+   "instructions": "HALLUX tells you whether an identifier actually exists before you act on it.\n\nCall hallux_check_command before running any install command. Call hallux_check_manifest after editing a dependency file. These are read-only lookups and cost nothing on the free tier.\n\nA `phantom` or `squat` verdict means do not proceed. `unknown` means the check could not be completed and must never be treated as permission.",
+   "capabilities": {
+    "resources": {
+     "listChanged": false,
+     "subscribe": false
+    },
+    "tools": {
+     "listChanged": false
+    }
+   },
+   "tools": [
+    {
+     "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true,
+      "readOnlyHint": true,
+      "title": "Check an install command"
+     },
+     "description": "Call this BEFORE running any command that installs a dependency: npm, yarn, pnpm, bun, pip, uv, poetry, pipx, cargo, go get, dotnet add package, nuget.\n\nLanguage models invent plausible package names that have never existed, and attackers register those names because they can predict them. Installing one runs attacker code. You cannot tell the difference by looking at the name, which is why this check exists.\n\nPass the command exactly as you intend to run it. The identifiers are extracted for you.\n\nIf the result says BLOCK, do not run the command. Use the `successor` if one is given, otherwise tell the user what was found and stop.",
+     "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+       "command": {
+        "description": "The shell command, verbatim. Example: pip install requests requests-oauth2-helper",
+        "type": "string"
+       }
+      },
+      "required": [
+       "command"
+      ],
+      "type": "object"
+     },
+     "name": "hallux_check_command",
+     "outputSchema": {
+      "properties": {
+       "blocked": {
+        "description": "The absent, phantom and squat results.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "checked": {
+        "description": "How many identifiers were checked.",
+        "minimum": 0,
+        "type": "integer"
+       },
+       "command": {
+        "description": "The command as received.",
+        "type": "string"
+       },
+       "decision": {
+        "description": "BLOCK: do not proceed. REVIEW: something could not be verified. PROCEED: every identifier exists. NOTHING_TO_CHECK: no identifier was recognised.",
+        "enum": [
+         "PROCEED",
+         "REVIEW",
+         "BLOCK",
+         "NOTHING_TO_CHECK"
+        ],
+        "type": "string"
+       },
+       "identifiersFound": {
+        "description": "The identifiers read off the command.",
+        "items": {
+         "properties": {
+          "namespace": {
+           "type": "string"
+          },
+          "value": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "results": {
+        "description": "Every result, in input order.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "safeToProceed": {
+        "description": "False whenever anything was blocked.",
+        "type": "boolean"
+       },
+       "unverified": {
+        "description": "The unknown results.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "decision",
+       "safeToProceed",
+       "results"
+      ],
+      "type": "object"
+     },
+     "title": "Check an install command before running it"
+    },
+    {
+     "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true,
+      "readOnlyHint": true,
+      "title": "Check identifiers"
+     },
+     "description": "Does this identifier actually exist? Call before acting on any name you recalled rather than read: a package to install, a module to import, a DOI to cite.\n\nReturns one of: exists, deprecated, absent, phantom, squat, unknown.\n  exists     - proceed\n  deprecated - proceed, but use `successor`\n  absent     - not in the registry. Do not proceed\n  phantom    - does not exist AND models repeatedly invent it. Do not proceed\n  squat      - was invented by models, then registered by someone. Treat as hostile\n  unknown    - could not verify. Never treat this as permission\n\nLive namespaces: cite.doi, pkg.crates, pkg.go, pkg.maven, pkg.npm, pkg.nuget, pkg.pypi. An unsupported namespace returns `unknown`, never an error, so it is safe to ask.",
+     "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+       "identifiers": {
+        "description": "Up to 100 identifiers.",
+        "items": {
+         "properties": {
+          "namespace": {
+           "description": "Where the identifier lives: pkg.npm, pkg.pypi, pkg.crates, pkg.go, pkg.maven or pkg.nuget for a package, cite.doi for a DOI.",
+           "enum": [
+            "cite.doi",
+            "pkg.crates",
+            "pkg.go",
+            "pkg.maven",
+            "pkg.npm",
+            "pkg.nuget",
+            "pkg.pypi"
+           ],
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier exactly as written, e.g. requests, @types/node, github.com/spf13/cobra, 10.1038/nature12373.",
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value"
+         ],
+         "type": "object"
+        },
+        "maxItems": 100,
+        "type": "array"
+       }
+      },
+      "required": [
+       "identifiers"
+      ],
+      "type": "object"
+     },
+     "name": "hallux_check",
+     "outputSchema": {
+      "properties": {
+       "blocked": {
+        "description": "The absent, phantom and squat results.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "checked": {
+        "description": "How many identifiers were checked.",
+        "minimum": 0,
+        "type": "integer"
+       },
+       "decision": {
+        "description": "BLOCK: do not proceed. REVIEW: something could not be verified. PROCEED: every identifier exists. NOTHING_TO_CHECK: no identifier was recognised.",
+        "enum": [
+         "PROCEED",
+         "REVIEW",
+         "BLOCK",
+         "NOTHING_TO_CHECK"
+        ],
+        "type": "string"
+       },
+       "results": {
+        "description": "Every result, in input order.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "safeToProceed": {
+        "description": "False whenever anything was blocked.",
+        "type": "boolean"
+       },
+       "unverified": {
+        "description": "The unknown results.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "decision",
+       "safeToProceed",
+       "results"
+      ],
+      "type": "object"
+     },
+     "title": "Check identifiers"
+    },
+    {
+     "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true,
+      "readOnlyHint": true,
+      "title": "Check a dependency file"
+     },
+     "description": "Call this after writing or editing a dependency file, and before committing it. Supported: package.json, requirements.txt, pyproject.toml, Cargo.toml, go.mod.\n\nChecks every dependency in one pass, including dev and optional groups, which is where an invented name usually arrives.",
+     "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+       "content": {
+        "description": "The file contents.",
+        "type": "string"
+       },
+       "filename": {
+        "description": "The file name, e.g. package.json. Path is ignored; only the name is used to pick a parser.",
+        "type": "string"
+       }
+      },
+      "required": [
+       "filename",
+       "content"
+      ],
+      "type": "object"
+     },
+     "name": "hallux_check_manifest",
+     "outputSchema": {
+      "properties": {
+       "blocked": {
+        "description": "The absent, phantom and squat results.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "checked": {
+        "description": "How many identifiers were checked.",
+        "minimum": 0,
+        "type": "integer"
+       },
+       "decision": {
+        "description": "BLOCK: do not proceed. REVIEW: something could not be verified. PROCEED: every identifier exists. NOTHING_TO_CHECK: no identifier was recognised.",
+        "enum": [
+         "PROCEED",
+         "REVIEW",
+         "BLOCK",
+         "NOTHING_TO_CHECK"
+        ],
+        "type": "string"
+       },
+       "filename": {
+        "description": "The file name as received.",
+        "type": "string"
+       },
+       "results": {
+        "description": "Every result, in input order.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "safeToProceed": {
+        "description": "False whenever anything was blocked.",
+        "type": "boolean"
+       },
+       "unverified": {
+        "description": "The unknown results.",
+        "items": {
+         "properties": {
+          "confidence": {
+           "maximum": 1,
+           "minimum": 0,
+           "type": "number"
+          },
+          "evidence": {
+           "description": "What the verdict rests on: registry status and time, attestations, model families, nearest existing names.",
+           "type": "object"
+          },
+          "namespace": {
+           "description": "The namespace checked.",
+           "type": "string"
+          },
+          "reason": {
+           "description": "Why the verdict is unknown.",
+           "type": "string"
+          },
+          "recommendation": {
+           "description": "What to do next.",
+           "type": "string"
+          },
+          "successor": {
+           "description": "The name to use instead, when one is known.",
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier checked.",
+           "type": "string"
+          },
+          "verdict": {
+           "description": "exists and deprecated may proceed; absent, phantom and squat must not; unknown is never permission.",
+           "enum": [
+            "exists",
+            "deprecated",
+            "absent",
+            "phantom",
+            "squat",
+            "unknown"
+           ],
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "verdict",
+          "confidence"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "decision",
+       "safeToProceed",
+       "results"
+      ],
+      "type": "object"
+     },
+     "title": "Check a dependency file"
+    },
+    {
+     "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": true,
+      "readOnlyHint": false,
+      "title": "Watch for verdict changes"
+     },
+     "description": "Register identifiers for notification when their verdict changes. The transition that matters is phantom to squat: a name models invent that somebody then registers.\n\nUse this for a dependency that came back `absent` or `phantom` and that the user intends to use anyway, or for a set of dependencies worth monitoring. Delivered by signed webhook to a URL you supply.",
+     "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+       "callbackUrl": {
+        "description": "An https URL to POST transitions to.",
+        "type": "string"
+       },
+       "identifiers": {
+        "description": "Up to 100 identifiers to watch, typically ones that came back absent or phantom.",
+        "items": {
+         "properties": {
+          "namespace": {
+           "description": "Where the identifier lives: pkg.npm, pkg.pypi, pkg.crates, pkg.go, pkg.maven or pkg.nuget for a package, cite.doi for a DOI.",
+           "enum": [
+            "cite.doi",
+            "pkg.crates",
+            "pkg.go",
+            "pkg.maven",
+            "pkg.npm",
+            "pkg.nuget",
+            "pkg.pypi"
+           ],
+           "type": "string"
+          },
+          "value": {
+           "description": "The identifier exactly as written, e.g. requests, @types/node, github.com/spf13/cobra, 10.1038/nature12373.",
+           "type": "string"
+          }
+         },
+         "required": [
+          "namespace",
+          "value"
+         ],
+         "type": "object"
+        },
+        "maxItems": 100,
+        "type": "array"
+       }
+      },
+      "required": [
+       "identifiers",
+       "callbackUrl"
+      ],
+      "type": "object"
+     },
+     "name": "hallux_watch",
+     "outputSchema": {
+      "properties": {
+       "decision": {
+        "enum": [
+         "WATCHING"
+        ],
+        "type": "string"
+       },
+       "event": {
+        "type": "string"
+       },
+       "registered": {
+        "items": {
+         "properties": {
+          "namespace": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          },
+          "signingSecret": {
+           "description": "Verifies the webhook signature.",
+           "type": "string"
+          },
+          "value": {
+           "type": "string"
+          },
+          "watchId": {
+           "type": "string"
+          },
+          "watched": {
+           "type": "boolean"
+          }
+         },
+         "required": [
+          "namespace",
+          "value",
+          "watched"
+         ],
+         "type": "object"
+        },
+        "type": "array"
+       },
+       "signature": {
+        "properties": {
+         "format": {
+          "type": "string"
+         },
+         "header": {
+          "type": "string"
+         }
+        },
+        "type": "object"
+       },
+       "transitionOfInterest": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "decision",
+       "registered"
+      ],
+      "type": "object"
+     },
+     "title": "Be told if a name turns hostile later"
+    }
+   ],
+   "prompts": [],
+   "resources": [
+    {
+     "uri": "hallux://verdicts",
+     "name": "Verdict semantics",
+     "title": "What each HALLUX verdict means",
+     "mimeType": "application/json",
+     "description": "The six verdicts and the action each one calls for. Read this if you are unsure how to act on a result."
+    },
+    {
+     "uri": "hallux://coverage",
+     "name": "Coverage",
+     "title": "Which namespaces answer",
+     "mimeType": "application/json",
+     "description": "Live and planned namespaces, with their authorities."
+    }
+   ]
+  }
+ ]
+}

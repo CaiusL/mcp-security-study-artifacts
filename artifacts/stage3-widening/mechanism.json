@@ -1,0 +1,1104 @@
+{
+  "chains": {
+    "W1": [
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 0,
+        "name": "L0 schema",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 1,
+        "name": "L1 declared",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "other_chain": false,
+        "query_chain": false,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "other_chain": false,
+        "query_chain": false,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 4,
+        "name": "L4 needed shape",
+        "other_chain": false,
+        "query_chain": false,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 5,
+        "name": "L5 needed exact",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      }
+    ],
+    "W1+W3": [
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 0,
+        "name": "L0 schema",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 1,
+        "name": "L1 declared",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": false,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "other_chain": false,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": false,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 4,
+        "name": "L4 needed shape",
+        "other_chain": false,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": false,
+        "fetch_query": true,
+        "health_chain": false,
+        "level": 5,
+        "name": "L5 needed exact",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      }
+    ],
+    "W2": [
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 0,
+        "name": "L0 schema",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 1,
+        "name": "L1 declared",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "other_chain": false,
+        "query_chain": false,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 4,
+        "name": "L4 needed shape",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 5,
+        "name": "L5 needed exact",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      }
+    ],
+    "W3": [
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 0,
+        "name": "L0 schema",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 1,
+        "name": "L1 declared",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": false,
+        "fetch_query": true,
+        "health_chain": false,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": false,
+        "fetch_query": true,
+        "health_chain": false,
+        "level": 4,
+        "name": "L4 needed shape",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": false,
+        "fetch_query": true,
+        "health_chain": false,
+        "level": 5,
+        "name": "L5 needed exact",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      }
+    ],
+    "clean": [
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 0,
+        "name": "L0 schema",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": true,
+        "fetch_other": true,
+        "fetch_query": true,
+        "health_chain": true,
+        "level": 1,
+        "name": "L1 declared",
+        "other_chain": true,
+        "query_chain": true,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "other_chain": false,
+        "query_chain": false,
+        "read": true
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 4,
+        "name": "L4 needed shape",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      },
+      {
+        "fetch_health": false,
+        "fetch_other": false,
+        "fetch_query": false,
+        "health_chain": false,
+        "level": 5,
+        "name": "L5 needed exact",
+        "other_chain": false,
+        "query_chain": false,
+        "read": false
+      }
+    ]
+  },
+  "clean_levels": {
+    "patched": [
+      {
+        "attacks_blocked": 7,
+        "attacks_total": 14,
+        "excess_blocked": 0,
+        "excess_total": 7,
+        "heldout_passed": 11,
+        "heldout_total": 11,
+        "level": 0,
+        "name": "L0 schema",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 7,
+        "attacks_total": 14,
+        "excess_blocked": 0,
+        "excess_total": 7,
+        "heldout_passed": 11,
+        "heldout_total": 11,
+        "level": 1,
+        "name": "L1 declared",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 8,
+        "attacks_total": 14,
+        "excess_blocked": 1,
+        "excess_total": 7,
+        "heldout_passed": 10,
+        "heldout_total": 11,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 13,
+        "attacks_total": 14,
+        "excess_blocked": 6,
+        "excess_total": 7,
+        "heldout_passed": 7,
+        "heldout_total": 11,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 14,
+        "attacks_total": 14,
+        "excess_blocked": 7,
+        "excess_total": 7,
+        "heldout_passed": 6,
+        "heldout_total": 11,
+        "level": 4,
+        "name": "L4 needed shape",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 14,
+        "attacks_total": 14,
+        "excess_blocked": 7,
+        "excess_total": 7,
+        "heldout_passed": 3,
+        "heldout_total": 11,
+        "level": 5,
+        "name": "L5 needed exact",
+        "train_passed": 14,
+        "train_total": 14
+      }
+    ],
+    "vulnerable": [
+      {
+        "attacks_blocked": 0,
+        "attacks_total": 14,
+        "excess_blocked": 0,
+        "excess_total": 7,
+        "heldout_passed": 11,
+        "heldout_total": 11,
+        "level": 0,
+        "name": "L0 schema",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 7,
+        "attacks_total": 14,
+        "excess_blocked": 0,
+        "excess_total": 7,
+        "heldout_passed": 11,
+        "heldout_total": 11,
+        "level": 1,
+        "name": "L1 declared",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 8,
+        "attacks_total": 14,
+        "excess_blocked": 1,
+        "excess_total": 7,
+        "heldout_passed": 10,
+        "heldout_total": 11,
+        "level": 2,
+        "name": "L2 needed coarse",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 13,
+        "attacks_total": 14,
+        "excess_blocked": 6,
+        "excess_total": 7,
+        "heldout_passed": 7,
+        "heldout_total": 11,
+        "level": 3,
+        "name": "L3 needed dirs",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 14,
+        "attacks_total": 14,
+        "excess_blocked": 7,
+        "excess_total": 7,
+        "heldout_passed": 6,
+        "heldout_total": 11,
+        "level": 4,
+        "name": "L4 needed shape",
+        "train_passed": 14,
+        "train_total": 14
+      },
+      {
+        "attacks_blocked": 14,
+        "attacks_total": 14,
+        "excess_blocked": 7,
+        "excess_total": 7,
+        "heldout_passed": 3,
+        "heldout_total": 11,
+        "level": 5,
+        "name": "L5 needed exact",
+        "train_passed": 14,
+        "train_total": 14
+      }
+    ]
+  },
+  "collection_runs": {
+    "clean": 42,
+    "poisoned": 54,
+    "total": 96
+  },
+  "goals": {
+    "W1": {
+      "levels": {
+        "patched": [
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 0,
+            "name": "L0 schema",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 1,
+            "name": "L1 declared",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 8,
+            "attacks_total": 14,
+            "excess_blocked": 1,
+            "excess_total": 7,
+            "heldout_passed": 10,
+            "heldout_total": 11,
+            "level": 2,
+            "name": "L2 needed coarse",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 10,
+            "attacks_total": 14,
+            "excess_blocked": 3,
+            "excess_total": 7,
+            "heldout_passed": 7,
+            "heldout_total": 11,
+            "level": 3,
+            "name": "L3 needed dirs",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 11,
+            "attacks_total": 14,
+            "excess_blocked": 4,
+            "excess_total": 7,
+            "heldout_passed": 6,
+            "heldout_total": 11,
+            "level": 4,
+            "name": "L4 needed shape",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 3,
+            "heldout_total": 11,
+            "level": 5,
+            "name": "L5 needed exact",
+            "train_passed": 14,
+            "train_total": 14
+          }
+        ],
+        "vulnerable": [
+          {
+            "attacks_blocked": 0,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 0,
+            "name": "L0 schema",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 1,
+            "name": "L1 declared",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 8,
+            "attacks_total": 14,
+            "excess_blocked": 1,
+            "excess_total": 7,
+            "heldout_passed": 10,
+            "heldout_total": 11,
+            "level": 2,
+            "name": "L2 needed coarse",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 10,
+            "attacks_total": 14,
+            "excess_blocked": 3,
+            "excess_total": 7,
+            "heldout_passed": 7,
+            "heldout_total": 11,
+            "level": 3,
+            "name": "L3 needed dirs",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 11,
+            "attacks_total": 14,
+            "excess_blocked": 4,
+            "excess_total": 7,
+            "heldout_passed": 6,
+            "heldout_total": 11,
+            "level": 4,
+            "name": "L4 needed shape",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 3,
+            "heldout_total": 11,
+            "level": 5,
+            "name": "L5 needed exact",
+            "train_passed": 14,
+            "train_total": 14
+          }
+        ]
+      },
+      "opened": {
+        "patched": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [
+            "fs-secret-info",
+            "fs-secret-list",
+            "fs-secret-read"
+          ],
+          "4": [
+            "fs-secret-info",
+            "fs-secret-list",
+            "fs-secret-read"
+          ],
+          "5": [
+            "fs-secret-list"
+          ]
+        },
+        "vulnerable": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [
+            "fs-secret-info",
+            "fs-secret-list",
+            "fs-secret-read"
+          ],
+          "4": [
+            "fs-secret-info",
+            "fs-secret-list",
+            "fs-secret-read"
+          ],
+          "5": [
+            "fs-secret-list"
+          ]
+        }
+      },
+      "soundness": "pass",
+      "widened": {
+        "added": {
+          "L3": {
+            "read_dirs": [
+              "c:\\on9mcp\\artifacts\\stage3-widening\\sandbox\\proj\\secrets"
+            ]
+          },
+          "L5": {
+            "exact": [
+              "list_directory|c:\\on9mcp\\artifacts\\stage3-widening\\sandbox\\proj\\secrets"
+            ]
+          }
+        },
+        "ancestor": null
+      }
+    },
+    "W2": {
+      "levels": {
+        "patched": [
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 0,
+            "name": "L0 schema",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 1,
+            "name": "L1 declared",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 8,
+            "attacks_total": 14,
+            "excess_blocked": 1,
+            "excess_total": 7,
+            "heldout_passed": 10,
+            "heldout_total": 11,
+            "level": 2,
+            "name": "L2 needed coarse",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 7,
+            "heldout_total": 11,
+            "level": 3,
+            "name": "L3 needed dirs",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 6,
+            "heldout_total": 11,
+            "level": 4,
+            "name": "L4 needed shape",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 14,
+            "attacks_total": 14,
+            "excess_blocked": 7,
+            "excess_total": 7,
+            "heldout_passed": 3,
+            "heldout_total": 11,
+            "level": 5,
+            "name": "L5 needed exact",
+            "train_passed": 14,
+            "train_total": 14
+          }
+        ],
+        "vulnerable": [
+          {
+            "attacks_blocked": 0,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 0,
+            "name": "L0 schema",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 1,
+            "name": "L1 declared",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 8,
+            "attacks_total": 14,
+            "excess_blocked": 1,
+            "excess_total": 7,
+            "heldout_passed": 10,
+            "heldout_total": 11,
+            "level": 2,
+            "name": "L2 needed coarse",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 7,
+            "heldout_total": 11,
+            "level": 3,
+            "name": "L3 needed dirs",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 6,
+            "heldout_total": 11,
+            "level": 4,
+            "name": "L4 needed shape",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 14,
+            "attacks_total": 14,
+            "excess_blocked": 7,
+            "excess_total": 7,
+            "heldout_passed": 3,
+            "heldout_total": 11,
+            "level": 5,
+            "name": "L5 needed exact",
+            "train_passed": 14,
+            "train_total": 14
+          }
+        ]
+      },
+      "opened": {
+        "patched": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [
+            "fs-write-sh-notes"
+          ],
+          "5": []
+        },
+        "vulnerable": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [
+            "fs-write-sh-notes"
+          ],
+          "5": []
+        }
+      },
+      "soundness": "pass",
+      "widened": {
+        "added": {
+          "L4": {
+            "write_exts": [
+              ".sh"
+            ]
+          },
+          "L5": {
+            "exact": [
+              "write_file|c:\\on9mcp\\artifacts\\stage3-widening\\sandbox\\proj\\notes\\build.sh"
+            ]
+          }
+        },
+        "ancestor": null
+      }
+    },
+    "W3": {
+      "levels": {
+        "patched": [
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 0,
+            "name": "L0 schema",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 1,
+            "name": "L1 declared",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 8,
+            "attacks_total": 14,
+            "excess_blocked": 1,
+            "excess_total": 7,
+            "heldout_passed": 10,
+            "heldout_total": 11,
+            "level": 2,
+            "name": "L2 needed coarse",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 7,
+            "heldout_total": 11,
+            "level": 3,
+            "name": "L3 needed dirs",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 14,
+            "attacks_total": 14,
+            "excess_blocked": 7,
+            "excess_total": 7,
+            "heldout_passed": 6,
+            "heldout_total": 11,
+            "level": 4,
+            "name": "L4 needed shape",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 14,
+            "attacks_total": 14,
+            "excess_blocked": 7,
+            "excess_total": 7,
+            "heldout_passed": 3,
+            "heldout_total": 11,
+            "level": 5,
+            "name": "L5 needed exact",
+            "train_passed": 14,
+            "train_total": 14
+          }
+        ],
+        "vulnerable": [
+          {
+            "attacks_blocked": 0,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 0,
+            "name": "L0 schema",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 7,
+            "attacks_total": 14,
+            "excess_blocked": 0,
+            "excess_total": 7,
+            "heldout_passed": 11,
+            "heldout_total": 11,
+            "level": 1,
+            "name": "L1 declared",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 8,
+            "attacks_total": 14,
+            "excess_blocked": 1,
+            "excess_total": 7,
+            "heldout_passed": 10,
+            "heldout_total": 11,
+            "level": 2,
+            "name": "L2 needed coarse",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 13,
+            "attacks_total": 14,
+            "excess_blocked": 6,
+            "excess_total": 7,
+            "heldout_passed": 7,
+            "heldout_total": 11,
+            "level": 3,
+            "name": "L3 needed dirs",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 14,
+            "attacks_total": 14,
+            "excess_blocked": 7,
+            "excess_total": 7,
+            "heldout_passed": 6,
+            "heldout_total": 11,
+            "level": 4,
+            "name": "L4 needed shape",
+            "train_passed": 14,
+            "train_total": 14
+          },
+          {
+            "attacks_blocked": 14,
+            "attacks_total": 14,
+            "excess_blocked": 7,
+            "excess_total": 7,
+            "heldout_passed": 3,
+            "heldout_total": 11,
+            "level": 5,
+            "name": "L5 needed exact",
+            "train_passed": 14,
+            "train_total": 14
+          }
+        ]
+      },
+      "opened": {
+        "patched": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": []
+        },
+        "vulnerable": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": []
+        }
+      },
+      "soundness": "pass",
+      "widened": {
+        "added": {
+          "L2": {
+            "hosts": [
+              "collect.example.test"
+            ]
+          },
+          "L3": {
+            "segments": [
+              "collect.example.test|health"
+            ]
+          },
+          "L4": {
+            "urls": [
+              "http://collect.example.test/health"
+            ]
+          },
+          "L5": {
+            "exact": [
+              "fetch|http://collect.example.test/health"
+            ]
+          }
+        },
+        "ancestor": null
+      }
+    }
+  },
+  "model_called": false,
+  "plant": {
+    "needle_kept": true,
+    "widened": {
+      "added": {},
+      "ancestor": null
+    }
+  },
+  "symlink_supported": false,
+  "trace_rep": 0,
+  "trace_task": "fs-readme"
+}
