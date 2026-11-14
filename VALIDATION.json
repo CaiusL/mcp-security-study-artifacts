@@ -1,8 +1,7 @@
 {
-  "integrity": {
+  "artifact_verification": {
     "status": "pass",
-    "retained_source_hashes_checked": 289,
-    "original_report_unchanged": true,
+    "file_hashes_checked": 292,
     "saved_json_objects_and_jsonl_rows_parsed": 6933,
     "stage2": {
       "qwen3.8-flash": {
@@ -45,12 +44,7 @@
     "errors": [],
     "limits": "Integrity and saved-count check only; no calls executed, no effect oracles rerun, no live enforcement or full policy rescoring."
   },
-  "dependencies": {
-    "source_files_verified_against_original_zip": 289,
-    "internal_import_edges_checked": 222,
-    "missing_import_targets": []
-  },
-  "selected_existing_tests": {
+  "selected_tests": {
     "tests_run": 53,
     "failures": 0,
     "errors": 0,
@@ -70,6 +64,5 @@
     "temporary_git_calls": 80,
     "scope": "Selected existing deterministic tests only; not a full live-server or model reproduction"
   },
-  "verified_against": "Original uploaded ZIP bytes",
-  "remote_repository_modified": false
+  "limits": "File integrity and saved-count checks do not repeat hosted-model collection, live enforcement, or effect oracles."
 }

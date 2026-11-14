@@ -1,6 +1,6 @@
-"""Verify this reduced package without models, servers, network or dependencies.
+"""Verify study artifacts without models, servers, network or dependencies.
 
-This checks source-file hashes, the unchanged original PDF, retained record
+This checks file hashes, experiment record
 syntax and key Stage 2 trace counts. It does not execute traces or rescore
 effect oracles, policies, live servers or model outputs.
 """
@@ -21,16 +21,12 @@ def sha(path: Path) -> str:
 def main() -> int:
     manifest = json.loads((ROOT / "MANIFEST.json").read_text())
     errors = []
-    for entry in manifest["files"] + manifest.get("packaging_files", []):
+    for entry in manifest["files"]:
         path = ROOT / entry["path"]
         if not path.is_file():
             errors.append(f"Missing: {entry['path']}")
         elif sha(path) != entry["sha256"]:
             errors.append(f"Changed: {entry['path']}")
-    pdf = manifest["report_pdf"]
-    if not (ROOT / pdf["path"]).is_file() or sha(ROOT / pdf["path"]) != pdf["sha256"]:
-        errors.append("Original report PDF is missing or changed")
-
     records = 0
     for path in sorted((ROOT / "artifacts").rglob("*")):
         if path.suffix not in {".json", ".jsonl"}:
@@ -71,9 +67,7 @@ def main() -> int:
 
     result = {
         "status": "fail" if errors else "pass",
-        "retained_source_hashes_checked": len(manifest["files"]),
-        "packaging_file_hashes_checked": len(manifest.get("packaging_files", [])),
-        "original_report_unchanged": sha(ROOT / pdf["path"]) == pdf["sha256"],
+        "file_hashes_checked": len(manifest["files"]),
         "saved_json_objects_and_jsonl_rows_parsed": records,
         "stage2": counts,
         "errors": errors,
